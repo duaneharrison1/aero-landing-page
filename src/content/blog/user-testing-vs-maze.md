@@ -256,7 +256,7 @@ tags: ["user testing", "maze", "prototype testing", "comparison"]
   // Update all blog links with current language
   const updateBlogLinks = () => {
     const currentLanguage = getCurrentLanguage();
-    const authUrl = `https://app.figmafolio.com/${currentLanguage}/auth`;
+    const authUrl = "https://aeroapp.ai";
     const pricingUrl = `/pricing`;
 
     // Update hero start link
