@@ -1,0 +1,28 @@
+---
+const APP_URL = "https://aeroapp.ai";
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-24 border-t border-black/5">
+  <div
+    class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-10 sm:flex-row"
+  >
+    <p class="text-sm text-[var(--aero-muted)]">
+      &copy; {year} Aero. All rights reserved.
+    </p>
+    <nav class="flex items-center gap-6">
+      <a
+        href={APP_URL}
+        class="text-sm text-[var(--aero-muted)] transition hover:text-[var(--aero-text)]"
+      >
+        Sign in
+      </a>
+      <a
+        href={APP_URL}
+        class="text-sm text-[var(--aero-muted)] transition hover:text-[var(--aero-text)]"
+      >
+        Get started
+      </a>
+    </nav>
+  </div>
+</footer>

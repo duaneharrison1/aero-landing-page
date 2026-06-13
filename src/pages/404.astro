@@ -1,0 +1,33 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+
+const APP_URL = "https://aeroapp.ai";
+---
+
+<Layout title="Page not found">
+  <Header />
+  <main class="mx-auto flex max-w-3xl flex-col items-center px-6 py-28 text-center">
+    <div class="font-mono text-sm font-semibold text-accent">404</div>
+    <h1
+      class="mt-4 text-3xl font-bold tracking-tight text-[var(--aero-text)] sm:text-4xl"
+    >
+      We could not find that page.
+    </h1>
+    <p class="mt-4 max-w-md text-lg text-[var(--aero-muted)]">
+      The link may be broken or the page may have moved. Head back and pick up
+      where you left off.
+    </p>
+    <div class="mt-8 flex items-center gap-4">
+      <a href="/" class="btn-primary text-sm">Back to home</a>
+      <a
+        href={APP_URL}
+        class="text-sm font-medium text-[var(--aero-muted)] transition hover:text-[var(--aero-text)]"
+      >
+        Go to Aero
+      </a>
+    </div>
+  </main>
+  <Footer />
+</Layout>

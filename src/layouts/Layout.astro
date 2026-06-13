@@ -1,0 +1,55 @@
+---
+import { SEO } from "astro-seo";
+import "@fontsource-variable/dm-sans";
+import "@/styles/global.css";
+
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = "Aero lets an AI agent publish a prototype to a live URL and set up a user test, then real people try it with screen and voice recorded and AI hands your agent the insights.",
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+const ogImage = new URL("/opengraph.png", Astro.site).toString();
+
+const makeTitle = title
+  ? title + " | Aero"
+  : "Aero: where an AI agent publishes a prototype and gets real humans testing it";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#f7f8fc" />
+    <SEO
+      title={makeTitle}
+      description={description}
+      canonical={canonicalURL}
+      twitter={{
+        card: "summary_large_image",
+      }}
+      openGraph={{
+        basic: {
+          url: canonicalURL,
+          type: "website",
+          title: makeTitle,
+          image: ogImage,
+        },
+        image: {
+          alt: "Aero",
+        },
+      }}
+    />
+  </head>
+  <body class="aero-bg min-h-screen">
+    <slot />
+  </body>
+</html>

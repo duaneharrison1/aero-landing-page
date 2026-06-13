@@ -1,0 +1,125 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import PromptBox from "@/components/PromptBox.astro";
+
+const hostPoints = [
+  "Drag-and-drop or agent-published static sites",
+  "Instant live URLs",
+  "Versions you can roll back to",
+];
+const testPoints = [
+  "Task-based tests on your real hosted prototype",
+  "Screen and voice recording",
+  "Transcripts and AI insights",
+];
+const steps = [
+  {
+    n: "01",
+    title: "Publish",
+    body: "Your agent publishes the project to a live URL in one step.",
+  },
+  {
+    n: "02",
+    title: "Share the test link",
+    body: "Send the test to real people, or let your agent set it up for you.",
+  },
+  {
+    n: "03",
+    title: "Read the insights",
+    body: "Screens and voices are recorded, then transcripts and AI insights come back.",
+  },
+];
+---
+
+<Layout>
+  <Header />
+
+  <main>
+    <!-- Hero -->
+    <section class="mx-auto max-w-4xl px-6 pt-16 text-center sm:pt-24">
+      <h1
+        class="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight text-[var(--aero-text)] sm:text-5xl sm:leading-[1.1]"
+      >
+        The only place an AI agent can publish a prototype and get real humans
+        testing it.
+      </h1>
+      <p
+        class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-[var(--aero-muted)]"
+      >
+        One conversation: your agent builds, publishes to a live URL, and sets up
+        a user test. Real people try it, their screen and voice recorded. AI hands
+        your agent the insights.
+      </p>
+
+      <div class="mt-10">
+        <PromptBox />
+      </div>
+    </section>
+
+    <!-- Feature cards -->
+    <section class="mx-auto max-w-5xl px-6 pt-24">
+      <div class="grid gap-6 md:grid-cols-2">
+        <article class="glass-card p-8">
+          <h2 class="text-xl font-semibold text-[var(--aero-text)]">Host</h2>
+          <p class="mt-2 text-[var(--aero-muted)]">
+            Drag-and-drop or agent-published static sites, live in seconds.
+          </p>
+          <ul class="mt-6 space-y-3">
+            {
+              hostPoints.map((p) => (
+                <li class="flex items-start gap-3 text-[var(--aero-text)]">
+                  <span
+                    class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-accent"
+                    aria-hidden="true"
+                  />
+                  <span>{p}</span>
+                </li>
+              ))
+            }
+          </ul>
+        </article>
+
+        <article class="glass-card p-8">
+          <h2 class="text-xl font-semibold text-[var(--aero-text)]">Test</h2>
+          <p class="mt-2 text-[var(--aero-muted)]">
+            Task-based tests on the real prototype you just hosted.
+          </p>
+          <ul class="mt-6 space-y-3">
+            {
+              testPoints.map((p) => (
+                <li class="flex items-start gap-3 text-[var(--aero-text)]">
+                  <span
+                    class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-accent"
+                    aria-hidden="true"
+                  />
+                  <span>{p}</span>
+                </li>
+              ))
+            }
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Three steps -->
+    <section class="mx-auto max-w-5xl px-6 pt-24">
+      <div class="grid gap-8 sm:grid-cols-3">
+        {
+          steps.map((s) => (
+            <div>
+              <div class="font-mono text-sm font-semibold text-accent">{s.n}</div>
+              <h3 class="mt-3 text-lg font-semibold text-[var(--aero-text)]">
+                {s.title}
+              </h3>
+              <p class="mt-2 text-[var(--aero-muted)]">{s.body}</p>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
