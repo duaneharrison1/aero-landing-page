@@ -1,55 +1,90 @@
 ---
 import { SEO } from "astro-seo";
-import "@fontsource-variable/dm-sans";
+import Footer from "../components/footer.astro";
+import Navbar from "../components/navbar/navbar.astro";
+import "@fontsource-variable/inter/index.css";
+import "@fontsource-variable/bricolage-grotesque";
 import "@/styles/global.css";
 
 export interface Props {
-  title?: string;
-  description?: string;
+  title: string;
 }
 
-const {
-  title,
-  description = "Aero lets an AI agent publish a prototype to a live URL and set up a user test, then real people try it with screen and voice recorded and AI hands your agent the insights.",
-} = Astro.props;
-
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
-const ogImage = new URL("/opengraph.png", Astro.site).toString();
+
+const resolvedImageWithDomain = new URL(
+  "/opengraph.jpg",
+  Astro.site
+).toString();
+
+const { title } = Astro.props;
 
 const makeTitle = title
-  ? title + " | Aero"
-  : "Aero: where an AI agent publishes a prototype and gets real humans testing it";
+  ? title + " | " + "FigmaFolio"
+  : "Figmafolio: Convert Figma Designs to Websites Instantly";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="/figmafolio-favicon.png" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="theme-color" content="#f7f8fc" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description={description}
+      description="Figmafolio: Convert Figma Designs to Websites Instantly"
       canonical={canonicalURL}
       twitter={{
+        creator: "@surjithctly",
+        site: "@web3templates",
         card: "summary_large_image",
       }}
       openGraph={{
         basic: {
           url: canonicalURL,
           type: "website",
-          title: makeTitle,
-          image: ogImage,
+          title: `Figmafolio: Convert Figma Designs to Websites Instantly`,
+          image: resolvedImageWithDomain,
         },
         image: {
-          alt: "Aero",
+          alt: "Figmafolio: Convert Figma Designs to Websites Instantly",
         },
       }}
     />
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+      defer></script>
+
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://plausible.io/js/pa-7bQoz7MUupl7CnT9H6uIJ.js"></script>
+    <script>
+      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+      plausible.init()
+    </script>
   </head>
-  <body class="aero-bg min-h-screen">
-    <slot />
+  <body>
+    <Navbar />
+    <main id="main-content" tabindex="-1">
+      <slot />
+    </main>
+    <Footer />
+    <style is:global>
+      /* Improve Page speed */
+      /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
+      img {
+        content-visibility: auto;
+      }
+    </style>
   </body>
 </html>

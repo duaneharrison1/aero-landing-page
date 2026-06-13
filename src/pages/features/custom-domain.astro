@@ -1,0 +1,255 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import landingCustomDomain from "../../assets/landing_custom_domain.png";
+import Tick from "../../ui/icons/tick.astro";
+import Container from "../../components/container.astro";
+---
+
+<Layout title="Custom domain for Figma portfolios">
+  <Container>
+    <section class="bg-white pt-8 pb-4 md:pt-14 md:pb-6">
+      <div class="text-center mt-14 mb-12">
+        <h1 class="text-5xl font-bold mb-4">
+          Custom domain for Figma portfolios
+        </h1>
+        <p class="text-lg text-slate-600">
+          Connect your own domain to create a professional portfolio website
+          that reflects your brand
+        </p>
+      </div>
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start mt-24">
+        <div class="flex flex-col items-start text-left">
+          <h2 class="text-2xl font-bold mb-4">
+            Professional branding for your portfolio
+          </h2>
+          <p class="text-slate-700 mb-4">
+            Using your own custom domain instead of a subdomain creates instant
+            credibility with potential clients and employers. Your portfolio
+            will be accessible at yourname.com instead of
+            yourname.figmafolio.com.
+          </p>
+          <div class="mb-4">
+            <h3 class="font-semibold text-lg mb-1">
+              Benefits of custom domains
+            </h3>
+            <ul class="space-y-1 text-base">
+              <li class="flex items-center gap-2">
+                <span class="text-green-600"
+                  ><Tick class="text-green-600 w-5 h-5" /></span
+                > Professional appearance and credibility
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-green-600"
+                  ><Tick class="text-green-600 w-5 h-5" /></span
+                > Better SEO rankings with your own domain authority
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-green-600"
+                  ><Tick class="text-green-600 w-5 h-5" /></span
+                > Memorable URLs that are easy to share
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-green-600"
+                  ><Tick class="text-green-600 w-5 h-5" /></span
+                > Complete brand control and ownership
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-green-600"
+                  ><Tick class="text-green-600 w-5 h-5" /></span
+                > Higher click-through rates in search results
+              </li>
+            </ul>
+          </div>
+          <div class="mb-4">
+            <h3 class="font-semibold text-lg mb-1">Easy setup process</h3>
+            <p class="text-slate-700 mb-2">
+              Our custom domain setup is designed to be simple even for
+              non-technical users. We provide step-by-step guidance and support
+              throughout the entire process.
+            </p>
+            <p class="text-slate-700 mb-4">
+              Connect an existing domain you own or purchase a new one through
+              our recommended domain providers. We'll handle the technical
+              configuration.
+            </p>
+          </div>
+          <div class="flex items-start mt-4">
+            <a
+              href="#"
+              id="custom-domain-start-link"
+              class="inline-block rounded-full bg-[#4d9f70] text-white font-semibold px-6 py-2 text-base shadow hover:bg-[#388e5c] transition"
+              >Get started with custom domain</a
+            >
+          </div>
+        </div>
+        <div class="flex flex-col items-center">
+          <div
+            class="bg-[#F8FAFC] rounded-2xl border border-[#E5EAF0] w-[320px] h-[320px] md:w-[400px] md:h-[400px] lg:w-[440px] lg:h-[440px] flex flex-col items-center justify-center p-8">
+            <Image
+              src={landingCustomDomain}
+              alt="Custom Domain"
+              width={120}
+              height={120}
+              class="mb-4"
+            />
+            <div class="text-center">
+              <div class="font-bold text-xl mb-1">yourportfolio.com</div>
+              <div class="text-slate-600 text-base">
+                Professional domain that builds trust and credibility with your
+                audience
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-24 mb-16">
+      <h2 class="text-4xl font-bold text-center mb-12">
+        Frequently Asked Questions
+      </h2>
+      <div class="space-y-6">
+        <details
+          class="bg-[#F8FAFC] rounded-2xl border border-[#E5EAF0] shadow p-4 md:p-8 mb-6 transition-all duration-300 group"
+          open>
+          <summary
+            class="font-bold text-xl text-[#222] cursor-pointer flex items-center justify-between select-none text-left">
+            How do I connect my domain?
+            <span
+              class="ml-4 transition-transform duration-300 group-open:rotate-180">
+              <svg
+                width="28"
+                height="28"
+                fill="none"
+                viewBox="0 0 24 24"
+                aria-hidden="true">
+                <path
+                  d="M8 10l4 4 4-4"
+                  stroke="#222"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+            </span>
+          </summary>
+          <div class="mt-4 text-slate-700 text-base leading-relaxed text-left">
+            Connecting your domain is straightforward. In your Figmafolio dashboard, go to your project settings and enter your domain name. We'll provide you with a CNAME record to add to your domain registrar's DNS settings. Once added, your portfolio will be accessible at your custom domain. We provide step-by-step instructions for popular registrars like GoDaddy, Namecheap, and Cloudflare.
+          </div>
+        </details>
+        <details
+          class="bg-[#F8FAFC] rounded-2xl border border-[#E5EAF0] shadow p-4 md:p-8 mb-6 transition-all duration-300 group">
+          <summary
+            class="font-bold text-xl text-[#222] cursor-pointer flex items-center justify-between select-none text-left">
+            Do I need to buy a domain separately?
+            <span
+              class="ml-4 transition-transform duration-300 group-open:rotate-180">
+              <svg
+                width="28"
+                height="28"
+                fill="none"
+                viewBox="0 0 24 24"
+                aria-hidden="true">
+                <path
+                  d="M8 10l4 4 4-4"
+                  stroke="#222"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+            </span>
+          </summary>
+          <div class="mt-4 text-slate-700 text-base leading-relaxed text-left">
+            Yes, you'll need to purchase your domain from a domain registrar like Namecheap, GoDaddy, Google Domains, or Cloudflare. Figmafolio doesn't sell domains directly, but we make it easy to connect any domain you own. Domain prices typically start around $10-15/year depending on the extension (.com, .design, .io, etc.).
+          </div>
+        </details>
+        <details
+          class="bg-[#F8FAFC] rounded-2xl border border-[#E5EAF0] shadow p-4 md:p-8 mb-6 transition-all duration-300 group">
+          <summary
+            class="font-bold text-xl text-[#222] cursor-pointer flex items-center justify-between select-none text-left">
+            How long does DNS propagation take?
+            <span
+              class="ml-4 transition-transform duration-300 group-open:rotate-180">
+              <svg
+                width="28"
+                height="28"
+                fill="none"
+                viewBox="0 0 24 24"
+                aria-hidden="true">
+                <path
+                  d="M8 10l4 4 4-4"
+                  stroke="#222"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+            </span>
+          </summary>
+          <div class="mt-4 text-slate-700 text-base leading-relaxed text-left">
+            DNS propagation typically takes anywhere from a few minutes to 48 hours, though most changes are visible within 1-2 hours. The time varies based on your domain registrar and DNS provider. During propagation, some visitors may still see the old configuration. We recommend setting up your domain and waiting a few hours before sharing your new URL widely.
+          </div>
+        </details>
+        <details
+          class="bg-[#F8FAFC] rounded-2xl border border-[#E5EAF0] shadow p-4 md:p-8 mb-6 transition-all duration-300 group">
+          <summary
+            class="font-bold text-xl text-[#222] cursor-pointer flex items-center justify-between select-none text-left">
+            Is SSL/HTTPS included?
+            <span
+              class="ml-4 transition-transform duration-300 group-open:rotate-180">
+              <svg
+                width="28"
+                height="28"
+                fill="none"
+                viewBox="0 0 24 24"
+                aria-hidden="true">
+                <path
+                  d="M8 10l4 4 4-4"
+                  stroke="#222"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+            </span>
+          </summary>
+          <div class="mt-4 text-slate-700 text-base leading-relaxed text-left">
+            Yes, SSL certificates are automatically provisioned for all custom domains at no extra cost. Your portfolio will be served over HTTPS, ensuring a secure connection for all visitors. The SSL certificate is set up automatically after your DNS records propagate—no manual configuration needed.
+          </div>
+        </details>
+      </div>
+    </section>
+  </Container>
+</Layout>
+
+<script>
+  // Language detection logic
+  const getCurrentLanguage = () => {
+    // Try to get language from URL path first
+    const pathSegments = window.location.pathname.split("/");
+    const langFromPath = pathSegments[1];
+
+    // Supported languages
+    const supportedLangs = ["en", "es", "de", "zh", "jp", "fr"];
+
+    if (supportedLangs.includes(langFromPath)) {
+      return langFromPath;
+    }
+
+    // Fallback to browser language
+    const browserLang = navigator.language.split("-")[0];
+    return supportedLangs.includes(browserLang) ? browserLang : "en";
+  };
+
+  // Update custom domain start link with current language
+  const updateCustomDomainLink = () => {
+    const startLink = document.getElementById("custom-domain-start-link");
+    if (startLink) {
+      const currentLanguage = getCurrentLanguage();
+      const authUrl = `https://app.figmafolio.com/${currentLanguage}/auth`;
+      startLink.href = authUrl;
+    }
+  };
+
+  // Update link when page loads
+  document.addEventListener("DOMContentLoaded", updateCustomDomainLink);
+</script>

@@ -1,0 +1,97 @@
+---
+import Link from "../ui/link.astro";
+import { Icon } from "astro-icon/components";
+import downloadVideo from "../assets/Download.mp4";
+---
+
+<script
+  type="text/javascript"
+  src="https://sf16-website-login.neutral.ttwstatic.com/obj/tiktok_web_login_static/tiktok/falcon/embed/embed_lib_v1.0.13.js"
+></script>
+
+<main
+  class="w-full grid grid-cols-1 lg:grid-cols-2 items-center pt-16 pb-8 md:pt-20 md:pb-24 gap-8">
+  <div class="w-full text-left max-w-full lg:max-w-[920px]">
+    <h1
+      class="font-extrabold tracking-tight text-slate-900 leading-[1.1] break-words text-3xl sm:text-4xl md:text-5xl lg:text-7xl">
+      Figma file to live<br /> site in a few clicks
+    </h1>
+    <p class="text-base sm:text-lg mt-6 text-slate-600 max-w-lg">
+      You can publish an interactive website or portfolio directly from your
+      Figma, no coding necessary.
+    </p>
+    <div
+      class="mt-8 flex flex-col sm:flex-row gap-4 lg:justify-start justify-center">
+      <Link
+        href="#"
+        id="hero-get-started-link"
+        target="_blank"
+        class="flex gap-2 items-center justify-center rounded-full bg-[#4d9f70] text-white font-semibold text-lg px-8 py-3 shadow-md hover:bg-[#388e5c] transition-colors duration-150"
+        rel="noopener">
+        <Icon class="text-white w-5 h-5" name="bx:rocket" />
+        Get started for free
+      </Link>
+      <Link
+        size="lg"
+        style="outline"
+        rel="noopener"
+        href="/how-it-works"
+        class="flex gap-2 items-center justify-center rounded-full border-2 border-[#4d9f70] text-[#4d9f70] font-semibold text-lg px-8 py-3 hover:bg-[#e6f4ec] transition-colors duration-150"
+        target="_self">
+        <Icon class="text-[#3d8f60] w-5 h-5" name="bx:help-circle" />
+        How it works
+      </Link>
+    </div>
+  </div>
+  <div class="flex w-full justify-center lg:justify-end mt-10 lg:mt-0">
+    <div
+      class="bg-white rounded-[20px] shadow-[0_4px_24px_0_rgba(0,0,0,0.10)] flex items-center justify-center mx-auto lg:mx-0"
+      style="width:100%;max-width:376px;height:432px;">
+      <video
+        src={downloadVideo}
+        controls
+        autoplay
+        muted
+        loop
+        playsinline
+        style="width:100%;height:100%;border-radius:20px;object-fit:cover;"
+        aria-label="Demo: How to publish a Figma file to a live website with Figmafolio"
+        title="Demo: How to publish a Figma file to a live website with Figmafolio">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</main>
+
+<script>
+  // Language detection logic
+  const getCurrentLanguage = () => {
+    // Try to get language from URL path first
+    const pathSegments = window.location.pathname.split("/");
+    const langFromPath = pathSegments[1];
+
+    // Supported languages
+    const supportedLangs = ["en", "es", "de", "zh", "jp", "fr"];
+
+    if (supportedLangs.includes(langFromPath)) {
+      return langFromPath;
+    }
+
+    // Fallback to browser language
+    const browserLang = navigator.language.split("-")[0];
+    return supportedLangs.includes(browserLang) ? browserLang : "en";
+  };
+
+  // Update hero get started link with current language
+  const updateHeroLink = () => {
+    const heroLink = document.getElementById("hero-get-started-link");
+    if (heroLink) {
+      const currentLanguage = getCurrentLanguage();
+      const authUrl = `https://app.figmafolio.com/${currentLanguage}/auth`;
+      heroLink.href = authUrl;
+    }
+  };
+
+  // Update link when page loads
+  document.addEventListener("DOMContentLoaded", updateHeroLink);
+</script>

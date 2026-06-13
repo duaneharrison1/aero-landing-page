@@ -1,30 +1,46 @@
-# Aero landing page
+# Astro Starter Kit: Basics
 
-Marketing landing page for Aero, where an AI agent can publish a prototype and get real
-humans testing it.
-
-## Stack
-- Astro 5 (static output)
-- Tailwind CSS 3.4 via @astrojs/tailwind
-- astro-seo for SEO, canonical and OpenGraph tags
-- @astrojs/sitemap
-- DM Sans (self-hosted via @fontsource-variable/dm-sans)
-
-## Develop
-```
-npm install
-npm run dev
+```sh
+npm create astro@latest -- --template basics
 ```
 
-## Build
-```
-npm run build
-```
-Output is static, in `dist/`.
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-## Deploy (Vercel)
-Import the repo into Vercel. The Astro framework preset is auto-detected. No environment
-variables are required. Security headers are set in `vercel.json`.
+## 🚀 Project Structure
 
-Note: the apex domain cutover is a separate, human-run step and is intentionally not
-configured here.
+Inside of your Astro project, you'll see the following folders and files:
+
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src
+│   ├── assets
+│   │   └── astro.svg
+│   ├── components
+│   │   └── Welcome.astro
+│   ├── layouts
+│   │   └── Layout.astro
+│   └── pages
+│       └── index.astro
+└── package.json
+```
+
+To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

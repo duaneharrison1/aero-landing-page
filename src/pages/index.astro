@@ -1,125 +1,232 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import Header from "@/components/Header.astro";
-import Footer from "@/components/Footer.astro";
-import PromptBox from "@/components/PromptBox.astro";
-
-const hostPoints = [
-  "Drag-and-drop or agent-published static sites",
-  "Instant live URLs",
-  "Versions you can roll back to",
-];
-const testPoints = [
-  "Task-based tests on your real hosted prototype",
-  "Screen and voice recording",
-  "Transcripts and AI insights",
-];
-const steps = [
-  {
-    n: "01",
-    title: "Publish",
-    body: "Your agent publishes the project to a live URL in one step.",
-  },
-  {
-    n: "02",
-    title: "Share the test link",
-    body: "Send the test to real people, or let your agent set it up for you.",
-  },
-  {
-    n: "03",
-    title: "Read the insights",
-    body: "Screens and voices are recorded, then transcripts and AI insights come back.",
-  },
-];
+import Container from "../components/container.astro";
+import Features from "../components/features.astro";
+import Hero from "../components/hero.astro";
+import Logos from "../components/logos.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout>
-  <Header />
+<Layout title="">
+  <Container>
+    <Hero />
+    <Features />
+    <Logos />
 
-  <main>
-    <!-- Hero -->
-    <section class="mx-auto max-w-4xl px-6 pt-16 text-center sm:pt-24">
-      <h1
-        class="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight text-[var(--aero-text)] sm:text-5xl sm:leading-[1.1]"
-      >
-        The only place an AI agent can publish a prototype and get real humans
-        testing it.
-      </h1>
-      <p
-        class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-[var(--aero-muted)]"
-      >
-        One conversation: your agent builds, publishes to a live URL, and sets up
-        a user test. Real people try it, their screen and voice recorded. AI hands
-        your agent the insights.
-      </p>
-
-      <div class="mt-10">
-        <PromptBox />
+    <section class="mt-24 mb-16">
+      <h2 class="text-4xl font-bold text-center mb-12">
+        Frequently Asked Questions
+      </h2>
+      <div class="space-y-6">
+        <details
+          class="bg-[#F8FAFC] rounded-2xl border border-[#E5EAF0] shadow p-4 md:p-8 mb-6 transition-all duration-300 group"
+          open>
+          <summary
+            class="font-bold text-xl text-[#222] cursor-pointer flex items-center justify-between select-none text-left">
+            How does Figmafolio turn my Figma designs into a website?
+            <span
+              class="ml-4 transition-transform duration-300 group-open:rotate-180">
+              <svg
+                width="28"
+                height="28"
+                fill="none"
+                viewBox="0 0 24 24"
+                aria-hidden="true">
+                <path
+                  d="M8 10l4 4 4-4"
+                  stroke="#222"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+            </span>
+          </summary>
+          <div class="mt-4 text-slate-700 text-base leading-relaxed text-left">
+            Figmafolio uses Figma's prototype embed feature to display your designs as a live, interactive website. All your animations, transitions, and interactions are preserved exactly as you designed them. Just paste your Figma prototype link, and we handle the rest—no coding or exporting required. Your site publishes instantly and updates automatically when you make changes in Figma.
+          </div>
+        </details>
+        <details
+          class="bg-[#F8FAFC] rounded-2xl border border-[#E5EAF0] shadow p-4 md:p-8 mb-6 transition-all duration-300 group">
+          <summary
+            class="font-bold text-xl text-[#222] cursor-pointer flex items-center justify-between select-none text-left">
+            Do I need to know how to code?
+            <span
+              class="ml-4 transition-transform duration-300 group-open:rotate-180">
+              <svg
+                width="28"
+                height="28"
+                fill="none"
+                viewBox="0 0 24 24"
+                aria-hidden="true">
+                <path
+                  d="M8 10l4 4 4-4"
+                  stroke="#222"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+            </span>
+          </summary>
+          <div class="mt-4 text-slate-700 text-base leading-relaxed text-left">
+            No coding required at all. Figmafolio is designed for designers who want to publish their work without touching any code. Simply create your portfolio in Figma, paste your prototype link into Figmafolio, and you're live. Everything else—hosting, responsiveness, and publishing—is handled automatically.
+          </div>
+        </details>
+        <details
+          class="bg-[#F8FAFC] rounded-2xl border border-[#E5EAF0] shadow p-4 md:p-8 mb-6 transition-all duration-300 group">
+          <summary
+            class="font-bold text-xl text-[#222] cursor-pointer flex items-center justify-between select-none text-left">
+            Can I use my own custom domain?
+            <span
+              class="ml-4 transition-transform duration-300 group-open:rotate-180">
+              <svg
+                width="28"
+                height="28"
+                fill="none"
+                viewBox="0 0 24 24"
+                aria-hidden="true">
+                <path
+                  d="M8 10l4 4 4-4"
+                  stroke="#222"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+            </span>
+          </summary>
+          <div class="mt-4 text-slate-700 text-base leading-relaxed text-left">
+            Yes, custom domains are available on Solo and Pro plans. You can connect any domain you own by setting up a simple CNAME record. We provide step-by-step instructions and support to help you through the setup process. Once connected, your portfolio will be accessible at your own professional URL like yourname.com.
+          </div>
+        </details>
+        <details
+          class="bg-[#F8FAFC] rounded-2xl border border-[#E5EAF0] shadow p-4 md:p-8 mb-6 transition-all duration-300 group">
+          <summary
+            class="font-bold text-xl text-[#222] cursor-pointer flex items-center justify-between select-none text-left">
+            How does User Testing work?
+            <span
+              class="ml-4 transition-transform duration-300 group-open:rotate-180">
+              <svg
+                width="28"
+                height="28"
+                fill="none"
+                viewBox="0 0 24 24"
+                aria-hidden="true">
+                <path
+                  d="M8 10l4 4 4-4"
+                  stroke="#222"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+            </span>
+          </summary>
+          <div class="mt-4 text-slate-700 text-base leading-relaxed text-left">
+            Enable User Testing in your dashboard and define tasks for testers to complete. Share your portfolio link with testers, who will navigate your site while recording audio think-aloud feedback. Our AI automatically transcribes and analyzes the recordings to surface key insights, pain points, and suggestions. You can view individual session summaries and an aggregated Testing Summary across all sessions.
+          </div>
+        </details>
+        <details
+          class="bg-[#F8FAFC] rounded-2xl border border-[#E5EAF0] shadow p-4 md:p-8 mb-6 transition-all duration-300 group">
+          <summary
+            class="font-bold text-xl text-[#222] cursor-pointer flex items-center justify-between select-none text-left">
+            What analytics can I see?
+            <span
+              class="ml-4 transition-transform duration-300 group-open:rotate-180">
+              <svg
+                width="28"
+                height="28"
+                fill="none"
+                viewBox="0 0 24 24"
+                aria-hidden="true">
+                <path
+                  d="M8 10l4 4 4-4"
+                  stroke="#222"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+            </span>
+          </summary>
+          <div class="mt-4 text-slate-700 text-base leading-relaxed text-left">
+            Portfolio Analytics shows you visitor counts, geographic locations by country, traffic sources (direct, social, referral), and engagement trends over time. The dashboard gives you a clear picture of who's viewing your work and where they're coming from. Analytics is available on Solo and Pro plans, with no code setup required.
+          </div>
+        </details>
+        <details
+          class="bg-[#F8FAFC] rounded-2xl border border-[#E5EAF0] shadow p-4 md:p-8 mb-6 transition-all duration-300 group">
+          <summary
+            class="font-bold text-xl text-[#222] cursor-pointer flex items-center justify-between select-none text-left">
+            Can I password protect my portfolio?
+            <span
+              class="ml-4 transition-transform duration-300 group-open:rotate-180">
+              <svg
+                width="28"
+                height="28"
+                fill="none"
+                viewBox="0 0 24 24"
+                aria-hidden="true">
+                <path
+                  d="M8 10l4 4 4-4"
+                  stroke="#222"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+            </span>
+          </summary>
+          <div class="mt-4 text-slate-700 text-base leading-relaxed text-left">
+            Yes, password protection is available on Solo and Pro plans. It's perfect for sharing confidential work, NDA projects, or early-stage designs with select clients or recruiters. Just set a password in your dashboard, and visitors will need to enter it to view your portfolio.
+          </div>
+        </details>
+        <details
+          class="bg-[#F8FAFC] rounded-2xl border border-[#E5EAF0] shadow p-4 md:p-8 mb-6 transition-all duration-300 group">
+          <summary
+            class="font-bold text-xl text-[#222] cursor-pointer flex items-center justify-between select-none text-left">
+            How much does it cost?
+            <span
+              class="ml-4 transition-transform duration-300 group-open:rotate-180">
+              <svg
+                width="28"
+                height="28"
+                fill="none"
+                viewBox="0 0 24 24"
+                aria-hidden="true">
+                <path
+                  d="M8 10l4 4 4-4"
+                  stroke="#222"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+            </span>
+          </summary>
+          <div class="mt-4 text-slate-700 text-base leading-relaxed text-left">
+            Figmafolio offers a free tier to get started. Paid plans start from $3/month with regional pricing available for many countries. Each plan tier unlocks additional features like custom domains, password protection, analytics, and more testing sessions. Check our pricing page for details specific to your region.
+          </div>
+        </details>
+        <details
+          class="bg-[#F8FAFC] rounded-2xl border border-[#E5EAF0] shadow p-4 md:p-8 mb-6 transition-all duration-300 group">
+          <summary
+            class="font-bold text-xl text-[#222] cursor-pointer flex items-center justify-between select-none text-left">
+            Can I have multiple projects?
+            <span
+              class="ml-4 transition-transform duration-300 group-open:rotate-180">
+              <svg
+                width="28"
+                height="28"
+                fill="none"
+                viewBox="0 0 24 24"
+                aria-hidden="true">
+                <path
+                  d="M8 10l4 4 4-4"
+                  stroke="#222"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+            </span>
+          </summary>
+          <div class="mt-4 text-slate-700 text-base leading-relaxed text-left">
+            Yes, you can manage multiple portfolios from one Figmafolio dashboard. This is great if you want separate portfolios for different types of work, clients, or personal projects. Each project gets its own URL and settings, and you can switch between them easily.
+          </div>
+        </details>
       </div>
     </section>
-
-    <!-- Feature cards -->
-    <section class="mx-auto max-w-5xl px-6 pt-24">
-      <div class="grid gap-6 md:grid-cols-2">
-        <article class="glass-card p-8">
-          <h2 class="text-xl font-semibold text-[var(--aero-text)]">Host</h2>
-          <p class="mt-2 text-[var(--aero-muted)]">
-            Drag-and-drop or agent-published static sites, live in seconds.
-          </p>
-          <ul class="mt-6 space-y-3">
-            {
-              hostPoints.map((p) => (
-                <li class="flex items-start gap-3 text-[var(--aero-text)]">
-                  <span
-                    class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-accent"
-                    aria-hidden="true"
-                  />
-                  <span>{p}</span>
-                </li>
-              ))
-            }
-          </ul>
-        </article>
-
-        <article class="glass-card p-8">
-          <h2 class="text-xl font-semibold text-[var(--aero-text)]">Test</h2>
-          <p class="mt-2 text-[var(--aero-muted)]">
-            Task-based tests on the real prototype you just hosted.
-          </p>
-          <ul class="mt-6 space-y-3">
-            {
-              testPoints.map((p) => (
-                <li class="flex items-start gap-3 text-[var(--aero-text)]">
-                  <span
-                    class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-accent"
-                    aria-hidden="true"
-                  />
-                  <span>{p}</span>
-                </li>
-              ))
-            }
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <!-- Three steps -->
-    <section class="mx-auto max-w-5xl px-6 pt-24">
-      <div class="grid gap-8 sm:grid-cols-3">
-        {
-          steps.map((s) => (
-            <div>
-              <div class="font-mono text-sm font-semibold text-accent">{s.n}</div>
-              <h3 class="mt-3 text-lg font-semibold text-[var(--aero-text)]">
-                {s.title}
-              </h3>
-              <p class="mt-2 text-[var(--aero-muted)]">{s.body}</p>
-            </div>
-          ))
-        }
-      </div>
-    </section>
-  </main>
-
-  <Footer />
+  </Container>
 </Layout>

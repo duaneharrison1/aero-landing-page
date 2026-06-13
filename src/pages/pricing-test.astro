@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PricingTableNew from '../components/PricingTableNew.astro';
+---
+
+<Layout title="Pricing Test - Figmafolio">
+  <main style="padding-top: 100px; min-height: 100vh; background: #fafafa;">
+    <div style="text-align: center; margin-bottom: 40px;">
+      <h1 style="font-size: 36px; font-weight: 700; color: #1e293b; margin-bottom: 8px;">
+        New Pricing Component Test
+      </h1>
+      <p style="color: #64748b;">
+        Testing the unified PricingTable with Firestore data
+      </p>
+    </div>
+
+    <PricingTableNew />
+
+    <div style="max-width: 600px; margin: 40px auto; padding: 20px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
+      <h3 style="margin-bottom: 12px; color: #1e293b;">Debug Info</h3>
+      <div x-data="{ tier: 'detecting...' }" x-init="
+        fetch('https://ipinfo.io/json?token=b259d22dc84b2e')
+          .then(r => r.json())
+          .then(d => tier = d.country + ' → ' + getPricingTierDebug(d.country))
+          .catch(() => tier = 'US (fallback)')
+      ">
+        <p style="color: #64748b; font-size: 14px;">
+          Detected region: <strong x-text="tier"></strong>
+        </p>
+      </div>
+      <p style="color: #64748b; font-size: 14px; margin-top: 8px;">
+        Data source: Firestore REST API (<code>/config/plans</code>, <code>/config/pricing</code>)
+      </p>
+    </div>
+  </main>
+
+  <script>
+    window.getPricingTierDebug = function(country) {
+      const c = (country || 'US').toUpperCase();
+      if (['PH', 'MY', 'CN', 'AR', 'BR'].includes(c)) return 'PH tier ($3)';
+      if (['IE', 'GB', 'FR', 'JP', 'KR', 'IL', 'IT'].includes(c)) return 'JP tier ($5)';
+      if (['TW', 'ES', 'PT', 'PL'].includes(c)) return 'TW tier ($4)';
+      if (['TH', 'VN', 'ID', 'IN', 'NG'].includes(c)) return 'TH tier ($2)';
+      return 'US tier ($6)';
+    };
+  </script>
+</Layout>

@@ -1,0 +1,89 @@
+---
+import { Image } from "astro:assets";
+import template1 from "../assets/template1.png";
+import template2 from "../assets/template2.png";
+import template3 from "../assets/template3.png";
+---
+
+<section class="mt-24">
+  <h2 class="text-center text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+    Professional templates
+  </h2>
+  <p class="text-center text-lg text-slate-500 mb-12">
+    Start with one of our 8 professionally designed templates or
+    <span class="text-green-600 font-medium cursor-pointer hover:underline"
+      >learn how to create your own.</span
+    >
+  </p>
+  <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+    <!-- Card 1 -->
+    <a
+      href="https://www.figma.com/community/file/1440672128785474782"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="h-[400px] bg-white rounded-[16px] border border-[#ededed] flex flex-col shadow-sm transition hover:shadow-md flex-shrink-0 w-full">
+      <div class="w-full h-[270px]">
+        <Image
+          src={template1}
+          alt="Light and Modern Figma Portfolio Template"
+          class="w-full h-full object-cover rounded-t-[16px]"
+        />
+      </div>
+      <div class="flex-1 flex items-center justify-center px-6">
+        <h3
+          class="text-xl md:text-2xl font-bold text-slate-900 text-center leading-snug">
+          Light and Modern Figma Portfolio Template
+        </h3>
+      </div>
+    </a>
+    <!-- Card 2 -->
+    <a
+      href="https://www.figma.com/community/file/1430551088498528618"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="h-[400px] bg-white rounded-[16px] border border-[#ededed] flex flex-col shadow-sm transition hover:shadow-md flex-shrink-0 w-full">
+      <div class="w-full h-[270px]">
+        <Image
+          src={template2}
+          alt="Minimalist Figma Portfolio Template"
+          class="w-full h-full object-cover rounded-t-[16px]"
+        />
+      </div>
+      <div class="flex-1 flex items-center justify-center px-6">
+        <h3
+          class="text-xl md:text-2xl font-bold text-slate-900 text-center leading-snug">
+          Minimalist Figma Portfolio Template
+        </h3>
+      </div>
+    </a>
+    <!-- Card 3 -->
+    <a
+      href="https://www.figma.com/community/file/1422617117567349052/modern-figma-portfolio-template-responsive"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="h-[400px] bg-white rounded-[16px] border border-[#ededed] flex flex-col shadow-sm transition hover:shadow-md flex-shrink-0 w-full">
+      <div class="w-full h-[270px]">
+        <Image
+          src={template3}
+          alt="Modern Figma Portfolio Template Responsive"
+          class="w-full h-full object-cover rounded-t-[16px]"
+        />
+      </div>
+      <div class="flex-1 flex items-center justify-center px-6">
+        <h3
+          class="text-xl md:text-2xl font-bold text-slate-900 text-center leading-snug">
+          Modern Figma Portfolio Template Responsive
+        </h3>
+      </div>
+    </a>
+  </div>
+  <div class="flex justify-center">
+    <a
+      href="https://www.figma.com/@figmafolio"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="bg-[#4D9F70] hover:bg-[#388E5C] text-white font-semibold text-lg rounded-full px-10 py-3 shadow-md transition focus:outline-none focus:ring-2 focus:ring-green-400 flex items-center justify-center">
+      View all templates
+    </a>
+  </div>
+</section>

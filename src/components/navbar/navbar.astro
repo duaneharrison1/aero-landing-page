@@ -1,0 +1,220 @@
+---
+import Container from "../container.astro";
+import Link from "../../ui/link.astro";
+const menuitems = [
+  {
+    title: "Features",
+    path: "#",
+    children: [
+      { title: "Custom domain", path: "/features/custom-domain" },
+      { title: "Responsive design", path: "/features/responsive-design" },
+      { title: "Custom favicon", path: "/features/custom-favicon" },
+      { title: "Password protection", path: "/features/password-protection" },
+      { title: "User testing", path: "/features/user-testing" },
+      { title: "Analytics", path: "/features/analytics" },
+    ],
+  },
+  { title: "How it works", path: "/how-it-works" },
+  { title: "Templates", path: "https://www.figma.com/@figmafolio", target: "_blank" },
+  { title: "Blog", path: "/blog" },
+  { title: "Pricing", path: "/pricing" },
+  { title: "Contact", path: "/contact" },
+];
+---
+<Container>
+  <header class="w-full flex items-center justify-between py-6 px-0 relative">
+    {/* Logo */}
+    <a href="/" class="logo flex items-center select-none mr-6">
+      <span class="figma-logo" style="color: #000;">Figma</span><span class="folio-logo" style="color: #4d9f70;">folio</span>
+    </a>
+    {/* Menu center (desktop) */}
+    <nav class="hidden lg:flex flex-1 justify-center" aria-label="Main navigation">
+      <ul class="flex items-center gap-6">
+        {menuitems.map((item, idx) => (
+          item.children ? (
+            <li class="relative" x-data="{ open: false }">
+              <button
+                @click="open = !open"
+                @keydown.escape="open = false"
+                class="flex items-center gap-1 text-base font-semibold text-gray-700 hover:text-black transition-colors duration-150 focus:outline-none"
+                :aria-expanded="open"
+                aria-haspopup="true"
+                type="button"
+              >
+                {item.title}
+                <svg
+                  class="w-3 h-3 ml-1 transition-transform duration-200"
+                  :class="{ 'rotate-180': open }"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div
+                x-show="open"
+                @click.away="open = false"
+                x-transition:enter="transition ease-out duration-150"
+                x-transition:enter-start="opacity-0 translate-y-2"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:leave="transition ease-in duration-100"
+                x-transition:leave-start="opacity-100 translate-y-0"
+                x-transition:leave-end="opacity-0 translate-y-2"
+                class="absolute left-1/2 -translate-x-1/2 mt-2 min-w-[180px] bg-white rounded-xl shadow-lg  z-20 pointer-events-auto"
+                style="top:100%"
+              >
+                <div class="flex flex-col py-2">
+                  {item.children.map((child) => (
+                    <a href={child.path} class="px-5 py-2 text-gray-700 hover:bg-gray-100 hover:text-black rounded-md text-base whitespace-nowrap transition-colors duration-150">{child.title}</a>
+                  ))}
+                </div>
+              </div>
+            </li>
+          ) : (
+            <li>
+              <a href={item.path} class="text-base font-semibold text-gray-700 hover:text-black transition-colors duration-150 px-2 py-1">{item.title}</a>
+            </li>
+          )
+        ))}
+      </ul>
+    </nav>
+    {/* Login/Signup right (desktop) */}
+    <div class="hidden lg:flex items-center gap-3 ml-6">
+      <a href="#" id="desktop-login-link" class="text-base font-semibold text-gray-700 hover:text-black px-3 py-2 transition-colors duration-150">Login</a>
+      <a href="#" id="desktop-signup-link" class="rounded-full px-6 py-2 font-semibold text-base bg-[#4d9f70] text-white hover:bg-[#388e5c] transition-colors duration-150">Sign up</a>
+    </div>
+    {/* Mobile menu button */}
+    <div class="lg:hidden flex items-center">
+      <button id="mobile-menu-btn" class="p-2 focus:outline-none" aria-label="Open menu">
+        <svg class="w-7 h-7 text-gray-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
+      </button>
+    </div>
+    {/* Mobile menu overlay & drawer */}
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-30 z-40 hidden"></div>
+    <nav id="mobile-menu" aria-label="Mobile navigation" class="fixed top-0 left-0 w-full h-full bg-white z-50 transform translate-x-full transition-transform duration-300 lg:hidden flex flex-col p-6">
+      <div class="flex items-center justify-between mb-10">
+        <a href="/" class="logo flex items-center select-none">
+          <span class="figma-logo">Figma</span><span class="folio-logo">folio</span>
+        </a>
+        <button id="mobile-menu-close" class="p-2" aria-label="Close menu">
+          <svg class="w-7 h-7 text-[#4d9f70]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+        </button>
+      </div>
+      <ul class="flex flex-col gap-6 mb-auto">
+        <li>
+          <details class="group">
+            <summary class="flex items-center justify-between text-xl font-bold text-[#4d9f70] cursor-pointer select-none">
+              Features
+              <svg class="w-4 h-4 ml-2 group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <ul class="pl-4 mt-2 flex flex-col gap-2">
+              <li><a href="/features/custom-domain" class="text-base font-semibold text-[#4d9f70]">Custom domain</a></li>
+              <li><a href="/features/responsive-design" class="text-base font-semibold text-[#4d9f70]">Responsive design</a></li>
+              <li><a href="/features/custom-favicon" class="text-base font-semibold text-[#4d9f70]">Custom favicon</a></li>
+              <li><a href="/features/password-protection" class="text-base font-semibold text-[#4d9f70]">Password protection</a></li>
+              <li><a href="/features/user-testing" class="text-base font-semibold text-[#4d9f70]">User testing</a></li>
+              <li><a href="/features/analytics" class="text-base font-semibold text-[#4d9f70]">Analytics</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><a href="/how-it-works" class="text-xl font-bold text-[#4d9f70]">How it works</a></li>
+        <li><a href="https://www.figma.com/@figmafolio" class="text-xl font-bold text-[#4d9f70]">Templates</a></li>
+        <li><a href="/blog" class="text-xl font-bold text-[#4d9f70]">Blog</a></li>
+        <li><a href="/pricing" class="text-xl font-bold text-[#4d9f70]">Pricing</a></li>
+        <li><a href="/contact" class="text-xl font-bold text-[#4d9f70]">Contact</a></li>
+      </ul>
+      <div class="mt-auto flex flex-col gap-3">
+        <a href="#" id="mobile-signup-link" class="w-full rounded-full bg-[#4d9f70] text-white font-semibold text-lg py-3 text-center">Sign up</a>
+        <a href="#" id="mobile-login-link" class="w-full rounded-full border-2 border-[#4d9f70] text-[#4d9f70] font-semibold text-lg py-3 text-center bg-white hover:bg-[#e6f4ec] transition-colors duration-150">Log in</a>
+      </div>
+    </nav>
+    <script>
+      // Language detection logic
+      const getCurrentLanguage = () => {
+        // Try to get language from URL path first
+        const pathSegments = window.location.pathname.split('/');
+        const langFromPath = pathSegments[1];
+        
+        // Supported languages
+        const supportedLangs = ['en', 'es', 'de', 'zh', 'jp', 'fr'];
+        
+        if (supportedLangs.includes(langFromPath)) {
+          return langFromPath;
+        }
+        
+        // Fallback to browser language
+        const browserLang = navigator.language.split('-')[0];
+        return supportedLangs.includes(browserLang) ? browserLang : 'en';
+      };
+
+      // Update all login and signup links to auth page with current language
+      const updateAllAuthLinks = () => {
+        const currentLanguage = getCurrentLanguage();
+        const authUrl = `https://app.figmafolio.com/${currentLanguage}/auth`;
+        
+        // Update desktop links
+        const desktopLoginLink = document.getElementById('desktop-login-link');
+        if (desktopLoginLink) {
+          desktopLoginLink.href = authUrl;
+        }
+        
+        const desktopSignupLink = document.getElementById('desktop-signup-link');
+        if (desktopSignupLink) {
+          desktopSignupLink.href = authUrl;
+        }
+        
+        // Update mobile links
+        const mobileLoginLink = document.getElementById('mobile-login-link');
+        if (mobileLoginLink) {
+          mobileLoginLink.href = authUrl;
+        }
+        
+        const mobileSignupLink = document.getElementById('mobile-signup-link');
+        if (mobileSignupLink) {
+          mobileSignupLink.href = authUrl;
+        }
+      };
+
+      // Mobile menu functionality
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      const overlay = document.getElementById('mobile-menu-overlay');
+      const closeBtn = document.getElementById('mobile-menu-close');
+      
+      if (btn && menu && overlay && closeBtn) {
+        function openMenu() {
+          menu.classList.remove('translate-x-full');
+          overlay.classList.remove('hidden');
+        }
+        function closeMenu() {
+          menu.classList.add('translate-x-full');
+          overlay.classList.add('hidden');
+        }
+        btn.addEventListener('click', openMenu);
+        closeBtn.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+      }
+
+      // Update auth links when page loads
+      document.addEventListener('DOMContentLoaded', updateAllAuthLinks);
+    </script>
+  </header>
+</Container>
+<style>
+.logo {
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+.figma-logo {
+  color: #3a5e3a;
+  font-weight: 700;
+}
+.folio-logo {
+  color: #222;
+  font-weight: 700;
+}
+</style>

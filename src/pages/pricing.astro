@@ -1,0 +1,31 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PricingTableNew from "../components/PricingTableNew.astro";
+---
+
+<Layout title="Pricing">
+  <section class="bg-white pt-8 pb-4 md:pt-14 md:pb-6">
+    <div class="max-w-4xl mx-auto text-center mt-14 mb-6">
+      <h1 class="text-5xl md:text-6xl font-bold mb-3">
+        Pick a plan to suit your needs
+      </h1>
+      <p class="text-xl text-slate-600 mb-6">
+        Try it free (7 or 15 days) and cancel anytime during the trial period.
+      </p>
+    </div>
+
+    <PricingTableNew />
+  </section>
+
+  <section class="mt-24 mb-16 sm:px-2 px-4 md:px-20 lg:px-32">
+    <h2 class="text-4xl md:text-5xl font-bold text-center mb-8">
+      Questions about pricing?
+    </h2>
+    <div class="text-center text-xl text-slate-700 mb-6">
+      Check out our FAQ section or read our setup guides to understand what plan
+      works best for your needs.<br /><span class="font-semibold text-slate-900"
+        >Not sure where to start?</span
+      > Try our free plan and explore our 8 template collection.
+    </div>
+  </section>
+</Layout>

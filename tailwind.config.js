@@ -4,23 +4,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: [
-          "DM Sans Variable",
-          "DM Sans",
-          "ui-sans-serif",
-          "system-ui",
-          "sans-serif",
-        ],
-      },
-      colors: {
-        accent: {
-          DEFAULT: "#5B6DC2",
-          hover: "#4D5DA5",
-          tint: "#EEF1FB",
-        },
-        ink: "#16181F",
+        sans: ["Poppins", "ui-sans-serif", "system-ui", "sans-serif"],
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };

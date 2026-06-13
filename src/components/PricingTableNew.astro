@@ -1,0 +1,357 @@
+---
+// PricingTable Component - Fetches from Firestore, supports regional pricing
+// CSS and icons are fetched from figmaApp at build time (single source of truth)
+
+const FIGMA_APP_BASE = 'https://figmawebapp.web.app/shared';
+
+// Fetch CSS from figmaApp at build time
+let css = '';
+try {
+  const cssUrl = `${FIGMA_APP_BASE}/pricing-table.css`;
+  const cssResponse = await fetch(cssUrl);
+  if (cssResponse.ok) {
+    css = await cssResponse.text();
+  } else {
+    console.error('Failed to fetch CSS from figmaApp:', cssResponse.status);
+  }
+} catch (e) {
+  console.error('Failed to fetch CSS from figmaApp:', e);
+}
+
+// Fetch icons from figmaApp at build time
+let iconsFromFigmaApp: Record<string, string> | null = null;
+try {
+  const iconsUrl = `${FIGMA_APP_BASE}/plan-icons.js`;
+  const iconsResponse = await fetch(iconsUrl);
+  if (iconsResponse.ok) {
+    const iconsText = await iconsResponse.text();
+    // Parse SVG strings from the icons file
+    // Expected format: export const FreePlanIcon = `<svg>...</svg>`;
+    // or: export const PLAN_ICONS = { free: `<svg>...</svg>`, ... }
+    const iconMatches = iconsText.matchAll(/(\w+):\s*`(<svg[^`]+)`/g);
+    const icons: Record<string, string> = {};
+    for (const match of iconMatches) {
+      icons[match[1]] = match[2];
+    }
+    if (Object.keys(icons).length > 0) {
+      iconsFromFigmaApp = icons;
+    }
+  }
+} catch (e) {
+  console.warn('Failed to fetch icons from figmaApp, using local fallback');
+}
+
+// Fallback icons (used if figmaApp fetch fails)
+const FALLBACK_ICONS = {
+  free: `<svg width="42" height="42" viewBox="0 0 42 42" fill="none"><rect width="42" height="42" rx="8" fill="#F1F5F9"/><path d="M21 14v14M14 21h14M17 17l8 8M25 17l-8 8" stroke="#64748B" stroke-width="2" stroke-linecap="round"/></svg>`,
+  basic: `<svg width="42" height="42" viewBox="0 0 42 42" fill="none"><rect width="42" height="42" rx="8" fill="#DBEAFE"/><circle cx="21" cy="16" r="5" stroke="#3B82F6" stroke-width="2"/><path d="M13 30c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/></svg>`,
+  solo: `<svg width="42" height="42" viewBox="0 0 42 42" fill="none"><rect width="42" height="42" rx="8" fill="#D1FAE5"/><circle cx="21" cy="16" r="5" stroke="#10B981" stroke-width="2"/><path d="M13 30c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="#10B981" stroke-width="2" stroke-linecap="round"/><path d="M28 12l2 2 4-4" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  pro: `<svg width="42" height="42" viewBox="0 0 42 42" fill="none"><rect width="42" height="42" rx="8" fill="#FEF3C7"/><path d="M21 10l2.5 5 5.5.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9 5.5-.8L21 10z" fill="#F59E0B"/><path d="M11 32c0-3.3 2.7-6 6-6h8c3.3 0 6 2.7 6 6" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/></svg>`
+};
+
+const planIcons = iconsFromFigmaApp || FALLBACK_ICONS;
+const planIconsJson = JSON.stringify(planIcons);
+---
+
+<style set:html={css}></style>
+
+<div class="pricing-table" x-data="pricingTable" data-plan-icons={planIconsJson}>
+  <!-- Loading State -->
+  <div x-show="loading" class="pricing-loading">
+    <div class="pricing-loading-spinner"></div>
+    <p>Loading pricing...</p>
+  </div>
+
+  <!-- Content -->
+  <template x-if="!loading">
+    <div>
+      <!-- Toggle -->
+      <div class="pricing-toggle-container">
+        <button
+          class="pricing-toggle-btn"
+          :class="{ 'active': !isYearly }"
+          @click="isYearly = false"
+        >Monthly</button>
+        <button
+          class="pricing-toggle-btn"
+          :class="{ 'active': isYearly }"
+          @click="isYearly = true"
+        >
+          Yearly
+          <span class="pricing-toggle-badge">Save 20%</span>
+        </button>
+      </div>
+
+      <!-- Cards Grid -->
+      <div class="pricing-grid">
+        <template x-for="plan in plans" :key="plan.key">
+          <div
+            class="pricing-card"
+            :class="{ 'pricing-card-popular': plan.mostPopular }"
+          >
+            <div x-show="plan.mostPopular" class="pricing-badge">Most Popular</div>
+
+            <div class="pricing-plan-icon" x-html="icons[plan.key]"></div>
+
+            <h3 class="pricing-plan-name" x-text="plan.name"></h3>
+            <p class="pricing-plan-desc" x-text="plan.description"></p>
+
+            <div class="pricing-price-container">
+              <span class="pricing-amount" x-text="getPrice(plan.key)"></span>
+              <span class="pricing-suffix" x-text="plan.key === 'free' ? '' : '/month'"></span>
+            </div>
+            <p class="pricing-bill-desc" x-text="getBillingDesc(plan.key)"></p>
+
+            <a
+              :href="'https://app.figmafolio.com/signup'"
+              class="pricing-cta"
+              :class="{ 'pricing-cta-popular': plan.mostPopular }"
+              x-text="getButtonText(plan.key)"
+            ></a>
+
+            <ul class="pricing-features">
+              <template x-for="(feature, idx) in plan.features" :key="idx">
+                <li class="pricing-feature" :class="{ 'pricing-feature-disabled': !feature.enabled }">
+                  <span class="pricing-feature-icon">
+                    <span x-show="feature.enabled" class="pricing-check">✓</span>
+                    <span x-show="!feature.enabled" class="pricing-x">✗</span>
+                  </span>
+                  <span x-text="feature.text"></span>
+                </li>
+              </template>
+            </ul>
+          </div>
+        </template>
+      </div>
+    </div>
+  </template>
+</div>
+
+<script is:inline>
+  // Plan icons are loaded from data attribute (fetched from figmaApp at build time)
+  // Fallback icons in case parsing fails
+  const FALLBACK_ICONS = {
+    free: `<svg width="42" height="42" viewBox="0 0 42 42" fill="none"><rect width="42" height="42" rx="8" fill="#F1F5F9"/><path d="M21 14v14M14 21h14M17 17l8 8M25 17l-8 8" stroke="#64748B" stroke-width="2" stroke-linecap="round"/></svg>`,
+    basic: `<svg width="42" height="42" viewBox="0 0 42 42" fill="none"><rect width="42" height="42" rx="8" fill="#DBEAFE"/><circle cx="21" cy="16" r="5" stroke="#3B82F6" stroke-width="2"/><path d="M13 30c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/></svg>`,
+    solo: `<svg width="42" height="42" viewBox="0 0 42 42" fill="none"><rect width="42" height="42" rx="8" fill="#D1FAE5"/><circle cx="21" cy="16" r="5" stroke="#10B981" stroke-width="2"/><path d="M13 30c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="#10B981" stroke-width="2" stroke-linecap="round"/><path d="M28 12l2 2 4-4" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    pro: `<svg width="42" height="42" viewBox="0 0 42 42" fill="none"><rect width="42" height="42" rx="8" fill="#FEF3C7"/><path d="M21 10l2.5 5 5.5.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9 5.5-.8L21 10z" fill="#F59E0B"/><path d="M11 32c0-3.3 2.7-6 6-6h8c3.3 0 6 2.7 6 6" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/></svg>`
+  };
+
+  // Get icons from data attribute (embedded at build time from figmaApp)
+  function getPlanIcons() {
+    const pricingTable = document.querySelector('.pricing-table[data-plan-icons]');
+    if (pricingTable) {
+      try {
+        const iconsData = pricingTable.getAttribute('data-plan-icons');
+        if (iconsData) {
+          return JSON.parse(iconsData);
+        }
+      } catch (e) {
+        console.warn('Failed to parse plan icons from data attribute:', e);
+      }
+    }
+    return FALLBACK_ICONS;
+  }
+
+  const PLAN_ICONS = getPlanIcons();
+
+  // Fallback regional pricing data (used if Firestore fetch fails)
+  const FALLBACK_PRICING = {
+    US: {
+      basic: { monthly: '$3', yearly: '$2.33', yearlyTotal: '$28' },
+      solo: { monthly: '$6', yearly: '$4.75', yearlyTotal: '$57' },
+      pro: { monthly: '$19', yearly: '$16.58', yearlyTotal: '$199' }
+    },
+    JP: {
+      basic: { monthly: '$2.50', yearly: '$2', yearlyTotal: '$24' },
+      solo: { monthly: '$5', yearly: '$4', yearlyTotal: '$48' },
+      pro: { monthly: '$16', yearly: '$14', yearlyTotal: '$168' }
+    },
+    TW: {
+      basic: { monthly: '$2', yearly: '$1.58', yearlyTotal: '$19' },
+      solo: { monthly: '$4', yearly: '$3.17', yearlyTotal: '$38' },
+      pro: { monthly: '$13', yearly: '$10.83', yearlyTotal: '$130' }
+    },
+    PH: {
+      basic: { monthly: '$1.50', yearly: '$1.17', yearlyTotal: '$14' },
+      solo: { monthly: '$3', yearly: '$2.33', yearlyTotal: '$28' },
+      pro: { monthly: '$9.50', yearly: '$7.58', yearlyTotal: '$91' }
+    },
+    TH: {
+      basic: { monthly: '$1', yearly: '$0.75', yearlyTotal: '$9' },
+      solo: { monthly: '$2', yearly: '$1.58', yearlyTotal: '$19' },
+      pro: { monthly: '$6', yearly: '$4.75', yearlyTotal: '$57' }
+    }
+  };
+
+  // Fallback country to tier mapping (used if Firestore fetch fails)
+  const FALLBACK_TIERS = {
+    JP: ['IE', 'GB', 'FR', 'JP', 'KR', 'IL', 'IT'],
+    TW: ['TW', 'ES', 'PT', 'PL'],
+    PH: ['PH', 'MY', 'CN', 'AR', 'BR'],
+    TH: ['TH', 'VN', 'ID', 'IN', 'NG']
+  };
+
+  // Get pricing tier from country using tiers data
+  function getPricingTier(country, tiers) {
+    const c = (country || 'US').toUpperCase();
+    for (const [tierName, countries] of Object.entries(tiers)) {
+      if (countries.includes(c)) return tierName;
+    }
+    return 'US';
+  }
+
+  // Fallback plans if Firestore fails
+  const FALLBACK_PLANS = [
+    { key: 'free', name: 'Free', description: 'Get started with Figmafolio', order: 0, mostPopular: false, features: [
+      { text: '1 published folio', enabled: true },
+      { text: 'Figmafolio branding', enabled: true },
+      { text: 'Community support', enabled: true },
+      { text: 'Custom domain', enabled: false },
+      { text: 'Password protection', enabled: false }
+    ]},
+    { key: 'basic', name: 'Basic', description: 'For individuals starting out', order: 1, mostPopular: false, features: [
+      { text: '1 published folio', enabled: true },
+      { text: 'Remove Figmafolio branding', enabled: true },
+      { text: 'Custom favicon', enabled: true },
+      { text: 'Custom domain', enabled: false },
+      { text: 'Password protection', enabled: false }
+    ]},
+    { key: 'solo', name: 'Solo', description: 'For professionals who need more', order: 2, mostPopular: true, features: [
+      { text: '3 published folios', enabled: true },
+      { text: 'Remove Figmafolio branding', enabled: true },
+      { text: 'Custom favicon', enabled: true },
+      { text: 'Custom domain', enabled: true },
+      { text: 'Password protection', enabled: true }
+    ]},
+    { key: 'pro', name: 'Pro', description: 'For teams and agencies', order: 3, mostPopular: false, features: [
+      { text: 'Unlimited folios', enabled: true },
+      { text: 'Remove Figmafolio branding', enabled: true },
+      { text: 'Custom favicon', enabled: true },
+      { text: 'Custom domain', enabled: true },
+      { text: 'Password protection', enabled: true },
+      { text: 'Priority support', enabled: true }
+    ]}
+  ];
+
+  document.addEventListener('alpine:init', () => {
+    Alpine.data('pricingTable', () => ({
+      loading: true,
+      isYearly: false,
+      plans: [],
+      tier: 'US',
+      pricing: FALLBACK_PRICING,
+      tiers: FALLBACK_TIERS,
+      icons: PLAN_ICONS,
+
+      async init() {
+        const projectId = 'figmawebapp';
+
+        // Fetch pricing data from Firestore (do this first so we can use tiers for region detection)
+        try {
+          const pricingUrl = `https://firestore.googleapis.com/v1/projects/${projectId}/databases/(default)/documents/config/pricing`;
+          const pricingRes = await fetch(pricingUrl);
+          const pricingDoc = await pricingRes.json();
+
+          if (pricingDoc.fields) {
+            // Parse tiers: { tierName: [country codes] }
+            const tiersField = pricingDoc.fields.tiers?.mapValue?.fields;
+            if (tiersField) {
+              this.tiers = {};
+              for (const [tierName, value] of Object.entries(tiersField)) {
+                const countries = value.arrayValue?.values || [];
+                this.tiers[tierName] = countries.map(c => c.stringValue);
+              }
+            }
+
+            // Parse prices: { tierName: { planKey: { monthly, yearly, yearlyTotal } } }
+            const pricesField = pricingDoc.fields.prices?.mapValue?.fields;
+            if (pricesField) {
+              this.pricing = {};
+              for (const [tierName, tierValue] of Object.entries(pricesField)) {
+                const tierPrices = tierValue.mapValue?.fields || {};
+                this.pricing[tierName] = {};
+                for (const [planKey, planValue] of Object.entries(tierPrices)) {
+                  const planFields = planValue.mapValue?.fields || {};
+                  this.pricing[tierName][planKey] = {
+                    monthly: planFields.monthly?.stringValue || '$0',
+                    yearly: planFields.yearly?.stringValue || '$0',
+                    yearlyTotal: planFields.yearlyTotal?.stringValue || '$0'
+                  };
+                }
+              }
+            }
+          }
+        } catch (e) {
+          console.error('Failed to fetch pricing:', e);
+          // Keep using fallback pricing and tiers
+        }
+
+        // Detect region using the fetched (or fallback) tiers
+        try {
+          const res = await fetch('https://ipinfo.io/json?token=b259d22dc84b2e');
+          const data = await res.json();
+          this.tier = getPricingTier(data.country, this.tiers);
+        } catch (e) {
+          this.tier = 'US';
+        }
+
+        // Fetch plans from Firestore REST API
+        try {
+          const plansUrl = `https://firestore.googleapis.com/v1/projects/${projectId}/databases/(default)/documents/config/plans`;
+          const res = await fetch(plansUrl);
+          const doc = await res.json();
+
+          if (doc.fields) {
+            // Only process valid plan keys, filter out metadata fields (updatedAt, version, etc.)
+            const validPlanKeys = ['free', 'basic', 'solo', 'pro'];
+            this.plans = Object.entries(doc.fields)
+              .filter(([key]) => validPlanKeys.includes(key))
+              .map(([key, value]) => {
+                const fields = value.mapValue?.fields || {};
+                return {
+                  key,
+                  name: fields.name?.stringValue || key,
+                  description: fields.description?.stringValue || '',
+                  order: parseInt(fields.order?.integerValue || '0'),
+                  mostPopular: fields.mostPopular?.booleanValue || false,
+                  features: (fields.features?.arrayValue?.values || []).map(f => ({
+                    text: f.mapValue?.fields?.text?.stringValue || '',
+                    enabled: f.mapValue?.fields?.enabled?.booleanValue ?? true
+                  }))
+                };
+              })
+              .sort((a, b) => a.order - b.order);
+          } else {
+            this.plans = FALLBACK_PLANS;
+          }
+        } catch (e) {
+          console.error('Failed to fetch plans:', e);
+          this.plans = FALLBACK_PLANS;
+        }
+
+        this.loading = false;
+      },
+
+      getPrice(planKey) {
+        if (planKey === 'free') return '$0';
+        const p = this.pricing[this.tier]?.[planKey];
+        return p ? (this.isYearly ? p.yearly : p.monthly) : '$0';
+      },
+
+      getBillingDesc(planKey) {
+        if (planKey === 'free') return 'No bills :) Upgrade any time.';
+        const p = this.pricing[this.tier]?.[planKey];
+        if (!p) return '';
+        return this.isYearly
+          ? `Billed yearly at ${p.yearlyTotal} USD after trial.`
+          : `Billed monthly at ${p.monthly} USD after trial.`;
+      },
+
+      getButtonText(planKey) {
+        if (planKey === 'free') return 'Get started';
+        return this.isYearly ? 'Start free 15 day trial' : 'Start free 7 day trial';
+      }
+    }));
+  });
+</script>
