@@ -8,7 +8,7 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://app.figmafolio.com",
+  site: "https://aeroapp.ai",
   integrations: [mdx(), sitemap(), icon(), tailwind()],
   vite: {
     resolve: {

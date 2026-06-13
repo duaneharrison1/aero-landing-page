@@ -1,31 +1,42 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import PricingTableNew from "../components/PricingTableNew.astro";
+import Container from "../components/container.astro";
+
+const APP_URL = "https://aeroapp.ai";
+
+// NOTE: Placeholder Aero copy. The previous figmafolio pricing table pulled
+// live plan/price data from figmafolio's backend, so it has been removed rather
+// than shown with the wrong brand's plans. Real Aero pricing to be added later.
 ---
 
 <Layout title="Pricing">
-  <section class="bg-white pt-8 pb-4 md:pt-14 md:pb-6">
-    <div class="max-w-4xl mx-auto text-center mt-14 mb-6">
-      <h1 class="text-5xl md:text-6xl font-bold mb-3">
-        Pick a plan to suit your needs
-      </h1>
-      <p class="text-xl text-slate-600 mb-6">
-        Try it free (7 or 15 days) and cancel anytime during the trial period.
-      </p>
-    </div>
+  <Container>
+    <section class="bg-white pt-8 pb-4 md:pt-14 md:pb-6">
+      <div class="max-w-3xl mx-auto text-center mt-14 mb-8">
+        <h1 class="text-5xl md:text-6xl font-bold mb-3 text-[#1D1D1F]">
+          Pricing
+        </h1>
+        <p class="text-xl text-[#6B6F76] mb-2">
+          Placeholder — pricing details to be refined.
+        </p>
+        <p class="text-base text-[#6B6F76]">
+          Aero lets you publish prototypes to live URLs and run recorded user
+          tests on them. Plans and prices will be published here soon. In the
+          meantime you can sign up free and start hosting.
+        </p>
+      </div>
 
-    <PricingTableNew />
-  </section>
-
-  <section class="mt-24 mb-16 sm:px-2 px-4 md:px-20 lg:px-32">
-    <h2 class="text-4xl md:text-5xl font-bold text-center mb-8">
-      Questions about pricing?
-    </h2>
-    <div class="text-center text-xl text-slate-700 mb-6">
-      Check out our FAQ section or read our setup guides to understand what plan
-      works best for your needs.<br /><span class="font-semibold text-slate-900"
-        >Not sure where to start?</span
-      > Try our free plan and explore our 8 template collection.
-    </div>
-  </section>
+      <div class="max-w-md mx-auto glass-card p-8 text-center mt-10">
+        <h2 class="font-semibold text-2xl text-[#1D1D1F] mb-2">
+          Get started free
+        </h2>
+        <p class="text-[#6B6F76] mb-6">
+          Create an account, publish a prototype, and try a user test.
+        </p>
+        <a href={APP_URL} class="btn-primary px-8 py-3 font-semibold text-lg">
+          Create your account
+        </a>
+      </div>
+    </section>
+  </Container>
 </Layout>
