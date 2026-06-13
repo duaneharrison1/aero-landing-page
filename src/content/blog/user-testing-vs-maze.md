@@ -256,7 +256,7 @@ tags: ["user testing", "maze", "prototype testing", "comparison"]
   // Update all blog links with current language
   const updateBlogLinks = () => {
     const currentLanguage = getCurrentLanguage();
-    const authUrl = "https://aeroapp.ai";
+    const authUrl = "https://aeroapp.ai/signup";
     const pricingUrl = `/pricing`;
 
     // Update hero start link

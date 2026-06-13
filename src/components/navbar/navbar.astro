@@ -18,7 +18,8 @@ const menuitems = [
   { title: "Pricing", path: "/pricing" },
   { title: "Contact", path: "/contact" },
 ];
-const APP_URL = "https://aeroapp.ai";
+const LOGIN_URL = "https://aeroapp.ai/login";
+const SIGNUP_URL = "https://aeroapp.ai/signup";
 ---
 <Container>
   <header class="w-full flex items-center justify-between py-6 px-0 relative">
@@ -54,8 +55,8 @@ const APP_URL = "https://aeroapp.ai";
     </nav>
     {/* Sign in / Get started right (desktop) */}
     <div class="hidden lg:flex items-center gap-3 ml-6">
-      <a href={APP_URL} class="btn-secondary btn-lg">Sign in</a>
-      <a href={APP_URL} class="btn-primary btn-lg">Get started</a>
+      <a href={LOGIN_URL} class="btn-secondary btn-lg">Sign in</a>
+      <a href={SIGNUP_URL} class="btn-primary btn-lg">Get started</a>
     </div>
     {/* Mobile menu button */}
     <div class="lg:hidden flex items-center">
@@ -96,8 +97,8 @@ const APP_URL = "https://aeroapp.ai";
         ))}
       </ul>
       <div class="mt-auto flex flex-col gap-3">
-        <a href={APP_URL} class="btn-primary btn-lg w-full text-center">Get started</a>
-        <a href={APP_URL} class="btn-secondary btn-lg w-full text-center">Sign in</a>
+        <a href={SIGNUP_URL} class="btn-primary btn-lg w-full text-center">Get started</a>
+        <a href={LOGIN_URL} class="btn-secondary btn-lg w-full text-center">Sign in</a>
       </div>
     </nav>
     <script>
