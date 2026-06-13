@@ -1,31 +1,25 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import PricingTableNew from "../components/PricingTableNew.astro";
+import Container from "../components/container.astro";
 ---
 
 <Layout title="Pricing">
-  <section class="bg-white pt-8 pb-4 md:pt-14 md:pb-6">
-    <div class="max-w-4xl mx-auto text-center mt-14 mb-6">
-      <h1 class="text-5xl md:text-6xl font-bold mb-3">
-        Pick a plan to suit your needs
-      </h1>
-      <p class="text-xl text-slate-600 mb-6">
-        Try it free (7 or 15 days) and cancel anytime during the trial period.
+  <Container>
+    <div class="max-w-2xl mx-auto mt-20 mb-10 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-[#1D1D1F] mb-4">Pricing</h1>
+      <p class="text-[#6B6F76] text-lg leading-relaxed">
+        [Placeholder: Aero pricing tiers to be confirmed. Sign up free to get started. Paid plans unlock additional hosted projects, more user test sessions, and advanced AI insight features.]
       </p>
     </div>
 
-    <PricingTableNew />
-  </section>
-
-  <section class="mt-24 mb-16 sm:px-2 px-4 md:px-20 lg:px-32">
-    <h2 class="text-4xl md:text-5xl font-bold text-center mb-8">
-      Questions about pricing?
-    </h2>
-    <div class="text-center text-xl text-slate-700 mb-6">
-      Check out our FAQ section or read our setup guides to understand what plan
-      works best for your needs.<br /><span class="font-semibold text-slate-900"
-        >Not sure where to start?</span
-      > Try our free plan and explore our 8 template collection.
+    <div class="max-w-xl mx-auto mb-24 p-8 bg-[#F9FAFB] rounded-lg border border-[rgba(0,0,0,0.06)] text-center">
+      <p class="text-[#6B6F76] text-sm mb-6">Pricing details are being finalized. Get early access and we will let you know when plans are live.</p>
+      <a
+        href="https://aeroapp.ai"
+        class="inline-flex items-center justify-center bg-[#3D78B0] text-white font-semibold text-sm px-5 py-2.5 rounded-lg shadow-[0_2px_8px_rgba(61,120,176,0.15)] hover:bg-[#2F6499] transition-colors duration-150"
+      >
+        Sign up free
+      </a>
     </div>
-  </section>
+  </Container>
 </Layout>
