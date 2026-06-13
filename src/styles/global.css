@@ -1,24 +1,110 @@
-html,
-body {
-    font-family: 'Poppins', sans-serif;
-}
-
-.pricing-card {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ----------------------------------------------------------------
+   Aero brand tokens
+   ---------------------------------------------------------------- */
+:root {
+    --aero-accent: #3D78B0;
+    --aero-accent-hover: #2F6499;
+    --aero-accent-tint: rgba(61, 120, 176, 0.08);
+    --aero-accent-focus: rgba(61, 120, 176, 0.14);
+
+    --aero-bg: #FFFFFF;
+    --aero-bg-secondary: #F9FAFB;
+    --aero-surface: #F4F5F8;
+
+    --aero-text: #1D1D1F;
+    --aero-text-secondary: #6B6F76;
+    --aero-text-muted: #8E8E93;
+
+    --aero-border: rgba(0, 0, 0, 0.06);
+
+    --aero-radius-sm: 6px;
+    --aero-radius-lg: 8px;
+    --aero-shadow-dropdown: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+html,
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--aero-bg);
+    color: var(--aero-text);
+}
+
+.pricing-card {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ----------------------------------------------------------------
+   Aero wordmark (styled text, not an image)
+   ---------------------------------------------------------------- */
+.aero-wordmark {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: var(--aero-text);
+    line-height: 1;
+}
+
+/* ----------------------------------------------------------------
+   Buttons — crisp and light, matching the app
+   ---------------------------------------------------------------- */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: var(--aero-accent);
+    color: #fff;
+    border-radius: var(--aero-radius-lg);
+    box-shadow: 0 2px 8px rgba(61, 120, 176, 0.15);
+    transition: background-color 0.15s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--aero-accent-hover);
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: var(--aero-accent-focus);
+    color: var(--aero-accent);
+    border-radius: var(--aero-radius-lg);
+    transition: background-color 0.15s ease;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(61, 120, 176, 0.2);
+}
+
+/* ----------------------------------------------------------------
+   Light glass card — mirrors the app's modal surface. Use sparingly.
+   ---------------------------------------------------------------- */
+.glass-card {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(20px) saturate(130%);
+    -webkit-backdrop-filter: blur(20px) saturate(130%);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+}
+
+/* ----------------------------------------------------------------
+   Dark mono prompt box (hero MCP snippet)
+   ---------------------------------------------------------------- */
+.prompt-box {
+    background: #16181F;
+    border-radius: var(--aero-radius-lg);
+    color: #E6E8EC;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+}
 
 @plugin '@tailwindcss/typography';
-
-@theme {
-    --font-sans:
-        Poppins, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-        'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-}
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
