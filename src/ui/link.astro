@@ -17,9 +17,11 @@ const {
   ...rest
 } = Astro.props;
 
+// Sizing is owned by the shared button styles in global.css. "lg" opts
+// into the larger CTA size (.btn-lg); "md" keeps the base button size.
 const sizes = {
-  lg: "px-5 py-2.5",
-  md: "px-4 py-2",
+  lg: "btn-lg",
+  md: "",
 };
 
 // All variants now share the Aero glass button treatment defined in

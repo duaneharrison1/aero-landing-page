@@ -6,7 +6,7 @@
 // Figmafolio share the same backend, Stripe and plans.
 //
 // Only the *visual styling* has been re-skinned to the Aero brand (Inter,
-// accent #3D78B0, glass card surface). Figmafolio originally pulled its
+// accent #3D78B0, solid-white content cards). Figmafolio originally pulled its
 // stylesheet from figmaApp at build time; that remote CSS carried the
 // Figmafolio look, so for the re-skin it is replaced by the local Aero
 // stylesheet below. Plan icons are still fetched from figmaApp (neutral SVGs)
@@ -53,8 +53,9 @@ const planIconsJson = JSON.stringify(planIcons);
   /* ----------------------------------------------------------------
      Aero re-skin of the Figmafolio pricing table. Same class structure
      as the original component; only colours, type and surfaces are
-     changed to the Aero brand (Inter, accent #3D78B0, glass card from
-     the site-wide .glass-card / .btn-primary treatment).
+     changed to the Aero brand (Inter, accent #3D78B0). Cards use the
+     site-wide solid-white content card; the recommended tier uses the
+     elevated panel, and CTAs use the shared grey/pale-blue glass buttons.
      ---------------------------------------------------------------- */
   .pricing-table {
     --pt-accent: #3D78B0;
@@ -151,33 +152,28 @@ const planIconsJson = JSON.stringify(planIcons);
     }
   }
 
-  /* Card surface */
+  /* Card surface — solid white content card (no shadow) */
   .pricing-card {
     position: relative;
     display: flex;
     flex-direction: column;
     text-align: left;
     padding: 2rem 1.75rem;
-    background: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.06);
+    background: #FFFFFF;
+    border: 1px solid #F0F0F0;
     border-radius: 12px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    transition: transform 0.15s ease;
   }
   .pricing-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
   }
-  /* Popular card — Aero light glass surface */
+  /* Recommended tier — elevated panel (no backdrop-filter) */
   .pricing-card-popular {
-    background: rgba(255, 255, 255, 0.65);
-    backdrop-filter: blur(20px) saturate(130%);
-    -webkit-backdrop-filter: blur(20px) saturate(130%);
-    border: 1px solid rgba(61, 120, 176, 0.45);
-    box-shadow: 0 16px 48px rgba(61, 120, 176, 0.12),
-      0 2px 8px rgba(0, 0, 0, 0.04),
-      inset 0 1px 0 rgba(255, 255, 255, 0.9);
-    color: #1A1E2C;
+    background: #FFFFFF;
+    border: 1px solid #F0F0F0;
+    border-radius: 12px;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+    color: #1D1D1F;
   }
 
   .pricing-badge {
@@ -242,36 +238,38 @@ const planIconsJson = JSON.stringify(planIcons);
     min-height: 2.4rem;
   }
 
-  /* CTA buttons — match the site-wide Aero glass buttons */
+  /* CTA buttons — match the site-wide Aero glass buttons (resolved hex
+     fills, pure-CSS sheen, no backdrop-filter). Default = neutral grey
+     secondary; the recommended tier uses the pale-blue primary. */
   .pricing-cta {
     position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-weight: 600;
-    font-size: 0.95rem;
-    padding: 0.7rem 1.25rem;
-    border-radius: 8px;
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    padding: 8px 16px;
+    border-radius: 6px;
     overflow: hidden;
     isolation: isolate;
     text-decoration: none;
     cursor: pointer;
-    backdrop-filter: blur(15px) saturate(140%);
-    -webkit-backdrop-filter: blur(15px) saturate(140%);
     transition: all 0.15s ease;
-    /* default = light-tinted secondary */
-    background-color: rgba(61, 120, 176, 0.14);
-    color: var(--pt-accent);
-    border: 1px solid rgba(61, 120, 176, 0.18);
-    box-shadow: 0 2px 8px rgba(61, 120, 176, 0.08),
-      inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    /* default = neutral grey secondary */
+    background: #F6F6F6;
+    color: #374151;
+    border: 1px solid #EDEDED;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
   }
   .pricing-cta::after {
     content: "";
     position: absolute;
     inset: 0;
-    z-index: 4;
+    z-index: -1;
     border-radius: inherit;
     pointer-events: none;
     background: linear-gradient(170deg,
@@ -285,18 +283,15 @@ const planIconsJson = JSON.stringify(planIcons);
   }
   .pricing-cta:hover {
     transform: translateY(-0.5px);
-    background-color: rgba(61, 120, 176, 0.2);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
   }
-  /* Popular CTA = primary accent */
+  /* Recommended tier CTA = pale-blue primary */
   .pricing-cta-popular {
-    background-color: var(--pt-accent);
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    box-shadow: 0 2px 8px rgba(61, 120, 176, 0.15);
-  }
-  .pricing-cta-popular:hover {
-    background-color: var(--pt-accent-hover);
+    background: #E4ECF4;
+    color: #3D78B0;
+    border: 1px solid #DCE7F1;
+    box-shadow: 0 2px 8px rgba(61, 120, 176, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.7);
   }
 
   /* Feature list */

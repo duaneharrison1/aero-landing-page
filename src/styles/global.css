@@ -49,16 +49,12 @@ body {
 }
 
 /* ----------------------------------------------------------------
-   Aero glass buttons — ported from the Aero app
-   (figmaApp src/components/Aero/aero-components.css: .aero-btn,
-   .aero-btn-aero, .aero-btn-aero-lt). The app draws a live caustic-glass
-   canvas behind these buttons; that cannot run in static Astro, so the
-   layered sheen gradient + inset highlights below reproduce the static
-   look. The accent uses a solid #3D78B0 fill rather than the app's
-   translucent rgba(61,120,176,0.45) so it still reads as the brand accent
-   over the landing page's light backgrounds (where there is no dark canvas
-   to sit on). Per-use Tailwind padding/font utilities are intentionally
-   left to win, so button sizes stay as set at each call site.
+   Aero glass buttons — EXACT resolved-over-white values from the Aero
+   app (figmaApp). The real app uses pale, light button fills with a
+   pure-CSS glass sheen and does NOT depend on the runtime caustic-glass
+   canvas. These are the resolved hex fills (no rgba fills, which
+   composite wrong without a backdrop-filter behind them), so the buttons
+   read correctly on the landing page's light backgrounds.
    ---------------------------------------------------------------- */
 .btn-primary,
 .btn-secondary {
@@ -66,22 +62,29 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    border-radius: var(--aero-radius-lg);
+    gap: 5px;
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
     overflow: hidden;
     isolation: isolate;
-    backdrop-filter: blur(15px) saturate(140%);
-    -webkit-backdrop-filter: blur(15px) saturate(140%);
-    transition: all 0.15s ease;
+    transition: all 0.15s;
 }
 
-/* Sheen + inset highlight pseudo-element — the gloss that defines the look */
+/* Pure-CSS glass sheen + inset rim highlight. It sits behind the label
+   (z-index:-1, above the fill) so the text/svg always stays legible —
+   functionally equivalent to the spec's "label span z-index:5", but works
+   for every call site without having to wrap each label individually. */
 .btn-primary::after,
 .btn-secondary::after {
-    content: "";
+    content: '';
     position: absolute;
     inset: 0;
-    z-index: 4;
+    z-index: -1;
     border-radius: inherit;
     pointer-events: none;
     background: linear-gradient(170deg,
@@ -97,52 +100,53 @@ body {
 .btn-primary:hover:not(:disabled),
 .btn-secondary:hover:not(:disabled) {
     transform: translateY(-0.5px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 }
 
-/* Primary accent button (.aero-btn-aero) */
+/* Primary CTA — the app's main "aero-lt" button: pale blue fill */
 .btn-primary {
-    background-color: var(--aero-accent);
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    box-shadow: 0 2px 8px rgba(61, 120, 176, 0.15);
-}
-
-.btn-primary:hover:not(:disabled) {
-    background-color: var(--aero-accent-hover);
-    box-shadow: 0 4px 12px rgba(61, 120, 176, 0.22);
-}
-
-/* Light-tinted secondary button (.aero-btn-aero-lt) */
-.btn-secondary {
-    background-color: rgba(61, 120, 176, 0.14);
-    color: var(--aero-accent);
-    border: 1px solid rgba(61, 120, 176, 0.18);
+    background: #E4ECF4;
+    color: #3D78B0;
+    border: 1px solid #DCE7F1;
     box-shadow: 0 2px 8px rgba(61, 120, 176, 0.08),
         inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
-.btn-secondary:hover:not(:disabled) {
-    background-color: rgba(61, 120, 176, 0.2);
-    box-shadow: 0 4px 12px rgba(61, 120, 176, 0.12),
-        inset 0 1px 0 rgba(255, 255, 255, 0.7);
+/* Secondary — neutral "grey" */
+.btn-secondary {
+    background: #F6F6F6;
+    color: #374151;
+    border: 1px solid #EDEDED;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* Larger CTA sizing where the hero / nav use bigger buttons */
+.btn-lg {
+    font-size: 14px;
+    padding: 8px 16px;
 }
 
 /* ----------------------------------------------------------------
-   Light glass card — the app's modal/card surface
-   (figmaApp aero-design-system.css: .aero-modal-light). Full layered
-   shadow + inset top highlight so the card reads as a floating glass panel.
+   Cards
+   - Content cards (feature cards, most panels): SOLID white. This is the
+     app's real content card.
+   - Elevated / highlighted panels (the recommended pricing tier, any
+     popover-like card): near-white panel with elevation. No
+     backdrop-filter needed.
    ---------------------------------------------------------------- */
-.glass-card {
-    background: rgba(255, 255, 255, 0.65);
-    backdrop-filter: blur(20px) saturate(130%);
-    -webkit-backdrop-filter: blur(20px) saturate(130%);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08),
-        0 2px 8px rgba(0, 0, 0, 0.04),
-        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+.content-card {
+    background: #FFFFFF;
+    border: 1px solid #F0F0F0;
     border-radius: 12px;
-    color: #1A1E2C;
+    color: #1D1D1F;
+}
+
+.elevated-card {
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+    color: #1D1D1F;
 }
 
 /* ----------------------------------------------------------------
