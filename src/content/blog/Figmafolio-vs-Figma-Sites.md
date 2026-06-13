@@ -205,7 +205,7 @@ tags: ["figmafolio", "figma sites", "portfolio", "comparison"]
   // Update all blog links with current language
   const updateBlogLinks = () => {
     const currentLanguage = getCurrentLanguage();
-    const authUrl = "https://aeroapp.ai";
+    const authUrl = "https://aeroapp.ai/auth";
     const pricingUrl = `/pricing`;
     
     // Update hero start link
