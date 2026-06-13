@@ -1,133 +1,32 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Container from "../components/container.astro";
-import Tick from "../ui/icons/tick.astro";
-
-const APP_URL = "https://aeroapp.ai";
-
-// NOTE: Placeholder Aero pricing — prices marked "TBD" are pending final
-// pricing. The shape (name / price / period / blurb / features / CTA) is final
-// so real numbers can drop straight in. This is static content defined here in
-// the page: no backend fetch, no figmafolio plan data.
-const plans = [
-  {
-    name: "Free",
-    price: "$0",
-    period: "/month",
-    blurb: "Publish your first prototypes and try a user test.",
-    features: [
-      "Publish static sites and prototypes",
-      "Limited user tests",
-      "Aero subdomain (yourproject.aeroapp.ai)",
-      "Screen and voice recording",
-    ],
-    cta: "Get started free",
-    recommended: false,
-  },
-  {
-    name: "Pro",
-    price: "TBD",
-    period: "/month",
-    blurb: "For makers shipping and testing regularly.",
-    features: [
-      "Everything in Free",
-      "More user-test sessions",
-      "Custom domains",
-      "Higher publishing limits",
-      "Transcripts and AI insights",
-    ],
-    cta: "Start with Pro",
-    recommended: true,
-  },
-  {
-    name: "Studio",
-    price: "TBD",
-    period: "/month",
-    blurb: "For teams running tests together at scale.",
-    features: [
-      "Everything in Pro",
-      "Highest publishing and testing limits",
-      "Team collaboration and shared projects",
-      "Priority support",
-    ],
-    cta: "Talk to us",
-    recommended: false,
-  },
-];
+import PricingTableNew from "../components/PricingTableNew.astro";
 ---
 
 <Layout title="Pricing">
   <Container>
     <section class="bg-white pt-8 pb-4 md:pt-14 md:pb-6">
-      <div class="max-w-3xl mx-auto text-center mt-14 mb-4">
+      <div class="max-w-3xl mx-auto text-center mt-14 mb-10">
         <h1 class="text-5xl md:text-6xl font-bold mb-3 text-[#1D1D1F]">
           Pricing
         </h1>
         <p class="text-xl text-[#6B6F76]">
           Start free. Publish prototypes to live URLs and run recorded user
-          tests with AI insights.
-        </p>
-        <p class="text-sm text-[#8E8E93] mt-2">
-          Placeholder pricing — final numbers to be confirmed.
+          tests with AI insights. Try it free and cancel anytime during the
+          trial period.
         </p>
       </div>
 
-      <div
-        class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto mt-10 items-stretch">
-        {
-          plans.map((plan) => (
-            <div
-              class:list={[
-                "flex flex-col p-8 text-left h-full",
-                plan.recommended
-                  ? "glass-card ring-1 ring-[#3D78B0] relative"
-                  : "bg-white rounded-lg border border-subtle shadow-sm",
-              ]}>
-              {plan.recommended && (
-                <span class="absolute -top-3 left-8 inline-block text-xs font-semibold uppercase tracking-wide text-white bg-[#3D78B0] rounded px-3 py-1">
-                  Recommended
-                </span>
-              )}
-              <h2 class="font-semibold text-2xl text-[#1D1D1F] mb-1">
-                {plan.name}
-              </h2>
-              <div class="flex items-baseline gap-1 mb-2">
-                <span class="text-4xl font-bold text-[#1D1D1F]">
-                  {plan.price}
-                </span>
-                <span class="text-[#8E8E93] text-base">{plan.period}</span>
-              </div>
-              <p class="text-[#6B6F76] text-base leading-relaxed mb-6">
-                {plan.blurb}
-              </p>
-              <ul class="space-y-3 mb-8">
-                {plan.features.map((feature) => (
-                  <li class="flex items-start gap-3 text-[#1D1D1F] text-base">
-                    <Tick class="text-[#3D78B0] w-5 h-5 mt-0.5 flex-shrink-0" />
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              <a
-                href={APP_URL}
-                class:list={[
-                  "mt-auto px-6 py-3 font-semibold text-base text-center",
-                  plan.recommended ? "btn-primary" : "btn-secondary",
-                ]}>
-                {plan.cta}
-              </a>
-            </div>
-          ))
-        }
-      </div>
-
-      <p class="text-center text-[#8E8E93] text-sm mt-10">
-        Questions about a plan?{" "}
-        <a href="/contact" class="text-[#3D78B0] hover:underline">
-          Get in touch
-        </a>
-        .
-      </p>
+      <PricingTableNew />
     </section>
+
+    <p class="text-center text-[#8E8E93] text-sm mt-10">
+      Questions about a plan?{" "}
+      <a href="/contact" class="text-[#3D78B0] hover:underline">
+        Get in touch
+      </a>
+      .
+    </p>
   </Container>
 </Layout>

@@ -22,11 +22,14 @@ const sizes = {
   md: "px-4 py-2",
 };
 
+// All variants now share the Aero glass button treatment defined in
+// global.css (.btn-primary / .btn-secondary). Primary and inverted use the
+// accent fill; outline and muted use the light-tinted secondary.
 const styles = {
-  outline: "bg-white border-2 border-[#2F6499] hover:bg-gray-100 text-[#2F6499] ",
-  primary: "bg-[#3D78B0] text-white hover:bg-[#2F6499]  border-2 border-transparent",
-  inverted: "bg-white text-black border-2 border-[#3D78B0]",
-  muted: "bg-gray-100 hover:bg-gray-200   border-2 border-transparent",
+  outline: "btn-secondary",
+  primary: "btn-primary",
+  inverted: "btn-primary",
+  muted: "btn-secondary",
 };
 ---
 
@@ -34,7 +37,7 @@ const styles = {
   href={href}
   {...rest}
   class:list={[
-    "rounded-full text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200",
+    "text-center focus-visible:ring-2 ring-offset-2 ring-gray-200",
     block && "w-full",
     sizes[size],
     styles[style],
