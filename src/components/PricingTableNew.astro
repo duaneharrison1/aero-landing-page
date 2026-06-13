@@ -381,7 +381,7 @@ const planIconsJson = JSON.stringify(planIcons);
             <p class="pricing-bill-desc" x-text="getBillingDesc(plan.key)"></p>
 
             <a
-              :href="'https://app.figmafolio.com/signup'"
+              :href="'https://aeroapp.ai'"
               class="pricing-cta"
               :class="{ 'pricing-cta-popular': plan.mostPopular }"
               x-text="getButtonText(plan.key)"
@@ -481,30 +481,30 @@ const planIconsJson = JSON.stringify(planIcons);
 
   // Fallback plans if Firestore fails
   const FALLBACK_PLANS = [
-    { key: 'free', name: 'Free', description: 'Get started with Figmafolio', order: 0, mostPopular: false, features: [
-      { text: '1 published folio', enabled: true },
-      { text: 'Figmafolio branding', enabled: true },
+    { key: 'free', name: 'Free', description: 'Get started with Aero', order: 0, mostPopular: false, features: [
+      { text: '1 published project', enabled: true },
+      { text: 'Aero branding', enabled: true },
       { text: 'Community support', enabled: true },
       { text: 'Custom domain', enabled: false },
       { text: 'Password protection', enabled: false }
     ]},
     { key: 'basic', name: 'Basic', description: 'For individuals starting out', order: 1, mostPopular: false, features: [
-      { text: '1 published folio', enabled: true },
-      { text: 'Remove Figmafolio branding', enabled: true },
+      { text: '1 published project', enabled: true },
+      { text: 'Remove Aero branding', enabled: true },
       { text: 'Custom favicon', enabled: true },
       { text: 'Custom domain', enabled: false },
       { text: 'Password protection', enabled: false }
     ]},
     { key: 'solo', name: 'Solo', description: 'For professionals who need more', order: 2, mostPopular: true, features: [
-      { text: '3 published folios', enabled: true },
-      { text: 'Remove Figmafolio branding', enabled: true },
+      { text: '3 published projects', enabled: true },
+      { text: 'Remove Aero branding', enabled: true },
       { text: 'Custom favicon', enabled: true },
       { text: 'Custom domain', enabled: true },
       { text: 'Password protection', enabled: true }
     ]},
     { key: 'pro', name: 'Pro', description: 'For teams and agencies', order: 3, mostPopular: false, features: [
-      { text: 'Unlimited folios', enabled: true },
-      { text: 'Remove Figmafolio branding', enabled: true },
+      { text: 'Unlimited projects', enabled: true },
+      { text: 'Remove Aero branding', enabled: true },
       { text: 'Custom favicon', enabled: true },
       { text: 'Custom domain', enabled: true },
       { text: 'Password protection', enabled: true },
