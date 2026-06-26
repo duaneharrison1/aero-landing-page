@@ -1,20 +1,20 @@
 ---
 draft: false
-title: "User Testing by Figmafolio vs Maze"
+title: "User Testing by Aero vs Maze"
 snippet: "Looking for a Maze alternative? Compare features, pricing, and see which prototype testing tool is right for you."
 image:
   src: "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-  alt: "User Testing by Figmafolio vs Maze"
+  alt: "User Testing by Aero vs Maze"
 publishDate: "2026-02-01"
-author: "FigmaFolio"
+author: "Aero"
 category: "Comparison"
 tags: ["user testing", "maze", "prototype testing", "comparison"]
 ---
 
 <!-- Hero -->
 <div class="text-center max-w-2xl mx-auto mt-10 mb-8">
-  <h1 class="text-4xl md:text-5xl font-extrabold mb-4">User Testing by Figmafolio vs Maze</h1>
-  <p class="text-gray-600 mb-6">User Testing by Figmafolio and Maze both help you understand how users interact with your prototypes. But they're built for different audiences and budgets. Here's a side-by-side comparison to help you choose.</p>
+  <h1 class="text-4xl md:text-5xl font-extrabold mb-4">User Testing by Aero vs Maze</h1>
+  <p class="text-gray-600 mb-6">User Testing by Aero and Maze both help you understand how users interact with your prototypes. But they're built for different audiences and budgets. Here's a side-by-side comparison to help you choose.</p>
   <a href="#" id="blog-start-link" class="inline-block bg-[#4d9f70] text-white px-6 py-3 rounded-full font-semibold text-lg shadow hover:bg-[#388e5c] transition underline">Start for Free</a>
 </div>
 
@@ -51,7 +51,7 @@ tags: ["user testing", "maze", "prototype testing", "comparison"]
           <th class="py-6 px-8 text-center font-bold text-xl bg-[#f6fef9] rounded-tr-3xl border-t-4 border-r-4 border-b-4 border-l-4 border-[#4d9f70] align-middle">
             <span class="inline-flex items-center justify-center w-full">
               <span class="text-[#3a5e3a] font-bold">User Testing by</span>
-              <span class="text-[#4d9f70] font-bold ml-1">Figmafolio</span>
+              <span class="text-[#4d9f70] font-bold ml-1">Aero</span>
             </span>
           </th>
         </tr>
@@ -65,12 +65,12 @@ tags: ["user testing", "maze", "prototype testing", "comparison"]
         <tr>
           <td class="py-6 px-8 text-gray-700 align-middle bg-white">Entry Paid Plan</td>
           <td class="py-6 px-8 text-center text-gray-700 align-middle bg-white">$99/month<br/><span class="text-xs text-gray-400">(Starter plan)</span></td>
-          <td class="py-6 px-8 text-center text-[#4d9f70] font-semibold align-middle bg-[#f6fef9] border-r-4 border-l-4 border-[#4d9f70]">From $6/month<br/><span class="text-xs text-gray-400">(Solo plan)</span></td>
+          <td class="py-6 px-8 text-center text-[#4d9f70] font-semibold align-middle bg-[#f6fef9] border-r-4 border-l-4 border-[#4d9f70]">From $5/month<br/><span class="text-xs text-gray-400">(Solo plan)</span></td>
         </tr>
         <tr>
           <td class="py-6 px-8 text-gray-700 align-middle bg-white">Annual Cost</td>
           <td class="py-6 px-8 text-center text-gray-700 align-middle bg-white">$1,188/year minimum</td>
-          <td class="py-6 px-8 text-center text-[#4d9f70] font-semibold align-middle bg-[#f6fef9] border-r-4 border-l-4 border-[#4d9f70]">From $57/year</td>
+          <td class="py-6 px-8 text-center text-[#4d9f70] font-semibold align-middle bg-[#f6fef9] border-r-4 border-l-4 border-[#4d9f70]">From $48/year</td>
         </tr>
         <tr>
           <td class="py-6 px-8 text-gray-700 align-middle bg-white">Screen Recording</td>
@@ -141,7 +141,7 @@ tags: ["user testing", "maze", "prototype testing", "comparison"]
 <div class="max-w-3xl mx-auto mb-12">
   <h2 class="text-2xl font-bold mb-3 text-center">Our honest take</h2>
   <p class="text-center text-gray-600 mb-4">Maze is the industry standard for enterprise UX research teams who need advanced features like heatmaps, path analysis, and tree testing. If you have a dedicated research team and budget, Maze delivers comprehensive insights.</p>
-  <p class="text-center text-gray-600">User Testing by Figmafolio is built for designers who need quick, affordable feedback. You won't get heatmaps, but you get something Maze Clips doesn't offer: automatic transcription and AI analysis of every session. No more scrubbing through recordings—our AI surfaces the insights for you.</p>
+  <p class="text-center text-gray-600">User Testing by Aero is built for designers who need quick, affordable feedback. You won't get heatmaps, but you get something Maze Clips doesn't offer: automatic transcription and AI analysis of every session. No more scrubbing through recordings—our AI surfaces the insights for you.</p>
 </div>
 
 <!-- Expert Recommendations -->
@@ -171,7 +171,7 @@ tags: ["user testing", "maze", "prototype testing", "comparison"]
           <circle cx="17" cy="7" r="3" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
-      <div class="font-bold text-xl mb-2">Choose User Testing by Figmafolio if</div>
+      <div class="font-bold text-xl mb-2">Choose User Testing by Aero if</div>
       <div class="text-gray-600 text-base">You're a designer or freelancer who wants to see how real users interact with your work, get transcribed feedback, and receive AI-powered insights—without the $99/month price tag.</div>
     </div>
     <!-- Box 3 -->
@@ -206,17 +206,17 @@ tags: ["user testing", "maze", "prototype testing", "comparison"]
 
   <div class="mb-8">
     <h3 class="text-xl font-bold mb-2 text-[#4d9f70]">Transcription & AI Analysis</h3>
-    <p class="text-gray-600">Maze records audio but doesn't transcribe it—you have to watch every session manually. User Testing by Figmafolio transcribes every session automatically and uses AI to extract friction points, confusion moments, and feature requests. Our AI even synthesizes patterns across multiple sessions.</p>
+    <p class="text-gray-600">Maze records audio but doesn't transcribe it—you have to watch every session manually. User Testing by Aero transcribes every session automatically and uses AI to extract friction points, confusion moments, and feature requests. Our AI even synthesizes patterns across multiple sessions.</p>
   </div>
 
   <div class="mb-8">
     <h3 class="text-xl font-bold mb-2 text-[#4d9f70]">Prototype Handling</h3>
-    <p class="text-gray-600">Maze imports your Figma file and copies the images, which can cause sync issues, crashes (especially on mobile), and requires you to optimize your file first. User Testing by Figmafolio embeds your live Figma prototype directly—no rebuild, no optimization, always shows your latest changes.</p>
+    <p class="text-gray-600">Maze imports your Figma file and copies the images, which can cause sync issues, crashes (especially on mobile), and requires you to optimize your file first. User Testing by Aero embeds your live Figma prototype directly—no rebuild, no optimization, always shows your latest changes.</p>
   </div>
 
   <div class="mb-8">
     <h3 class="text-xl font-bold mb-2 text-[#4d9f70]">Pricing</h3>
-    <p class="text-gray-600">Maze starts at $99/month for their Starter plan. User Testing is included in Figmafolio plans starting at $6/month (Solo). That's 94% less for core testing functionality.</p>
+    <p class="text-gray-600">Maze starts at $99/month for their Starter plan. User Testing is included in Aero plans starting at $5/month (Solo). That's 95% less for core testing functionality.</p>
   </div>
 </div>
 
