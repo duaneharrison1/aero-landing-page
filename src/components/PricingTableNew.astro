@@ -295,6 +295,13 @@ const planIconsJson = JSON.stringify(planIcons);
   }
 
   /* Feature list */
+  .pricing-note {
+    text-align: center;
+    font-size: 13px;
+    color: #8E8E93;
+    margin-top: 24px;
+  }
+
   .pricing-features {
     list-style: none;
     padding: 0;
@@ -351,7 +358,7 @@ const planIconsJson = JSON.stringify(planIcons);
           @click="isYearly = true"
         >
           Yearly
-          <span class="pricing-toggle-badge">Save 20%</span>
+          <span class="pricing-toggle-badge" x-show="maxYearlySaving() > 0" x-text="'Save up to ' + maxYearlySaving() + '%'"></span>
         </button>
       </div>
 
@@ -396,6 +403,7 @@ const planIconsJson = JSON.stringify(planIcons);
           </div>
         </template>
       </div>
+      <p class="pricing-note">Session counts are how many you can keep at once. Delete old ones to free room.</p>
     </div>
   </template>
 </div>
@@ -474,38 +482,76 @@ const planIconsJson = JSON.stringify(planIcons);
     return 'US';
   }
 
-  // Fallback plans if Firestore fails
+  // Fallback plans if Firestore fails. Mirrors Firestore /config/plans after
+  // aeroizePlan() below (that doc is shared with Figmafolio).
   const FALLBACK_PLANS = [
-    { key: 'free', name: 'Free', description: 'Get started with Aero', order: 0, mostPopular: false, features: [
-      { text: '1 published project', enabled: true },
-      { text: 'Aero branding', enabled: true },
-      { text: 'Community support', enabled: true },
-      { text: 'Custom domain', enabled: false },
+    { key: 'free', name: 'Free', description: 'No bills :) try it out quickly to share a project', order: 0, mostPopular: false, features: [
+      { text: '1 project/website, live for 7 days', enabled: true },
+      { text: 'HTML hosting', enabled: true },
+      { text: 'Free aeroapp.ai address', enabled: true },
+      { text: 'Analytics', enabled: false },
+      { text: "No 'Made with Aero' badge", enabled: false },
+      { text: 'Customize favicon', enabled: false },
       { text: 'Password protection', enabled: false }
     ]},
-    { key: 'basic', name: 'Basic', description: 'For individuals starting out', order: 1, mostPopular: false, features: [
-      { text: '1 published project', enabled: true },
-      { text: 'Remove Aero branding', enabled: true },
-      { text: 'Custom favicon', enabled: true },
-      { text: 'Custom domain', enabled: false },
-      { text: 'Password protection', enabled: false }
-    ]},
-    { key: 'solo', name: 'Solo', description: 'For professionals who need more', order: 2, mostPopular: true, features: [
-      { text: '3 published projects', enabled: true },
-      { text: 'Remove Aero branding', enabled: true },
-      { text: 'Custom favicon', enabled: true },
-      { text: 'Custom domain', enabled: true },
+    { key: 'basic', name: 'Basic', description: 'Perfect for a single, professional link', order: 1, mostPopular: false, features: [
+      { text: '1 project/website', enabled: true },
+      { text: 'HTML hosting', enabled: true },
+      { text: 'Free aeroapp.ai address', enabled: true },
+      { text: 'Analytics', enabled: false },
+      { text: "No 'Made with Aero' badge", enabled: true },
+      { text: 'Customize favicon', enabled: true },
       { text: 'Password protection', enabled: true }
     ]},
-    { key: 'pro', name: 'Pro', description: 'For teams and agencies', order: 3, mostPopular: false, features: [
-      { text: 'Unlimited projects', enabled: true },
-      { text: 'Remove Aero branding', enabled: true },
-      { text: 'Custom favicon', enabled: true },
-      { text: 'Custom domain', enabled: true },
+    { key: 'solo', name: 'Solo', description: 'Great for individuals & small projects', order: 2, mostPopular: true, features: [
+      { text: '3 projects/websites', enabled: true },
+      { text: 'HTML hosting', enabled: true },
+      { text: 'Connect your existing custom domains', enabled: true },
+      { text: 'Analytics', enabled: true },
+      { text: "No 'Made with Aero' badge", enabled: true },
+      { text: 'Customize favicon', enabled: true },
+      { text: 'Password protection', enabled: true }
+    ]},
+    { key: 'pro', name: 'Pro', description: 'For growth-focused professionals', order: 3, mostPopular: false, features: [
+      { text: 'Unlimited projects/websites', enabled: true },
+      { text: 'HTML hosting', enabled: true },
+      { text: 'Connect your existing custom domains', enabled: true },
+      { text: 'Analytics', enabled: true },
+      { text: "No 'Made with Aero' badge", enabled: true },
+      { text: 'Customize favicon', enabled: true },
       { text: 'Password protection', enabled: true },
-      { text: 'Priority support', enabled: true }
+      { text: 'Priority technical and product support', enabled: true }
     ]}
   ];
+
+  // Test sessions per plan, kept at once (figmaApp SESSION_LIMITS in
+  // src/utils/userTestingLimits.js, mode 'total').
+  const TEST_SESSIONS = { free: 3, basic: 5, solo: 10, pro: 20 };
+
+  // /config/plans is shared with Figmafolio, so its Figmafolio wording is
+  // rewritten here for Aero instead of in Firestore.
+  const AERO_FEATURE_TEXT = {
+    'Free Figmafolio domain': 'Free aeroapp.ai address',
+    "Removes 'Made with Figmafolio' label": "No 'Made with Aero' badge",
+    'Customize Favicon': 'Customize favicon',
+    'Password protection option': 'Password protection',
+  };
+  const DROPPED_FEATURES = new Set(['Free portfolio review to perfect your work']);
+
+  function aeroizePlan(plan) {
+    const features = plan.features
+      .filter(f => !DROPPED_FEATURES.has(f.text))
+      .map(f => ({ ...f, text: (AERO_FEATURE_TEXT[f.text] || f.text).replace(/Figmafolio/g, 'Aero') }))
+      .filter(f => !/test sessions/.test(f.text));
+    const sessions = TEST_SESSIONS[plan.key];
+    if (sessions) {
+      // After "HTML hosting" when present, else after the first bullet.
+      const at = features.findIndex(f => f.text === 'HTML hosting');
+      features.splice(at >= 0 ? at + 1 : 1, 0, { text: `${sessions} test sessions`, enabled: true });
+    }
+    return { ...plan, features };
+  }
+
 
   document.addEventListener('alpine:init', () => {
     Alpine.data('pricingTable', () => ({
@@ -602,8 +648,28 @@ const planIconsJson = JSON.stringify(planIcons);
           console.error('Failed to fetch plans:', e);
           this.plans = FALLBACK_PLANS;
         }
+        this.plans = this.plans.map(aeroizePlan);
 
         this.loading = false;
+      },
+
+      // Largest whole-percent yearly saving across paid plans in this tier.
+      // Rounded down so the badge never overstates (it differs per plan and
+      // region, e.g. US Basic 22%, Pro 12%).
+      maxYearlySaving() {
+        const tierPrices = this.pricing[this.tier] || {};
+        const num = (v) => parseFloat(String(v || '').replace(/[^0-9.]/g, '')) || 0;
+        let max = 0;
+        for (const key of ['basic', 'solo', 'pro']) {
+          const p = tierPrices[key];
+          if (!p) continue;
+          const monthly = num(p.monthly);
+          const yearlyTotal = num(p.yearlyTotal);
+          if (monthly > 0 && yearlyTotal > 0) {
+            max = Math.max(max, Math.floor((1 - yearlyTotal / (monthly * 12)) * 100));
+          }
+        }
+        return max;
       },
 
       getPrice(planKey) {

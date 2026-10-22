@@ -4,23 +4,22 @@ import Features from "../components/features.astro";
 import Hero from "../components/hero.astro";
 import Layout from "../layouts/Layout.astro";
 
-// NOTE: Placeholder Aero copy below — to be refined later.
 const faqs = [
   {
     q: "What is Aero?",
-    a: "Aero is where you publish prototypes to live URLs and run recorded user tests on them. You can publish by drag-and-drop, from an AI agent over MCP, or from a Figma link, then put the result in front of real people.",
+    a: "Aero puts your prototypes on a live link and lets you test them with real people. Publish a site or a Figma prototype, share a test link, then watch each session with AI notes.",
   },
   {
-    q: "How does an AI agent publish to Aero?",
-    a: "Connect Aero as an MCP server to your agent, then ask it to publish your project and create a user test. Your agent gets a live URL back, and the test insights are handed back to it once sessions come in.",
+    q: "How does an AI tool publish to Aero?",
+    a: "Use your own Claude or ChatGPT. Create an API token in your Aero account, give your AI one prompt, and it publishes your site to a live link. MCP works too.",
   },
   {
     q: "What gets captured in a user test?",
-    a: "Tests are task-based and run on your real hosted prototype. Each session records the tester's screen and voice, and you get transcripts plus AI insights.",
+    a: "The tester's screen and voice, how each task went, a transcript, and AI notes with quotes from the session. Tests on an HTML site run in a desktop browser. Figma tests also work on a phone, where only the voice is recorded.",
   },
   {
     q: "Do I need to write code?",
-    a: "No. You can publish static sites by drag-and-drop or from a Figma link without touching code. Agent-driven publishing over MCP is there when you want it.",
+    a: "No. Drag and drop your files, paste a Figma prototype link, or publish with one prompt from your AI tool.",
   },
 ];
 ---
@@ -31,12 +30,9 @@ const faqs = [
     <Features />
 
     <section class="mt-24 mb-16">
-      <h2 class="text-4xl font-bold text-center mb-4 text-[#1D1D1F]">
-        Frequently Asked Questions
+      <h2 class="text-4xl font-bold text-center mb-10 text-[#1D1D1F]">
+        Frequently asked questions
       </h2>
-      <p class="text-center text-[#8E8E93] text-sm mb-10">
-        Placeholder copy — final answers to be refined.
-      </p>
       <div class="space-y-6">
         {
           faqs.map((faq, i) => (
