@@ -1,6 +1,6 @@
 ---
 brand-sync: figmaApp docs/brand is the source. Copy this file unchanged to aero-landing-page/docs/brand/.
-version: 2026-10-23.1
+version: 2026-10-23.2
 ---
 
 # Can Aero show the tester's cursor? (investigation, 23 Oct 2026)
@@ -63,3 +63,21 @@ Duane asked whether Aero can record the tester's mouse, because session replays 
 1. Build option 1 for HTML sites. It is the most complete, and it uses a channel that already exists.
 2. Prototype option 2 to get click paths and misclicks for Figma.
 3. Until either ships, every mockup, video and page stays true to the app: no moving cursor in a replay.
+
+## How the Figma Embed API would work in Aero (added 23 Oct)
+- **For designers:** nothing changes. They paste the same prototype link, and Aero rewrites `figma.com/proto/FILE/Name?node-id=…` to `embed.figma.com/proto/FILE/Name?node-id=…&embed-host=aero&client-id=AERO_ID`.
+- **One-time setup by Duane:**
+  - create a free OAuth app at figma.com/developers/apps
+  - copy its client id into Aero's config
+  - add aeroapp.ai as an allowed embed origin
+- No per-user Figma login. Viewing rules are as today: link-viewable files embed; private files show Figma's login, and the embed sends `LOGIN_SCREEN_SHOWN`, so Aero can warn the designer.
+- **Events:**
+  - `PRESENTED_NODE_CHANGED`: screen path with times
+  - `MOUSE_PRESS_OR_RELEASE` with `handled`: hits and misclicks
+  - `NEW_STATE`: component variants
+  - `INITIAL_LOAD`, `LOGIN_SCREEN_SHOWN`, `PASSWORD_SCREEN_SHOWN`
+- **Commands:** `RESTART`, `NAVIGATE_TO_FRAME_AND_CLOSE_OVERLAYS`, `NAVIGATE_FORWARD`, `NAVIGATE_BACKWARD`, `CHANGE_COMPONENT_STATE`. Useful to start each task on the right screen.
+- **Gaps:**
+  - Events carry node ids, not frame names. Names need the REST API with the designer's Figma access. The lighter alternative is a thumbnail taken from Aero's own recording at each screen change.
+  - Click positions are relative to the clicked layer and sometimes null, so misclicks become timeline markers, not exact dots on the video.
+- **Rollout:** behind a flag. Test with several real prototypes. Fall back to the legacy embed if `INITIAL_LOAD` never arrives.
