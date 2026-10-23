@@ -1,6 +1,6 @@
 ---
 brand-sync: figmaApp docs/brand is the source. Copy this file unchanged to aero-landing-page/docs/brand/.
-version: 2026-10-23.2
+version: 2026-10-23.3
 ---
 
 # Aero playbook: re-evaluating the product, brand and website
@@ -15,7 +15,8 @@ The same process HeyBooking went through in October 2026 (see the HeyBooking rep
 | 2. Strategy | Done 22 Oct: lead, proofs, audiences, pricing check, SEO page tree, 10 decisions | research/strategy-dossier.md |
 | 3. Art direction | Five rounds (see the log) | mockups/, research/reference-analysis.md |
 | 4. Logo | Direction chosen ("Aero." in Geist, blue dot); refinement and motion to do | BRAND.md, logo/ |
-| 5. Copy, UX, UI, motion passes | Next: the whole-app UI first, then the website | DESIGN_SYSTEM_PLAN.md |
+| 5a. UI directions | 23 Oct: every main screen in A to D, beside the app UI round and today's app; buttons and logo options; waiting on Duane's marks | directions/ |
+| 5. Copy, UX, UI, motion passes | After 5a: tighten the app UI round into the agreed components and their marketing versions, then the website | DESIGN_SYSTEM_PLAN.md |
 | 6. Illustration and card kit | To do, built from the marketing kit | DESIGN_SYSTEM_PLAN.md |
 | 7. SEO | Plan done (task pages); pages to build later | research/strategy-dossier.md |
 | 8. Make it automatic | Started: docs/brand, CLAUDE.md rules, two-repo sync rule | this folder, CLAUDE.md |
@@ -47,11 +48,13 @@ The same process HeyBooking went through in October 2026 (see the HeyBooking rep
 - Never show a transcript typing live, or a cursor moving in a replay: neither is true.
 - Helpers sharing a scratch folder overwrite each other's scripts. Give each helper its own folder and file names.
 - Save decisions into the repo as you go (this folder), not only in published boards.
+- Don't jump from liked mockups straight to a detailed app UI. Draw each main screen in every direction first and let the owner pick per screen; that was the missing step (23 Oct).
+- Name the patterns that read as AI-made (side-stripe cards, icons in pastel boxes) in the brief, so teams invent their own status marks.
 
 ## Log
 - 21 Oct: repair, model tests, OpenRouter fallback, transcription dedupe.
 - 22 Oct: research and strategy doc; fix PRs (#262, #263, landing #5); brand rounds 1 to 4; glass lab; app UX review; round 5 mockups.
-- 23 Oct: feedback on the mockups; this folder, the decisions log, the design system plan and CLAUDE.md rules; cursor and Figma Embed API investigation; the app UI round (files in app-ui/).
+- 23 Oct: feedback on the mockups; this folder, the decisions log, the design system plan and CLAUDE.md rules; cursor and Figma Embed API investigation; the app UI round (files in app-ui/); the UI directions stage (directions/).
 
 ## Boards and labs (private links, Duane's account)
 | What | Link | Status |
@@ -63,4 +66,5 @@ The same process HeyBooking went through in October 2026 (see the HeyBooking rep
 | Round 4 brand and font study | https://claude.ai/artifact/UuZ6VJwV65nD8LQKjHPfVX | Font study still useful |
 | Glass button lab | https://claude.ai/artifact/4dajXGEv5aYB5hsyS5mFVw | V3 chosen |
 | Round 5 mockups (A Studio, B Colour, C Story, D Replay) | https://claude.ai/artifact/8BPToDfdd57Bpm1wpxWVtN | Feedback 23 Oct |
-| App UI round (screens, tester flow, flows, components) | https://claude.ai/artifact/Y1vWdd2BsZdkn6HmvTW5Zk | Current; 11 decisions waiting |
+| App UI round (screens, tester flow, flows, components) | https://claude.ai/artifact/Y1vWdd2BsZdkn6HmvTW5Zk | To tighten after the directions stage |
+| UI directions (every screen in A to D, buttons, logo) | https://claude.ai/artifact/6iCo36JkjhvNsaYxLUfbpb | Current; waiting on Duane's marks |

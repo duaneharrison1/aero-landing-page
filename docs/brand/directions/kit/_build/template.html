@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aero buttons and logo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1D1D1F;--ink2:#3C3C40;--mut:#6E6E73;--mut2:#A3A3A8;--line:#E8E8EA;--line2:#F1F1F3;
+  --paper:#FFFFFF;--mist:#FAFAF9;--page:#F3F3F1;--blue:#3478F6;--blue-h:#2A66D9;
+  --dk:#111214;--dk2:#1B1C1F;--dk-line:#2A2B2F;--dk-ink:#F5F5F3;--dk-mut:#9A9AA0;
+  --sans:'Geist',system-ui,sans-serif;--mono:'Geist Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--page);color:var(--ink);font-family:var(--sans);font-size:14px;line-height:1.45;-webkit-font-smoothing:antialiased}
+.mono{font-family:var(--mono);font-feature-settings:"tnum"}
+.page-h{width:1360px;margin:0 auto;padding:56px 0 8px}
+.page-h h1{font-weight:450;font-size:34px;letter-spacing:-.02em;margin:0 0 8px}
+.page-h p{margin:0;color:var(--mut);max-width:760px;font-size:15px}
+.xp{width:1360px;margin:0 auto;padding:56px 0 40px}
+.xp>h2{font-weight:500;font-size:24px;letter-spacing:-.015em;margin:0 0 4px}
+.xp>.idea{margin:0 0 24px;color:var(--mut);font-size:15px;max-width:900px}
+.lbl{font-family:var(--mono);font-size:11px;color:var(--mut);letter-spacing:.01em}
+.dk .lbl,.lbl.dk{color:var(--dk-mut)}
+
+/* ===================== Buttons ===================== */
+.bt{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:7px;font-family:var(--sans);font-weight:540;font-size:14px;letter-spacing:-.005em;line-height:1;height:40px;padding:0 18px;border:0;white-space:nowrap;cursor:pointer;background:none;color:var(--ink);transition:background .15s,box-shadow .15s,color .15s}
+.bt.sm{height:30px;padding:0 12px;font-size:12.5px;gap:6px}
+.bt.pill{border-radius:999px}.bt.rect{border-radius:10px}.bt.sm.rect{border-radius:8px}
+.bt svg.ar{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.6}
+.bt .spin{width:13px;height:13px;border-radius:50%;border:1.6px solid currentColor;border-right-color:transparent;opacity:.8;animation:spin .8s linear infinite;flex:none}
+.bt.sm .spin{width:11px;height:11px}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.bt .spin{animation:none}}
+.bt:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+/* ink solid */
+.f-ink.pri{background:var(--ink);color:#fff;box-shadow:0 1px 2px rgba(0,0,0,.12)}
+.f-ink.pri:hover{background:#333336}
+.f-ink.sec{background:#fff;color:var(--ink);box-shadow:inset 0 0 0 1px #DADADE,0 1px 2px rgba(0,0,0,.04)}
+.f-ink.pri:disabled{background:#E9E9EB;color:#A3A3A8;box-shadow:none}
+.f-ink.dk.pri{background:var(--dk-ink);color:#111}
+.f-ink.dk.sec{background:rgba(255,255,255,.07);color:var(--dk-ink);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)}
+.f-ink.dk.pri:disabled{background:#2A2B2F;color:#6B6B70}
+/* aero blue */
+.f-blue.pri{background:var(--blue);color:#fff;box-shadow:0 1px 2px rgba(20,60,140,.2)}
+.f-blue.pri:hover{background:var(--blue-h)}
+.f-blue.sec{background:#fff;color:#1F5BD0;box-shadow:inset 0 0 0 1px #CFDDF8}
+.f-blue.pri:disabled{background:#E3EBFB;color:#97AEDB;box-shadow:none}
+.f-blue.dk.sec{background:rgba(52,120,246,.12);color:#9DBEFA;box-shadow:inset 0 0 0 1px rgba(52,120,246,.35)}
+.f-blue.dk.pri:disabled{background:#1E2738;color:#5D6E90}
+/* ink outline */
+.f-outline.pri{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.f-outline.sec{background:transparent;color:var(--ink2);box-shadow:inset 0 0 0 1px #D3D3D8}
+.f-outline.pri:disabled{color:#A3A3A8;box-shadow:inset 0 0 0 1.5px #D7D7DB}
+.f-outline.dk.pri{color:var(--dk-ink);box-shadow:inset 0 0 0 1.5px var(--dk-ink)}
+.f-outline.dk.sec{color:#C9C9CE;box-shadow:inset 0 0 0 1px #45464B}
+.f-outline.dk.pri:disabled{color:#5E5F64;box-shadow:inset 0 0 0 1.5px #3A3B40}
+/* quiet text */
+.f-quiet{padding:0 6px}.f-quiet.sm{padding:0 4px}
+.f-quiet.pri{color:var(--ink);font-weight:580;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:5px;text-decoration-color:rgba(29,29,31,.25)}
+.f-quiet.sec{color:var(--mut);font-weight:500}
+.f-quiet.pri:disabled,.f-quiet.sec:disabled{color:#B5B5BA;text-decoration-color:transparent}
+.f-quiet.dk.pri{color:var(--dk-ink);text-decoration-color:rgba(245,245,243,.3)}
+.f-quiet.dk.sec{color:var(--dk-mut)}
+/* soft tint, neutral (no pastel box) */
+.f-tint.pri{background:rgba(29,29,31,.075);color:var(--ink);box-shadow:inset 0 0 0 .5px rgba(29,29,31,.06)}
+.f-tint.pri:hover{background:rgba(29,29,31,.11)}
+.f-tint.sec{background:transparent;color:var(--ink2)}
+.f-tint.sec:hover{background:rgba(29,29,31,.05)}
+.f-tint.pri:disabled{background:rgba(29,29,31,.04);color:#B0B0B5}
+.f-tint.sec:disabled{color:#B0B0B5}
+.f-tint.dk.pri{background:rgba(255,255,255,.12);color:var(--dk-ink);box-shadow:none}
+.f-tint.dk.sec{color:#C9C9CE}
+.f-tint.dk.pri:disabled{background:rgba(255,255,255,.05);color:#5E5F64}
+.bt.on-img.f-tint.pri{background:rgba(255,255,255,.82);backdrop-filter:blur(14px) saturate(160%);-webkit-backdrop-filter:blur(14px) saturate(160%)}
+.bt.on-img.f-tint.sec{background:rgba(255,255,255,.55);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.bt.on-img.f-quiet.sec,.bt.on-img.f-quiet.pri{background:rgba(255,255,255,.8);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:0 12px}
+.bt.on-img.f-quiet.sm{padding:0 9px}
+.bt.on-img.f-outline.pri{background:rgba(255,255,255,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.bt.on-img.f-outline.sec{background:rgba(255,255,255,.55);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+/* V3 glass: sizes and shapes override the engine's defaults */
+.bt.gb.md{height:40px;padding:0 18px;font-size:14px}
+.bt.gb.sm{height:30px;padding:0 12px;font-size:12.5px}
+.bt.gb.pill{border-radius:999px}.bt.gb.rect{border-radius:10px}.bt.gb.sm.rect{border-radius:8px}
+.bt.gb.sec>span{font-weight:500}
+.bt.gb.pri>span{font-weight:590}
+
+/* ===================== b1 ===================== */
+.fams{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fam{background:var(--paper);border-radius:16px;box-shadow:0 0 0 1px var(--line);overflow:hidden}
+.fam-h{display:flex;align-items:baseline;gap:12px;padding:18px 20px 0}
+.fam-h .n{font-family:var(--mono);font-size:11px;color:var(--mut2)}
+.fam-h b{font-weight:550;font-size:16px;letter-spacing:-.01em}
+.fam-h .tag{margin-left:auto;font-family:var(--mono);font-size:10.5px;color:var(--mut)}
+.fam-note{padding:4px 20px 14px;color:var(--mut);font-size:13px;min-height:44px}
+.stage{position:relative;margin:0 20px 20px;border-radius:12px;overflow:hidden;height:196px;background:var(--mist);box-shadow:inset 0 0 0 1px var(--line2)}
+.stage .rows{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:20px;padding:0 18px}
+.stage .row{display:flex;align-items:center;gap:10px}
+.stage .row .lbl{width:44px;flex:none}
+.stage.img .row .lbl{background:rgba(255,255,255,.85);border-radius:5px;padding:2px 5px;width:auto;margin-right:2px;color:var(--ink2)}
+.stage .bg{position:absolute;inset:0}
+.stage-cap{display:flex;gap:16px;padding:0 20px 18px;margin-top:-8px}
+.stage-cap span{font-family:var(--mono);font-size:10.5px;color:var(--mut)}
+
+/* ===================== prototypes (example content, drawn at 1x, scaled) ===================== */
+.sc{position:absolute;transform-origin:0 0}
+.proto{font-family:'Geist',sans-serif;position:relative;overflow:hidden}
+/* Pocket web */
+.pw{width:1200px;height:760px;background:#FFF7EF;display:grid;grid-template-columns:220px 1fr;color:#2A1A14}
+.pw-side{background:#123C3D;color:#E6F2EF;padding:26px 20px;display:flex;flex-direction:column;gap:6px}
+.pw-logo{font-weight:700;font-size:24px;letter-spacing:-.03em;color:#fff;margin-bottom:22px;display:flex;align-items:center;gap:10px}
+.pw-logo i{width:26px;height:26px;border-radius:8px;background:#FF5A3C;display:block}
+.pw-nav{padding:10px 12px;border-radius:10px;font-size:16px;color:#BFD8D3}
+.pw-nav.on{background:#1E5153;color:#fff;font-weight:600}
+.pw-side .promo{margin-top:auto;background:#FFC93C;color:#3A2A00;border-radius:14px;padding:16px;font-weight:600;font-size:15px}
+.pw-main{padding:28px 34px;display:flex;flex-direction:column;gap:22px}
+.pw-top{display:flex;align-items:center;justify-content:space-between}
+.pw-top h3{margin:0;font-size:30px;font-weight:650;letter-spacing:-.02em}
+.pw-top .av{width:44px;height:44px;border-radius:50%;background:#7C5CFF;color:#fff;display:grid;place-items:center;font-weight:700;font-size:18px}
+.pw-row{display:grid;grid-template-columns:1.25fr 1fr;gap:20px}
+.pw-bal{position:relative;overflow:hidden;background:#FF5A3C;color:#fff;border-radius:22px;padding:24px 26px;height:190px}
+.pw-bal small{font-size:15px;opacity:.85}.pw-bal b{display:block;font-size:46px;letter-spacing:-.03em;font-weight:650;margin:6px 0 14px}
+.pw-bal .r{display:flex;gap:10px;position:relative;z-index:1}
+.pw-bal .r span{background:rgba(255,255,255,.22);padding:8px 14px;border-radius:999px;font-size:14px;font-weight:600}
+.pw-bal .c1{position:absolute;right:-40px;top:-50px;width:210px;height:210px;border-radius:50%;background:#FF8A5C}
+.pw-bal .c2{position:absolute;right:70px;bottom:-70px;width:150px;height:150px;border-radius:50%;background:#FFC24B}
+.pw-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card{border-radius:16px;padding:16px;color:#fff;display:flex;flex-direction:column;justify-content:space-between;font-weight:600;font-size:14px}
+.card .nm{font-size:13px;opacity:.85;font-weight:500}.card .no{font-family:'Geist Mono',monospace;font-size:15px;letter-spacing:.08em}
+.k1{background:#0EA5A0}.k2{background:#FFC93C;color:#3A2A00}.k3{background:#23232A}.k4{background:#FF7AB6}
+.pw-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:20px;flex:1}
+.pw-panel{background:#fff;border-radius:18px;padding:20px 22px;box-shadow:0 1px 0 rgba(0,0,0,.04)}
+.pw-panel h4{margin:0 0 14px;font-size:17px;font-weight:650}
+.bars{display:flex;align-items:flex-end;gap:12px;height:150px}
+.bars i{flex:1;border-radius:8px 8px 3px 3px;display:block}
+.tx{display:flex;align-items:center;gap:14px;padding:10px 0;border-bottom:1px solid #F3E9DF;font-size:15px}
+.tx:last-child{border-bottom:0}
+.tx i{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;color:#fff;font-style:normal;font-weight:700}
+.tx b{font-weight:600;display:block}.tx small{color:#9A877A;font-size:13px}.tx span{margin-left:auto;font-weight:650}
+/* Pocket phone */
+.pp{width:390px;height:800px;background:#FFF4EA;color:#2A1A14;padding:18px 20px;display:flex;flex-direction:column;gap:16px}
+.pp-sb{display:flex;justify-content:space-between;font-weight:650;font-size:15px}
+.pp-top{display:flex;align-items:center;justify-content:space-between}
+.pp-top small{display:block;color:#9A877A;font-size:14px}.pp-top b{font-size:22px;letter-spacing:-.02em}
+.pp-top i{width:42px;height:42px;border-radius:50%;background:#7C5CFF;color:#fff;display:grid;place-items:center;font-style:normal;font-weight:700}
+.pp .pw-bal{height:176px}.pp .pw-bal b{font-size:40px}
+.pp-qa{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center;font-size:13px;font-weight:600}
+.pp-qa i{display:grid;place-items:center;width:54px;height:54px;border-radius:50%;margin:0 auto 6px;color:#fff;font-style:normal;font-size:20px}
+.pp-h{font-weight:650;font-size:17px}
+.pp-tab{margin-top:auto;display:grid;grid-template-columns:repeat(4,1fr);text-align:center;font-size:12.5px;font-weight:600;color:#9A877A;border-top:1px solid #F0E2D4;padding-top:12px}
+.pp-tab .on{color:#FF5A3C}
+.pp-tab i{display:block;width:22px;height:22px;border-radius:7px;background:currentColor;opacity:.85;margin:0 auto 4px}
+/* Checkout (tester screen) */
+.co{width:1200px;height:760px;background:#FFE14D;display:grid;grid-template-columns:1.15fr 1fr;color:#1E2A12}
+.co-l{position:relative;padding:34px 40px;overflow:hidden}
+.co-brand{font-weight:800;font-size:26px;letter-spacing:-.03em}
+.co-crumb{display:flex;gap:10px;margin-top:20px;font-size:15px;font-weight:600}
+.co-crumb span{padding:7px 14px;border-radius:6px;background:rgba(30,42,18,.1)}.co-crumb span.on{background:#1E2A12;color:#FFE14D}
+.co-art{position:absolute;left:60px;bottom:-40px;width:520px;height:520px}
+.co-art .b1{position:absolute;left:60px;bottom:40px;width:400px;height:400px;border-radius:50%;background:#FF6B2C}
+.co-art .b2{position:absolute;left:170px;bottom:120px;width:150px;height:330px;border-radius:40px 40px 22px 22px;background:#1E7A4C}
+.co-art .b3{position:absolute;left:205px;bottom:420px;width:80px;height:50px;border-radius:14px;background:#123D27}
+.co-art .b4{position:absolute;left:190px;bottom:230px;width:110px;height:120px;border-radius:12px;background:#FFF6D6}
+.co-art .b5{position:absolute;left:30px;bottom:300px;width:90px;height:90px;border-radius:50%;background:#5BC0EB}
+.co-art .b6{position:absolute;left:420px;bottom:330px;width:60px;height:60px;border-radius:14px;background:#E8366F;transform:rotate(18deg)}
+.co-r{background:#fff;padding:36px 40px;display:flex;flex-direction:column;gap:14px}
+.co-r h3{margin:0;font-size:28px;font-weight:700;letter-spacing:-.02em}
+.co-line{display:flex;justify-content:space-between;font-size:16px;padding:10px 0;border-bottom:1px solid #EEE}
+.co-saved{display:flex;gap:12px}.co-saved div{flex:1;height:78px;border-radius:12px;padding:12px;color:#fff;font-weight:650;font-size:14px}
+.co-pay{margin-top:auto;height:58px;border-radius:6px;background:#1E7A4C;color:#fff;display:grid;place-items:center;font-weight:700;font-size:18px}
+/* Onboarding */
+.ob{width:1200px;height:760px;background:#0F7B5F;color:#fff;position:relative;overflow:hidden;padding:60px 70px}
+.ob h3{font-size:62px;line-height:1.02;letter-spacing:-.035em;margin:40px 0 0;width:560px;font-weight:700}
+.ob p{font-size:20px;opacity:.85;width:460px}
+.ob .o1{position:absolute;right:80px;top:90px;width:420px;height:420px;border-radius:50%;background:#FFC93C}
+.ob .o2{position:absolute;right:250px;top:340px;width:260px;height:260px;border-radius:50%;background:#FF7AB6}
+.ob .o3{position:absolute;right:40px;top:420px;width:200px;height:300px;border-radius:30px;background:#E9F7F1}
+.ob .cta{display:inline-block;margin-top:24px;background:#fff;color:#0F7B5F;padding:16px 26px;border-radius:4px;font-weight:700;font-size:18px}
+
+/* ===================== moments (b2) ===================== */
+.moment{margin-bottom:34px}
+.moment-h{display:flex;align-items:baseline;gap:14px;margin-bottom:12px}
+.moment-h b{font-weight:550;font-size:16px}.moment-h span{color:var(--mut);font-size:13px}
+.mgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.mcell{min-width:0}
+.mcell .cap{display:flex;justify-content:space-between;margin-top:8px}
+.mcell .cap b{font-weight:520;font-size:12.5px}
+.mf{position:relative;width:100%;height:230px;border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 0 0 1px var(--line),0 10px 30px -18px rgba(20,24,40,.25)}
+.mf .clip{position:absolute;overflow:hidden}
+.mf-bar{position:absolute;left:0;right:0;top:0;height:30px;display:flex;align-items:center;gap:8px;padding:0 10px;background:#fff;border-bottom:1px solid var(--line);font-size:11.5px;z-index:2}
+.mf-bar .url{margin-left:auto;font-family:var(--mono);font-size:10.5px;color:var(--mut)}
+.mf-foot{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;gap:8px;padding:10px 12px;z-index:2}
+.mf-foot.bar{background:#fff;border-top:1px solid var(--line)}
+.mf-foot .sp{flex:1}
+.mf-foot .meta{font-family:var(--mono);font-size:10px;color:var(--mut);white-space:nowrap}
+.chip-w{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;border-radius:7px;background:rgba(255,255,255,.92);font-size:11.5px;font-weight:550;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.chip-w .av{width:16px;height:16px;border-radius:50%;background:#CFE3FF;color:#1c3358;font-size:9px;display:grid;place-items:center;font-weight:650}
+.top-ov{position:absolute;left:10px;right:10px;top:10px;display:flex;align-items:center;gap:8px;z-index:2}
+.top-ov .sp{flex:1}
+.prog{position:absolute;left:0;right:0;bottom:0;height:24px;display:flex;align-items:center;gap:8px;padding:0 10px;background:rgba(17,18,20,.72);color:#fff;font-family:var(--mono);font-size:10px;z-index:2}
+.prog .tr{flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.25);position:relative}
+.prog .tr i{position:absolute;left:0;top:0;bottom:0;width:43%;background:var(--blue);border-radius:2px}
+.prog .tr i::after{content:"";position:absolute;right:-4px;top:-3px;width:9px;height:9px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 2px #fff}
+.task{position:absolute;right:10px;bottom:10px;width:178px;padding:11px 12px 12px;border-radius:12px;background:#fff;box-shadow:0 0 0 .5px rgba(0,0,0,.08),0 10px 30px -10px rgba(0,0,0,.35);z-index:2}
+.task.glassy{background:rgba(255,255,255,.62);backdrop-filter:blur(22px) saturate(170%);-webkit-backdrop-filter:blur(22px) saturate(170%)}
+.task .k{font-family:var(--mono);font-size:9.5px;color:var(--mut)}
+.task p{margin:3px 0 10px;font-size:12.5px;font-weight:550;line-height:1.3}
+.task .bs{display:flex;gap:6px}
+.recbar{position:absolute;left:10px;top:10px;display:flex;align-items:center;gap:6px;height:24px;padding:0 9px;border-radius:999px;background:rgba(17,18,20,.78);color:#fff;font-size:10.5px;z-index:2}
+.recbar i{width:6px;height:6px;border-radius:50%;background:#FF453A}
+.welcome{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:236px;padding:14px 14px 13px;border-radius:14px;background:#fff;box-shadow:0 0 0 .5px rgba(0,0,0,.08),0 20px 50px -14px rgba(0,0,0,.4);z-index:2}
+.welcome .k{font-family:var(--mono);font-size:9.5px;color:var(--mut)}
+.welcome h5{margin:4px 0 4px;font-size:14px;font-weight:550;letter-spacing:-.01em}
+.welcome p{margin:0 0 11px;font-size:11px;color:var(--mut);line-height:1.4}
+.welcome .bs{display:flex;gap:6px;align-items:center}
+.welcome.float{background:transparent;box-shadow:none;padding:0;width:auto}
+.welcome.float .txt{background:rgba(255,255,255,.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);padding:12px 14px;border-radius:12px;margin-bottom:8px;width:236px;box-shadow:0 10px 30px -12px rgba(0,0,0,.3)}
+.hero-h{position:absolute;left:16px;top:16px;width:200px;z-index:2}
+.hero-h h5{margin:0;font-size:19px;line-height:1.12;font-weight:450;letter-spacing:-.02em}
+.hero-h h5 em{font-style:normal;color:var(--blue)}
+.hero-bs{position:absolute;left:16px;top:96px;display:flex;gap:8px;z-index:2}
+.hero-win{position:absolute;left:150px;top:62px;width:330px;height:220px;border-radius:9px;overflow:hidden;box-shadow:0 0 0 1px rgba(0,0,0,.06),0 20px 40px -16px rgba(20,24,40,.35)}
+.wash{position:absolute;inset:0;background:radial-gradient(120% 90% at 85% 10%,#DCE8FF 0,rgba(220,232,255,0) 60%),radial-gradient(90% 80% at 10% 100%,#FFE6D6 0,rgba(255,230,214,0) 60%),#FBFAF8}
+.dkf{background:var(--dk)}
+.dk-head{position:absolute;left:0;right:0;top:0;height:30px;display:flex;align-items:center;padding:0 10px;gap:8px;color:var(--dk-ink);font-size:11.5px;border-bottom:1px solid var(--dk-line);background:var(--dk2)}
+.dk-head .m{margin-left:auto;font-family:var(--mono);font-size:10px;color:var(--dk-mut)}
+.dk-grid{position:absolute;left:10px;right:10px;top:40px;bottom:10px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.dk-th{position:relative;border-radius:8px;overflow:hidden;background:#222}
+.dk-th .t{position:absolute;left:6px;bottom:6px;font-family:var(--mono);font-size:9px;color:#fff;background:rgba(0,0,0,.55);padding:1px 5px;border-radius:4px}
+.dk-bar{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);display:flex;align-items:center;gap:8px;padding:6px 6px 6px 12px;border-radius:999px;z-index:3;white-space:nowrap}
+.dk-bar.solid{background:#1C1D20;box-shadow:0 0 0 1px #34353A,0 14px 30px -10px rgba(0,0,0,.6)}
+.dk-bar .t{font-family:var(--mono);font-size:10px;color:var(--dk-ink)}
+.dk-bar.float{padding:0;gap:8px}
+.dk-bar.float .t{background:rgba(17,18,20,.7);padding:6px 8px;border-radius:999px}
+.rect-shape .dk-bar{border-radius:12px}
+
+/* ===================== logos ===================== */
+svg.lg{display:block;overflow:visible}
+.lrow{display:grid;grid-template-columns:240px 1fr 1fr;gap:16px;margin-bottom:16px}
+.lmeta{padding:20px 4px 0}
+.lmeta .n{font-family:var(--mono);font-size:11px;color:var(--mut2)}
+.lmeta b{display:block;font-weight:550;font-size:16px;letter-spacing:-.01em;margin:4px 0 6px}
+.lmeta p{margin:0;color:var(--mut);font-size:13px}
+.lmeta .fav{display:inline-block;margin-top:10px;font-family:var(--mono);font-size:10.5px;color:var(--ink2);background:#EBEBED;border-radius:5px;padding:2px 6px}
+.lpan{border-radius:14px;padding:26px 28px 20px;display:flex;flex-direction:column;gap:22px;min-height:208px}
+.lpan.lt{background:#fff;color:var(--ink);box-shadow:0 0 0 1px var(--line);--tile:#1D1D1F;--glyph:#F5F5F3}
+.lpan.dk{background:var(--dk);color:var(--dk-ink);--tile:#F5F5F3;--glyph:#1D1D1F}
+.lpan .big{height:78px;display:flex;align-items:center}
+.lpan .smalls{display:flex;align-items:flex-end;gap:28px}
+.lpan .smalls>div{display:flex;flex-direction:column;gap:8px}
+.lpan .smalls .lbl{white-space:nowrap}
+.lpan .zoom{image-rendering:pixelated}
+/* in use */
+.ugrid{display:grid;grid-template-columns:150px repeat(5,1fr);gap:12px;align-items:stretch}
+.uhead{font-family:var(--mono);font-size:11px;color:var(--mut);padding:0 2px 2px;align-self:end}
+.uname{padding-top:10px}
+.uname b{display:block;font-weight:550;font-size:13.5px;letter-spacing:-.01em;line-height:1.3}
+.uname span{font-family:var(--mono);font-size:10.5px;color:var(--mut2)}
+.uc{position:relative;height:150px;border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 0 0 1px var(--line)}
+.u-side{position:absolute;left:0;top:0;bottom:0;width:150px;background:#FAFAFB;border-right:1px solid var(--line);padding:16px 12px}
+.u-side .ws{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--mut);margin:12px 0 10px;padding-left:2px}
+.u-side .ni{height:24px;display:flex;align-items:center;gap:8px;padding:0 6px;border-radius:6px;font-size:12px;color:var(--ink2)}
+.u-side .ni.on{background:#EDEDF0;color:var(--ink);font-weight:500}
+.u-side .ni i{width:12px;height:12px;border-radius:3px;border:1.4px solid currentColor;opacity:.6}
+.u-side+.u-main{position:absolute;left:150px;right:0;top:0;bottom:0;padding:16px 14px}
+.u-main .ln{height:8px;border-radius:4px;background:#EFEFF1;margin-bottom:8px}
+.u-tester .proto-bg{position:absolute;inset:0 0 34px 0;overflow:hidden}
+.u-tester .tf{position:absolute;left:0;right:0;bottom:0;height:34px;background:#fff;border-top:1px solid var(--line);display:flex;align-items:center;gap:6px;padding:0 10px;font-size:11px;color:var(--mut)}
+.u-tester .tf .r{margin-left:auto;display:flex;align-items:center;gap:5px;color:var(--ink2)}
+.u-tester .tf .r i{width:6px;height:6px;border-radius:50%;background:#FF453A}
+.u-mail{background:#F4F4F2}
+.u-mail .card{position:absolute;left:14px;right:14px;top:12px;bottom:-10px;background:#fff;border-radius:8px;box-shadow:0 0 0 1px var(--line);padding:13px 14px;color:var(--ink);display:block;font-weight:400}
+.u-mail .card h6{margin:9px 0 3px;font-size:13px;font-weight:550;letter-spacing:-.01em}
+.u-mail .card p{margin:0;font-size:10.5px;color:var(--mut);line-height:1.4}
+.u-mail .card .mb{display:inline-block;margin-top:7px;height:22px;line-height:22px;padding:0 10px;border-radius:999px;background:var(--ink);color:#fff;font-size:10.5px;font-weight:550}
+.u-tab{background:#DEDFE3}
+.tabs{position:absolute;left:0;right:0;top:12px;height:34px;display:flex;align-items:flex-end;padding:0 6px;gap:2px}
+.tab{height:30px;flex:1;min-width:0;display:flex;align-items:center;gap:7px;padding:0 10px;border-radius:9px 9px 0 0;font-size:11.5px;color:#3C3C40;white-space:nowrap;overflow:hidden}
+.tab.on{background:#fff}
+.tab span{overflow:hidden;text-overflow:ellipsis}
+.tab svg{flex:none}
+.u-tab .addr{position:absolute;left:0;right:0;top:46px;height:30px;background:#fff;display:flex;align-items:center;padding:0 10px}
+.u-tab .addr span{flex:1;height:20px;border-radius:10px;background:#F1F1F3;font-family:var(--mono);font-size:10px;color:var(--mut);display:flex;align-items:center;padding:0 10px}
+.u-tab.dkt{background:#202124}
+.u-tab.dkt .tab{color:#E8EAED}.u-tab.dkt .tab.on{background:#35363A}
+.u-tab.dkt .addr{background:#35363A}.u-tab.dkt .addr span{background:#202124;color:#9AA0A6}
+.half{position:absolute;left:0;right:0;height:75px;overflow:hidden}
+.half.b{top:75px}
+.u-nav .nav{position:absolute;left:0;right:0;top:0;height:46px;display:flex;align-items:center;padding:0 12px;gap:10px;border-bottom:1px solid var(--line2);background:#fff;z-index:1}
+.u-nav .nav .lk{font-size:10.5px;color:var(--ink2)}
+.u-nav .nav .gs{white-space:nowrap;margin-left:auto;height:24px;padding:0 10px;border-radius:999px;background:var(--ink);color:#fff;font-size:10.5px;font-weight:550;display:flex;align-items:center}
+.u-nav .hh{position:absolute;left:14px;top:62px;font-size:16px;line-height:1.15;letter-spacing:-.02em;font-weight:450;width:200px}
+
+/* ===================== r1 ===================== */
+.recs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rec{background:#fff;border-radius:16px;box-shadow:0 0 0 1px var(--line);padding:20px;display:flex;flex-direction:column;gap:14px}
+.rec .n{font-family:var(--mono);font-size:11px;color:var(--mut2)}
+.rec h3{margin:0;font-weight:550;font-size:17px;letter-spacing:-.01em}
+.rec .why{margin:0;font-size:13.5px;color:var(--ink2)}
+.rec .test{margin:0;font-size:12.5px;color:var(--mut);border-top:1px solid var(--line2);padding-top:12px}
+.rec .test b{font-weight:550;color:var(--ink2)}
+.rec .pair{display:flex;align-items:center;gap:14px;height:48px}
+.rec .pair .plus{color:var(--mut2)}
+.rec .mf{height:230px}
+</style>
+</head>
+<body>
+<!--DEFS-->
+
+<header class="page-h">
+  <h1>Buttons and the logo in use</h1>
+  <p>Exploration, not decided. Eight button families and seven logo options, each tried in the moments where Aero actually shows them. Example data throughout (Kestrel Studio, Pocket, Tester B). Glass refraction renders in Chromium; other browsers get a frosted blur.</p>
+</header>
+
+<section class="xp" id="b1">
+  <h2>Button families</h2>
+  <p class="idea">Eight families, each as primary, secondary, small, disabled and loading, in pill and rounded rectangle. Glass families sit over real prototype content, because that is the only place glass reads.</p>
+  <div class="fams" id="fams"></div>
+</section>
+
+<section class="xp" id="b2">
+  <h2>Buttons in context</h2>
+  <p class="idea">The same eight families in five real moments. Every moment has detailed content near the buttons, so glass is judged where it would live, not on flat white.</p>
+  <div id="moments"></div>
+</section>
+
+<section class="xp" id="l1">
+  <h2>Logo options</h2>
+  <p class="idea">Seven options drawn as outlines from the real fonts. Each at large size, at 24px, and as the favicon at 32px and 16px, on light and dark.</p>
+  <div id="logos"></div>
+</section>
+
+<section class="xp" id="l2">
+  <h2>Logo in use</h2>
+  <p class="idea">Each option where people will actually meet it: the app sidebar, the tester screen footer (Free plan only), a share email, the browser tab and the website nav.</p>
+  <div class="ugrid" id="uses"></div>
+</section>
+
+<section class="xp" id="r1">
+  <h2>Recommendation</h2>
+  <p class="idea">Three pairings worth putting in front of people, from safest to boldest, each with what would settle it.</p>
+  <div class="recs" id="recs"></div>
+</section>
+
+<script>
+const LOGOS = /*LOGOS*/[];
+const HK = {'aero-lower':.78,'mark-lock':1.18};          // height factor so the cap height matches across options
+
+/* ---------------- families ---------------- */
+const FAM = [
+  {id:'ink', name:'Ink solid', tag:'CSS', note:'Black primary, white secondary with a hairline. Calm, high contrast, lets the blue dot stay the only bright thing.'},
+  {id:'blue', name:'Aero blue solid', tag:'CSS', note:'The accent as the button. Clear call to action, but blue then appears everywhere and the dot loses its job.'},
+  {id:'outline', name:'Ink outline', tag:'CSS', note:'1.5px ink line, no fill. Light on the page; the primary only wins by weight, so it needs space around it.'},
+  {id:'quiet', name:'Quiet text', tag:'CSS', note:'Underlined text, no shape. For the third action or dense tables; never alone as the main action.'},
+  {id:'tint', name:'Soft tint, neutral', tag:'CSS', note:'7% ink fill, no colour, no border. A grey that reads as a control, not a pastel box.'},
+  {id:'gclear', name:'V3 glass, clear', tag:'Glass', glass:{pri:['secondary',null,'1.6'],sec:['secondary',null,'.8']}, dk:{pri:['dark',null,'1.6'],sec:['dark',null,'.8']},
+    note:'Clear glass for both. Over a prototype it is the quietest floating control; the primary only differs by weight.'},
+  {id:'gink', name:'V3 glass, ink tint', tag:'Glass', glass:{pri:['primary','rgba(29,29,31,.72)'],sec:['secondary']}, dk:{pri:['primary','rgba(245,245,243,.86)'],sec:['dark']},
+    note:'Ink-tinted glass primary, clear secondary. The black button, but the content still shows through at the edge.'},
+  {id:'gblue', name:'V3 glass, blue tint', tag:'Glass', glass:{pri:['primary','rgba(52,120,246,.84)'],sec:['secondary']}, dk:{pri:['primary','rgba(52,120,246,.84)'],sec:['dark']},
+    note:'Blue-tinted glass primary, clear secondary. The most "Aero" looking; strongest over busy prototypes.'},
+];
+const AR = '<svg class="ar" viewBox="0 0 16 16"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5"/></svg>';
+
+function btn(f, o){
+  const size = o.size||'md', shape = o.shape||'pill', role = o.role||'pri';
+  let lab = o.label;
+  if (o.state==='loading') lab = '<i class="spin"></i>' + lab;
+  if (f.id==='quiet' && role==='pri' && o.state!=='loading' && o.arrow) lab += AR;
+  const dis = o.state==='disabled' ? ' disabled' : '';
+  const busy = o.state==='loading' ? ' aria-busy="true"' : '';
+  const cls = `bt ${size} ${shape} ${role}`;
+  if (f.glass){
+    const g = (o.dark ? f.dk : f.glass)[role];
+    return `<button class="${cls} gb" data-glass-v3="${g[0]}"${g[1]?` data-fill="${g[1]}"`:''}${g[2]?` data-strength="${g[2]}"`:''}${dis}${busy}>${lab}</button>`;
+  }
+  return `<button class="${cls} f-${f.id}${o.dark?' dk':''}${o.img?' on-img':''}"${dis}${busy}>${lab}</button>`;
+}
+
+/* ---------------- example prototypes (drawn at 1x, scaled into frames) ---------------- */
+function pocketWeb(){
+  const tx = [['#22A06B','G','Green Grocer','Today, 09:12','−£14.20'],['#FF7AB6','C','Corner Café','Today, 08:03','−£3.40'],['#3478F6','T','City Transit','Yesterday','−£2.80'],['#FFB020','S','Sam (Example)','Yesterday','+£20.00']];
+  return `<div class="proto pw"><div class="pw-side"><div class="pw-logo"><i></i>Pocket</div>
+    <div class="pw-nav on">Home</div><div class="pw-nav">Payments</div><div class="pw-nav">Activity</div><div class="pw-nav">More</div>
+    <div class="promo">Save 3% on every top up this month</div></div>
+    <div class="pw-main"><div class="pw-top"><h3>Good morning, Alex</h3><div class="av">A</div></div>
+    <div class="pw-row"><div class="pw-bal"><i class="c1"></i><i class="c2"></i><small>Main account</small><b>£2,480.60</b><div class="r"><span>Send</span><span>Request</span><span>Top up</span></div></div>
+    <div class="pw-cards"><div class="card k1"><span class="nm">Everyday</span><span class="no">•••• 4417</span></div><div class="card k2"><span class="nm">Travel</span><span class="no">•••• 0921</span></div><div class="card k3"><span class="nm">Bills</span><span class="no">•••• 7730</span></div><div class="card k4"><span class="nm">Savings</span><span class="no">£640</span></div></div></div>
+    <div class="pw-grid"><div class="pw-panel"><h4>Spending</h4><div class="bars">${[['#FF5A3C',60],['#FFC93C',85],['#0EA5A0',45],['#7C5CFF',95],['#FF7AB6',70],['#123C3D',55],['#FF5A3C',78]].map(b=>`<i style="background:${b[0]};height:${b[1]}%"></i>`).join('')}</div></div>
+    <div class="pw-panel"><h4>Recent</h4>${tx.map(t=>`<div class="tx"><i style="background:${t[0]}">${t[1]}</i><div><b>${t[2]}</b><small>${t[3]}</small></div><span>${t[4]}</span></div>`).join('')}</div></div></div></div>`;
+}
+function pocketPhone(){
+  const tx = [['#22A06B','G','Green Grocer','−£14.20'],['#FF7AB6','C','Corner Café','−£3.40'],['#3478F6','T','City Transit','−£2.80']];
+  return `<div class="proto pp"><div class="pp-sb"><span>9:41</span><span>5G</span></div>
+   <div class="pp-top"><div><small>Good morning</small><b>Alex</b></div><i>A</i></div>
+   <div class="pw-bal"><i class="c1"></i><i class="c2"></i><small>Main account</small><b>£2,480.60</b><div class="r"><span>+ £320 this week</span></div></div>
+   <div class="pp-qa">${[['#0EA5A0','↗','Send'],['#7C5CFF','↙','Request'],['#FFC93C','+','Top up'],['#23232A','⋯','More']].map(q=>`<div><i style="background:${q[0]}">${q[1]}</i>${q[2]}</div>`).join('')}</div>
+   <div class="pp-h">Recent</div>
+   ${tx.map(t=>`<div class="tx"><i style="background:${t[0]}">${t[1]}</i><div><b>${t[2]}</b></div><span>${t[3]}</span></div>`).join('')}
+   <div class="pp-tab"><div class="on"><i></i>Home</div><div><i></i>Pay</div><div><i></i>Activity</div><div><i></i>More</div></div></div>`;
+}
+function checkout(){
+  return `<div class="proto co"><div class="co-l"><div class="co-brand">Fern &amp; Co</div><div class="co-crumb"><span>Bag</span><span class="on">Payment</span><span>Done</span></div>
+   <div class="co-art"><i class="b1"></i><i class="b5"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i><i class="b6"></i></div></div>
+   <div class="co-r"><h3>Payment</h3><div class="co-line"><span>Monstera, large</span><b>£64.00</b></div><div class="co-line"><span>Ceramic pot</span><b>£20.00</b></div><div class="co-line"><span>Delivery</span><b>Free</b></div>
+   <div style="font-weight:650;font-size:15px;margin-top:6px">Saved cards</div><div class="co-saved"><div style="background:#0EA5A0">Everyday<br>•••• 4417</div><div style="background:#23232A">Bills<br>•••• 7730</div><div style="background:#FF7AB6">New card</div></div>
+   <div class="co-pay">Pay £84.00</div></div></div>`;
+}
+function onboarding(){
+  return `<div class="proto ob"><div style="font-weight:800;font-size:26px">Pocket</div><h3>Save for the things you love</h3><p>Set a goal, round up your spending, watch it grow.</p><span class="cta">Get started</span><i class="o1"></i><i class="o2"></i><i class="o3"></i></div>`;
+}
+const PROTO = {web:[pocketWeb,1200], phone:[pocketPhone,390], co:[checkout,1200], ob:[onboarding,1200]};
+function scaled(kind, w, x=0, y=0){
+  const p = PROTO[kind], s = w / p[1];
+  return `<div class="sc" style="left:${x}px;top:${y}px;transform:scale(${s.toFixed(4)})">${p[0]()}</div>`;
+}
+
+/* ---------------- b1: family cards ---------------- */
+function famCard(f, i){
+  const rows = ['pill','rect'].map(shape => `<div class="row"><span class="lbl">${shape==='pill'?'Pill':'Rect'}</span>
+    ${btn(f,{role:'pri',shape,label:'Publish',img:!!f.glass,arrow:1})}
+    ${btn(f,{role:'sec',shape,label:'Copy link',img:!!f.glass})}
+    ${btn(f,{role:'pri',shape,size:'sm',label:'Share',img:!!f.glass})}
+    ${btn(f,{role:'pri',shape,label:'Publish',state:'disabled',img:!!f.glass})}
+    ${btn(f,{role:'pri',shape,label:'Publishing',state:'loading',img:!!f.glass})}</div>`).join('');
+  const bg = f.glass ? `<div class="bg">${scaled('web', 820, -150, -120)}</div>` : '';
+  return `<div class="fam"><div class="fam-h"><span class="n">${String(i+1).padStart(2,'0')}</span><b>${f.name}</b><span class="tag">${f.tag}</span></div>
+    <div class="fam-note">${f.note}</div>
+    <div class="stage${f.glass?' img':''}">${bg}<div class="rows">${rows}</div></div>
+    <div class="stage-cap"><span>Left to right: primary, secondary, small, disabled, loading</span></div></div>`;
+}
+document.getElementById('fams').innerHTML = FAM.map(famCard).join('');
+
+/* ---------------- b2: moments ---------------- */
+const W = 328, H = 230;
+const MOMENTS = [
+  {id:'create', name:'Create footer', note:'The last step of publishing. The footer floats over the preview of what you uploaded.', fn:(f,sh)=>{
+    const g = !!f.glass;
+    return `<div class="mf"><div class="clip" style="inset:30px 0 0 0">${scaled('web', 520, -14, -10)}</div>
+      <div class="mf-bar"><b style="font-weight:550">New site</b><span style="color:var(--mut)">Step 3 of 3</span><span class="url">pocket.aeroapp.ai</span></div>
+      <div class="mf-foot ${g?'':'bar'}"><span class="sp"></span>${btn(f,{role:'sec',shape:sh,label:'Back',img:true})}${btn(f,{role:'pri',shape:sh,label:'Publish and get link',img:true})}</div></div>`;}},
+  {id:'session', name:'Session header', note:'Player-first session view: controls float over the recording. Tab recordings show no cursor.', fn:(f,sh)=>
+    `<div class="mf"><div class="clip" style="inset:0">${scaled('web', 400, -8, -6)}</div>
+      <div class="top-ov"><span class="chip-w"><span class="av">B</span>Tester B</span><span class="sp"></span>${btn(f,{role:'sec',shape:sh,label:'Share',img:true})}${btn(f,{role:'pri',shape:sh,label:'Next session',img:true})}</div>
+      <div class="prog"><span>03:08</span><span class="tr"><i></i></span><span>07:12</span></div></div>`},
+  {id:'tester-start', name:'Tester screen: before', note:'What a tester sees first, over the prototype they were sent (any colour). Screen and voice, stop any time.', fn:(f,sh)=>{
+    const g = !!f.glass;
+    const body = `<span class="k">Kestrel Studio (Example)</span><h5>Try the Checkout prototype</h5><p>Your screen and voice are recorded while you use it. Stop any time.</p>`;
+    return `<div class="mf"><div class="clip" style="inset:0">${scaled('co', 420, -40, -10)}</div>
+      ${g ? `<div class="welcome float"><div class="txt">${body}</div><div class="bs">${btn(f,{role:'pri',shape:sh,label:'Start'})}${btn(f,{role:'sec',shape:sh,label:'Not now'})}</div></div>`
+          : `<div class="welcome">${body}<div class="bs">${btn(f,{role:'pri',shape:sh,label:'Start'})}${btn(f,{role:'sec',shape:sh,label:'Not now'})}</div></div>`}</div>`;}},
+  {id:'tester-task', name:'Tester screen: task panel', note:'A floating task panel while they work. "I\'m done" moves to the next task.', fn:(f,sh)=>{
+    const g = !!f.glass;
+    return `<div class="mf"><div class="clip" style="inset:0">${scaled('co', 420, -10, -10)}</div>
+      <div class="recbar"><i></i>Recording this tab</div>
+      <div class="task${g?' glassy':''}"><span class="k">Task 2 of 3</span><p>Pay with a saved card.</p><div class="bs">${btn(f,{role:'pri',shape:sh,size:'sm',label:'I\'m done',noArrow:1,img:true})}${btn(f,{role:'sec',shape:sh,size:'sm',label:'Skip',img:true})}</div></div></div>`;}},
+  {id:'hero', name:'Marketing hero', note:'Homepage hero on a soft wash, the CTA overlapping the real app shot.', fn:(f,sh)=>
+    `<div class="mf"><div class="wash"></div><div class="hero-win">${scaled('web', 330)}</div>
+      <div class="hero-h"><h5>Publish your prototype. Watch people use it<em>.</em></h5></div>
+      <div class="hero-bs">${btn(f,{role:'pri',shape:sh,label:'Put a prototype online',img:true,arrow:1})}</div></div>`},
+  {id:'dark', name:'Dark surface', note:'The app\'s dark theme: a bar floating over session thumbnails.', fn:(f,sh)=>{
+    const g = !!f.glass;
+    return `<div class="mf dkf${sh==='rect'?' rect-shape':''}"><div class="dk-head"><b style="font-weight:550">Pocket</b><span style="color:var(--dk-mut)">6 sessions</span><span class="m">Example</span></div>
+      <div class="dk-grid"><div class="dk-th">${scaled('web',150)}<span class="t">A · 05:40</span></div><div class="dk-th">${scaled('phone',150,0,-40)}<span class="t">B · 07:12</span></div><div class="dk-th">${scaled('ob',150)}<span class="t">C · 04:55</span></div><div class="dk-th">${scaled('co',150)}<span class="t">D · 06:18</span></div></div>
+      <div class="dk-bar ${g?'float':'solid'}"><span class="t">Tester B · 03:08</span>${btn(f,{role:'sec',shape:sh,size:'sm',label:'Share',dark:true})}${btn(f,{role:'pri',shape:sh,size:'sm',label:'Next session',dark:true})}</div></div>`;}},
+];
+const SHAPE = {ink:'pill',blue:'rect',outline:'pill',quiet:'pill',tint:'rect',gclear:'pill',gink:'pill',gblue:'rect'};
+document.getElementById('moments').innerHTML = MOMENTS.map(m => `<div class="moment"><div class="moment-h"><b>${m.name}</b><span>${m.note}</span></div>
+  <div class="mgrid">${FAM.map(f => `<div class="mcell">${m.fn(f, SHAPE[f.id])}<div class="cap"><b>${f.name}</b><span class="lbl">${SHAPE[f.id]==='pill'?'Pill':'Rounded rect'}</span></div></div>`).join('')}</div></div>`).join('');
+
+/* ---------------- logos ---------------- */
+function logo(id, h){
+  const m = LOGOS.find(l => l.id===id), hh = h * (HK[id]||1);
+  return `<svg class="lg" width="${(hh*m.ratio).toFixed(1)}" height="${hh.toFixed(1)}" aria-label="Aero"><use href="#lg-${id}" width="100%" height="100%"/></svg>`;
+}
+function fav(id, s){ return `<svg class="lg" width="${s}" height="${s}"><use href="#fv-${id}" width="100%" height="100%"/></svg>`; }
+const FAVNOTE = {'aero-dot':'"A." Geist 700','aero-plain':'"A" Geist 700, no dot','aero-lower':'"a." Geist 700','mark-lock':'"A." tile, same as the mark','aero-instrument':'"A." Instrument Sans','aero-schibsted':'"A." Schibsted Grotesk','dot-mark':'The dot on an ink tile'};
+document.getElementById('logos').innerHTML = LOGOS.map((l,i) => {
+  const pan = cls => `<div class="lpan ${cls}"><div class="big">${logo(l.id, 58)}</div>
+    <div class="smalls"><div>${logo(l.id, 24)}<span class="lbl">24px</span></div>
+      <div>${fav(l.id,32)}<span class="lbl">32</span></div><div>${fav(l.id,16)}<span class="lbl">16</span></div>
+      <div>${fav(l.id,48)}<span class="lbl">48, detail</span></div></div></div>`;
+  return `<div class="lrow"><div class="lmeta"><span class="n">${String(i+1).padStart(2,'0')}${i===0?'  Favourite':''}</span><b>${l.name}</b><p>${l.note}</p><span class="fav">Favicon: ${FAVNOTE[l.id]}</span></div>${pan('lt')}${pan('dk')}</div>`;
+}).join('');
+
+/* ---------------- logo in use ---------------- */
+const USEH = ['App sidebar','Tester screen footer','Share email','Browser tab, light and dark','Website nav'];
+let u = '<div></div>' + USEH.map(h => `<div class="uhead">${h}</div>`).join('');
+LOGOS.forEach((l,i) => {
+  u += `<div class="uname"><b>${l.name}</b><span>${String(i+1).padStart(2,'0')}</span></div>`;
+  u += `<div class="uc"><div class="u-side">${logo(l.id,15)}<div class="ws">Kestrel Studio (Example)</div><div class="ni on"><i></i>Home</div><div class="ni"><i></i>Sites</div><div class="ni"><i></i>Tests</div></div><div class="u-main"><div class="ln" style="width:70%"></div><div class="ln"></div><div class="ln" style="width:55%"></div></div></div>`;
+  u += `<div class="uc u-tester"><div class="proto-bg">${scaled('co', 330, 0, -6)}</div><div class="tf">Made with <span style="color:var(--ink)">${logo(l.id,11)}</span><span class="r"><i></i>Recording</span></div></div>`;
+  u += `<div class="uc u-mail"><div class="card">${logo(l.id,14)}<h6>Kestrel Studio sent you Pocket to try</h6><p>Your screen and voice are recorded. Stop any time.</p><span class="mb">Open the test</span></div></div>`;
+  const tabs = d => `<div class="tabs"><div class="tab on">${fav(l.id,16)}<span>Pocket · Sessions</span></div><div class="tab">${fav(l.id,16)}<span>pocket.aeroapp.ai</span></div></div><div class="addr"><span>aeroapp.ai/tests/pocket</span></div>`;
+  u += `<div class="uc" style="background:none"><div class="half u-tab" style="top:0;--tile:#1D1D1F;--glyph:#F5F5F3">${tabs()}</div><div class="half b u-tab dkt" style="--tile:#F5F5F3;--glyph:#1D1D1F">${tabs()}</div></div>`;
+  u += `<div class="uc u-nav"><div class="wash"></div><div class="nav">${logo(l.id,14)}<span class="lk">Pricing</span><span class="gs">Start free</span></div><div class="hh">One prompt and it's live<em style="font-style:normal;color:var(--blue)">.</em></div></div>`;
+});
+document.getElementById('uses').innerHTML = u;
+
+/* ---------------- recommendation ---------------- */
+const F = id => FAM.find(f => f.id===id);
+const RECS = [
+  {fam:'ink', logo:'aero-dot', title:'Ink solid with "Aero."', why:'The safest pair. Ink buttons stay calm everywhere, so the blue full stop really is the one bright thing on a page, as the brand says.',
+   test:'<b>Test:</b> a five-second test on the dashboard and homepage hero: what do people remember? If it is "the blue dot", the pair works.', m:'hero', sh:'pill'},
+  {fam:'gink', logo:'aero-dot', title:'Ink glass over prototypes, ink solid elsewhere', why:'One family with two states: solid ink on Aero\'s own pages, ink-tinted glass only where a control floats over someone\'s prototype (tester panel, player).',
+   test:'<b>Test:</b> the tester task panel over five prototypes of different colours: label contrast at AA, and do testers find "I\'m done" without being told.', m:'tester-task', sh:'pill'},
+  {fam:'gblue', logo:'dot-mark', title:'Blue glass with the dot mark', why:'The boldest: the dot becomes the mark, the playhead and the loader, and blue glass carries it into the buttons. Most distinctive, least quiet.',
+   test:'<b>Test:</b> a preference test of this pair against pair 1 on the session view and the homepage, plus the favicon among ten open tabs.', m:'session', sh:'rect'},
+];
+document.getElementById('recs').innerHTML = RECS.map((r,i) => `<div class="rec"><span class="n">${String(i+1).padStart(2,'0')}</span><h3>${r.title}</h3>
+  <div class="pair">${logo(r.logo, 26)}<span class="plus">+</span>${F(r.fam).glass?`<span class="lbl">${F(r.fam).name}</span>`:btn(F(r.fam),{role:'pri',shape:r.sh,label:'Publish'})}</div>
+  ${MOMENTS.find(m=>m.id===r.m).fn(F(r.fam), r.sh)}
+  <p class="why">${r.why}</p><p class="test">${r.test}</p></div>`).join('');
+</script>
+<script src="glass-v3.js"></script>
+</body>
+</html>

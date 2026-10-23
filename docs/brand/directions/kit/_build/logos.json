@@ -1,0 +1,44 @@
+[
+ {
+  "id": "aero-dot",
+  "name": "\"Aero.\" Geist 500",
+  "note": "Today's favourite. The blue full stop is the one bright thing on a page.",
+  "ratio": 3.1791
+ },
+ {
+  "id": "aero-plain",
+  "name": "\"Aero\" Geist 500, no dot",
+  "note": "Plainest. Loses the one memorable detail; colour moves to the product.",
+  "ratio": 2.9044
+ },
+ {
+  "id": "aero-lower",
+  "name": "\"aero.\" lowercase",
+  "note": "Softer and more casual; closer to a tool than a company.",
+  "ratio": 3.8613
+ },
+ {
+  "id": "mark-lock",
+  "name": "\"A.\" mark plus \"Aero\"",
+  "note": "A tile you can recognise at 16px, then the plain word beside it.",
+  "ratio": 3.7495
+ },
+ {
+  "id": "aero-instrument",
+  "name": "\"Aero.\" Instrument Sans 500",
+  "note": "A little warmer, rounder joins; same dot, same rules.",
+  "ratio": 3.1836
+ },
+ {
+  "id": "aero-schibsted",
+  "name": "\"Aero.\" Schibsted Grotesk 500",
+  "note": "More character in the a and the r; reads editorial, less app.",
+  "ratio": 3.3325
+ },
+ {
+  "id": "dot-mark",
+  "name": "Dot mark plus \"Aero\"",
+  "note": "The dot alone is the mark: it becomes the playhead, the loader and the favicon.",
+  "ratio": 3.6244
+ }
+]

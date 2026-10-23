@@ -1,11 +1,19 @@
 ---
 brand-sync: figmaApp docs/brand is the source. Copy this file unchanged to aero-landing-page/docs/brand/.
-version: 2026-10-23.2
+version: 2026-10-23.3
 ---
 
 # Aero brand and product decisions
 
 The running log of what Duane decided, newest first. Add a line whenever he decides something; never delete a line, strike it through and say what replaced it. The full evidence is in `research/conversation-audit.md`.
+
+## 23 Oct 2026: after the app UI round
+- **A step was missing: UI directions before components.** Before tightening components, show each main screen (home, sessions, session review, publish from a prompt, upload HTML, review across sessions) drawn in each direction (A, B, C, D) next to the app UI round and today's app; decide what works and what doesn't; then do the detailed components. The app UI round is good work to reuse and tighten after that decision.
+- **Marketing versions of components are still to do:** the real component, simplified and bigger, for the website, videos and cards.
+- **Primary button colour not decided.** Black "looks nice", but explore button options in the directions stage first.
+- **Logo not decided.** "Aero." with the blue dot is still the favourite, but earlier mockups used "Aero" in full and other forms; explore in use.
+- **Avoid patterns that look AI-made:** white cards with a coloured stripe down one side; icons sitting in pastel rounded boxes.
+- **Work as a team of roles** (marketer, brand, copywriter, UX, UI, information architect, animator, graphic designer), as in round 5.
 
 ## 23 Oct 2026: after the round 5 mockups
 - **UI first, then the website.** Design the whole app UI and the shared design system first; the homepage, content pages and videos are rebuilt on it afterwards.
