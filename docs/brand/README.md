@@ -1,6 +1,6 @@
 ---
 brand-sync: figmaApp docs/brand is the source. Copy this file unchanged to aero-landing-page/docs/brand/.
-version: 2026-10-23.3
+version: 2026-10-23.4
 ---
 
 # Aero brand folder
@@ -19,6 +19,7 @@ Everything about how Aero looks, sounds and is built, kept in the repo so it isn
 | `glass/` | The V3 glass button script, its source and the other variants studied, research notes. |
 | `research/` | The strategy dossier, reference analysis, app UX review, conversation audit. |
 | `mockups/` | The round 5 creative brief and the independent critique. |
+| `app-ui-v3/` | App UI round v3: v2 polished; the gradient tokens and sidebar live in its shared/aero.css. |
 | `app-ui-v2/` | App UI round v2 on A Studio: shared stylesheet, every screen in light and dark. |
 | `directions/` | The UI directions stage: every main screen in A to D, flows, marketing kits, buttons and logo options. |
 | `app-ui/` | The whole-app UI round: brief, then tokens, components, screens and flows. |
