@@ -7,6 +7,19 @@ version: 2026-10-23.4
 
 The running log of what Duane decided, newest first. Add a line whenever he decides something; never delete a line, strike it through and say what replaced it. The full evidence is in `research/conversation-audit.md`.
 
+## 23 Oct 2026: after the app UI v2 board ("overall looks amazing")
+- **Sidebar: improve today's**, don't replace it. "Aero." at the top with the collapse arrow; the account stays bottom left; no separate workspace name at the top.
+- **A sample site and a sample test in every account by default** (open: personalised or fixed, see the questions page). It affects the first run; the first-run page still looks good.
+- **Gradients must be nailed**: the three step washes match the marketing material (Publish, Test, Review), drawn to the standard of the OpenAI-style references from round 3; an uploaded site's own colour can tint its wash.
+- **Site page:** no "Test it if you like" push (testing lives in the site's menu, e.g. "User test this site"). After publishing, go to the site's page in Aero, not the live site.
+- **"Open as tester" becomes "Preview as tester".**
+- **Tester task panel:** a square panel the tester can move out of the way, with a separate timer, and both "Done" and "Couldn't do it".
+- **Sessions list needs filters**, also in the all-sessions view.
+- **Session review:** looks good; tidy the transcript (cleaner, more even).
+- **Insights timeline:** better UI, aligned with the session timeline.
+- **Marketing:** the component versions suit feature pages; general marketing keeps the earlier real-UI pages he liked.
+- **Questions page** for the open product questions, with pictures and inline answers.
+
 ## 23 Oct 2026: after the UI directions board
 **Look**
 - **A (Studio) is the base.** "Looks great, feels like Figma, which isn't bad." Round 5 versions were too busy.
