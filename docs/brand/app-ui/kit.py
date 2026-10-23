@@ -218,7 +218,7 @@ def scrub(pos=0.44, marks=(161, 182, 188), length=LEN_B, tasks=(182,)):
     return (f'<div class="ae-scrub"><span class="ae-scrub__track"></span><span class="ae-scrub__fill" style="width:{pos*100:.1f}%"></span>'
             f'{tk}{m}<span class="ae-scrub__head" style="left:{pos*100:.1f}%"></span></div>')
 
-def player(pos=0.44, stage_extra="", chips=True, glass_float=False, tall=False, cur="03:08"):
+def player(pos=0.44, stage_extra="", chips=True, glass_float=False, tall=False, cur="03:08", floating=False):
     ch = ""
     if chips:
         ch = (f'<div class="ae-player__chips"><span class="ae-player__chip">{i("monitor","ae-i--sm")}Laptop · Chrome</span>'
@@ -228,15 +228,20 @@ def player(pos=0.44, stage_extra="", chips=True, glass_float=False, tall=False, 
         fl = (f'<div class="ae-player__float">{btn("", "secondary", True, "", "back10", extra="ae-btn--icon ae-btn--pill", attrs="aria-label=\"Back 10 seconds\"")}'
               f'{btn("", "primary", True, "", "pause", extra="ae-btn--icon ae-btn--pill", attrs="aria-label=\"Pause\"")}'
               f'{btn("1×", "secondary", True, extra="ae-btn--pill")}</div>')
+    if floating:
+        pill = (f'<div class="ae-player__pill">{btn("", "primary", True, "", "pause", extra="ae-btn--icon ae-btn--pill ae-play-g", attrs="aria-label=\"Pause\"")}'
+                f'<span class="ae-player__time"><b>{cur}</b> / 07:12</span>{scrub(pos)}{btn("1×", "secondary", True, size="sm", extra="ae-btn--pill")}</div>')
+        return f'<div class="ae-player ae-player--float"><div class="ae-player__stage">{ch}{proto(hl="More")}{stage_extra}{pill}</div></div>'
     return (f'<div class="ae-player"><div class="ae-player__stage{" ae-player__stage--tall" if tall else ""}">{ch}{proto(hl="More")}{stage_extra}{fl}</div>'
             f'<div class="ae-player__bar"><button class="ae-play" aria-label="Play">{i("pause")}</button>'
             f'<span class="ae-player__time"><b>{cur}</b> / 07:12</span>{scrub(pos)}'
             f'<span class="ae-tag ae-tag--line ae-tag--mono">1×</span></div></div>')
 
-def transcript(now_idx=5, playing=True, read=False, notes=True, upto=None):
+def transcript(now_idx=5, playing=True, read=False, notes=True, upto=None, start=0):
     rows = []
     lines = TRANSCRIPT if upto is None else TRANSCRIPT[:upto]
     for k, ln in enumerate(lines):
+        if k < start: continue
         t1 = TRANSCRIPT[k+1]["t"] if k+1 < len(TRANSCRIPT) else ln["t"] + 9
         t1 = min(t1, ln["t"] + 9)
         cls = ["ae-tline"]
@@ -308,7 +313,7 @@ def sidebar(active="home", recent=True, collapsed=False, usage=True, new_badge=T
     rec = ""
     if recent:
         rec = ('<div class="ae-nav__head ae-label">Recent tests</div>'
-               f'<a class="ae-nav-item ae-nav-item--sub{" is-active" if active == "pocket" else ""}"><span class="ae-nav-item__chip" style="background:var(--ae-test)"></span>Pocket<span class="ae-nav-item__count" style="color:var(--ae-link)">2 new</span></a>'
+               f'<a class="ae-nav-item ae-nav-item--sub{" is-active" if active == "pocket" else ""}"><span class="ae-nav-item__chip" style="background:var(--ae-ink-3)"></span>Pocket<span class="ae-nav-item__count" style="color:var(--ae-link)">2 new</span></a>'
                '<a class="ae-nav-item ae-nav-item--sub"><span class="ae-nav-item__chip"></span>Onboarding v2</a>'
                '<a class="ae-nav-item ae-nav-item--sub"><span class="ae-nav-item__chip"></span>Checkout</a>')
     use = ""

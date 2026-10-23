@@ -1,6 +1,6 @@
 ---
 brand-sync: figmaApp docs/brand is the source. Copy this file unchanged to aero-landing-page/docs/brand/.
-version: 2026-10-23.1
+version: 2026-10-23.2
 ---
 
 # Aero playbook: re-evaluating the product, brand and website
@@ -51,7 +51,7 @@ The same process HeyBooking went through in October 2026 (see the HeyBooking rep
 ## Log
 - 21 Oct: repair, model tests, OpenRouter fallback, transcription dedupe.
 - 22 Oct: research and strategy doc; fix PRs (#262, #263, landing #5); brand rounds 1 to 4; glass lab; app UX review; round 5 mockups.
-- 23 Oct: feedback on the mockups; this folder, the decisions log, the design system plan and CLAUDE.md rules.
+- 23 Oct: feedback on the mockups; this folder, the decisions log, the design system plan and CLAUDE.md rules; cursor and Figma Embed API investigation; the app UI round (files in app-ui/).
 
 ## Boards and labs (private links, Duane's account)
 | What | Link | Status |
@@ -62,4 +62,5 @@ The same process HeyBooking went through in October 2026 (see the HeyBooking rep
 | Round 3 brand | https://claude.ai/artifact/MdD4Hhri8YRxox7PqrJS1t | Superseded |
 | Round 4 brand and font study | https://claude.ai/artifact/UuZ6VJwV65nD8LQKjHPfVX | Font study still useful |
 | Glass button lab | https://claude.ai/artifact/4dajXGEv5aYB5hsyS5mFVw | V3 chosen |
-| Round 5 mockups (A Studio, B Colour, C Story, D Replay) | https://claude.ai/artifact/8BPToDfdd57Bpm1wpxWVtN | Current; feedback 23 Oct |
+| Round 5 mockups (A Studio, B Colour, C Story, D Replay) | https://claude.ai/artifact/8BPToDfdd57Bpm1wpxWVtN | Feedback 23 Oct |
+| App UI round (screens, tester flow, flows, components) | https://claude.ai/artifact/Y1vWdd2BsZdkn6HmvTW5Zk | Current; 11 decisions waiting |

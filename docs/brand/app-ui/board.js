@@ -24,7 +24,7 @@
     var inner = el.firstElementChild; if (!inner) return;
     var w = +el.getAttribute('data-w') || 1180, h = +el.getAttribute('data-h') || 760;
     var W = el.clientWidth;
-    var natural = W < 600 && !el.hasAttribute('data-fixed');
+    var natural = window.innerWidth < 700 && !el.hasAttribute('data-fixed');
     el.classList.toggle('is-natural', natural);
     if (natural) {
       inner.style.width = ''; inner.style.height = ''; inner.style.transform = '';
@@ -46,7 +46,7 @@
 
   /* transcript demo: play highlights words by their stored timings. No cursor is drawn on the stage. */
   function demo(box) {
-    var playBtn = box.querySelector('.ae-play'), tr = box.querySelector('.ae-transcript'), head = box.querySelector('.ae-scrub__head'), fill = box.querySelector('.ae-scrub__fill'), time = box.querySelector('.ae-player__time b');
+    var playBtn = box.querySelector('.ae-play, .ae-play-g'), tr = box.querySelector('.ae-transcript'), head = box.querySelector('.ae-scrub__head'), fill = box.querySelector('.ae-scrub__fill'), time = box.querySelector('.ae-player__time b');
     if (!playBtn || !tr) return;
     var len = (+box.getAttribute('data-len') || 432) * 1000, t = +box.getAttribute('data-start') || 188000, timer = null;
     var ws = [].slice.call(tr.querySelectorAll('.ae-w')), lines = [].slice.call(tr.querySelectorAll('.ae-tline'));
@@ -58,12 +58,13 @@
       lines.forEach(function (l, k) { var lt = +l.getAttribute('data-t'), nx = lines[k + 1] ? +lines[k + 1].getAttribute('data-t') : lt + 9000; l.classList.toggle('is-now', t >= lt && t < nx); });
       var p = Math.min(100, t / len * 100); if (head) head.style.left = p + '%'; if (fill) fill.style.width = p + '%'; if (time) time.textContent = fmt(t);
     }
-    function play() { if (timer) return stop(); playBtn.innerHTML = '<svg class="ae-i" style="fill:currentColor;stroke:none"><use href="#i-pause"/></svg>'; timer = setInterval(function () { t += 120; if (t > len) t = 0; paint(); }, 120); }
-    function stop() { clearInterval(timer); timer = null; playBtn.innerHTML = '<svg class="ae-i" style="fill:currentColor;stroke:none"><use href="#i-play"/></svg>'; }
+    function icon(n) { var u = playBtn.querySelector('use'); if (u) u.setAttribute('href', '#i-' + n); }
+    function play() { if (timer) return stop(); icon('pause'); timer = setInterval(function () { t += 120; if (t > len) t = 0; paint(); }, 120); }
+    function stop() { clearInterval(timer); timer = null; icon('play'); }
     playBtn.addEventListener('click', play);
     lines.forEach(function (l) { l.addEventListener('click', function () { t = +l.getAttribute('data-t'); paint(); }); });
     box.querySelectorAll('[data-jump]').forEach(function (j) { j.addEventListener('click', function () { t = +j.getAttribute('data-jump'); paint(); box.querySelectorAll('.ae-friction').forEach(function (f) { f.classList.toggle('is-active', f === j); }); }); });
-    if (playBtn) playBtn.innerHTML = '<svg class="ae-i" style="fill:currentColor;stroke:none"><use href="#i-play"/></svg>';
+    icon('play');
   }
   document.addEventListener('DOMContentLoaded', function () { document.querySelectorAll('[data-demo="session"]').forEach(demo); });
 
@@ -77,7 +78,7 @@
       steps.forEach(function (x, j) { x.classList.toggle('is-on', j === k); });
       caps.forEach(function (x, j) { x.style.display = j === k ? '' : 'none'; });
       if (cnt) cnt.textContent = (k + 1) + ' / ' + frames.length;
-      if (fill) fill.style.width = ((k + 1) / frames.length * 100) + '%';
+      var a = +(f.getAttribute('data-from') || 0), b = +(f.getAttribute('data-to') || 100); if (fill) fill.style.width = (a + (k + 1) / frames.length * (b - a)) + '%';
       fitAll();
     }
     f.querySelector('[data-prev]').addEventListener('click', function () { go(k - 1); });

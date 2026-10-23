@@ -260,7 +260,7 @@ so the same markup works in the app, a scaled screen board, and the marketing ki
 /* ================= Lists ================= */
 .ae-list { display: flex; flex-direction: column; }
 .ae-list > * + * { border-top: 1px solid var(--ae-line); }
-.ae-list--card { background: var(--ae-paper); border-radius: var(--ae-r-lg); box-shadow: inset 0 0 0 1px var(--ae-line); overflow: hidden; }
+.ae-list--card { container-type: inline-size; background: var(--ae-paper); border-radius: var(--ae-r-lg); box-shadow: inset 0 0 0 1px var(--ae-line); overflow: hidden; }
 .ae-listhead { display: grid; align-items: center; gap: var(--ae-s-3); padding: 8px var(--ae-s-4); background: var(--ae-mist); }
 .ae-listhead > * { font-family: var(--ae-mono); font-size: var(--ae-fs-2xs); letter-spacing: var(--ae-track-label); text-transform: uppercase; color: var(--ae-ink-3); white-space: nowrap; }
 
@@ -551,8 +551,8 @@ so the same markup works in the app, a scaled screen board, and the marketing ki
 .ae-guide__head { display: flex; align-items: center; gap: 8px; color: var(--ae-ink); font-weight: var(--ae-fw-strong); }
 .ae-guide__head .ae-i { color: var(--ae-ink-3); }
 .ae-guide ol { margin: 0; padding: 0; list-style: none; counter-reset: g; display: flex; flex-direction: column; gap: 8px; }
-.ae-guide ol li { counter-increment: g; display: grid; grid-template-columns: 20px 1fr; gap: 8px; }
-.ae-guide ol li::before { content: counter(g); width: 18px; height: 18px; border-radius: 50%; background: var(--ae-paper); box-shadow: inset 0 0 0 1px var(--ae-line-2); font-family: var(--ae-mono); font-size: 10px; display: grid; place-items: center; color: var(--ae-ink-2); }
+.ae-guide ol li { counter-increment: g; position: relative; padding-left: 28px; }
+.ae-guide ol li::before { position: absolute; left: 0; top: 1px; content: counter(g); width: 18px; height: 18px; border-radius: 50%; background: var(--ae-paper); box-shadow: inset 0 0 0 1px var(--ae-line-2); font-family: var(--ae-mono); font-size: 10px; display: grid; place-items: center; color: var(--ae-ink-2); }
 .ae-guide--closed { flex-direction: row; align-items: center; padding: 10px 14px; }
 
 .ae-callout { display: flex; gap: 10px; align-items: flex-start; padding: 11px 14px; border-radius: var(--ae-r-md); font-size: var(--ae-fs-sm); line-height: 1.45; background: var(--ae-mist); color: var(--ae-ink-2); min-width: 0; }
@@ -643,7 +643,7 @@ so the same markup works in the app, a scaled screen board, and the marketing ki
   .ae-test-row { grid-template-columns: minmax(0, 1fr) auto; row-gap: 4px; }
   .ae-test-row > :nth-child(2), .ae-test-row > :nth-child(5) { display: none; }
   .ae-test-row > :nth-child(3) { grid-column: 2; grid-row: 1; }
-  .ae-test-row > :nth-child(4) { grid-column: 1 / -1; }
+  .ae-test-row > :nth-child(4) { grid-column: 1 / -1; justify-self: start; }
   .ae-listhead { display: none; }
   .ae-session-row { grid-template-columns: minmax(0, 1fr) auto; row-gap: 4px; }
   .ae-session-row__n { display: none; }
@@ -671,3 +671,32 @@ so the same markup works in the app, a scaled screen board, and the marketing ki
 @container (max-width: 520px) { .ae-player__chips .ae-player__chip:nth-child(2), .ae-player__chips .ae-player__chip:nth-child(4) { display: none; } }
 .ae-site-card { container-type: inline-size; }
 @container (max-width: 250px) { .ae-site-card__foot .ae-tag { display: none; } }
+
+/* lists respond to their own width too (a list in a side column) */
+@container (max-width: 640px) {
+  .ae-listhead { display: none; }
+  .ae-test-row { grid-template-columns: minmax(0, 1fr) auto; row-gap: 4px; }
+  .ae-test-row > :nth-child(2), .ae-test-row > :nth-child(5) { display: none; }
+  .ae-test-row > :nth-child(3) { grid-column: 2; grid-row: 1; }
+  .ae-test-row > :nth-child(4) { grid-column: 1 / -1; justify-self: start; }
+  .ae-session-row { grid-template-columns: minmax(0, 1fr) auto; row-gap: 4px; }
+  .ae-session-row__n { display: none; }
+  .ae-session-row > :nth-child(3) { grid-column: 1 / -1; grid-row: 2; }
+  .ae-session-row > :nth-child(4) { display: none; }
+  .ae-session-row > :nth-child(5) { grid-column: 2; grid-row: 1; }
+}
+/* floating player controls (glass), over the recording */
+.ae-player__pill { position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%); width: min(560px, calc(100% - 28px)); display: flex; align-items: center; gap: 10px; padding: 6px 12px 6px 6px; border-radius: var(--ae-r-pill); background: var(--ae-glass-plate); backdrop-filter: blur(var(--ae-glass-blur)) saturate(1.6); -webkit-backdrop-filter: blur(var(--ae-glass-blur)) saturate(1.6); box-shadow: 0 0 0 1px rgba(0,0,0,.12), inset 0 0 0 1px rgba(255,255,255,.6), var(--ae-sh-float); z-index: 3; }
+.ae-player--float .ae-player__stage { aspect-ratio: 16 / 10; }
+
+/* ===== Proposed: cursor and clicks over a replay (needs the overlay track; HTML sites) =====
+   Drawn only when a cursor track exists for the session. Today: never. */
+.ae-cursor { position: absolute; width: 18px; height: 18px; margin: -2px 0 0 -3px; z-index: 4; pointer-events: none; filter: drop-shadow(0 1px 1.5px rgba(0,0,0,.35)); }
+.ae-ripple { position: absolute; width: 30px; height: 30px; margin: -15px 0 0 -15px; border-radius: 50%; box-shadow: 0 0 0 2px var(--ae-blue); background: rgba(52,120,246,.14); z-index: 3; pointer-events: none; }
+.ae-ripple--miss { box-shadow: 0 0 0 2px var(--ae-bad); background: rgba(196,55,44,.12); }
+.ae-scrub__click { position: absolute; top: 19px; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: var(--ae-ink-3); }
+.ae-scrub__miss { position: absolute; top: 17px; width: 7px; height: 7px; margin-left: -3.5px; border-radius: 50%; background: var(--ae-paper); box-shadow: inset 0 0 0 2px var(--ae-bad); }
+.ae-clickpath { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; font-size: var(--ae-fs-xs); color: var(--ae-ink-3); }
+.ae-clickpath__screen { height: 22px; padding: 0 8px; border-radius: 6px; background: var(--ae-mist-2); color: var(--ae-ink-2); display: inline-flex; align-items: center; gap: 5px; font-family: var(--ae-mono); font-size: 10.5px; }
+.ae-clickpath__screen.is-now { background: var(--ae-blue-soft); color: var(--ae-link); }
+.ae-clickpath__miss { color: var(--ae-bad); font-family: var(--ae-mono); font-size: 10.5px; }

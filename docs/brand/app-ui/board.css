@@ -110,7 +110,7 @@ body.is-large .appr { grid-template-columns: minmax(0, 1fr); }
 .flow__cap { background: #fff; border-radius: 12px; box-shadow: 0 0 0 1px var(--b-line); padding: 14px 16px; font-size: 13px; color: #3A3A3D; }
 .flow__cap h4 { margin: 0 0 6px; font-size: 15px; font-weight: 520; color: var(--b-ink); letter-spacing: -0.01em; }
 .flow__line { margin-top: 14px; display: flex; flex-direction: column; gap: 6px; }
-.flow__line .labels { display: flex; justify-content: space-between; font-family: "Geist Mono", monospace; font-size: 10.5px; color: var(--b-ink-3); text-transform: uppercase; letter-spacing: .06em; }
+.flow__line .labels { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px 8px; font-family: "Geist Mono", monospace; font-size: 10.5px; color: var(--b-ink-3); text-transform: uppercase; letter-spacing: .06em; }
 .outside-frame { border-radius: 12px; overflow: hidden; box-shadow: 0 0 0 2px #E2D9C6, 0 10px 30px rgba(17,17,26,.07); }
 .outside-tag { position: absolute; top: 12px; right: 12px; z-index: 5; font-family: "Geist Mono", monospace; font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 9px; border-radius: 6px; background: #2B2A26; color: #F5F4EE; }
 
@@ -132,3 +132,8 @@ body.is-large .appr { grid-template-columns: minmax(0, 1fr); }
   .flow__head h2 { font-size: 24px; }
   .typo-row { grid-template-columns: minmax(0, 1fr); gap: 2px; }
 }
+
+.st--phone .fit, .ap--phone .fit { max-width: 320px; }
+.st--phone { align-items: flex-start; }
+
+.flow__line .labels span:last-child { grid-column: 1 / -1; text-align: right; opacity: .7; }
