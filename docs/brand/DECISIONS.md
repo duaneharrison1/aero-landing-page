@@ -7,6 +7,24 @@ version: 2026-10-23.4
 
 The running log of what Duane decided, newest first. Add a line whenever he decides something; never delete a line, strike it through and say what replaced it. The full evidence is in `research/conversation-audit.md`.
 
+## 23 Oct 2026: answers on the questions page
+- **Home:** layout A, what's new first with sites and tests beside it.
+- **Sample project: personalised.** A silly one-page site made from the person's name and what we know, plus a finished test on it. Labelled Example, deletable.
+- **Private is not password.** Password protection is its own feature. Private means people from outside (not signed in to the account) can't open the address.
+- **Test link: short**, as today (today's form is the app address, the test name and `?test=1`).
+- **Custom domain and favicon on tests:** paid plans only.
+- **Keep a switch to stop taking new sessions** on a test.
+- **After "Now test it",** the test opens on Setup.
+- **Your own "Preview as tester" runs are free** and kept out of Insights; they show as "You".
+- **Figma prototype link** offered under New site and under Tests.
+- **Sessions newest first** (numbers never change).
+- **Insights ranks by severity first** (Critical, Major, Minor), then how many testers.
+- **Sessions open in Watch**, then remember each person's last choice.
+- **Tasks can have an optional description.**
+- **Tester screen light or dark is automatic**, from the prototype's background colour.
+- **No timer for testers.** Keep a recording indicator ("just helpful to know it's being recorded"), in the new style; time is still recorded.
+- **Recent tests (up to 5) listed under Tests** in the sidebar.
+
 ## 23 Oct 2026: after the app UI v2 board ("overall looks amazing")
 - **Sidebar: improve today's**, don't replace it. "Aero." at the top with the collapse arrow; the account stays bottom left; no separate workspace name at the top.
 - **A sample site and a sample test in every account by default** (open: personalised or fixed, see the questions page). It affects the first run; the first-run page still looks good.
