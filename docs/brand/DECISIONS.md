@@ -1,11 +1,39 @@
 ---
 brand-sync: figmaApp docs/brand is the source. Copy this file unchanged to aero-landing-page/docs/brand/.
-version: 2026-10-23.3
+version: 2026-10-23.4
 ---
 
 # Aero brand and product decisions
 
 The running log of what Duane decided, newest first. Add a line whenever he decides something; never delete a line, strike it through and say what replaced it. The full evidence is in `research/conversation-audit.md`.
+
+## 23 Oct 2026: after the UI directions board
+**Look**
+- **A (Studio) is the base.** "Looks great, feels like Figma, which isn't bad." Round 5 versions were too busy.
+- **Dark mode too**, especially for session review (video, prototype, sound); demos and videos of session review in dark.
+- **Buttons: ink.** Fully rounded pill only where it's needed (a floating task pill), rounded rectangle elsewhere. Still a little glassy: the V3 glass agreed earlier, kept subtle. Soft graphite "isn't bad" as a fallback.
+- **Logo: "Aero." in Geist 500 with the blue dot.** Blue is the secondary or tertiary colour: the dot can become the loader, the playhead, the video player accent.
+- **B's colour is too much**: end-to-end colour, gradients and coloured tiles feel basic and assume every project is linear (someone may only have a site). A subtle wash is fine: Publish wash before upload, and after upload the wash could pick up the site's own colours very slightly.
+
+**Structure**
+- **Sites and Tests stay separate.** Combining them is more confusing. Sites come first naturally; a site can become a test (its own test link). People can also go straight to a test. Both should get custom domain, favicon and so on.
+- **Site to test copies** (Duane, 23 Oct): "Test this site" makes the test its own copy with its own link; the test is then updated from the test, never affecting the live site. The reverse works the same way ("Publish as a site" copies). Simpler than keeping versions in sync. Both keep their own versions.
+- **Going straight to Test** hosts the prototype under the test (versions, domain, favicon), shown only under Tests.
+- **New sites are public by default** (anyone with the address), with a switch to make them private.
+- **Lists:** sites as blocks with a real preview (screenshot, cached iframe); tests as a status line (sessions, live or not). Tests can show a preview too.
+- **Sidebar:** keep it collapsible (today's arrow). Maybe the workspace name at the top instead of the logo. Maybe show a single site or test in the sidebar when there is only one.
+- **Empty states must teach the features without overwhelming.** None of the empty states so far convinced; D's empty player didn't make sense.
+- **Home "what's new"** as a timeline of events is interesting (could include site visits); check it can be built.
+
+**Sessions and review**
+- **Each session is a tester with a name.** Ask testers their name at the start (today it says "Anonymous Tester"); when the owner tests with "Open as tester", record "You".
+- **Each session gets a summary**: per task when tasks were set, a plain session summary when not, and a clear "no audio" state. A big button to go deep into the session with video. Show all the details (browser, time, device).
+- **Cross-session analysis is its own overall place**, not under the Sessions tab (maybe its own tab, maybe Home; needs an empty state). Views by task, by theme, by priority; longest task, most friction; summary and scores first, detail after. Keep links to each session.
+- **Session review:** A's layout "looks really cool", dense. Tasks on the player timeline; tags beyond friction (good, delight, critical) with filters; word highlight in the transcript; click a line to jump; flexible layout (video small or big, a reading mode with notes vs a video mode). Keep "Download transcript" and "Download video". Research how pro tools lay out transcript, video and insights before deciding.
+- **Liked:** C's lead quote; D's sound bite with waveform, playable inline (one play control, not two); D's task timeline and quote cards with play; "4 of 5 testers". D's shared-clock bars and B's session side panel were not clear.
+- **The prompt flow is a prompt**, not a connector (true in the code: the prompt calls Aero's API with a key). Don't ask to publish before there is a link, file or prompt.
+- **Create:** one guided flow per source (pick Figma, HTML or prompt, then that flow; switching goes to the other flow). C's "Done" steps plus round 5's radio choice. B's create is too much.
+- **Upload:** A liked. B's guidance and "Now test it" setting the test up straight away liked. Settings (name, badge, domain) can sit on the site's one page. E's update and free 7-day notes liked; its "Run test" button too big.
 
 ## 23 Oct 2026: after the app UI round
 - **A step was missing: UI directions before components.** Before tightening components, show each main screen (home, sessions, session review, publish from a prompt, upload HTML, review across sessions) drawn in each direction (A, B, C, D) next to the app UI round and today's app; decide what works and what doesn't; then do the detailed components. The app UI round is good work to reuse and tighten after that decision.
