@@ -18,6 +18,7 @@ The same process HeyBooking went through in October 2026 (see the HeyBooking rep
 | 5a. UI directions | 23 Oct: every main screen in A to D, beside the app UI round and today's app; buttons and logo options; waiting on Duane's marks | directions/ |
 | 5b. App UI v2 on A | 23 Oct: two teams, one shared stylesheet, light and dark, built on research into pro review tools; waiting on Duane's marks and 13 questions | app-ui-v2/ |
 | 5c. App UI v3 | 23 Oct: v2 polished with Duane's notes and 16 answers; gradient system, sidebar, sample project, tester panel, filters, transcript, Insights timeline | app-ui-v3/ |
+| 6a. Homepage round | 23 Oct: homepage built from the v3 UI; rotating headline, real-app hero loop, two hero layouts | website-v1/ |
 | 5. Copy, UX, UI, motion passes | After 5c: tighten the app UI round into the agreed components and their marketing versions, then the website | DESIGN_SYSTEM_PLAN.md |
 | 6. Illustration and card kit | To do, built from the marketing kit | DESIGN_SYSTEM_PLAN.md |
 | 7. SEO | Plan done (task pages); pages to build later | research/strategy-dossier.md |
@@ -75,3 +76,4 @@ The same process HeyBooking went through in October 2026 (see the HeyBooking rep
 | App UI v2 (A refined, light and dark) | https://claude.ai/artifact/Mxv3bb9Pf1gkB5TYnY8mw3 | Superseded by v3 |
 | Open questions (answered 23 Oct) | https://claude.ai/artifact/X9aUr93asweA1iP7oqPFS7 | Answered |
 | App UI v3 | https://claude.ai/artifact/PL8a9PJjQykiisf53aEiCY | Current |
+| Homepage round | https://claude.ai/artifact/PzaUotNaGcqP5hpHLMvk79 | Current; hero A or B to pick |
