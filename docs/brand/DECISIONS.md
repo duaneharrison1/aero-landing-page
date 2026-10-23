@@ -7,6 +7,12 @@ version: 2026-10-23.4
 
 The running log of what Duane decided, newest first. Add a line whenever he decides something; never delete a line, strike it through and say what replaced it. The full evidence is in `research/conversation-audit.md`.
 
+## 23 Oct 2026: next phase, the website
+- **Next: a homepage round on the v3 UI**, then the video storyboard, one feature page and the SEO template, then the build in aero-landing-page.
+- **Rotating headline**, as HeyBooking did: the made-with part changes ("Publish your Claude artifact", "...your Figma prototype", "...your Lovable app", "...your HTML site"), so people see what they can bring. The rest of the line stays ("Watch people use it.").
+- **Hero: one big real app window with a short calm loop** (published, then a session arriving).
+- **Node 20 upgrade** opened as its own PR now (deadline 30 Oct).
+
 ## 23 Oct 2026: answers on the questions page
 - **Home:** layout A, what's new first with sites and tests beside it.
 - **Sample project: personalised.** A silly one-page site made from the person's name and what we know, plus a finished test on it. Labelled Example, deletable.
