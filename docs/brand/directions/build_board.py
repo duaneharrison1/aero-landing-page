@@ -10,7 +10,7 @@ D = json.load(open(os.path.join(H, 'notes.json')))
 e = html.escape
 
 
-def img(src, name, w=1280):
+def img(src, name, w=2200):
     p = os.path.join(H, src)
     if not os.path.exists(p):
         return None
@@ -18,7 +18,7 @@ def img(src, name, w=1280):
     if im.width > w:
         im = im.resize((w, int(im.height * w / im.width)), Image.LANCZOS)
     dst = f'img/{name}.jpg'
-    im.save(os.path.join(OUT, dst), quality=74, optimize=True, progressive=True)
+    im.save(os.path.join(OUT, dst), quality=76, optimize=True, progressive=True)
     return dst, im.width, im.height
 
 
@@ -44,7 +44,6 @@ def tile(sec, t):
     vid = f"{sec['id']}-{t.get('vkey', t['key'])}"
     return f'''<article class="tile" data-k="{t['key']}" id="t-{vid}">
   <header><span class="tk tk-{t['key']}">{e(t['key'])}</span><h3>{e(t['label'])}</h3></header>
-  <div class="pics">{pics}</div>
   <div class="talk">
     {f'<p class="idea">{e(t["idea"])}</p>' if t.get('idea') else ''}
     <div class="cols">
@@ -52,6 +51,7 @@ def tile(sec, t):
       <div><h4>Doesn't</h4>{ul(t.get('doesnt'), 'd')}</div>
     </div>
   </div>
+  <div class="pics">{pics}</div>
   <div class="vote" data-v="{vid}">
     <span class="vq">Your call</span>
     <button data-c="keep">Keep</button><button data-c="part">Parts of it</button><button data-c="drop">Drop</button>
@@ -85,7 +85,7 @@ page = (page.replace('{{INTRO}}', intro).replace('{{ROLES}}', roles).replace('{{
 open(os.path.join(OUT, 'index.html'), 'w').write(page)
 import shutil
 os.makedirs(os.path.join(OUT,'live'),exist_ok=True)
-for d in ['studio','colour','story','replay','kit']:
+for d in ['studio','colour','story','replay','kit','kit2']:
     shutil.copy(os.path.join(H,d,'pages.html'),os.path.join(OUT,'live',d+'.html'))
 shutil.copy(os.path.join(H,'kit','glass-v3.js'),os.path.join(OUT,'live','glass-v3.js'))
 print('ok', sum(len(s['tiles']) for s in D['sections']), 'tiles')

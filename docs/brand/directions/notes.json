@@ -12,15 +12,36 @@
    ],
    "tiles": [
     {
+     "key": "T",
+     "label": "Today: the live app",
+     "img": [
+      [
+       "today/t-dashboard.png",
+       "Live app, 22 Oct"
+      ]
+     ],
+     "idea": "Today's dashboard is a grid of tests with four counters on top.",
+     "works": [
+      "Simple and familiar; filters and search work",
+      "\"New test\" is easy to find"
+     ],
+     "doesnt": [
+      "Grid fills with drafts named lone-arch, cool-flamingo",
+      "Counters say 0% before anything happens",
+      "\"AI-generated insights\" in the subtitle (AI as the headline)",
+      "Blue-tinted buttons look washed out"
+     ]
+    },
+    {
      "key": "A",
      "label": "A \u00b7 Studio",
      "img": [
       [
-       "studio/shots/p1.png",
+       "hi/studio-p1.png",
        "New"
       ],
       [
-       "shots/studio-1.png",
+       "hi/r5-studio-1.png",
        "Round 5 version"
       ]
      ],
@@ -41,11 +62,11 @@
      "label": "B \u00b7 Colour",
      "img": [
       [
-       "colour/shots/p1.png",
+       "hi/colour-p1.png",
        "New"
       ],
       [
-       "shots/colour-1.png",
+       "hi/r5-colour-1.png",
        "Round 5 version"
       ]
      ],
@@ -66,11 +87,11 @@
      "label": "C \u00b7 Story",
      "img": [
       [
-       "story/shots/p1.png",
+       "hi/story-p1.png",
        "New"
       ],
       [
-       "shots/story-1.png",
+       "hi/r5-story-1.png",
        "Round 5 version"
       ]
      ],
@@ -91,11 +112,11 @@
      "label": "D \u00b7 Replay",
      "img": [
       [
-       "replay/shots/p1.png",
+       "hi/replay-p1.png",
        "New"
       ],
       [
-       "shots/replay-1.png",
+       "hi/r5-replay-1.png",
        "Round 5 version"
       ]
      ],
@@ -116,8 +137,16 @@
      "label": "E \u00b7 App UI round",
      "img": [
       [
-       "shots/ex-s2.png",
-       "Layouts A, B, C plus states"
+       "e/s2-1.png",
+       "Layout A"
+      ],
+      [
+       "e/s2-2.png",
+       "Layout B"
+      ],
+      [
+       "e/s2-3.png",
+       "Layout C"
       ]
      ],
      "idea": "The previous round: three home layouts and every state (first run, loading, drafts, phone).",
@@ -128,22 +157,6 @@
      "doesnt": [
       "Looks like a generic template next to A to D",
       "Icons in pastel boxes in the feed (the pattern you flagged)"
-     ]
-    },
-    {
-     "key": "T",
-     "label": "Today's app",
-     "img": [
-      [
-       "shots/01-dashboard.jpg",
-       "Live, 22 Oct"
-      ]
-     ],
-     "idea": "",
-     "works": [],
-     "doesnt": [
-      "Grid of empty drafts with made-up names",
-      "Numbers that say 0% before anything happened"
      ]
     }
    ]
@@ -160,11 +173,31 @@
    ],
    "tiles": [
     {
+     "key": "T",
+     "label": "Today: the live app",
+     "img": [
+      [
+       "today/t-sessions.png",
+       "Live app: Sessions tab"
+      ]
+     ],
+     "idea": "A list of sessions with a one-line summary, length and status; themes on the right.",
+     "works": [
+      "Each row has a summary and a length",
+      "Themes with counts beside the list"
+     ],
+     "doesnt": [
+      "Every tester is \"Anonymous Tester\" and every row says \"Friction\"",
+      "The tester's own words are missing",
+      "\"No sentiment yet\" panel is always empty"
+     ]
+    },
+    {
      "key": "A",
      "label": "A \u00b7 Studio",
      "img": [
       [
-       "studio/shots/p2.png",
+       "hi/studio-p2.png",
        "New"
       ]
      ],
@@ -183,7 +216,7 @@
      "label": "B \u00b7 Colour",
      "img": [
       [
-       "colour/shots/p2.png",
+       "hi/colour-p2.png",
        "New"
       ]
      ],
@@ -201,7 +234,7 @@
      "label": "C \u00b7 Story",
      "img": [
       [
-       "story/shots/p2.png",
+       "hi/story-p2.png",
        "New"
       ]
      ],
@@ -220,7 +253,7 @@
      "label": "D \u00b7 Replay",
      "img": [
       [
-       "replay/shots/p2.png",
+       "hi/replay-p2.png",
        "New"
       ]
      ],
@@ -239,28 +272,17 @@
      "label": "E \u00b7 App UI round",
      "img": [
       [
-       "shots/ex-s7.png",
-       "Sessions list"
+       "e/s7-1.png",
+       "A. Table"
+      ],
+      [
+       "e/s7-2.png",
+       "B. Cards with a quote"
       ]
      ],
      "idea": "",
      "works": [],
      "doesnt": []
-    },
-    {
-     "key": "T",
-     "label": "Today's app",
-     "img": [
-      [
-       "shots/06-test-sessions-empty-bug.jpg",
-       "Live: says no sessions while two exist"
-      ]
-     ],
-     "idea": "",
-     "works": [],
-     "doesnt": [
-      "Sessions tab can say \"no sessions\" while they exist (bug B2)"
-     ]
     }
    ]
   },
@@ -277,15 +299,40 @@
    ],
    "tiles": [
     {
+     "key": "T",
+     "label": "Today: the live app",
+     "img": [
+      [
+       "today/t-session-top.png",
+       "Live app: top of the session page"
+      ],
+      [
+       "today/t-session-recording.png",
+       "Live app: scrolled down to the recording and transcript"
+      ]
+     ],
+     "idea": "Summary, priorities and friction points at the top; recording and transcript far below.",
+     "works": [
+      "All the findings are there, with quotes and a recommendation",
+      "Priorities are numbered"
+     ],
+     "doesnt": [
+      "Recording is hidden behind \"Watch recording\", about 1,800px down",
+      "Transcript is one block with no times",
+      "Red Delete button sits next to the title",
+      "\"AI insights\" label"
+     ]
+    },
+    {
      "key": "A",
      "label": "A \u00b7 Studio",
      "img": [
       [
-       "studio/shots/p3.png",
+       "hi/studio-p3.png",
        "New"
       ],
       [
-       "shots/studio-2.png",
+       "hi/r5-studio-2.png",
        "Round 5 version"
       ]
      ],
@@ -304,11 +351,11 @@
      "label": "B \u00b7 Colour",
      "img": [
       [
-       "colour/shots/p3.png",
+       "hi/colour-p3.png",
        "New"
       ],
       [
-       "shots/colour-2.png",
+       "hi/r5-colour-2.png",
        "Round 5 version"
       ]
      ],
@@ -327,11 +374,11 @@
      "label": "C \u00b7 Story",
      "img": [
       [
-       "story/shots/p3.png",
+       "hi/story-p3.png",
        "New"
       ],
       [
-       "shots/story-2.png",
+       "hi/r5-story-2.png",
        "Round 5 version"
       ]
      ],
@@ -351,8 +398,12 @@
      "label": "D \u00b7 Replay",
      "img": [
       [
-       "replay/shots/p3.png",
+       "hi/replay-p3.png",
        "New"
+      ],
+      [
+       "hi/r5-replay-2.png",
+       "Round 5 version"
       ]
      ],
      "idea": "The recording is the page; tasks and friction points on its timeline; light variant included.",
@@ -370,28 +421,25 @@
      "label": "E \u00b7 App UI round",
      "img": [
       [
-       "shots/ex-s8.png",
-       "Four layouts plus states"
+       "e/s8-1.png",
+       "A. Recording first"
+      ],
+      [
+       "e/s8-3.png",
+       "B. Read like an article"
+      ],
+      [
+       "e/s8-4.png",
+       "C. Theatre"
+      ],
+      [
+       "e/s8-2.png",
+       "D. Proposed: cursor and clicks"
       ]
      ],
      "idea": "",
      "works": [],
      "doesnt": []
-    },
-    {
-     "key": "T",
-     "label": "Today's app",
-     "img": [
-      [
-       "shots/07-session-detail.jpg",
-       "Live"
-      ]
-     ],
-     "idea": "",
-     "works": [],
-     "doesnt": [
-      "Recording on a separate page from the findings"
-     ]
     }
    ]
   },
@@ -407,15 +455,35 @@
    ],
    "tiles": [
     {
+     "key": "T",
+     "label": "Today: the live app",
+     "img": [
+      [
+       "today/t-create-modal.png",
+       "Live app: New test window"
+      ]
+     ],
+     "idea": "A New test window with four ways in.",
+     "works": [
+      "Four clear ways in, including an existing site",
+      "Opening it saves nothing"
+     ],
+     "doesnt": [
+      "Icons in pastel boxes: the pattern you flagged is in today's app",
+      "The window uses a different font (Poppins) from the app (Inter)",
+      "No sense of what happens next"
+     ]
+    },
+    {
      "key": "A",
      "label": "A \u00b7 Studio",
      "img": [
       [
-       "studio/shots/p4.png",
+       "hi/studio-p4.png",
        "New"
       ],
       [
-       "shots/studio-3.png",
+       "hi/r5-studio-3.png",
        "Round 5 version"
       ]
      ],
@@ -433,11 +501,11 @@
      "label": "B \u00b7 Colour",
      "img": [
       [
-       "colour/shots/p4.png",
+       "hi/colour-p4.png",
        "New"
       ],
       [
-       "shots/colour-3.png",
+       "hi/r5-colour-3.png",
        "Round 5 version"
       ]
      ],
@@ -455,11 +523,11 @@
      "label": "C \u00b7 Story",
      "img": [
       [
-       "story/shots/p4.png",
+       "hi/story-p4.png",
        "New"
       ],
       [
-       "shots/story-3.png",
+       "hi/r5-story-3.png",
        "Round 5 version"
       ]
      ],
@@ -477,11 +545,11 @@
      "label": "D \u00b7 Replay",
      "img": [
       [
-       "replay/shots/p4.png",
+       "hi/replay-p4.png",
        "New"
       ],
       [
-       "shots/replay-3.png",
+       "hi/r5-replay-3.png",
        "Round 5 version"
       ]
      ],
@@ -500,28 +568,21 @@
      "label": "E \u00b7 App UI round",
      "img": [
       [
-       "shots/ex-s3.png",
-       "Create, three layouts plus states"
+       "e/s3-1.png",
+       "A. Three tiles, one page"
+      ],
+      [
+       "e/s3-2.png",
+       "B. One question at a time"
+      ],
+      [
+       "e/s3-3.png",
+       "C. Prompt first"
       ]
      ],
      "idea": "",
      "works": [],
      "doesnt": []
-    },
-    {
-     "key": "T",
-     "label": "Today's app",
-     "img": [
-      [
-       "shots/03-test-setup.jpg",
-       "Live: test setup after creating"
-      ]
-     ],
-     "idea": "",
-     "works": [],
-     "doesnt": [
-      "Lands on setup fields, not on the link to share"
-     ]
     }
    ]
   },
@@ -537,11 +598,35 @@
    ],
    "tiles": [
     {
+     "key": "T",
+     "label": "Today: the live app",
+     "img": [
+      [
+       "today/t-site-detail.png",
+       "Live app: a live site"
+      ],
+      [
+       "today/t-sites.png",
+       "Live app: Sites list"
+      ]
+     ],
+     "idea": "A live site page with a preview, a drop zone, auto-publish and an agent prompt.",
+     "works": [
+      "Drop to publish a new version, right on the page",
+      "Auto-publish switch and \"Get prompt\" are useful"
+     ],
+     "doesnt": [
+      "Sites list is mostly drafts with made-up names",
+      "Copy and Visit buttons look different from each other",
+      "Subtitle copy has an em dash"
+     ]
+    },
+    {
      "key": "A",
      "label": "A \u00b7 Studio",
      "img": [
       [
-       "studio/shots/p5.png",
+       "hi/studio-p5.png",
        "New"
       ]
      ],
@@ -559,7 +644,7 @@
      "label": "B \u00b7 Colour",
      "img": [
       [
-       "colour/shots/p5.png",
+       "hi/colour-p5.png",
        "New"
       ]
      ],
@@ -576,7 +661,7 @@
      "label": "C \u00b7 Story",
      "img": [
       [
-       "story/shots/p5.png",
+       "hi/story-p5.png",
        "New"
       ]
      ],
@@ -593,7 +678,7 @@
      "label": "D \u00b7 Replay",
      "img": [
       [
-       "replay/shots/p5.png",
+       "hi/replay-p5.png",
        "New"
       ]
      ],
@@ -611,28 +696,17 @@
      "label": "E \u00b7 App UI round",
      "img": [
       [
-       "shots/ex-s4.png",
-       "Site detail"
+       "e/s4-1.png",
+       "A. Header and tabs"
+      ],
+      [
+       "e/s4-2.png",
+       "B. One page"
       ]
      ],
      "idea": "",
      "works": [],
      "doesnt": []
-    },
-    {
-     "key": "T",
-     "label": "Today's app",
-     "img": [
-      [
-       "shots/09-sites.jpg",
-       "Live: Sites"
-      ]
-     ],
-     "idea": "",
-     "works": [],
-     "doesnt": [
-      "Free sites say \"Live\" after they have gone offline (B13)"
-     ]
     }
    ]
   },
@@ -648,11 +722,30 @@
    ],
    "tiles": [
     {
+     "key": "T",
+     "label": "Today: the live app",
+     "img": [
+      [
+       "today/t-insights.png",
+       "Live app: Insights tab"
+      ]
+     ],
+     "idea": "An executive summary, then priority fixes, with themes on the right.",
+     "works": [
+      "A summary and a fix list exist"
+     ],
+     "doesnt": [
+      "Long summary paragraph",
+      "\"L\" badges mean nothing to a reader",
+      "No quotes or \"how many testers\" per fix"
+     ]
+    },
+    {
      "key": "A",
      "label": "A \u00b7 Studio",
      "img": [
       [
-       "studio/shots/p6.png",
+       "hi/studio-p6.png",
        "New"
       ]
      ],
@@ -669,7 +762,7 @@
      "label": "B \u00b7 Colour",
      "img": [
       [
-       "colour/shots/p6.png",
+       "hi/colour-p6.png",
        "New"
       ]
      ],
@@ -687,7 +780,7 @@
      "label": "C \u00b7 Story",
      "img": [
       [
-       "story/shots/p6.png",
+       "hi/story-p6.png",
        "New"
       ]
      ],
@@ -704,7 +797,7 @@
      "label": "D \u00b7 Replay",
      "img": [
       [
-       "replay/shots/p6.png",
+       "hi/replay-p6.png",
        "New"
       ]
      ],
@@ -722,28 +815,17 @@
      "label": "E \u00b7 App UI round",
      "img": [
       [
-       "shots/ex-s9.png",
-       "Review across sessions"
+       "e/s9-1.png",
+       "A. What to fix first"
+      ],
+      [
+       "e/s9-2.png",
+       "B. Written summary"
       ]
      ],
      "idea": "",
      "works": [],
      "doesnt": []
-    },
-    {
-     "key": "T",
-     "label": "Today's app",
-     "img": [
-      [
-       "shots/08-insights-stuck.jpg",
-       "Live: insights stuck"
-      ]
-     ],
-     "idea": "",
-     "works": [],
-     "doesnt": [
-      "Insights stuck or crashing (B3 to B5)"
-     ]
     }
    ]
   },
@@ -763,7 +845,7 @@
      "label": "A \u00b7 Studio: one page that fills in",
      "img": [
       [
-       "studio/shots/f1.png",
+       "hi/studio-f1.png",
        "New"
       ]
      ],
@@ -780,7 +862,7 @@
      "label": "B \u00b7 Colour: a colour stepper",
      "img": [
       [
-       "colour/shots/f1.png",
+       "hi/colour-f1.png",
        "New"
       ]
      ],
@@ -797,7 +879,7 @@
      "label": "C \u00b7 Story: a page that keeps a log",
      "img": [
       [
-       "story/shots/f1.png",
+       "hi/story-f1.png",
        "New"
       ]
      ],
@@ -814,7 +896,7 @@
      "label": "D \u00b7 Replay: player-first, one line",
      "img": [
       [
-       "replay/shots/f1.png",
+       "hi/replay-f1.png",
        "New"
       ]
      ],
@@ -857,7 +939,7 @@
      "label": "A \u00b7 Studio",
      "img": [
       [
-       "studio/shots/m1.png",
+       "hi/studio-m1.png",
        "New"
       ]
      ],
@@ -875,7 +957,7 @@
      "label": "B \u00b7 Colour",
      "img": [
       [
-       "colour/shots/m1.png",
+       "hi/colour-m1.png",
        "New"
       ]
      ],
@@ -893,7 +975,7 @@
      "label": "C \u00b7 Story",
      "img": [
       [
-       "story/shots/m1.png",
+       "hi/story-m1.png",
        "New"
       ]
      ],
@@ -911,7 +993,7 @@
      "label": "D \u00b7 Replay",
      "img": [
       [
-       "replay/shots/m1.png",
+       "hi/replay-m1.png",
        "New"
       ]
      ],
@@ -930,40 +1012,131 @@
    "id": "btn",
    "num": "09",
    "short": "Buttons",
-   "title": "Buttons",
-   "question": "Not decided. Eight families, each in five real moments: create footer, session header, tester screen, task panel, hero, dark surface.",
+   "title": "Buttons in the app",
+   "question": "Not decided. Four realistic options, each drawn on the same seven real moments: dashboard, session review with the player, share modal, delete confirm, new test modal, tester task panel, disabled and loading. The stock blue is gone.",
    "take": [
-    "Findings: glass falls apart when a button sits across two backgrounds; clear glass gets thin over yellow and orange; disabled glass looks broken. Glass is at its best where controls float over a prototype.",
-    "My read: ink solid as the main button, ink-tinted glass only where controls float over a prototype (tester task panel, player). Blue stays the dot, the playhead and links. The live page shows the glass properly (screenshots flatten it)."
+    "Option 3 (ink everywhere you read, accessible glass only where controls float over a recording or prototype) is the team's pick and mine. On the dashboard and in modals it is identical to option 1 on purpose.",
+    "The accessible glass: panels you read use a frosted plate (86% white); glass stays on small floating controls. Over a dark recording it turns smoky grey to stay readable (4.7 to 7.6:1 against the worst pixel behind the label). It passes AA, but it looks less glassy than the lab version.",
+    "Every option passes AA: ink 16.8:1, deep blue 8.6:1, graphite 9.6:1. The logo blue itself is too light for white text (4.1:1), so option 2 uses it darker and greyer."
    ],
    "tiles": [
     {
      "key": "K",
-     "label": "Button families",
+     "label": "Side by side: dashboard header and share modal",
      "img": [
       [
-       "kit/shots/b1.png",
-       ""
-      ]
-     ],
-     "idea": "Ink solid, Aero blue, ink outline, quiet text, soft tint, glass clear, glass ink, glass blue.",
-     "works": [],
-     "doesnt": [],
-     "vkey": "K1"
-    },
-    {
-     "key": "K",
-     "label": "Buttons in context",
-     "img": [
-      [
-       "kit/shots/b2.png",
+       "hi/kit2-cmp.png",
        ""
       ]
      ],
      "idea": "",
      "works": [],
      "doesnt": [],
+     "vkey": "K1"
+    },
+    {
+     "key": "K",
+     "label": "1 \u00b7 Ink",
+     "img": [
+      [
+       "hi/kit2-o1.png",
+       ""
+      ]
+     ],
+     "idea": "Near-black primary, white secondary with a hairline, red only for delete.",
+     "works": [
+      "Calm; the blue dot stays the one bright thing",
+      "Highest contrast"
+     ],
+     "doesnt": [
+      "Can feel severe on large empty pages"
+     ],
      "vkey": "K2"
+    },
+    {
+     "key": "K",
+     "label": "2 \u00b7 Deep Aero blue",
+     "img": [
+      [
+       "hi/kit2-o2.png",
+       ""
+      ]
+     ],
+     "idea": "The logo dot's hue, darker and greyer (#254A8D).",
+     "works": [
+      "Ties the button to the logo",
+      "Clear call to action"
+     ],
+     "doesnt": [
+      "Blue everywhere competes with links and the playhead"
+     ],
+     "vkey": "K3"
+    },
+    {
+     "key": "K",
+     "label": "3 \u00b7 Ink, glass where it floats",
+     "img": [
+      [
+       "hi/kit2-o3.png",
+       ""
+      ]
+     ],
+     "idea": "Option 1, plus the accessible glass only on the player controls and the tester's task panel.",
+     "works": [
+      "Glass where Aero cannot know what is behind a control",
+      "One family with two states"
+     ],
+     "doesnt": [
+      "Glass over dark recordings reads as smoky grey"
+     ],
+     "vkey": "K4"
+    },
+    {
+     "key": "K",
+     "label": "4 \u00b7 Soft graphite",
+     "img": [
+      [
+       "hi/kit2-o4.png",
+       ""
+      ]
+     ],
+     "idea": "Warm graphite pills, warm stone secondary.",
+     "works": [
+      "Softest, friendliest"
+     ],
+     "doesnt": [
+      "Publish and row actions look alike",
+      "Hairlines and stone below 3:1"
+     ],
+     "vkey": "K5"
+    },
+    {
+     "key": "K",
+     "label": "The team's recommendation",
+     "img": [
+      [
+       "hi/kit2-rec.png",
+       ""
+      ]
+     ],
+     "idea": "",
+     "works": [],
+     "doesnt": [],
+     "vkey": "K6"
+    },
+    {
+     "key": "K",
+     "label": "Reference: the eight families from the first kit",
+     "img": [
+      [
+       "hi/kit-b1.png",
+       ""
+      ]
+     ],
+     "idea": "",
+     "works": [],
+     "doesnt": [],
+     "vkey": "K7"
     }
    ]
   },
@@ -974,6 +1147,7 @@
    "title": "Logo in use",
    "question": "Not decided. Seven options, at size, 24px, favicon 32 and 16, then in the sidebar, tester footer, share email, browser tab and site nav.",
    "take": [
+    "Today's app sets \"Aero.\" in a serif (see the Today pictures above); every option here is a sans, so whichever wins, the app logo changes.",
     "In a browser tab every option becomes the same tile, so the favicon matters more than the wordmark; \"A.\" is the strongest at 16px.",
     "\"Made with Aero.\" puts a full stop mid-sentence. If \"Aero.\" wins, the tester footer may need the wordmark without the dot, or the dot mark."
    ],
@@ -983,7 +1157,7 @@
      "label": "Logo options",
      "img": [
       [
-       "kit/shots/l1.png",
+       "hi/kit-l1.png",
        ""
       ]
      ],
@@ -997,7 +1171,7 @@
      "label": "Logo in use",
      "img": [
       [
-       "kit/shots/l2.png",
+       "hi/kit-l2.png",
        ""
       ]
      ],
@@ -1011,7 +1185,7 @@
      "label": "Kit team's three pairings",
      "img": [
       [
-       "kit/shots/r1.png",
+       "hi/kit-r1.png",
        ""
       ]
      ],
@@ -1025,8 +1199,8 @@
  ],
  "intro": [
   "You said a step was missing: seeing each main screen in every direction and deciding what works before tightening components. This is that step.",
-  "Each row is one screen. A, B, C and D are the four round 5 directions, each redrawn across the whole app by its own team (new screens, with the round 5 version underneath where there was one). E is the app UI round. Today is the live app. Then the flow, the marketing kit, buttons and the logo.",
-  "Click any picture for full size. Mark each tile Keep, Parts of it or Drop, with a note if it helps; I read your marks before the next round. The live pages (with real glass and hover) are linked at the bottom."
+  "Each row is one screen and starts with today's live app (captured at 2x), as the base. Then A, B, C and D, the four round 5 directions, each redrawn across the whole app by its own team (the round 5 version underneath where there was one), then E, the app UI round, each layout at full size. Then the flow, the marketing kit, buttons in the app, and the logo.",
+  "Pictures are full width; use \"Side by side\" at the top if you want two per row. Click any picture to open it on its own. Mark each tile Keep, Parts of it or Drop, with a note if it helps; I read your marks before the next round. The live pages (with real glass and hover) are linked at the bottom."
  ],
  "roles": [
   [
