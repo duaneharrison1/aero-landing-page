@@ -1,0 +1,171 @@
+/*
+version: 2026-10-23.1
+brand-sync: figmaApp docs/brand/app-ui is the source. Copy unchanged to aero-landing-page/docs/brand/app-ui/.
+
+Aero app UI tokens (proposal, app UI round, step 1 of the design system plan).
+Every component in components.css is built only from these.
+Two area palettes are offered as themes:
+  - default            "Morning": A Studio's softness (peach, lilac, mint)
+  - [data-palette="clear"]  "Clear": B Colour's clarity, softened (butter, rose, sea)
+Light is the default. [data-theme="dark"] is a proposed app-only dark theme (no dark website).
+Aero blue is the one bright thing: the dot, links, selection, the playhead. It is never an area colour.
+*/
+
+:root {
+  /* ---------- core colour ---------- */
+  --ae-ink: #1D1D1F;
+  --ae-ink-2: #3A3A3D;          /* body text */
+  --ae-ink-3: #6E6E73;          /* secondary text, 4.9:1 on white */
+  --ae-ink-4: #8E8E93;          /* hints and meta on white only, large or mono */
+  --ae-paper: #FFFFFF;
+  --ae-mist: #FAFAF9;           /* app background, panels */
+  --ae-mist-2: #F3F3F1;         /* hover, wells, skeleton base */
+  --ae-line: #E8E8EA;
+  --ae-line-2: #D7D7DC;         /* inputs, strong dividers */
+  --ae-on-ink: #FFFFFF;
+
+  --ae-blue: #3478F6;           /* the dot, playhead, selection, focus */
+  --ae-blue-rgb: 52, 120, 246;
+  --ae-link: #1F63DD;           /* blue text that passes AA at 13px */
+  --ae-blue-soft: rgba(52, 120, 246, .10);
+  --ae-blue-line: rgba(52, 120, 246, .32);
+
+  /* ---------- state colour (quiet) ---------- */
+  --ae-ok: #1C8752;      --ae-ok-bg: #E8F6EE;
+  --ae-warn: #9A5B00;    --ae-warn-bg: #FFF3DC;
+  --ae-bad: #C4372C;     --ae-bad-bg: #FDEDEB;
+  --ae-rec: #E5484D;     /* recording dot only */
+
+  /* voice: their words. Friction lines carry a warm marker; the word being heard carries blue */
+  --ae-mark: #FFEAA0;
+  --ae-mark-ink: #5C4400;
+  --ae-word-now: rgba(52, 120, 246, .16);
+  --ae-word-past: var(--ae-ink);
+  --ae-word-future: #8E8E93;
+
+  /* ---------- areas: Publish, Test, Review (palette "Morning", default) ---------- */
+  --ae-publish: #EE8A5C;  --ae-publish-tint: #FFF1E9;  --ae-publish-ink: #8F4520;
+  --ae-publish-wash: linear-gradient(135deg, #FFE6D6 0%, #FFF3EA 48%, #FBF5FF 100%);
+  --ae-test: #7A78EE;     --ae-test-tint: #F1F0FF;     --ae-test-ink: #463FB0;
+  --ae-test-wash: linear-gradient(135deg, #E7E6FF 0%, #F2F0FF 48%, #ECF5FF 100%);
+  --ae-review: #3BA97F;   --ae-review-tint: #E9F7F0;   --ae-review-ink: #1D6649;
+  --ae-review-wash: linear-gradient(135deg, #D9F2E5 0%, #EEF9F3 48%, #F6FBEE 100%);
+  /* the whole app hero / marketing wash: the three areas in one soft sweep */
+  --ae-all-wash: linear-gradient(120deg, #FFE9DC 0%, #F1EEFF 50%, #DFF4E9 100%);
+
+  /* ---------- type ---------- */
+  --ae-font: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ae-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --ae-fs-2xs: 10.5px;  /* mono labels */
+  --ae-fs-xs: 11.5px;
+  --ae-fs-sm: 12.5px;
+  --ae-fs-base: 14px;
+  --ae-fs-md: 15px;
+  --ae-fs-lg: 17px;
+  --ae-fs-xl: 21px;
+  --ae-fs-2xl: 26px;
+  --ae-fs-3xl: 34px;
+  --ae-fs-4xl: 46px;
+  --ae-fw-light: 350;   /* large headings */
+  --ae-fw-head: 450;    /* page titles */
+  --ae-fw-text: 400;
+  --ae-fw-strong: 520;  /* never heavier */
+  --ae-lh-tight: 1.15;
+  --ae-lh-snug: 1.35;
+  --ae-lh-text: 1.55;
+  --ae-lh-read: 1.7;    /* transcript */
+  --ae-track-head: -0.022em;
+  --ae-track-label: 0.06em;
+
+  /* ---------- space (4px grid) ---------- */
+  --ae-s-1: 4px;  --ae-s-2: 8px;  --ae-s-3: 12px; --ae-s-4: 16px;
+  --ae-s-5: 20px; --ae-s-6: 24px; --ae-s-8: 32px; --ae-s-10: 40px;
+  --ae-s-12: 48px; --ae-s-16: 64px;
+
+  /* ---------- radius ---------- */
+  --ae-r-xs: 4px;
+  --ae-r-sm: 6px;
+  --ae-r-md: 9px;       /* inputs, small cards */
+  --ae-r-lg: 12px;      /* cards */
+  --ae-r-xl: 16px;      /* panels, modals, window */
+  --ae-r-btn: 10px;     /* rounded-rectangle buttons (app). Glass reads this. */
+  --ae-r-pill: 999px;   /* pill buttons (marketing, floating controls) */
+
+  /* ---------- elevation ---------- */
+  --ae-sh-1: 0 1px 2px rgba(17, 17, 26, .05);
+  --ae-sh-2: 0 1px 2px rgba(17, 17, 26, .05), 0 4px 14px rgba(17, 17, 26, .05);
+  --ae-sh-3: 0 2px 6px rgba(17, 17, 26, .06), 0 16px 40px rgba(17, 17, 26, .10);
+  --ae-sh-float: 0 1px 2px rgba(0, 0, 0, .12), 0 10px 30px rgba(0, 0, 0, .18);
+  --ae-ring: 0 0 0 3px rgba(52, 120, 246, .28);
+
+  /* ---------- motion ---------- */
+  --ae-ease: cubic-bezier(.2, .7, .2, 1);
+  --ae-ease-in-out: cubic-bezier(.65, 0, .35, 1);
+  --ae-dur-1: 120ms;
+  --ae-dur-2: 220ms;
+  --ae-dur-3: 420ms;
+  --ae-dur-skel: 1.4s;
+
+  /* ---------- layout ---------- */
+  --ae-sidebar-w: 236px;
+  --ae-rail-w: 60px;
+  --ae-topbar-h: 52px;
+  --ae-content-max: 1120px;
+  --ae-read-max: 680px;  /* transcript, guidance */
+
+  /* ---------- layers ---------- */
+  --ae-z-sticky: 10;
+  --ae-z-float: 40;
+  --ae-z-menu: 60;
+  --ae-z-modal: 100;
+  --ae-z-toast: 120;
+
+  /* ---------- glass (V3) ---------- */
+  --ae-glass-ink: #1D1D1F;          /* data-fill for primary glass */
+  --ae-glass-plate: rgba(255, 255, 255, .92);  /* floating panels over unknown colour */
+  --ae-glass-blur: 22px;
+}
+
+/* ---------- palette "Clear": B's colour per area, softened ---------- */
+[data-palette="clear"] {
+  --ae-publish: #E9AE12;  --ae-publish-tint: #FFF6D8;  --ae-publish-ink: #6F5100;
+  --ae-publish-wash: linear-gradient(160deg, #FFEFB8 0%, #FFF7DA 50%, #FFFCF2 100%);
+  --ae-test: #E35C9C;     --ae-test-tint: #FFEBF4;     --ae-test-ink: #9B2660;
+  --ae-test-wash: linear-gradient(160deg, #FFDCEB 0%, #FFEEF5 50%, #FFF8FB 100%);
+  --ae-review: #15A28A;   --ae-review-tint: #E3F6F2;   --ae-review-ink: #0B6656;
+  --ae-review-wash: linear-gradient(160deg, #CDEFE8 0%, #E7F8F4 50%, #F6FCFA 100%);
+  --ae-all-wash: linear-gradient(120deg, #FFF0BF 0%, #FFE3EF 50%, #D6F2EC 100%);
+}
+
+/* ---------- dark (proposed, app only) ---------- */
+[data-theme="dark"] {
+  --ae-ink: #F5F5F7;
+  --ae-ink-2: #D9D9DE;
+  --ae-ink-3: #A1A1A8;
+  --ae-ink-4: #7C7C84;
+  --ae-paper: #18181B;
+  --ae-mist: #111113;
+  --ae-mist-2: #222226;
+  --ae-line: #2A2A2F;
+  --ae-line-2: #3A3A40;
+  --ae-on-ink: #111113;
+  --ae-link: #6FA0FF;
+  --ae-blue-soft: rgba(52, 120, 246, .22);
+  --ae-ok: #4CC38A;   --ae-ok-bg: rgba(76, 195, 138, .14);
+  --ae-warn: #F0B24A; --ae-warn-bg: rgba(240, 178, 74, .14);
+  --ae-bad: #FF6B60;  --ae-bad-bg: rgba(255, 107, 96, .14);
+  --ae-mark: rgba(255, 213, 79, .26);
+  --ae-mark-ink: #FFE7A0;
+  --ae-word-future: #75757C;
+  --ae-publish-tint: rgba(238, 138, 92, .14);  --ae-publish-ink: #FFB592;
+  --ae-test-tint: rgba(122, 120, 238, .18);    --ae-test-ink: #B9B7FF;
+  --ae-review-tint: rgba(59, 169, 127, .16);   --ae-review-ink: #8EE0BC;
+  --ae-publish-wash: linear-gradient(135deg, #2A1D17 0%, #1C1A1F 100%);
+  --ae-test-wash: linear-gradient(135deg, #1E1D33 0%, #1A1B22 100%);
+  --ae-review-wash: linear-gradient(135deg, #15271F 0%, #191C1B 100%);
+  --ae-all-wash: linear-gradient(120deg, #2A1D17 0%, #1E1D33 50%, #15271F 100%);
+  --ae-sh-2: 0 1px 2px rgba(0, 0, 0, .4), 0 4px 14px rgba(0, 0, 0, .3);
+  --ae-sh-3: 0 2px 6px rgba(0, 0, 0, .4), 0 16px 40px rgba(0, 0, 0, .5);
+  --ae-glass-ink: #F5F5F7;
+  --ae-glass-plate: rgba(28, 28, 31, .84);
+}
