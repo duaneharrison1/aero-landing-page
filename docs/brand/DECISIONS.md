@@ -10,7 +10,7 @@ The running log of what Duane decided, newest first. Add a line whenever he deci
 ## 23 Oct 2026: next phase, the website
 - **Next: a homepage round on the v3 UI**, then the video storyboard, one feature page and the SEO template, then the build in aero-landing-page.
 - **Rotating headline**, as HeyBooking did: the made-with part changes ("Publish your Claude artifact", "...your Figma prototype", "...your Lovable app", "...your HTML site"), so people see what they can bring. The rest of the line stays ("Watch people use it.").
-- **Hero: one big real app window with a short calm loop** (published, then a session arriving).
+- ~~Hero: one big real app window with a short calm loop (published, then a session arriving).~~ Replaced 23 Oct: **keep round 5 A's hero**, the whole app at an angle with someone's session being reviewed (true to the app: no cursor, no live typing). **Publish, Test, Review each show a large real app screen**; the timeline is not a headline feature. Never mention `claude mcp`: "one prompt to publish".
 - **Node 20 upgrade** opened as its own PR now (deadline 30 Oct).
 
 ## 23 Oct 2026: answers on the questions page
