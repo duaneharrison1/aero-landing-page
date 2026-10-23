@@ -1,0 +1,407 @@
+{
+ "sections": [
+  {
+   "id": "home",
+   "num": "01",
+   "short": "Home",
+   "title": "Home",
+   "question": "\"What's new\" as a plain timeline of events, sites as preview blocks, tests as status lines. Layout A (timeline first) and B (sites on top).",
+   "take": [
+    "The team picks A: what changed is the reason to open Home. B suits someone who mostly publishes sites.",
+    "Site visits on Home need site analytics (Solo plan); check we store daily visits before building that event."
+   ],
+   "tiles": [
+    {
+     "key": "A",
+     "label": "A \u00b7 Studio, v2 (light, then dark)",
+     "img": [
+      [
+       "hi/make-m1.png",
+       ""
+      ]
+     ],
+     "idea": "",
+     "works": [],
+     "doesnt": [],
+     "vkey": "v2"
+    }
+   ]
+  },
+  {
+   "id": "first",
+   "num": "02",
+   "short": "First run",
+   "title": "First run, and only one site or test",
+   "question": "Teaches Publish, Test, Review with a faint shape of what will appear, three ways in, and \"Open the example\". With one site or test, it sits in the sidebar.",
+   "take": [],
+   "tiles": [
+    {
+     "key": "A",
+     "label": "A \u00b7 Studio, v2 (light, then dark)",
+     "img": [
+      [
+       "hi/make-m2.png",
+       ""
+      ]
+     ],
+     "idea": "",
+     "works": [],
+     "doesnt": [],
+     "vkey": "v2"
+    }
+   ]
+  },
+  {
+   "id": "lists",
+   "num": "03",
+   "short": "Lists",
+   "title": "Sites and Tests lists",
+   "question": "Sites as blocks with a real preview (Live, Private, Free countdown); tests as status lines with a small preview and session dots.",
+   "take": [],
+   "tiles": [
+    {
+     "key": "A",
+     "label": "A \u00b7 Studio, v2 (light, then dark)",
+     "img": [
+      [
+       "hi/make-m3.png",
+       ""
+      ]
+     ],
+     "idea": "",
+     "works": [],
+     "doesnt": [],
+     "vkey": "v2"
+    }
+   ]
+  },
+  {
+   "id": "site",
+   "num": "04",
+   "short": "Site page",
+   "title": "Site page",
+   "question": "Everything on one page: preview, address, drop a new version, versions with roll back; settings (public or private, domain, favicon, badge, name) in a side column. \"Test this site\" explains it makes a copy with its own link.",
+   "take": [],
+   "tiles": [
+    {
+     "key": "A",
+     "label": "A \u00b7 Studio, v2 (light, then dark)",
+     "img": [
+      [
+       "hi/make-m4.png",
+       ""
+      ]
+     ],
+     "idea": "",
+     "works": [],
+     "doesnt": [],
+     "vkey": "v2"
+    }
+   ]
+  },
+  {
+   "id": "create",
+   "num": "05",
+   "short": "Create",
+   "title": "Create: one guided flow per source",
+   "question": "Pick the source first, then its own flow: upload (the wash picks up the site's colours after upload, then \"Now test it\"), prompt (copy it into Claude or ChatGPT, no connector; blue-dot loader while waiting), Figma link (publish only once the link is checked).",
+   "take": [],
+   "tiles": [
+    {
+     "key": "A",
+     "label": "A \u00b7 Studio, v2 (light, then dark)",
+     "img": [
+      [
+       "hi/make-m5.png",
+       ""
+      ]
+     ],
+     "idea": "",
+     "works": [],
+     "doesnt": [],
+     "vkey": "v2"
+    }
+   ]
+  },
+  {
+   "id": "setup",
+   "num": "06",
+   "short": "Test setup",
+   "title": "Test setup and share",
+   "question": "Name, optional tasks, welcome and thank-you; the link card, \"Open as tester\" (recorded as You), an open or closed switch for new sessions, the test's own domain and favicon.",
+   "take": [],
+   "tiles": [
+    {
+     "key": "A",
+     "label": "A \u00b7 Studio, v2 (light, then dark)",
+     "img": [
+      [
+       "hi/make-m6.png",
+       ""
+      ]
+     ],
+     "idea": "",
+     "works": [],
+     "doesnt": [],
+     "vkey": "v2"
+    }
+   ]
+  },
+  {
+   "id": "tester",
+   "num": "07",
+   "short": "Tester",
+   "title": "Tester start screen and task pill",
+   "question": "Asks for a first name (optional) before any browser prompt, then permissions. The task pill floats over the prototype: words on a frosted plate so they read over any colour, glass only on Done. Shown over five backgrounds.",
+   "take": [],
+   "tiles": [
+    {
+     "key": "A",
+     "label": "A \u00b7 Studio, v2 (light, then dark)",
+     "img": [
+      [
+       "hi/make-m7.png",
+       ""
+      ]
+     ],
+     "idea": "",
+     "works": [],
+     "doesnt": [],
+     "vkey": "v2"
+    }
+   ]
+  },
+  {
+   "id": "sessions",
+   "num": "08",
+   "short": "Sessions",
+   "title": "Sessions",
+   "question": "One row per tester: name, device, summary or quote, length, tasks 2 of 2, Issue / Confusion / Works well counts with severity, and Watch. \"Transcript arriving\", \"No audio\" and \"You\" rows.",
+   "take": [],
+   "tiles": [
+    {
+     "key": "A",
+     "label": "A \u00b7 Studio, v2 (light, then dark)",
+     "img": [
+      [
+       "hi/review-s1.png",
+       ""
+      ]
+     ],
+     "idea": "",
+     "works": [],
+     "doesnt": [],
+     "vkey": "v2"
+    }
+   ]
+  },
+  {
+   "id": "watch",
+   "num": "09",
+   "short": "Watch",
+   "title": "Session review: Watch",
+   "question": "Dark first. Recording left (a recorded tab, no pointer), one timeline with task regions and tag marks plus filter chips, follow-along transcript with the current word lit, click to jump, \"Back to now\", Summary per task, speeds, Skip silence, keyboard sheet, Download menu, previous and next tester.",
+   "take": [
+    "Built on the research: video left and transcript right (UserTesting, Lookback, Grain), one timeline with task and tag markers, Frame.io-style keys."
+   ],
+   "tiles": [
+    {
+     "key": "A",
+     "label": "A \u00b7 Studio, v2 (light, then dark)",
+     "img": [
+      [
+       "hi/review-s2.png",
+       ""
+      ]
+     ],
+     "idea": "",
+     "works": [],
+     "doesnt": [],
+     "vkey": "v2"
+    }
+   ]
+  },
+  {
+   "id": "read",
+   "num": "10",
+   "short": "Read",
+   "title": "Session review: Read",
+   "question": "The same session as a calm read: her words as the headline, the summary as the opening, tags and notes in the margin, the video in a corner that keeps playing. One switch between Watch and Read.",
+   "take": [],
+   "tiles": [
+    {
+     "key": "A",
+     "label": "A \u00b7 Studio, v2 (light, then dark)",
+     "img": [
+      [
+       "hi/review-s3.png",
+       ""
+      ]
+     ],
+     "idea": "",
+     "works": [],
+     "doesnt": [],
+     "vkey": "v2"
+    }
+   ]
+  },
+  {
+   "id": "noaudio",
+   "num": "11",
+   "short": "No audio",
+   "title": "No tasks, no audio",
+   "question": "What changes when there are no tasks and no sound: no task lane, an honest \"No sound in this recording\", Transcript and Read switched off with a reason. Two half-cases beside it.",
+   "take": [],
+   "tiles": [
+    {
+     "key": "A",
+     "label": "A \u00b7 Studio, v2 (light, then dark)",
+     "img": [
+      [
+       "hi/review-s4.png",
+       ""
+      ]
+     ],
+     "idea": "",
+     "works": [],
+     "doesnt": [],
+     "vkey": "v2"
+    }
+   ]
+  },
+  {
+   "id": "insights",
+   "num": "12",
+   "short": "Insights",
+   "title": "Insights, across sessions",
+   "question": "Its own tab. Summary first, a score per task, Task 2 opened into a timeline (one bar per tester from their own start, with a median line), issues ranked \"4 of 6 testers\" with playable quote cards, what worked, where testers disagreed, a confidence note. By task, by theme, by priority; Copy as table.",
+   "take": [],
+   "tiles": [
+    {
+     "key": "A",
+     "label": "A \u00b7 Studio, v2 (light, then dark)",
+     "img": [
+      [
+       "hi/review-s5.png",
+       ""
+      ]
+     ],
+     "idea": "",
+     "works": [],
+     "doesnt": [],
+     "vkey": "v2"
+    }
+   ]
+  },
+  {
+   "id": "insempty",
+   "num": "13",
+   "short": "Insights empty",
+   "title": "Insights: empty and early",
+   "question": "0 sessions: three steps say what happens and when, beside a faded Example, with Copy test link and Open the example. 2 sessions: \"Patterns appear from 3 sessions\", low confidence, \"Seen so far\".",
+   "take": [],
+   "tiles": [
+    {
+     "key": "A",
+     "label": "A \u00b7 Studio, v2 (light, then dark)",
+     "img": [
+      [
+       "hi/review-s6.png",
+       ""
+      ]
+     ],
+     "idea": "",
+     "works": [],
+     "doesnt": [],
+     "vkey": "v2"
+    }
+   ]
+  },
+  {
+   "id": "mkt",
+   "num": "14",
+   "short": "Marketing",
+   "title": "Marketing versions",
+   "question": "The real components, bigger and simpler, and a homepage hero and a social card built only from them.",
+   "take": [],
+   "tiles": [
+    {
+     "key": "A",
+     "label": "Make team: site block, test link card, what's-new rows, hero",
+     "img": [
+      [
+       "hi/make-m8.png",
+       ""
+      ]
+     ],
+     "idea": "",
+     "works": [],
+     "doesnt": [],
+     "vkey": "make"
+    },
+    {
+     "key": "A",
+     "label": "Review team: session row, quote card, player, social card",
+     "img": [
+      [
+       "hi/review-s7.png",
+       ""
+      ]
+     ],
+     "idea": "",
+     "works": [],
+     "doesnt": [],
+     "vkey": "review"
+    }
+   ]
+  }
+ ],
+ "intro": [
+  "Round v2 on your pick, A Studio, with your notes from the directions board: ink buttons with quiet glass, \"Aero.\" in Geist with the blue dot, dark mode, Sites and Tests separate with \"Test this site\" making a copy, testers with names, one guided flow per source, and the review screens built on the research into pro tools (Lookback, UserTesting, Grain, Maze, Dovetail, Frame.io).",
+  "Two teams, one shared stylesheet, so it reads as one product. Every screen is shown in light and then dark. Mark each screen Keep, Parts of it or Drop, with a note; I read the marks before building.",
+  "The questions that need your answer are at the bottom."
+ ],
+ "roles": [
+  [
+   "Information architect",
+   "sites, tests, insights as its own tab"
+  ],
+  [
+   "UX researcher",
+   "what pro review tools do"
+  ],
+  [
+   "UX and UI designers",
+   "screens, states, light and dark"
+  ],
+  [
+   "Copywriter",
+   "every label"
+  ],
+  [
+   "Marketer",
+   "marketing versions"
+  ]
+ ],
+ "patterns": [
+  "Coloured side stripes on cards",
+  "Icons in pastel boxes",
+  "A moving cursor in a replay",
+  "A transcript typing live"
+ ],
+ "recommend": [
+  "Home: layout A (timeline first) or B (sites on top)? Team picks A.",
+  "Private site means: a password (a Basic plan feature today) or only people signed in? This decides whether Free gets the switch.",
+  "Test link: aeroapp.ai/t/pocket-7k2 (as drawn) or its own name.aeroapp.ai?",
+  "A test can have its own custom domain, separate from its site. On which plan?",
+  "New: an open or closed switch for taking sessions on a test. Want it?",
+  "After \"Now test it\", open the test on Setup (drawn) or Share?",
+  "Your own \"Open as tester\" runs (\"You\"): count towards the session allowance? Keep them out of Insights by default?",
+  "Every account gets a read-only Example study (Pocket) under Tests until dismissed?",
+  "Figma link offered under New site as well, or only under Tests?",
+  "Sessions newest first (drawn) or numbered from the first?",
+  "Ranking in Insights: severity first (Minor, Major, Critical, editable), then how many testers?",
+  "Watch as the default view, remembering each person's last choice of Watch or Read?",
+  "For me to check in the code before building: the recorder logs task ticks with times; tasks still count with no audio; \"Skip silence\" can work from the audio; daily site visits are stored."
+ ]
+}
