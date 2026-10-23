@@ -1,6 +1,6 @@
 ---
 brand-sync: figmaApp docs/brand is the source. Copy this file unchanged to aero-landing-page/docs/brand/.
-version: 2026-10-23.1
+version: 2026-10-23.2
 ---
 
 # Aero brand and product decisions
@@ -15,9 +15,9 @@ The running log of what Duane decided, newest first. Add a line whenever he deci
 - **Logo:** A's "Aero." in Geist with the blue full stop is the favourite. B's Funnel Display is out.
 - **Keep these lines:** "One prompt and it's live." "Made for people who make things." "In their own words." "From prompt to first session."
 - **Video:** follow A's in-app style, slower, as separate scenes: the Aero dashboard (a made-up studio name, never Duane's) → Claude building the page (Claude's own UI, accurate but simplified) → one prompt → back in Aero, published at a real-looking URL → create a test → someone else, on their own computer, takes the test → results. Keep D's progress line along the bottom and C's voice highlight with insights.
-- **Truth rules for every mockup and video:**
-  - The transcript arrives after the session; never show it typing live during recording. A replay may highlight words as the audio plays (word timings are stored).
-  - Recordings of a browser tab do not show the tester's mouse. Don't show a cursor moving in a replay.
+- **Be true to the app** in every mockup and video (Duane's point, 23 Oct). For example:
+  - The transcript is made after the session. Highlighting words while a recorded session plays is true, and liked: keep it.
+  - Tab recordings show no mouse today. Can it be recorded? Yes, with work: see `research/cursor-recording.md` (full cursor for HTML sites through our overlay script, clicks and misclicks for Figma through Figma's Embed API). Until that ships, don't show a moving cursor in a replay.
   - Keep Aero's interface and Claude's interface visibly separate.
   - Use real-looking URLs (name.aeroapp.ai, aeroapp.ai/...).
 - **No stock photos.** They look fake; use illustration and animation instead.
