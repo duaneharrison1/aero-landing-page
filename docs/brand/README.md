@@ -19,3 +19,4 @@ Everything about how Aero looks, sounds and is built, kept in the repo so it isn
 | `glass/` | The V3 glass button script, its source and the other variants studied, research notes. |
 | `research/` | The strategy dossier, reference analysis, app UX review, conversation audit. |
 | `mockups/` | The round 5 creative brief and the independent critique. |
+| `app-ui/` | The whole-app UI round: brief, then tokens, components, screens and flows. |
