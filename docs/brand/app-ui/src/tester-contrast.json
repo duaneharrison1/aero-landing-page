@@ -1,0 +1,284 @@
+{
+ "dark:today": {
+  "min": 8.75,
+  "fg": "rgba(255, 255, 255, 0.96)",
+  "worst": [
+   68,
+   71,
+   76
+  ],
+  "bf": "blur(30px) saturate(1.65) brightness(1.06)",
+  "ins": 7.76
+ },
+ "dark:plate": {
+  "min": 14.12,
+  "fg": "rgb(29, 29, 31)",
+  "worst": [
+   235,
+   235,
+   235
+  ],
+  "bf": "blur(22px) saturate(1.4)",
+  "ins": 9.51
+ },
+ "dark:glass": {
+  "min": 2,
+  "fg": "rgb(255, 255, 255)",
+  "worst": [
+   183,
+   183,
+   184
+  ],
+  "bf": "none",
+  "ins": 4.32
+ },
+ "dark:mini": {
+  "min": 4.64,
+  "fg": "rgb(29, 29, 31)",
+  "worst": [
+   135,
+   134,
+   134
+  ],
+  "bf": "none"
+ },
+ "light:today": {
+  "min": 2.42,
+  "fg": "rgba(255, 255, 255, 0.96)",
+  "worst": [
+   162,
+   164,
+   168
+  ],
+  "bf": "blur(30px) saturate(1.65) brightness(1.06)",
+  "ins": 2.16
+ },
+ "light:plate": {
+  "min": 16,
+  "fg": "rgb(29, 29, 31)",
+  "worst": [
+   249,
+   249,
+   250
+  ],
+  "bf": "blur(22px) saturate(1.4)",
+  "ins": 10.96
+ },
+ "light:glass": {
+  "min": 4.94,
+  "fg": "rgb(255, 255, 255)",
+  "worst": [
+   112,
+   112,
+   114
+  ],
+  "bf": "none",
+  "ins": 4.15
+ },
+ "light:mini": {
+  "min": 15.84,
+  "fg": "rgb(29, 29, 31)",
+  "worst": [
+   247,
+   248,
+   250
+  ],
+  "bf": "none"
+ },
+ "bright:today": {
+  "min": 4.4,
+  "fg": "rgba(255, 255, 255, 0.96)",
+  "worst": [
+   159,
+   103,
+   87
+  ],
+  "bf": "blur(30px) saturate(1.65) brightness(1.06)",
+  "ins": 3.57
+ },
+ "bright:plate": {
+  "min": 15.28,
+  "fg": "rgb(29, 29, 31)",
+  "worst": [
+   255,
+   241,
+   238
+  ],
+  "bf": "blur(22px) saturate(1.4)",
+  "ins": 10.36
+ },
+ "bright:glass": {
+  "min": 2.35,
+  "fg": "rgb(255, 255, 255)",
+  "worst": [
+   169,
+   169,
+   170
+  ],
+  "bf": "none",
+  "ins": 2.45
+ },
+ "bright:mini": {
+  "min": 7.6,
+  "fg": "rgb(29, 29, 31)",
+  "worst": [
+   255,
+   144,
+   115
+  ],
+  "bf": "none"
+ },
+ "busy:today": {
+  "min": 3.09,
+  "fg": "rgba(255, 255, 255, 0.96)",
+  "worst": [
+   159,
+   144,
+   62
+  ],
+  "bf": "blur(30px) saturate(1.65) brightness(1.06)",
+  "ins": 2.67
+ },
+ "busy:plate": {
+  "min": 15.76,
+  "fg": "rgb(29, 29, 31)",
+  "worst": [
+   255,
+   246,
+   238
+  ],
+  "bf": "blur(22px) saturate(1.4)",
+  "ins": 10.55
+ },
+ "busy:glass": {
+  "min": 1.86,
+  "fg": "rgb(255, 255, 255)",
+  "worst": [
+   190,
+   190,
+   191
+  ],
+  "bf": "none",
+  "ins": 1.76
+ },
+ "busy:mini": {
+  "min": 6.62,
+  "fg": "rgb(29, 29, 31)",
+  "worst": [
+   188,
+   156,
+   137
+  ],
+  "bf": "none"
+ },
+ "blue:today": {
+  "min": 4.62,
+  "fg": "rgba(255, 255, 255, 0.96)",
+  "worst": [
+   79,
+   115,
+   165
+  ],
+  "bf": "blur(30px) saturate(1.65) brightness(1.06)",
+  "ins": 3.76
+ },
+ "blue:plate": {
+  "min": 15.12,
+  "fg": "rgb(29, 29, 31)",
+  "worst": [
+   237,
+   243,
+   255
+  ],
+  "bf": "blur(22px) saturate(1.4)",
+  "ins": 10.25
+ },
+ "blue:glass": {
+  "min": 1.86,
+  "fg": "rgb(255, 255, 255)",
+  "worst": [
+   190,
+   190,
+   191
+  ],
+  "bf": "none",
+  "ins": 2.08
+ },
+ "blue:mini": {
+  "min": 6.69,
+  "fg": "rgb(29, 29, 31)",
+  "worst": [
+   111,
+   163,
+   254
+  ],
+  "bf": "none"
+ },
+ "sun:today": {
+  "min": 2.63,
+  "fg": "rgba(255, 255, 255, 0.96)",
+  "worst": [
+   161,
+   161,
+   77
+  ],
+  "bf": "blur(30px) saturate(1.65) brightness(1.06)",
+  "ins": 2.24
+ },
+ "sun:plate": {
+  "min": 15.96,
+  "fg": "rgb(29, 29, 31)",
+  "worst": [
+   250,
+   249,
+   243
+  ],
+  "bf": "blur(22px) saturate(1.4)",
+  "ins": 10.93
+ },
+ "sun:glass": {
+  "min": 5.4,
+  "fg": "rgb(255, 255, 255)",
+  "worst": [
+   112,
+   107,
+   72
+  ],
+  "bf": "none",
+  "ins": 4.5
+ },
+ "sun:mini": {
+  "min": 13.84,
+  "fg": "rgb(29, 29, 31)",
+  "worst": [
+   253,
+   235,
+   106
+  ],
+  "bf": "none"
+ },
+ "dark:plate94": {
+  "min": 14.77,
+  "ins": 9.95
+ },
+ "light:plate94": {
+  "min": 16.26,
+  "ins": 11.06
+ },
+ "bright:plate94": {
+  "min": 15.7,
+  "ins": 10.58
+ },
+ "busy:plate94": {
+  "min": 16,
+  "ins": 10.78
+ },
+ "blue:plate94": {
+  "min": 15.52,
+  "ins": 10.54
+ },
+ "sun:plate94": {
+  "min": 16.24,
+  "ins": 11.04
+ }
+}

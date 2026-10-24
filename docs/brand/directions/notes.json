@@ -1,0 +1,1251 @@
+{
+ "sections": [
+  {
+   "id": "p1",
+   "num": "01",
+   "short": "Home",
+   "title": "Home",
+   "question": "What should the first screen say when you come back? Everyone agrees it opens on what is new. The difference is how loud the lead is.",
+   "take": [
+    "All four directions moved away from today's grid of tests to \"what's new first\". They differ in volume: A a quiet list, B coloured step cards, C one quote as a headline, D one playable moment.",
+    "My read: A's quiet list, with D's \"worth watching\" moment as its first item when there is one. C's quote works as that moment's headline."
+   ],
+   "tiles": [
+    {
+     "key": "T",
+     "label": "Today: the live app",
+     "img": [
+      [
+       "today/t-dashboard.png",
+       "Live app, 22 Oct"
+      ]
+     ],
+     "idea": "Today's dashboard is a grid of tests with four counters on top.",
+     "works": [
+      "Simple and familiar; filters and search work",
+      "\"New test\" is easy to find"
+     ],
+     "doesnt": [
+      "Grid fills with drafts named lone-arch, cool-flamingo",
+      "Counters say 0% before anything happens",
+      "\"AI-generated insights\" in the subtitle (AI as the headline)",
+      "Blue-tinted buttons look washed out"
+     ]
+    },
+    {
+     "key": "A",
+     "label": "A \u00b7 Studio",
+     "img": [
+      [
+       "hi/studio-p1.png",
+       "New"
+      ],
+      [
+       "hi/r5-studio-1.png",
+       "Round 5 version"
+      ]
+     ],
+     "idea": "What's new as a list with real thumbnails and one dot per session; the first run puts the three inputs right on the page.",
+     "works": [
+      "Calm, and the real thumbnails replace icon tiles",
+      "Session dots: status for six sessions in one glance",
+      "First run is the input itself (paste, drop, connect), not three cards"
+     ],
+     "doesnt": [
+      "Three columns compete (what's new, tests, sites)",
+      "The coloured squares beside each test in the sidebar are colour-coding again",
+      "Plan usage block at the bottom is noise on every page"
+     ]
+    },
+    {
+     "key": "B",
+     "label": "B \u00b7 Colour",
+     "img": [
+      [
+       "hi/colour-p1.png",
+       "New"
+      ],
+      [
+       "hi/r5-colour-1.png",
+       "Round 5 version"
+      ]
+     ],
+     "idea": "What's new split by step (Publish, Test, Review), each in its colour; a loop meter shows where each test has got to.",
+     "works": [
+      "You know what kind of news it is before you read it",
+      "The loop meter is a nice, honest progress mark",
+      "No colour in the nav, as asked"
+     ],
+     "doesnt": [
+      "Three coloured cards in a row is close to the AI pattern",
+      "Tests and sites tables repeat each other",
+      "A lot of colour for a page you see daily"
+     ]
+    },
+    {
+     "key": "C",
+     "label": "C \u00b7 Story",
+     "img": [
+      [
+       "hi/story-p1.png",
+       "New"
+      ],
+      [
+       "hi/r5-story-1.png",
+       "Round 5 version"
+      ]
+     ],
+     "idea": "A front page: the newest thing a tester said is the headline, tests and sites as an index on the right. No sidebar.",
+     "works": [
+      "The most human home: her words first",
+      "Top bar instead of sidebar gives the reading column room",
+      "Highlighter and tally marks instead of pills"
+     ],
+     "doesnt": [
+      "One lead story hides the rest when several tests run",
+      "Roman numerals and italics are decoration (the team agrees)",
+      "Without a sidebar the list of tests is one click further away"
+     ]
+    },
+    {
+     "key": "D",
+     "label": "D \u00b7 Replay",
+     "img": [
+      [
+       "hi/replay-p1.png",
+       "New"
+      ],
+      [
+       "hi/r5-replay-1.png",
+       "Round 5 version"
+      ]
+     ],
+     "idea": "Opens on one moment worth watching, cued to 03:08; tests drawn as reels; the loop line runs along the bottom.",
+     "works": [
+      "Shows the product's value every visit",
+      "Reels: each bar is a session, to scale",
+      "The bottom line is the same thing as the homepage scrubber and the video"
+     ],
+     "doesnt": [
+      "Dark everywhere is heavy for daily admin work",
+      "Small, dense type",
+      "A playing clip can distract when you only came to copy a link"
+     ]
+    },
+    {
+     "key": "E",
+     "label": "E \u00b7 App UI round",
+     "img": [
+      [
+       "e/s2-1.png",
+       "Layout A"
+      ],
+      [
+       "e/s2-2.png",
+       "Layout B"
+      ],
+      [
+       "e/s2-3.png",
+       "Layout C"
+      ]
+     ],
+     "idea": "The previous round: three home layouts and every state (first run, loading, drafts, phone).",
+     "works": [
+      "Covers every state, which the directions don't",
+      "Draft rule: only real input becomes a draft"
+     ],
+     "doesnt": [
+      "Looks like a generic template next to A to D",
+      "Icons in pastel boxes in the feed (the pattern you flagged)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "p2",
+   "num": "02",
+   "short": "Sessions",
+   "title": "Sessions",
+   "question": "How do you see and move between the sessions of one test?",
+   "take": [
+    "A, B and C agree: a numbered list with each tester's first words, numbers that never change, and J / K to move. D adds something none of the others have: every session on one shared clock, so the 03:08 cluster across four testers shows before you press play.",
+    "My read: C's list (their words, big numbers) with B's friction ticks per row, and D's shared clock as a \"Compare\" view on top."
+   ],
+   "tiles": [
+    {
+     "key": "T",
+     "label": "Today: the live app",
+     "img": [
+      [
+       "today/t-sessions.png",
+       "Live app: Sessions tab"
+      ]
+     ],
+     "idea": "A list of sessions with a one-line summary, length and status; themes on the right.",
+     "works": [
+      "Each row has a summary and a length",
+      "Themes with counts beside the list"
+     ],
+     "doesnt": [
+      "Every tester is \"Anonymous Tester\" and every row says \"Friction\"",
+      "The tester's own words are missing",
+      "\"No sentiment yet\" panel is always empty"
+     ]
+    },
+    {
+     "key": "A",
+     "label": "A \u00b7 Studio",
+     "img": [
+      [
+       "hi/studio-p2.png",
+       "New"
+      ]
+     ],
+     "idea": "A calm table with a peek panel on the right; status is a word with its own mark.",
+     "works": [
+      "Peek panel: read the summary without leaving the list",
+      "\"First friction, in their words\" column"
+     ],
+     "doesnt": [
+      "The length strip on top adds little (the team would drop it)",
+      "Very close to today's structure; little new"
+     ]
+    },
+    {
+     "key": "B",
+     "label": "B \u00b7 Colour",
+     "img": [
+      [
+       "hi/colour-p2.png",
+       "New"
+      ]
+     ],
+     "idea": "Length drawn to scale with a tick per friction point; the test header turns mint on Review tabs.",
+     "works": [
+      "Friction ticks per row are the clearest small signal",
+      "Selected row in the same blue as the dot"
+     ],
+     "doesnt": [
+      "Header changing colour per tab feels jumpy (the team agrees)"
+     ]
+    },
+    {
+     "key": "C",
+     "label": "C \u00b7 Story",
+     "img": [
+      [
+       "hi/story-p2.png",
+       "New"
+      ]
+     ],
+     "idea": "A contents page: each session listed by its first line in the tester's words.",
+     "works": [
+      "Most readable; you can choose what to watch from the words alone",
+      "\"Next session\" teaser at the end of each one"
+     ],
+     "doesnt": [
+      "No sense of where in the session things went wrong",
+      "Feels like a document if there are 40 sessions"
+     ]
+    },
+    {
+     "key": "D",
+     "label": "D \u00b7 Replay",
+     "img": [
+      [
+       "hi/replay-p2.png",
+       "New"
+      ]
+     ],
+     "idea": "All sessions as tracks on one clock, like an editor; selected one previews on top.",
+     "works": [
+      "Unique: shows patterns across testers before watching",
+      "Each status looks different (waveform, hatching, flat line)"
+     ],
+     "doesnt": [
+      "Squashes when lengths vary a lot",
+      "Dark, editor-like; may feel technical"
+     ]
+    },
+    {
+     "key": "E",
+     "label": "E \u00b7 App UI round",
+     "img": [
+      [
+       "e/s7-1.png",
+       "A. Table"
+      ],
+      [
+       "e/s7-2.png",
+       "B. Cards with a quote"
+      ]
+     ],
+     "idea": "",
+     "works": [],
+     "doesnt": []
+    }
+   ]
+  },
+  {
+   "id": "p3",
+   "num": "03",
+   "short": "Session review",
+   "title": "Session review",
+   "question": "Watch first or read first? This is the most important screen and the real choice of the round.",
+   "take": [
+    "A, B and D put the recording first; C puts her words first and docks the recording. You liked C's calm analysis view and D's timeline line, which pull in different directions.",
+    "My read: C's article layout as the default (headline from her words, summary, transcript with friction points in the margin), with D's timeline as the player bar of the docked recording, and one switch to make the recording big.",
+    "Note for C: the yellow rule down the left of the summary and the margin notes is a mild version of the side-stripe pattern; I would remove it."
+   ],
+   "tiles": [
+    {
+     "key": "T",
+     "label": "Today: the live app",
+     "img": [
+      [
+       "today/t-session-top.png",
+       "Live app: top of the session page"
+      ],
+      [
+       "today/t-session-recording.png",
+       "Live app: scrolled down to the recording and transcript"
+      ]
+     ],
+     "idea": "Summary, priorities and friction points at the top; recording and transcript far below.",
+     "works": [
+      "All the findings are there, with quotes and a recommendation",
+      "Priorities are numbered"
+     ],
+     "doesnt": [
+      "Recording is hidden behind \"Watch recording\", about 1,800px down",
+      "Transcript is one block with no times",
+      "Red Delete button sits next to the title",
+      "\"AI insights\" label"
+     ]
+    },
+    {
+     "key": "A",
+     "label": "A \u00b7 Studio",
+     "img": [
+      [
+       "hi/studio-p3.png",
+       "New"
+      ],
+      [
+       "hi/r5-studio-2.png",
+       "Round 5 version"
+      ]
+     ],
+     "idea": "Recording left on the Review wash, transcript right following the playback, summary and priorities under.",
+     "works": [
+      "True to the app: word highlight only on playback, no cursor",
+      "Friction cards jump to their moment"
+     ],
+     "doesnt": [
+      "Three areas compete for attention",
+      "Transcript is small and secondary"
+     ]
+    },
+    {
+     "key": "B",
+     "label": "B \u00b7 Colour",
+     "img": [
+      [
+       "hi/colour-p3.png",
+       "New"
+      ],
+      [
+       "hi/r5-colour-2.png",
+       "Round 5 version"
+      ]
+     ],
+     "idea": "Recording first; friction points are mint ticks on the timeline and mint times in the list.",
+     "works": [
+      "Ticks on the timeline match the list",
+      "Clear task markers"
+     ],
+     "doesnt": [
+      "Almost the same layout as A",
+      "The blue word highlight is harsh at reading size"
+     ]
+    },
+    {
+     "key": "C",
+     "label": "C \u00b7 Story",
+     "img": [
+      [
+       "hi/story-p3.png",
+       "New"
+      ],
+      [
+       "hi/r5-story-2.png",
+       "Round 5 version"
+      ]
+     ],
+     "idea": "The session reads like an article: her words as the headline, summary as the standfirst, transcript as the body, friction in the margin.",
+     "works": [
+      "The calmest way to understand a session",
+      "Friction point sits beside the line that caused it",
+      "Headline is her own words"
+     ],
+     "doesnt": [
+      "Yellow left rules (side-stripe pattern)",
+      "Recording is small; watching is secondary"
+     ]
+    },
+    {
+     "key": "D",
+     "label": "D \u00b7 Replay",
+     "img": [
+      [
+       "hi/replay-p3.png",
+       "New"
+      ],
+      [
+       "hi/r5-replay-2.png",
+       "Round 5 version"
+      ]
+     ],
+     "idea": "The recording is the page; tasks and friction points on its timeline; light variant included.",
+     "works": [
+      "Watching is the core value, and this shows it",
+      "Timeline with tasks and markers is the best player bar of the four"
+     ],
+     "doesnt": [
+      "Transcript squeezed into a column",
+      "Lots going on under the player"
+     ]
+    },
+    {
+     "key": "E",
+     "label": "E \u00b7 App UI round",
+     "img": [
+      [
+       "e/s8-1.png",
+       "A. Recording first"
+      ],
+      [
+       "e/s8-3.png",
+       "B. Read like an article"
+      ],
+      [
+       "e/s8-4.png",
+       "C. Theatre"
+      ],
+      [
+       "e/s8-2.png",
+       "D. Proposed: cursor and clicks"
+      ]
+     ],
+     "idea": "",
+     "works": [],
+     "doesnt": []
+    }
+   ]
+  },
+  {
+   "id": "p4",
+   "num": "04",
+   "short": "From a prompt",
+   "title": "Publish from a prompt",
+   "question": "The connector flow: connect once, copy the prompt, wait for the chat, published. Which look and how much detail?",
+   "take": [
+    "All four land on the same flow, so this is a choice of look and detail, not of flow. All keep Claude in its own panel outside Aero.",
+    "Detail ranges from C (calm, four lines) to D (a live log with clock times). D is the most reassuring while waiting, but its file sizes are too technical for most people."
+   ],
+   "tiles": [
+    {
+     "key": "T",
+     "label": "Today: the live app",
+     "img": [
+      [
+       "today/t-create-modal.png",
+       "Live app: New test window"
+      ]
+     ],
+     "idea": "A New test window with four ways in.",
+     "works": [
+      "Four clear ways in, including an existing site",
+      "Opening it saves nothing"
+     ],
+     "doesnt": [
+      "Icons in pastel boxes: the pattern you flagged is in today's app",
+      "The window uses a different font (Poppins) from the app (Inter)",
+      "No sense of what happens next"
+     ]
+    },
+    {
+     "key": "A",
+     "label": "A \u00b7 Studio",
+     "img": [
+      [
+       "hi/studio-p4.png",
+       "New"
+      ],
+      [
+       "hi/r5-studio-3.png",
+       "Round 5 version"
+      ]
+     ],
+     "idea": "One page that keeps its history; each step ticks off in place; ends on \"Now test it\".",
+     "works": [
+      "Ends on the next step, not a dashboard",
+      "Short \"What the prompt does\" notes"
+     ],
+     "doesnt": [
+      "Shows the steps twice (cards and page)"
+     ]
+    },
+    {
+     "key": "B",
+     "label": "B \u00b7 Colour",
+     "img": [
+      [
+       "hi/colour-p4.png",
+       "New"
+      ],
+      [
+       "hi/r5-colour-3.png",
+       "Round 5 version"
+      ]
+     ],
+     "idea": "Publish is sunflower; four numbered steps; tabs switch between Figma, HTML and prompt.",
+     "works": [
+      "Clearest numbering",
+      "\"Share the test\" when the prompt already made one"
+     ],
+     "doesnt": [
+      "The yellow is strong for a whole page"
+     ]
+    },
+    {
+     "key": "C",
+     "label": "C \u00b7 Story",
+     "img": [
+      [
+       "hi/story-p4.png",
+       "New"
+      ],
+      [
+       "hi/r5-story-3.png",
+       "Round 5 version"
+      ]
+     ],
+     "idea": "A short numbered log; the published site set like a title page.",
+     "works": [
+      "Calmest",
+      "Real thumbnail of the published page"
+     ],
+     "doesnt": [
+      "Roman numerals"
+     ]
+    },
+    {
+     "key": "D",
+     "label": "D \u00b7 Replay",
+     "img": [
+      [
+       "hi/replay-p4.png",
+       "New"
+      ],
+      [
+       "hi/r5-replay-3.png",
+       "Round 5 version"
+      ]
+     ],
+     "idea": "While waiting, a log with clock times fills the empty player.",
+     "works": [
+      "Most reassuring while you wait",
+      "Empty player fills with your prototype when live"
+     ],
+     "doesnt": [
+      "\"Receiving files, 412 KB\" is too technical",
+      "Dark"
+     ]
+    },
+    {
+     "key": "E",
+     "label": "E \u00b7 App UI round",
+     "img": [
+      [
+       "e/s3-1.png",
+       "A. Three tiles, one page"
+      ],
+      [
+       "e/s3-2.png",
+       "B. One question at a time"
+      ],
+      [
+       "e/s3-3.png",
+       "C. Prompt first"
+      ]
+     ],
+     "idea": "",
+     "works": [],
+     "doesnt": []
+    }
+   ]
+  },
+  {
+   "id": "p5",
+   "num": "05",
+   "short": "Upload HTML",
+   "title": "Upload HTML or zip",
+   "question": "Drop, uploading, published with address and version, then \"Now test it\".",
+   "take": [
+    "Again the same flow everywhere. Worth keeping from all: the version list with roll back, and \"Now test it\" as the one next step.",
+    "The upload limits the teams wrote (50 MB, 100 MB) are placeholders. The code has a 4.5 MB request cap on one path; the real limit needs checking before any copy uses a number."
+   ],
+   "tiles": [
+    {
+     "key": "T",
+     "label": "Today: the live app",
+     "img": [
+      [
+       "today/t-site-detail.png",
+       "Live app: a live site"
+      ],
+      [
+       "today/t-sites.png",
+       "Live app: Sites list"
+      ]
+     ],
+     "idea": "A live site page with a preview, a drop zone, auto-publish and an agent prompt.",
+     "works": [
+      "Drop to publish a new version, right on the page",
+      "Auto-publish switch and \"Get prompt\" are useful"
+     ],
+     "doesnt": [
+      "Sites list is mostly drafts with made-up names",
+      "Copy and Visit buttons look different from each other",
+      "Subtitle copy has an em dash"
+     ]
+    },
+    {
+     "key": "A",
+     "label": "A \u00b7 Studio",
+     "img": [
+      [
+       "hi/studio-p5.png",
+       "New"
+      ]
+     ],
+     "idea": "",
+     "works": [
+      "Version table with roll back on each row",
+      "Calm file list while uploading"
+     ],
+     "doesnt": [
+      "Limit placeholder"
+     ]
+    },
+    {
+     "key": "B",
+     "label": "B \u00b7 Colour",
+     "img": [
+      [
+       "hi/colour-p5.png",
+       "New"
+      ]
+     ],
+     "idea": "",
+     "works": [
+      "Settings (password, domain, badge) beside versions"
+     ],
+     "doesnt": [
+      "Sunflower drop zone close to a pastel box"
+     ]
+    },
+    {
+     "key": "C",
+     "label": "C \u00b7 Story",
+     "img": [
+      [
+       "hi/story-p5.png",
+       "New"
+      ]
+     ],
+     "idea": "",
+     "works": [
+      "Published page reads like a title page"
+     ],
+     "doesnt": [
+      "Drawn preview of the site is simplified"
+     ]
+    },
+    {
+     "key": "D",
+     "label": "D \u00b7 Replay",
+     "img": [
+      [
+       "hi/replay-p5.png",
+       "New"
+      ]
+     ],
+     "idea": "",
+     "works": [
+      "The bottom line doubles as the upload progress bar",
+      "The live site shown as testers will see it"
+     ],
+     "doesnt": [
+      "Dark frame around a light site"
+     ]
+    },
+    {
+     "key": "E",
+     "label": "E \u00b7 App UI round",
+     "img": [
+      [
+       "e/s4-1.png",
+       "A. Header and tabs"
+      ],
+      [
+       "e/s4-2.png",
+       "B. One page"
+      ]
+     ],
+     "idea": "",
+     "works": [],
+     "doesnt": []
+    }
+   ]
+  },
+  {
+   "id": "p6",
+   "num": "06",
+   "short": "Across sessions",
+   "title": "Review across sessions",
+   "question": "What to fix first, across six sessions.",
+   "take": [
+    "My read: C's plain-English headline (\"People found sending easy. Almost nobody found their cards.\"), then a numbered \"what to fix first\" with counts shown as A's session dots or B's squares and playable quotes. D's \"where people got stuck\" chart as an optional view.",
+    "D's ordering by \"how long it held them\" and \"where testers disagreed\" need data we do not save today; treat them as proposals."
+   ],
+   "tiles": [
+    {
+     "key": "T",
+     "label": "Today: the live app",
+     "img": [
+      [
+       "today/t-insights.png",
+       "Live app: Insights tab"
+      ]
+     ],
+     "idea": "An executive summary, then priority fixes, with themes on the right.",
+     "works": [
+      "A summary and a fix list exist"
+     ],
+     "doesnt": [
+      "Long summary paragraph",
+      "\"L\" badges mean nothing to a reader",
+      "No quotes or \"how many testers\" per fix"
+     ]
+    },
+    {
+     "key": "A",
+     "label": "A \u00b7 Studio",
+     "img": [
+      [
+       "hi/studio-p6.png",
+       "New"
+      ]
+     ],
+     "idea": "",
+     "works": [
+      "Session dots show who said what, so \"4 of 5\" is visible"
+     ],
+     "doesnt": [
+      "Summary wash box at the top is soft but vague"
+     ]
+    },
+    {
+     "key": "B",
+     "label": "B \u00b7 Colour",
+     "img": [
+      [
+       "hi/colour-p6.png",
+       "New"
+      ]
+     ],
+     "idea": "",
+     "works": [
+      "Count squares are clear",
+      "What worked and where testers disagreed, side by side"
+     ],
+     "doesnt": [
+      "Mint header again"
+     ]
+    },
+    {
+     "key": "C",
+     "label": "C \u00b7 Story",
+     "img": [
+      [
+       "hi/story-p6.png",
+       "New"
+      ]
+     ],
+     "idea": "",
+     "works": [
+      "The headline sentence is the best summary of a test in any version"
+     ],
+     "doesnt": [
+      "Little visual proof; it is all words"
+     ]
+    },
+    {
+     "key": "D",
+     "label": "D \u00b7 Replay",
+     "img": [
+      [
+       "hi/replay-p6.png",
+       "New"
+      ]
+     ],
+     "idea": "",
+     "works": [
+      "Overlay on one clock is strong visual proof",
+      "Quotes as playable clips"
+     ],
+     "doesnt": [
+      "Needs data not saved today"
+     ]
+    },
+    {
+     "key": "E",
+     "label": "E \u00b7 App UI round",
+     "img": [
+      [
+       "e/s9-1.png",
+       "A. What to fix first"
+      ],
+      [
+       "e/s9-2.png",
+       "B. Written summary"
+      ]
+     ],
+     "idea": "",
+     "works": [],
+     "doesnt": []
+    }
+   ]
+  },
+  {
+   "id": "f1",
+   "num": "07",
+   "short": "The flow",
+   "title": "The flow: from prompt to first session",
+   "question": "Four different flows. This is an information architecture choice, not a visual one.",
+   "take": [
+    "A and C arrived separately at the same idea: one page per prototype that fills in as you go (published, test link, sessions, review). Today Sites and Tests are separate places.",
+    "My read: decide this first. If yes, \"Pocket\" is one object with Publish, Test and Review tabs, and Sites and Tests stop being separate lists. B's stepper and D's timeline are then ways of showing progress on that page."
+   ],
+   "tiles": [
+    {
+     "key": "A",
+     "label": "A \u00b7 Studio: one page that fills in",
+     "img": [
+      [
+       "hi/studio-f1.png",
+       "New"
+      ]
+     ],
+     "idea": "",
+     "works": [
+      "Nothing to navigate; each step lands as a row"
+     ],
+     "doesnt": [
+      "Merges Sites and Tests: a real IA change"
+     ]
+    },
+    {
+     "key": "B",
+     "label": "B \u00b7 Colour: a colour stepper",
+     "img": [
+      [
+       "hi/colour-f1.png",
+       "New"
+      ]
+     ],
+     "idea": "",
+     "works": [
+      "The canvas colour tells you which step you are in"
+     ],
+     "doesnt": [
+      "More screens; feels like a wizard"
+     ]
+    },
+    {
+     "key": "C",
+     "label": "C \u00b7 Story: a page that keeps a log",
+     "img": [
+      [
+       "hi/story-f1.png",
+       "New"
+      ]
+     ],
+     "idea": "",
+     "works": [
+      "Times on every step; history stays readable"
+     ],
+     "doesnt": [
+      "Log can get long"
+     ]
+    },
+    {
+     "key": "D",
+     "label": "D \u00b7 Replay: player-first, one line",
+     "img": [
+      [
+       "hi/replay-f1.png",
+       "New"
+      ]
+     ],
+     "idea": "",
+     "works": [
+      "The whole journey is one timeline; best for the video"
+     ],
+     "doesnt": [
+      "As app navigation it is abstract"
+     ]
+    },
+    {
+     "key": "E",
+     "label": "E \u00b7 App UI round",
+     "img": [
+      [
+       "shots/ex-flows.png",
+       "Flows"
+      ]
+     ],
+     "idea": "",
+     "works": [],
+     "doesnt": []
+    }
+   ]
+  },
+  {
+   "id": "m1",
+   "num": "08",
+   "short": "Marketing kit",
+   "title": "Marketing versions of components",
+   "question": "The step that was missing: five real components (session card, friction quote, site card, test link, transcript line) at 1.5 to 2x, with less detail, then a hero and a social card built only from them.",
+   "take": [
+    "B's rule is the one to keep whatever the look: a component never picks its own colour; it takes the colour of the step it sits on. That is what lets one session card work in the app, on the site and in a video.",
+    "The friction quote with the word highlight is the strongest marketing piece in all four; it is also \"In their own words\"."
+   ],
+   "tiles": [
+    {
+     "key": "A",
+     "label": "A \u00b7 Studio",
+     "img": [
+      [
+       "hi/studio-m1.png",
+       "New"
+      ]
+     ],
+     "idea": "",
+     "works": [
+      "Washes carry from app to site unchanged",
+      "\"In their own words\" social card"
+     ],
+     "doesnt": [
+      "Hero stack is a little busy"
+     ]
+    },
+    {
+     "key": "B",
+     "label": "B \u00b7 Colour",
+     "img": [
+      [
+       "hi/colour-m1.png",
+       "New"
+      ]
+     ],
+     "idea": "",
+     "works": [
+      "Step colour explains before you read",
+      "Three-column social card"
+     ],
+     "doesnt": [
+      "Close to three pastel cards"
+     ]
+    },
+    {
+     "key": "C",
+     "label": "C \u00b7 Story",
+     "img": [
+      [
+       "hi/story-m1.png",
+       "New"
+      ]
+     ],
+     "idea": "",
+     "works": [
+      "The highlighted quote is the hero",
+      "Most restrained"
+     ],
+     "doesnt": [
+      "Little colour; may look plain on social"
+     ]
+    },
+    {
+     "key": "D",
+     "label": "D \u00b7 Replay",
+     "img": [
+      [
+       "hi/replay-m1.png",
+       "New"
+      ]
+     ],
+     "idea": "",
+     "works": [
+      "Dark tiles stand out on a light page",
+      "Player and waveform are ready for video"
+     ],
+     "doesnt": [
+      "Dark everything in marketing"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "btn",
+   "num": "09",
+   "short": "Buttons",
+   "title": "Buttons in the app",
+   "question": "Not decided. Four realistic options, each drawn on the same seven real moments: dashboard, session review with the player, share modal, delete confirm, new test modal, tester task panel, disabled and loading. The stock blue is gone.",
+   "take": [
+    "Option 3 (ink everywhere you read, accessible glass only where controls float over a recording or prototype) is the team's pick and mine. On the dashboard and in modals it is identical to option 1 on purpose.",
+    "The accessible glass: panels you read use a frosted plate (86% white); glass stays on small floating controls. Over a dark recording it turns smoky grey to stay readable (4.7 to 7.6:1 against the worst pixel behind the label). It passes AA, but it looks less glassy than the lab version.",
+    "Every option passes AA: ink 16.8:1, deep blue 8.6:1, graphite 9.6:1. The logo blue itself is too light for white text (4.1:1), so option 2 uses it darker and greyer."
+   ],
+   "tiles": [
+    {
+     "key": "K",
+     "label": "Side by side: dashboard header and share modal",
+     "img": [
+      [
+       "hi/kit2-cmp.png",
+       ""
+      ]
+     ],
+     "idea": "",
+     "works": [],
+     "doesnt": [],
+     "vkey": "K1"
+    },
+    {
+     "key": "K",
+     "label": "1 \u00b7 Ink",
+     "img": [
+      [
+       "hi/kit2-o1.png",
+       ""
+      ]
+     ],
+     "idea": "Near-black primary, white secondary with a hairline, red only for delete.",
+     "works": [
+      "Calm; the blue dot stays the one bright thing",
+      "Highest contrast"
+     ],
+     "doesnt": [
+      "Can feel severe on large empty pages"
+     ],
+     "vkey": "K2"
+    },
+    {
+     "key": "K",
+     "label": "2 \u00b7 Deep Aero blue",
+     "img": [
+      [
+       "hi/kit2-o2.png",
+       ""
+      ]
+     ],
+     "idea": "The logo dot's hue, darker and greyer (#254A8D).",
+     "works": [
+      "Ties the button to the logo",
+      "Clear call to action"
+     ],
+     "doesnt": [
+      "Blue everywhere competes with links and the playhead"
+     ],
+     "vkey": "K3"
+    },
+    {
+     "key": "K",
+     "label": "3 \u00b7 Ink, glass where it floats",
+     "img": [
+      [
+       "hi/kit2-o3.png",
+       ""
+      ]
+     ],
+     "idea": "Option 1, plus the accessible glass only on the player controls and the tester's task panel.",
+     "works": [
+      "Glass where Aero cannot know what is behind a control",
+      "One family with two states"
+     ],
+     "doesnt": [
+      "Glass over dark recordings reads as smoky grey"
+     ],
+     "vkey": "K4"
+    },
+    {
+     "key": "K",
+     "label": "4 \u00b7 Soft graphite",
+     "img": [
+      [
+       "hi/kit2-o4.png",
+       ""
+      ]
+     ],
+     "idea": "Warm graphite pills, warm stone secondary.",
+     "works": [
+      "Softest, friendliest"
+     ],
+     "doesnt": [
+      "Publish and row actions look alike",
+      "Hairlines and stone below 3:1"
+     ],
+     "vkey": "K5"
+    },
+    {
+     "key": "K",
+     "label": "The team's recommendation",
+     "img": [
+      [
+       "hi/kit2-rec.png",
+       ""
+      ]
+     ],
+     "idea": "",
+     "works": [],
+     "doesnt": [],
+     "vkey": "K6"
+    },
+    {
+     "key": "K",
+     "label": "Reference: the eight families from the first kit",
+     "img": [
+      [
+       "hi/kit-b1.png",
+       ""
+      ]
+     ],
+     "idea": "",
+     "works": [],
+     "doesnt": [],
+     "vkey": "K7"
+    }
+   ]
+  },
+  {
+   "id": "logo",
+   "num": "10",
+   "short": "Logo",
+   "title": "Logo in use",
+   "question": "Not decided. Seven options, at size, 24px, favicon 32 and 16, then in the sidebar, tester footer, share email, browser tab and site nav.",
+   "take": [
+    "Today's app sets \"Aero.\" in a serif (see the Today pictures above); every option here is a sans, so whichever wins, the app logo changes.",
+    "In a browser tab every option becomes the same tile, so the favicon matters more than the wordmark; \"A.\" is the strongest at 16px.",
+    "\"Made with Aero.\" puts a full stop mid-sentence. If \"Aero.\" wins, the tester footer may need the wordmark without the dot, or the dot mark."
+   ],
+   "tiles": [
+    {
+     "key": "K",
+     "label": "Logo options",
+     "img": [
+      [
+       "hi/kit-l1.png",
+       ""
+      ]
+     ],
+     "idea": "",
+     "works": [],
+     "doesnt": [],
+     "vkey": "K1"
+    },
+    {
+     "key": "K",
+     "label": "Logo in use",
+     "img": [
+      [
+       "hi/kit-l2.png",
+       ""
+      ]
+     ],
+     "idea": "",
+     "works": [],
+     "doesnt": [],
+     "vkey": "K2"
+    },
+    {
+     "key": "K",
+     "label": "Kit team's three pairings",
+     "img": [
+      [
+       "hi/kit-r1.png",
+       ""
+      ]
+     ],
+     "idea": "",
+     "works": [],
+     "doesnt": [],
+     "vkey": "K3"
+    }
+   ]
+  }
+ ],
+ "intro": [
+  "You said a step was missing: seeing each main screen in every direction and deciding what works before tightening components. This is that step.",
+  "Each row is one screen and starts with today's live app (captured at 2x), as the base. Then A, B, C and D, the four round 5 directions, each redrawn across the whole app by its own team (the round 5 version underneath where there was one), then E, the app UI round, each layout at full size. Then the flow, the marketing kit, buttons in the app, and the logo.",
+  "Pictures are full width; use \"Side by side\" at the top if you want two per row. Click any picture to open it on its own. Mark each tile Keep, Parts of it or Drop, with a note if it helps; I read your marks before the next round. The live pages (with real glass and hover) are linked at the bottom."
+ ],
+ "roles": [
+  [
+   "Information architect",
+   "home, sessions and the one-page-per-prototype question"
+  ],
+  [
+   "UX designer",
+   "flows, states, moving between sessions"
+  ],
+  [
+   "UI designer",
+   "layout, type, status without pills or icon boxes"
+  ],
+  [
+   "Brand and graphic designer",
+   "logo, colour, washes"
+  ],
+  [
+   "Copywriter",
+   "every label against the tone of voice"
+  ],
+  [
+   "Animator",
+   "motion notes on each screen"
+  ],
+  [
+   "Marketer",
+   "the marketing kit and composed hero and card"
+  ]
+ ],
+ "patterns": [
+  "White cards with a coloured stripe down one side",
+  "Icons in pastel rounded boxes",
+  "Sparkle icons, purple gradients, emoji",
+  "Rows of three identical icon cards",
+  "Pills on everything; stock photos of people"
+ ],
+ "recommend": [
+  "Use A (Studio) as the app's look: light, calm, colour only in soft washes. It held up on every screen.",
+  "Take C's session as an article (her words as the headline, friction in the margin) and C's plain-English review headline.",
+  "Take D's timeline line (player bar, loop line, flow line) and the \"worth watching\" moment on Home; offer D's shared clock as a Compare view.",
+  "Take B's rule: components take the colour of the step they sit on. Use count squares or session dots for \"4 of 5\".",
+  "Decide the IA question first: one page per prototype, with Publish, Test and Review on it, instead of separate Sites and Tests.",
+  "Buttons: ink solid; glass only where controls float over a prototype. Logo: keep \"Aero.\" with an \"A.\" favicon, and check the tester footer wording.",
+  "Then tighten the app UI round into these components and their marketing versions, and add them to the /aero showcase."
+ ]
+}
