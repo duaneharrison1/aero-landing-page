@@ -7,6 +7,40 @@ version: 2026-10-23.4
 
 The running log of what Duane decided, newest first. Add a line whenever he decides something; never delete a line, strike it through and say what replaced it. The full evidence is in `research/conversation-audit.md`.
 
+## 24 Oct 2026: feedback on the homepage rework (round 3 of the homepage)
+Rounds named: 1 = round 5 A (liked), 2 = rework on round 5 A's structure, 3 = the previous round.
+**Hero**
+- The hero animation must tell the **three steps, quick and dynamic, showing all the features** (as round 1 did), not one slow screen: (1) Publish: someone in the Claude app with their site in the preview on the right, one prompt, then it's live on Aero; (2) Test: share the link, another browser window, someone opens it and does the test, their voice shown; (3) Review: the analysis (today's session screen), **in dark mode**; the rest of the page light. Keep the **progress bar along the bottom** showing which stage it's at. Pace: quicker than round 2 (too slow, prototype didn't move).
+- No "Example session" or "Recorded replay" labels on the homepage: simple and confident.
+- Rework the whole hero area; buttons maybe not under the headline.
+- Under the hero: keep the small blue icon and text for the three steps, but as lines that fill in blue like a timeline (all black is too much).
+**Proposition and copy**
+- "Watch people use it" sounds weird. Review the whole proposition: speed, one prompt to publish, an easy place to manage your work, use it as a website, test it straight away ("get feedback on it instantly", "test it immediately"). Avoid cliché ("in seconds"). The ethos: less time on tedious things; "I can't think of a quicker way to publish something and then test it, with very little set-up, on one platform: fast, simple, cheap, even free."
+- Writing: round 2's copy is closest.
+- "From prompt to first session" section may no longer be needed (the hero tells it).
+- "Priced for one designer" (not a corporate) is liked; move it elsewhere.
+- Homepage pricing: compare competitors' self-serve prices like for like (not panels), rather than only our own plans.
+- "For people who make things": think through archetypes; each step has its own advantage (publish: no tech knowledge, no hosting or domain jargon; test: user-testing pain points removed, no software for testers; review: no hours going through recordings, automatic, still a good reading experience).
+- Use cases and scenarios, from real pain points (Reddit, forums): e.g. a portfolio from a folder of work via one prompt; a product idea the night before, a prototype sent to 3 people, insights by morning.
+- Everything Figmafolio offers, Aero has; say so, even briefly: custom domain, password protection, testing.
+- Study Maze and competitors' copy and language.
+**Sections**
+- Publish, Test, Review sections: round 1's layout (big hero then text and image per section) is the nicest, but not all on one UI element; round 2 too zoomed out with needless labels; round 3 lazy (two UI elements stacked). Each section's image is a **subtle, targeted animation** of its specific UI: pasting the prompt then published; sharing the link then someone opening it and recording; the session voice then all sessions (more abstract). Each has its own sell: one prompt to publish (also HTML upload and Figma, in text or UI); just share a link, no software for testers; transcribed automatically, insights ready, synthesis across sessions.
+- **Step colours change: Publish blue, Test green, Review (analysis) orange.** Possibly a coloured pill label per section (Publish in the blue pill), since the washes are subtle and each step has many features.
+- Gradients can change per section; maybe they slowly move or shift over time (even in the app), if not too much with the animations.
+- The Questions section wastes white space; tighten it.
+**Type and brand**
+- Headline full stops: use the logo's round dot (Geist's own full stop is square). The logo's blue dot can be slightly bigger. No blue dot on small labels ("Example session", "Prototype hosting and user testing").
+- Round 3 of the brand rounds used the blue dot in headers well.
+**Buttons and glass**
+- The caustic (V3) glass stays decided; it must be visible: use it where it reads (the top nav, Sign in as it scrolls over the page, buttons on gradients). Buttons don't need to get bigger. Explore hover options where the light refracts differently as if the button lifted, without moving or resizing (e.g. the cursor moving the light). Options, plus a simple one.
+**Site structure and SEO**
+- Every top menu item is its own page (Features, not Product). Features lists every feature of the app, grouped under Publish, Test, Review.
+- A blog like HeyBooking's: dated posts for features shipped over time, so the site looks active. Now or later, don't forget it.
+- Keep the hundreds of SEO task pages in the plan.
+**Product ideas noted**
+- AI follow-up questions for tasks during a test (not built).
+
 ## 23 Oct 2026: next phase, the website
 - **Next: a homepage round on the v3 UI**, then the video storyboard, one feature page and the SEO template, then the build in aero-landing-page.
 - **Rotating headline**, as HeyBooking did: the made-with part changes ("Publish your Claude artifact", "...your Figma prototype", "...your Lovable app", "...your HTML site"), so people see what they can bring. The rest of the line stays ("Watch people use it.").
