@@ -1,11 +1,16 @@
 ---
 brand-sync: figmaApp docs/brand is the source. Copy this file unchanged to aero-landing-page/docs/brand/.
-version: 2026-10-25.3
+version: 2026-10-25.4
 ---
 
 # Aero brand and product decisions
 
 The running log of what Duane decided, newest first. Add a line whenever he decides something; never delete a line, strike it through and say what replaced it. The full evidence is in `research/conversation-audit.md`.
+
+## 25 Oct 2026: go live
+- Glass: blend the tester glass into the final. The tester glass has a light frosted background behind its text, so buttons read more clearly (more black and white). Final glass = between the current final and that.
+- The video is better now. "Implement this right away, no more showing me": build the website in aero-landing-page and put it live, with decisions recorded so everything can be changed later.
+- Before going live, features the app doesn't have yet come out of the website visuals (first-name field, word highlight, Private and "Taking new sessions" switches, free Preview as tester runs), per the truth rules; they go back when they ship.
 
 ## 25 Oct 2026: glass final, and round 7 feedback
 **Glass: one final version, no other presets**
