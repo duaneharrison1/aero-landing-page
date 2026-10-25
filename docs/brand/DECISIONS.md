@@ -1,11 +1,30 @@
 ---
 brand-sync: figmaApp docs/brand is the source. Copy this file unchanged to aero-landing-page/docs/brand/.
-version: 2026-10-23.4
+version: 2026-10-24.2
 ---
 
 # Aero brand and product decisions
 
 The running log of what Duane decided, newest first. Add a line whenever he decides something; never delete a line, strike it through and say what replaced it. The full evidence is in `research/conversation-audit.md`.
+
+## 24 Oct 2026 (evening): feedback on website round 4
+**Glass and buttons**
+- Buttons: go back to the slab of thick glass (rounded rectangle with depth), not the rounded pill.
+- Bring back the caustic effect: the button picks up light and colour from what is near it, as in the decided V3 glass. Round 4's buttons lacked it.
+- Hover: combine "key light follows" and "Lift". Tone the key light down to a slight effect. It suits the white glass button; it doesn't look good on the black button.
+- The top nav must be glass. Round 4's wasn't.
+
+**Homepage hero**
+- Go back to the earlier liked hero: the screen at an angle with no background panel behind it. Show one screen, not floating windows.
+- Layout still open: maybe buttons under the headline with the description to the side.
+- The animation has the right steps but runs a little too fast. Add a cursor for the person's own actions, and highlight each effect at the moment it happens.
+- After Claude publishes, show the site in Aero and the live site in a browser. Then back in Aero, go to Test.
+- Test must read clearly as a user test. Maybe a phone alongside, maybe a webcam (Aero records screen and voice, never the camera, so a webcam can't be shown).
+
+**Sections and content**
+- Round 4's Publish, Test and Review animations were broken (they collapsed while playing), so they still need reviewing.
+- No "Coming from Figmafolio?" strip. Put Figmafolio's features (custom domain, password, versions, testing) under their own sections.
+- Price comparison must include Maze, and compare like with like in the same unit (always per month).
 
 ## 24 Oct 2026: feedback on the homepage rework (round 3 of the homepage)
 Rounds named: 1 = round 5 A (liked), 2 = rework on round 5 A's structure, 3 = the previous round.
