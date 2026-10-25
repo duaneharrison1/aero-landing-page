@@ -1,11 +1,33 @@
 ---
 brand-sync: figmaApp docs/brand is the source. Copy this file unchanged to aero-landing-page/docs/brand/.
-version: 2026-10-25.2
+version: 2026-10-25.3
 ---
 
 # Aero brand and product decisions
 
 The running log of what Duane decided, newest first. Add a line whenever he decides something; never delete a line, strike it through and say what replaced it. The full evidence is in `research/conversation-audit.md`.
+
+## 25 Oct 2026: glass final, and round 7 feedback
+**Glass: one final version, no other presets**
+- Colour from nearby: yes (as Subtle).
+- Caustic: Subtle's (narrower, lower, near the bottom edge, tinted).
+- Edge thickness: Subtle's crisper edge.
+- Refraction: Subtle's.
+- Shadow: off.
+- Corners: the less rounded (10).
+- Hover: keep the idea of the light changing on the button, but much subtler than Agreed's pointer light, which looked "too obvious and crazy" on the black button and still too much on white. Find a subtler way if the pointer light isn't it.
+- Fix in the mockups: the black button looks bigger than the white one, and white buttons such as "Preview as tester" don't look caustic.
+
+**Homepage**
+- WhatsApp tab is missing its favicon, and WhatsApp Web could look more realistic.
+- Maya's screen tilting the other way and panning left to right looks tacky; improve the handover.
+- Pasting the prompt into Claude in the loop happens too fast.
+
+**Features page**
+- Keep the colour gradients in the boxes' UI backgrounds; only the section titles don't need one.
+
+**Next**
+- A final review of the homepage, the Features page and every UI illustration, by a team of roles (video, animation, illustration, copy, UX, UI, UI engineering, motion, brand).
 
 ## 25 Oct 2026: feedback on website round 6 (voice notes)
 **Homepage hero**
