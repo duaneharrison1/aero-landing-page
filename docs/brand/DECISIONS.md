@@ -1,11 +1,25 @@
 ---
 brand-sync: figmaApp docs/brand is the source. Copy this file unchanged to aero-landing-page/docs/brand/.
-version: 2026-10-24.2
+version: 2026-10-24.3
 ---
 
 # Aero brand and product decisions
 
 The running log of what Duane decided, newest first. Add a line whenever he decides something; never delete a line, strike it through and say what replaced it. The full evidence is in `research/conversation-audit.md`.
+
+## 24 Oct 2026 (late): feedback on website round 5
+**Glass**
+- Round 5's caustic looks stronger than the one agreed before, and the slab shows a very thick line of glass. The caustic may be getting confused with the lighting.
+- Wanted: a control panel with the buttons and nav in place, where Duane sets the strength of each effect himself (caustic, key light following the mouse, lift, edge thickness...), with a note on how each one works.
+- The nav's refracting strip over scrolling content looks too thick.
+
+**Homepage**
+- Remove the hero's pause button: it clashes with the test interface.
+- The video is a bit too fast, but he likes it overall.
+- The task panel should be on the left. Show the voice as the real tester UI does.
+- Make it a proper loop: after the review, go back to the main UI, go to Publish, copy and paste the prompt again.
+- No gradient behind the hero: white. Tighten the title, subtext and links; they take up a lot of space.
+- It isn't clear that Maya is on a different computer. Make the whole video easier to follow for a newcomer, for example Visit opens a new tab and then the page loads.
 
 ## 24 Oct 2026 (evening): feedback on website round 4
 **Glass and buttons**
