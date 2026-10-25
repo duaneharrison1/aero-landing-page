@@ -1,11 +1,26 @@
 ---
 brand-sync: figmaApp docs/brand is the source. Copy this file unchanged to aero-landing-page/docs/brand/.
-version: 2026-10-25.1
+version: 2026-10-25.2
 ---
 
 # Aero brand and product decisions
 
 The running log of what Duane decided, newest first. Add a line whenever he decides something; never delete a line, strike it through and say what replaced it. The full evidence is in `research/conversation-audit.md`.
+
+## 25 Oct 2026: feedback on website round 6 (voice notes)
+**Homepage hero**
+- Prefers the centred layout: headline and subtext centred, so Start free and See pricing are centred too.
+- Build the glass buttons so they can be swapped easily (one component, one settings file), since glass is still being refined. Use it on the website now. The buttons inside the hero animation must use the same component, so a glass change updates them too.
+- Remove the caption pill ("Claude publishes it to Aero" etc.).
+- The animation is "really cool" and about the right speed. Keep the angle, but it mustn't overlap the Publish, Test, Review timeline. Make those three clickable to jump the video to that step.
+- The publish part (paste prompt, send, switch tab, it's there, Visit opens a new tab) is the best bit.
+- Going back and choosing "User test this site" happens too quickly; show that click clearly. Copying the link is a bit much.
+- Sharing idea: open WhatsApp Web and send the link to someone; they receive it in their own WhatsApp Web on another screen, angled the other way, with different people in it. That's how to show it's someone else.
+- Maya: no laptop frame. Use a second screen tilted the other way.
+
+**Other sections and pages**
+- The other homepage sections are good for now.
+- Features page: too many blue gradients. Section titles get no gradient background (almost no background). At most 6 boxes per section: group features (e.g. upload methods as one, tasks and welcome messages as one) while still mentioning each.
 
 ## 24 Oct 2026 (late): feedback on website round 5
 **Glass**
