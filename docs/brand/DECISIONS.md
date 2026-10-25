@@ -1,6 +1,6 @@
 ---
 brand-sync: figmaApp docs/brand is the source. Copy this file unchanged to aero-landing-page/docs/brand/.
-version: 2026-10-24.3
+version: 2026-10-25.1
 ---
 
 # Aero brand and product decisions
@@ -12,6 +12,7 @@ The running log of what Duane decided, newest first. Add a line whenever he deci
 - Round 5's caustic looks stronger than the one agreed before, and the slab shows a very thick line of glass. The caustic may be getting confused with the lighting.
 - Wanted: a control panel with the buttons and nav in place, where Duane sets the strength of each effect himself (caustic, key light following the mouse, lift, edge thickness...), with a note on how each one works.
 - The nav's refracting strip over scrolling content looks too thick.
+- First setting from the control panel (25 Oct, "what I have so far"): Subtle with the bottom wall, rim reflection and drop shadow off, white fill a touch clearer. Saved in `website-v5/glass-panel/saved/`. Too many settings: the panel now has a simple mode with 8 sliders.
 
 **Homepage**
 - Remove the hero's pause button: it clashes with the test interface.
