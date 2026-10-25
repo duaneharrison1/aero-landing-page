@@ -17,6 +17,7 @@ The running log of what Duane decided, newest first. Add a line whenever he deci
 - Corners: the less rounded (10).
 - Hover: keep the idea of the light changing on the button, but much subtler than Agreed's pointer light, which looked "too obvious and crazy" on the black button and still too much on white. Find a subtler way if the pointer light isn't it.
 - Fix in the mockups: the black button looks bigger than the white one, and white buttons such as "Preview as tester" don't look caustic.
+- After seeing the final version: a little more colour pickup; colour from above and the sides must reach the button too, as in earlier versions; the transparent white glass should look clearer and more like liquid glass (like the tester UI in the live-test mockups), it's barely visible now; hover is now too subtle, make it noticeable but calm.
 
 **Homepage**
 - WhatsApp tab is missing its favicon, and WhatsApp Web could look more realistic.
