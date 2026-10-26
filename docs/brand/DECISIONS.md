@@ -1,6 +1,6 @@
 ---
 brand-sync: figmaApp docs/brand is the source. Copy this file unchanged to aero-landing-page/docs/brand/.
-version: 2026-10-25.7
+version: 2026-10-25.8
 ---
 
 # Aero brand and product decisions
@@ -12,6 +12,8 @@ The running log of what Duane decided, newest first. Add a line whenever he deci
 - Site and test previews are a stored snapshot of the real page, not an iframe and not a letter: captured once, saved, and loaded from the cache so lists open fast. Applies to both Sites and Tests.
 - The gradient wash stays behind each preview, but its colours come from the captured image.
 - Until a snapshot exists, show the initial on the default wash.
+- New site is a full page, not a modal (as in the agreed Create design).
+- Figma previews use Figma's public link preview, with no per-user Figma token.
 
 ## 25 Oct 2026 (evening): after go-live
 - Update the favicon.
