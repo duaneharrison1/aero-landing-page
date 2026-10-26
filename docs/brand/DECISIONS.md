@@ -1,11 +1,21 @@
 ---
 brand-sync: figmaApp docs/brand is the source. Copy this file unchanged to aero-landing-page/docs/brand/.
-version: 2026-10-25.10
+version: 2026-10-26.1
 ---
 
 # Aero brand and product decisions
 
 The running log of what Duane decided, newest first. Add a line whenever he decides something; never delete a line, strike it through and say what replaced it. The full evidence is in `research/conversation-audit.md`.
+
+## 26 Oct 2026: after the app phases
+- Match the product demo in the app: chevron breadcrumbs, sessions easy to find ("N new" in the sidebar, tests open on Sessions), Test this site.
+- "Test this site" is a real copy: its own link, its own versions ("Upload to this test"), several tests per site. Build it now.
+- "New sessions" marks are remembered per browser for now.
+- The test page's old side column (Sentiment, progress, themes) goes; Insights covers it.
+- The main sidebar folds to the icon rail during session review (stopgap until the rest of the app has dark mode); the user can open it again.
+- Onboarding popup for Figmafolio users: align it with the new marketing website (video, Publish/Test/Review, features), keeping the experiment's arms and counters.
+- "Made with Aero" label on free sites uses the final glass.
+- The phase 7 sweep is split into smaller PRs (7a settings and popups, 7b states, 7c visitor pages).
 
 ## 25 Oct 2026 (night): app phases 2 and 3
 - Phase 2 (sidebar, Home, new blue and Geist) merged (#270). Favicon: lighter A, sharp @2x bitmaps (#269, landing #10).
