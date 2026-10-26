@@ -1,11 +1,16 @@
 ---
 brand-sync: figmaApp docs/brand is the source. Copy this file unchanged to aero-landing-page/docs/brand/.
-version: 2026-10-25.5
+version: 2026-10-25.6
 ---
 
 # Aero brand and product decisions
 
 The running log of what Duane decided, newest first. Add a line whenever he decides something; never delete a line, strike it through and say what replaced it. The full evidence is in `research/conversation-audit.md`.
+
+## 25 Oct 2026 (evening): after go-live
+- Update the favicon.
+- Hero buttons (Start free, See pricing) literally centred, on their own row if needed.
+- Apply the decided design system (final glass buttons, v3 app designs as used in the video) to sign-in and then the whole app. Rolled out in phases, one PR each: foundation and sign-in first.
 
 ## 25 Oct 2026: go live
 - Transcripts and summaries are on every plan, Free included (PRICING-FACTS updated).
