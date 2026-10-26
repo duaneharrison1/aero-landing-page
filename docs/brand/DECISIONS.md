@@ -1,6 +1,6 @@
 ---
 brand-sync: figmaApp docs/brand is the source. Copy this file unchanged to aero-landing-page/docs/brand/.
-version: 2026-10-25.8
+version: 2026-10-25.9
 ---
 
 # Aero brand and product decisions
@@ -14,6 +14,8 @@ The running log of what Duane decided, newest first. Add a line whenever he deci
 - Until a snapshot exists, show the initial on the default wash.
 - New site is a full page, not a modal (as in the agreed Create design).
 - Figma previews use Figma's public link preview, with no per-user Figma token.
+- Previews are on for everything, automatically: not a customer setting and no manual switch. Existing sites and tests are filled in by themselves.
+- Feature parity: everything the hero video, website and mockups show must exist in the app (session review and Insights are the biggest gap).
 
 ## 25 Oct 2026 (evening): after go-live
 - Update the favicon.
