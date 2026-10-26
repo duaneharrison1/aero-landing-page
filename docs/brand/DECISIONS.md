@@ -1,11 +1,17 @@
 ---
 brand-sync: figmaApp docs/brand is the source. Copy this file unchanged to aero-landing-page/docs/brand/.
-version: 2026-10-25.6
+version: 2026-10-25.7
 ---
 
 # Aero brand and product decisions
 
 The running log of what Duane decided, newest first. Add a line whenever he decides something; never delete a line, strike it through and say what replaced it. The full evidence is in `research/conversation-audit.md`.
+
+## 25 Oct 2026 (night): app phases 2 and 3
+- Phase 2 (sidebar, Home, new blue and Geist) merged (#270). Favicon: lighter A, sharp @2x bitmaps (#269, landing #10).
+- Site and test previews are a stored snapshot of the real page, not an iframe and not a letter: captured once, saved, and loaded from the cache so lists open fast. Applies to both Sites and Tests.
+- The gradient wash stays behind each preview, but its colours come from the captured image.
+- Until a snapshot exists, show the initial on the default wash.
 
 ## 25 Oct 2026 (evening): after go-live
 - Update the favicon.
