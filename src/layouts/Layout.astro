@@ -1,83 +1,20 @@
 ---
-import { SEO } from "astro-seo";
-import Footer from "../components/Footer.astro";
-import Navbar from "../components/navbar/navbar.astro";
-import "@/styles/global.css";
+// Layout for the pages that are still built with Tailwind (about, contact, 404, the two earlier blog posts).
+// Same header, footer, tokens and glass as the new website (SiteLayout); see docs/website/README.md.
+import SiteLayout from "./SiteLayout.astro";
+import "../styles/website/site-page.css";
+import "../styles/legacy.css";
 
 export interface Props {
   title: string;
+  description?: string;
+  noindex?: boolean;
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
-
-const resolvedImageWithDomain = new URL(
-  "/opengraph.jpg",
-  Astro.site
-).toString();
-
-const { title } = Astro.props;
-
-const makeTitle = title
-  ? title + " | " + "Aero"
-  : "Aero: Publish prototypes and run real user tests";
+const { title, description, noindex = false } = Astro.props;
+const makeTitle = title ? `${title} · Aero` : "Aero";
+const desc = description || "Aero puts what you made online at its own address and gives you one link to test it with people. Free to start.";
 ---
-
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
-    <SEO
-      title={makeTitle}
-      description="Aero is where you publish prototypes to live URLs and run recorded user tests on them, with AI insights handed straight back to your agent."
-      canonical={canonicalURL}
-      twitter={{
-        card: "summary_large_image",
-      }}
-      openGraph={{
-        basic: {
-          url: canonicalURL,
-          type: "website",
-          title: `Aero: Publish prototypes and run real user tests`,
-          image: resolvedImageWithDomain,
-        },
-        image: {
-          alt: "Aero: Publish prototypes and run real user tests",
-        },
-      }}
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
-      defer></script>
-
-    <!-- Privacy-friendly analytics by Plausible -->
-    <script async src="https://plausible.io/js/pa-7bQoz7MUupl7CnT9H6uIJ.js"></script>
-    <script>
-      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-      plausible.init()
-    </script>
-  </head>
-  <body>
-    <Navbar />
-    <main id="main-content" tabindex="-1">
-      <slot />
-    </main>
-    <Footer />
-    <style is:global>
-      /* Improve Page speed */
-      /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
-      img {
-        content-visibility: auto;
-      }
-    </style>
-  </body>
-</html>
+<SiteLayout title={makeTitle} description={desc} bodyClass="site s-page legacy-page" script="none" noindex={noindex}>
+  <slot />
+</SiteLayout>

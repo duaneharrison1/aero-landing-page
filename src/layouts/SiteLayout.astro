@@ -1,0 +1,89 @@
+---
+// The Aero website layout (new design, Oct 2026): head, SEO, the glass header and footer, and the scripts.
+//
+// Styles: each page imports ONE bundle, home-page.css or site-page.css, which load in order: aero.css (every token:
+// colour, type, spacing, radius; and the shared website block: nav, footer, buttons, washes, pills), extra.css and
+// review.css (the app screens), home.css or site.css (the page), not-yet-live.css (hides features not live yet).
+// Glass: src/glass/glass-settings.js is the ONE file that tunes the glass; it loads before the engine (glass-v3.js).
+// See docs/website/README.md.
+import { SEO } from "astro-seo";
+import SiteHeader from "../components/website/SiteHeader.astro";
+import SiteFooter from "../components/website/SiteFooter.astro";
+// Favicon: the Aero mark. favicon.svg is the source and is linked first, so browsers with SVG icons use the vector. The
+// PNGs are rasterised from it for the rest: 32px and its @2x (64px) so retina screens get a sharp bitmap, and 180px on
+// white for iOS. All get hashed /_astro/ paths, which the app's middleware routes here.
+import favicon from "../assets/brand/favicon.svg?url";
+import favicon32 from "../assets/brand/favicon-32.png?url";
+import favicon32x2 from "../assets/brand/favicon-32@2x.png?url";
+import appleTouchIcon from "../assets/brand/apple-touch-icon.png?url";
+import glassSettings from "../glass/glass-settings.js?url";
+import glassEngine from "../glass/glass-v3.js?url";
+import navJs from "../scripts/website/nav.js?url";
+import homeJs from "../scripts/website/home.js?url";
+import siteJs from "../scripts/website/site.js?url";
+
+export interface Props {
+  title: string;
+  description: string;
+  bodyClass?: string;
+  jsonld?: unknown[];
+  /** The words file of the page, embedded as #copy for the page script. */
+  copy?: Record<string, unknown>;
+  /** Which page script runs: "home" (hero animation, section loops) or "site" (crops of app screens). */
+  script?: "home" | "site" | "none";
+  noindex?: boolean;
+}
+
+const { title, description, bodyClass = "site s-page", jsonld = [], copy, script = "site", noindex = false } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+const ogImage = new URL("/opengraph.jpg", Astro.site).toString();
+const pageJs = script === "home" ? homeJs : script === "site" ? siteJs : null;
+---
+
+<!doctype html>
+<html lang="en-GB" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <SEO
+      title={title}
+      description={description}
+      canonical={canonicalURL}
+      noindex={noindex}
+      twitter={{ card: "summary_large_image" }}
+      openGraph={{
+        basic: { url: canonicalURL, type: "website", title, image: ogImage },
+        optional: { description, siteName: "Aero", locale: "en_GB" },
+        image: { alt: "Aero: publish it, test it, review it" },
+      }}
+    />
+    <link rel="icon" href={favicon} type="image/svg+xml" />
+    <link rel="icon" href={favicon32} type="image/png" sizes="32x32" />
+    <link rel="icon" href={favicon32x2} type="image/png" sizes="64x64" />
+    <link rel="apple-touch-icon" href={appleTouchIcon} sizes="180x180" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    {copy && <script type="application/json" id="copy" set:html={JSON.stringify(copy).replace(/</g, "\\u003c")} />}
+    {jsonld.map((j) => <script type="application/ld+json" set:html={JSON.stringify(j).replace(/</g, "\\u003c")} />)}
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script is:inline async src="https://plausible.io/js/pa-7bQoz7MUupl7CnT9H6uIJ.js"></script>
+    <script is:inline>
+      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+      plausible.init()
+    </script>
+  </head>
+  <body class={bodyClass}>
+    <SiteHeader />
+    <main id="main-content">
+      <slot />
+    </main>
+    <SiteFooter />
+    <script is:inline src={glassSettings}></script>
+    <script is:inline src={glassEngine}></script>
+    <script is:inline src={navJs}></script>
+    {pageJs && <script is:inline src={pageJs}></script>}
+    <slot name="scripts" />
+  </body>
+</html>

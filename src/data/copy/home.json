@@ -1,0 +1,362 @@
+{
+ "meta.title": "Aero: one prompt and it’s live, one link and it’s tested",
+ "meta.desc": "Publish a Claude artifact, Figma prototype, Lovable app or HTML site to its own address, then send one test link. People try it on their own computer; you get the recording, transcript and summary back. Free to start.",
+ "p1.h1": [
+  "One prompt and it’s live",
+  "One link and it’s tested"
+ ],
+ "p1.lead": "Then send one test link and get the recording, transcript and summary back.",
+ "p2.h1": [
+  "Test it the day you make it"
+ ],
+ "p2.lead": "Put it online at your own aeroapp.ai address and share one test link. Hear where people got stuck, in their own words. Testers need no software or account.",
+ "p3.h1": [
+  "From prompt to first session"
+ ],
+ "p3.lead": "Aero puts it online and gives you a link to test it. Testers need no download, and each session comes back transcribed and summarised.",
+ "hero.made.sr": "Publish your Claude artifact, Figma prototype, Lovable app or HTML site.",
+ "hero.made.a": "Publish your",
+ "hero.made": [
+  "Claude artifact",
+  "Figma prototype",
+  "Lovable app",
+  "HTML site"
+ ],
+ "hero.cta1": "Start free",
+ "hero.cta2": "See pricing",
+ "hero.fine": [
+  "Free to start",
+  "From $3 a month",
+  "No call, no contract"
+ ],
+ "steps": [
+  [
+   "Publish",
+   "One prompt, and it’s live at its own address."
+  ],
+  [
+   "Test",
+   "One link. They try it on their own computer, talking it through."
+  ],
+  [
+   "Review",
+   "Transcript and summary, then every session together."
+  ]
+ ],
+ "st.claude.ask": "Make a simple web app for Pocket: balance, send money, cards and spending.",
+ "st.claude.made": "Here’s Pocket. A home screen with the balance and quick actions, a send flow and a spending page.",
+ "st.claude.card": "Pocket · web app",
+ "st.prompt": "Publish the app you just built to Aero as a site called “pocket”. Send every file through the Aero API at aeroapp.ai/api/v1/sites with my key aero_sk_••••7Q2c, then reply with the address.",
+ "st.claude.work": "Running a command",
+ "st.claude.used": "Ran a command · sent 9 files to aeroapp.ai",
+ "st.claude.done": "Done. It’s live at pocket.aeroapp.ai, version 1.",
+ "st.claude.input": "Reply to Claude",
+ "st.msg.to": "To Maya",
+ "st.msg": "Could you try this for me? Takes a few minutes. aeroapp.ai/t/pocket-7k2",
+ "st.copied": "Copied",
+ "st.who.maya": "Maya’s computer",
+ "st.note.from": "Mia Chen",
+ "st.say": [
+  "“Okay, send twenty pounds to Sam. Send is right there.”",
+  "“I thought last month would be right here. Where do I change the month?”"
+ ],
+ "st.wa.ask": "Are you all free to try something tonight?",
+ "st.wa.ok.who": "Maya",
+ "st.wa.group": "Pocket testers",
+ "st.wa.members": "Maya, Tom, Priya, Jonas, Ana, Leo, You",
+ "st.wa.ok": "Sure, send it over",
+ "st.wa.ask2": "Could you try this for me? Takes a few minutes.",
+ "st.wa.link": "aeroapp.ai/t/pocket-7k2",
+ "hero.aria": "How Aero works, a 50-second loop. In Claude, Aero’s one prompt is pasted and Claude publishes Pocket to pocket.aeroapp.ai. In Aero the site is live; Visit opens it in a new tab. From the site’s menu, “User test this site” creates a test with its own link, which is copied and sent to six testers in a WhatsApp group. On Maya’s own computer the message arrives; she opens the link, allows the microphone and the tab, and tries two tasks while her tab and voice are recorded. Back in Aero her session is transcribed with friction points, and Insights sums up every session. Then the owner starts a new site and copies the prompt again. The Publish, Test and Review buttons jump to each step; pressing the step that is playing pauses it.",
+ "pub.k": "Publish",
+ "pub.h2": "One prompt and it’s live",
+ "pub.body": "Built it in Claude or ChatGPT? Aero gives you one prompt. Paste it into the chat where you made the thing and it publishes there and then, at its own aeroapp.ai address. No hosting to set up, no domain settings to learn.",
+ "pub.more": "Or paste a Figma prototype link, or drop an HTML file, folder or zip. Publish again to the same address whenever it changes; every version is kept.",
+ "pub.facts": [
+  [
+   "prompt",
+   "One prompt",
+   "Nothing to install or connect"
+  ],
+  [
+   "folder",
+   "Figma link or HTML upload",
+   "A link, a file, a folder or a zip"
+  ],
+  [
+   "globe",
+   "Custom domain",
+   "Your own domain, on Solo and up"
+  ],
+  [
+   "lock",
+   "Password protection",
+   "On Basic and up"
+  ],
+  [
+   "undo",
+   "Versions",
+   "Every publish kept, roll back any time"
+  ],
+  [
+   "site",
+   "Your own address",
+   "name.aeroapp.ai, on Basic and up"
+  ]
+ ],
+ "test.k": "Test",
+ "test.h2": "One link. They open it, and that’s it",
+ "test.body": "Every site can become a test with its own short link. Send it to a client, a friend or a classmate. They open it on their own computer, allow the microphone and the tab with your prototype, and think aloud while they try your tasks.",
+ "test.more": "No app to install, no account to make, no session to book.",
+ "test.facts": [
+  [
+   "tab",
+   "Tab and voice",
+   "This tab only, never the camera"
+  ],
+  [
+   "user",
+   "No account",
+   "Or software, for testers"
+  ],
+  [
+   "check",
+   "Optional tasks",
+   "In a panel they can move"
+  ],
+  [
+   "site",
+   "Works on any prototype",
+   "Claude, HTML or a Figma link"
+  ]
+ ],
+ "rev.k": "Review",
+ "rev.h2": "What to fix, in their own words",
+ "rev.body": "About a minute after each session, it’s transcribed and summarised. Insights puts every session together: what to fix first, how many testers hit it, and the quotes.",
+ "rev.more": "No hours scrubbing through recordings, and no notes to take. It still reads well: a session reads like a short article, and the whole test fits on one page.",
+ "rev.facts": [
+  [
+   "book",
+   "Transcript and summary",
+   "About a minute after"
+  ],
+  [
+   "chart",
+   "“4 of 6 testers”",
+   "Ranked by how serious"
+  ],
+  [
+   "play",
+   "Quotes you can play",
+   "From the moment it was said"
+  ],
+  [
+   "down",
+   "Download",
+   "The report, the transcript, the video"
+  ]
+ ],
+ "more.pub": "Every Publish feature",
+ "more.test": "Every Test feature",
+ "more.rev": "Every Review feature",
+ "pr.swipe": "Swipe for the others",
+ "uc.k": "Use cases",
+ "uc.h2": "For people who make things",
+ "uc.body": "A few of the ways people use it. Every name here is an example.",
+ "uc.items": [
+  [
+   "folder",
+   "A portfolio from a folder of work",
+   "Lena asks Claude to turn her case-study folder into a site, publishes it with one prompt, then has two classmates try it. Neither found her contact link.",
+   "Student"
+  ],
+  [
+   "test",
+   "An idea at night, insights by the morning",
+   "Omar builds a pricing page after dinner, sends the test link to four customers at 9pm and reads where they hesitated over coffee.",
+   "Founder"
+  ],
+  [
+   "figma",
+   "A Figma flow before the review",
+   "Hana pastes her checkout prototype at 4pm, sends the link to five colleagues and reads three summaries before tomorrow’s design review.",
+   "Product designer"
+  ],
+  [
+   "lock",
+   "A client site behind a password",
+   "Marco sends his client a password-protected preview on their own domain, then asks three of their staff to test the booking flow.",
+   "Freelancer"
+  ],
+  [
+   "site",
+   "A weekend build with a real address",
+   "Kit turns a weekend Claude artifact into a live tool at kit.aeroapp.ai and shares it in a group chat, off claude.ai.",
+   "Maker"
+  ]
+ ],
+ "pr.k": "Pricing",
+ "pr.h2": "Priced for one designer, not a corporate",
+ "pr.body": "Free to start, recordings included. Paid plans from $3 a month, billed monthly, with a 7-day free trial and no call. Below, the cheapest plan with recordings from each tool that tests a prototype with people you invite, every price per month.",
+ "pr.cols": [
+  "Aero Free",
+  "Aero Basic",
+  "Maze Free",
+  "Lookback Freelance",
+  "Userbrain Starter",
+  "Lyssna Growth"
+ ],
+ "pr.us": 2,
+ "pr.rows": [
+  [
+   "Price per month",
+   [
+    "$0",
+    "$3",
+    "$0",
+    "$25 ²",
+    "$49",
+    "$199 ³"
+   ]
+  ],
+  [
+   "Billing",
+   [
+    "Free plan",
+    "Monthly, cancel any time",
+    "Free plan",
+    "Yearly only, $299 a year",
+    "Monthly",
+    "Monthly, or $166 a month billed yearly"
+   ]
+  ],
+  [
+   "Sessions with your own testers",
+   [
+    "3 ¹",
+    "5 ¹",
+    "1 study a month",
+    "10 a year",
+    "3 a month",
+    "5 in-depth studies a month"
+   ]
+  ],
+  [
+   "Recording with voice",
+   [
+    "yes",
+    "yes",
+    "no",
+    "yes",
+    "yes",
+    "yes"
+   ]
+  ],
+  [
+   "Transcript and summary",
+   [
+    "yes",
+    "yes",
+    "no",
+    "AI analysis; transcript not checked",
+    "yes",
+    "yes"
+   ]
+  ],
+  [
+   "Hosts your prototype",
+   [
+    "yes · live for 7 days",
+    "yes · your own aeroapp.ai address",
+    "no",
+    "no",
+    "no",
+    "no"
+   ]
+  ],
+  [
+   "Testers install nothing",
+   [
+    "yes · in their browser ⁴",
+    "yes · in their browser ⁴",
+    "Not checked",
+    "iPhone needs an app; desktop not checked",
+    "Needs a Chrome extension or app",
+    "Desktop yes; phone recording uses an app"
+   ]
+  ]
+ ],
+ "pr.notes": [
+  "¹ Aero’s sessions are a total on your plan, not a monthly allowance. The others reset each month or year, so the counts aren’t a straight comparison.",
+  "² Lookback sells yearly plans only: $299 a year, about $25 a month.",
+  "³ $199 billed monthly; $166 a month when billed yearly. Lyssna Growth also includes unlimited unmoderated responses.",
+  "⁴ Figma prototype tests also work on a phone, voice only; site and HTML tests need a computer.",
+  "Maze Free: 1 study a month and 5 seats; recordings (Clips) and interview transcription are on Enterprise only, which has no public price. Dovetail is Free or Enterprise; UserTesting publishes no prices.",
+  "Prices in USD from each company’s own pricing page and help centre, checked 24 Oct 2026. “Not checked” means we couldn’t confirm it, so we don’t claim it either way."
+ ],
+ "pr.plans": [
+  [
+   "Free",
+   "$0",
+   "to start, 3 test sessions"
+  ],
+  [
+   "Basic",
+   "$3",
+   "a month, 5 test sessions"
+  ],
+  [
+   "Solo",
+   "$6",
+   "a month, adds custom domain"
+  ],
+  [
+   "Pro",
+   "$19",
+   "a month, 20 test sessions"
+  ]
+ ],
+ "pr.link": "See every plan",
+ "faq.k": "Questions",
+ "faq.h2": "Asked often",
+ "faq.items": [
+  [
+   "Do my testers need an account or an app?",
+   "No. They open the link in their browser on their own computer, allow the microphone and the tab, and start. You choose who gets the link."
+  ],
+  [
+   "What exactly is recorded?",
+   "The browser tab with your prototype, and the tester’s voice as they think aloud. Not their camera and not their other tabs."
+  ],
+  [
+   "How does one prompt publish my site?",
+   "Aero gives you a prompt with a key in it. Paste it into the Claude or ChatGPT chat where you built the thing and it sends the files to Aero. Nothing to install or connect."
+  ],
+  [
+   "What can I publish?",
+   "A Claude artifact or anything you built in a chat, a Figma prototype link, or an HTML file, folder or zip."
+  ],
+  [
+   "How soon is the transcript ready?",
+   "About a minute after each session ends, with a short summary and the friction points in the tester’s own words."
+  ],
+  [
+   "Is the test link the same as my site’s?",
+   "No. Testing a site makes a copy with its own short link, so you can change the test without touching the live site."
+  ],
+  [
+   "Can I use my own domain?",
+   "Yes, on Solo and up. Password protection comes with Basic and up."
+  ],
+  [
+   "Can people test on a phone?",
+   "Figma prototype tests work on a phone and record the tester’s voice only. Site and HTML tests need a computer, because Aero records the tab."
+  ],
+  [
+   "What do I get for free?",
+   "3 test sessions with recordings, transcripts and summaries, and sites that stay live for 7 days. Paid plans have a 7-day free trial."
+  ]
+ ],
+ "close.h2": "Put it online. Find out what people think",
+ "close.p": "Free to start. From $3 a month. No call, no contract."
+}

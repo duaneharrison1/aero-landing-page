@@ -1,0 +1,82 @@
+[
+ {
+  "slug": "steadier-figma-tests",
+  "date": "2026-10-21",
+  "title": "Steadier Figma tests and summaries",
+  "summary": "Figma prototype tests are more reliable for testers, and each session is summarised once, with a backup if the first try fails.",
+  "pill": "pill pill-test",
+  "label": "Test"
+ },
+ {
+  "slug": "change-custom-domain",
+  "date": "2026-09-21",
+  "title": "Change or remove your custom domain yourself",
+  "summary": "You can now switch a site to a different custom domain, or remove it, without contacting support.",
+  "pill": "pill pill-publish",
+  "label": "Publish"
+ },
+ {
+  "slug": "figma-sites-custom-domains",
+  "date": "2026-07-16",
+  "title": "Custom domains for Figma sites",
+  "summary": "Sites made from a Figma prototype now get the same settings as HTML sites, including your own domain.",
+  "pill": "pill pill-publish",
+  "label": "Publish"
+ },
+ {
+  "slug": "sign-in-with-google",
+  "date": "2026-07-02",
+  "title": "Sign in with Google",
+  "summary": "You can sign in to Aero with your Google account, and link it to an existing email and password.",
+  "pill": "pill",
+  "label": "Plans and account"
+ },
+ {
+  "slug": "test-from-a-prompt",
+  "date": "2026-06-23",
+  "title": "Set up a test from the same prompt",
+  "summary": "The prompt that publishes your site can now set up a test on it too.",
+  "pill": "pill pill-test",
+  "label": "Test"
+ },
+ {
+  "slug": "tasks-are-optional",
+  "date": "2026-06-16",
+  "title": "Tasks are optional",
+  "summary": "A test no longer needs tasks. Leave them out and testers explore freely.",
+  "pill": "pill pill-test",
+  "label": "Test"
+ },
+ {
+  "slug": "publish-from-claude",
+  "date": "2026-06-12",
+  "title": "Publish from Claude or ChatGPT with one prompt",
+  "summary": "Built something in Claude or ChatGPT? Aero now gives you one prompt to publish it from the same chat.",
+  "pill": "pill pill-publish",
+  "label": "Publish"
+ },
+ {
+  "slug": "site-settings",
+  "date": "2026-06-11",
+  "title": "Passwords, favicons and visits for your sites",
+  "summary": "Every site now has a settings page: its name, password protection, favicon and visits.",
+  "pill": "pill pill-publish",
+  "label": "Publish"
+ },
+ {
+  "slug": "test-html-sites",
+  "date": "2026-06-11",
+  "title": "Test an HTML site, with tasks",
+  "summary": "You can now run a test on any HTML site you’ve published, not only on Figma prototypes.",
+  "pill": "pill pill-test",
+  "label": "Test"
+ },
+ {
+  "slug": "html-hosting",
+  "date": "2026-06-07",
+  "title": "Drop an HTML folder and it’s live",
+  "summary": "Aero now hosts HTML sites: a single file, a folder or a zip, live at its own aeroapp.ai address.",
+  "pill": "pill pill-publish",
+  "label": "Publish"
+ }
+]

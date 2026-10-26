@@ -1,59 +1,11 @@
 ---
-import Container from "../components/container.astro";
-import Features from "../components/features.astro";
-import Hero from "../components/hero.astro";
-import Layout from "../layouts/Layout.astro";
+// Built from src/markup/home.html (layout and pictures) and src/data/copy/home.json (words). See docs/website/README.md.
+import SiteLayout from "../layouts/SiteLayout.astro";
+import "../styles/website/home-page.css";
+import { getPage } from "../lib/website";
 
-const faqs = [
-  {
-    q: "What is Aero?",
-    a: "Aero puts your prototypes on a live link and lets you test them with real people. Publish a site or a Figma prototype, share a test link, then watch each session with AI notes.",
-  },
-  {
-    q: "How does an AI tool publish to Aero?",
-    a: "Use your own Claude or ChatGPT. Create an API token in your Aero account, give your AI one prompt, and it publishes your site to a live link. MCP works too.",
-  },
-  {
-    q: "What gets captured in a user test?",
-    a: "The tester's screen and voice, how each task went, a transcript, and AI notes with quotes from the session. Tests on an HTML site run in a desktop browser. Figma tests also work on a phone, where only the voice is recorded.",
-  },
-  {
-    q: "Do I need to write code?",
-    a: "No. Drag and drop your files, paste a Figma prototype link, or publish with one prompt from your AI tool.",
-  },
-];
+const { html, copy, meta } = getPage("home");
 ---
-
-<Layout title="">
-  <Container>
-    <Hero />
-    <Features />
-
-    <section class="mt-24 mb-16">
-      <h2 class="text-4xl font-bold text-center mb-10 text-[#1D1D1F]">
-        Frequently asked questions
-      </h2>
-      <div class="space-y-6">
-        {
-          faqs.map((faq, i) => (
-            <details
-              class="bg-[#F9FAFB] rounded-lg border border-subtle p-4 md:p-8 transition-all duration-300 group"
-              open={i === 0}>
-              <summary class="font-semibold text-xl text-[#1D1D1F] cursor-pointer flex items-center justify-between select-none text-left">
-                {faq.q}
-                <span class="ml-4 transition-transform duration-300 group-open:rotate-180">
-                  <svg width="28" height="28" fill="none" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M8 10l4 4 4-4" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </span>
-              </summary>
-              <div class="mt-4 text-[#6B6F76] text-base leading-relaxed text-left">
-                {faq.a}
-              </div>
-            </details>
-          ))
-        }
-      </div>
-    </section>
-  </Container>
-</Layout>
+<SiteLayout title={meta.title} description={meta.description} bodyClass={meta.bodyClass} jsonld={meta.jsonld} copy={copy} script="home">
+  <Fragment set:html={html} />
+</SiteLayout>
