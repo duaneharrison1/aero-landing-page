@@ -67,6 +67,8 @@
 /* c: centred stack */
 .lay-c .hm-top{grid-template-columns:1fr;text-align:center;justify-items:center}
 .lay-c .hm-act,.lay-c .hm-ctas,.lay-c .hm-fine{justify-content:center}
+/* the two buttons on their own row, centred on the page; the small print centred on its own row beneath */
+.lay-c .hm-act{flex-direction:column;flex-wrap:nowrap;align-items:center;gap:12px}
 .lay-c .hm-lead{margin:0 auto}
 
 .hm-stage{position:relative;margin-top:30px;aspect-ratio:1540/1090;outline:none}
