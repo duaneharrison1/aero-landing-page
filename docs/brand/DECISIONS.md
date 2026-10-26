@@ -1,6 +1,6 @@
 ---
 brand-sync: figmaApp docs/brand is the source. Copy this file unchanged to aero-landing-page/docs/brand/.
-version: 2026-10-25.9
+version: 2026-10-25.10
 ---
 
 # Aero brand and product decisions
@@ -16,6 +16,10 @@ The running log of what Duane decided, newest first. Add a line whenever he deci
 - Figma previews use Figma's public link preview, with no per-user Figma token.
 - Previews are on for everything, automatically: not a customer setting and no manual switch. Existing sites and tests are filled in by themselves.
 - Feature parity: everything the hero video, website and mockups show must exist in the app (session review and Insights are the biggest gap).
+- Build the missing features now rather than hiding them on the website (parity audit: research/app-v3/PARITY.md).
+- Severity words: Critical, Major, Minor everywhere (old high/medium/low map across).
+- Insights start at 2 analysed sessions and refresh after each new session.
+- Dark mode: build it as a real theme with a Light/Dark control, starting with session review (dark by default there), then the rest of the app later.
 
 ## 25 Oct 2026 (evening): after go-live
 - Update the favicon.
