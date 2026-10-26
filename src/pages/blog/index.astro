@@ -1,0 +1,28 @@
+---
+// The blog index. Hero and closing band: src/markup/blog.html + src/data/copy/blog.json.
+// The list of posts is built from src/data/blog.json (newest first, grouped by month).
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import "../../styles/website/site-page.css";
+import { getPage } from "../../lib/website";
+import posts from "../../data/blog.json";
+import icons from "../../data/blog-icons.json";
+
+const { html, copy, meta } = getPage("blog");
+const pills = icons.pills as Record<string, string>;
+const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+const fmt = (d: string, o: Intl.DateTimeFormatOptions) => new Date(d + "T12:00:00Z").toLocaleDateString("en-GB", { timeZone: "UTC", ...o });
+
+let month = "";
+let list = "";
+for (const p of [...posts].sort((a, b) => b.date.localeCompare(a.date))) {
+  const m = fmt(p.date, { month: "long", year: "numeric" });
+  if (m !== month) { list += `<h2 class="s-month">${m}</h2>`; month = m; }
+  list += `<a class="s-post" href="/blog/${p.slug}"><time datetime="${p.date}">${fmt(p.date, { day: "numeric", month: "long", year: "numeric" })}</time>`
+    + `<div><div class="s-post-h"><span class="${p.pill}">${pills[p.pill] || ""}${esc(p.label)}</span><h3>${esc(p.title)}</h3></div><p>${esc(p.summary)}</p></div>`
+    + `<span class="s-garr">${icons.arrow}</span></a>`;
+}
+const body = html.replace("<!--posts-->", list);
+---
+<SiteLayout title={meta.title} description={meta.description} bodyClass={meta.bodyClass} jsonld={meta.jsonld} copy={copy} script="site">
+  <Fragment set:html={body} />
+</SiteLayout>

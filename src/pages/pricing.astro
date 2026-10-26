@@ -1,32 +1,15 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Container from "../components/container.astro";
-import PricingTableNew from "../components/PricingTableNew.astro";
+// Built from src/markup/pricing.html (layout) and src/data/copy/pricing.json (words). See docs/website/README.md.
+// Plan prices: the markup holds the US prices (docs/brand/PRICING-FACTS.md); regional-pricing.js swaps in the
+// visitor's regional price with the same logic as before (never change the currency or pricing logic).
+import SiteLayout from "../layouts/SiteLayout.astro";
+import "../styles/website/site-page.css";
+import { getPage } from "../lib/website";
+import regionalPricing from "../scripts/website/regional-pricing.js?url";
+
+const { html, copy, meta } = getPage("pricing");
 ---
-
-<Layout title="Pricing">
-  <Container>
-    <section class="bg-white pt-8 pb-4 md:pt-14 md:pb-6">
-      <div class="max-w-3xl mx-auto text-center mt-14 mb-10">
-        <h1 class="text-5xl md:text-6xl font-bold mb-3 text-[#1D1D1F]">
-          Pricing
-        </h1>
-        <p class="text-xl text-[#6B6F76]">
-          Start free. Publish prototypes to live URLs and run recorded user
-          tests with AI insights. Try it free and cancel anytime during the
-          trial period.
-        </p>
-      </div>
-
-      <PricingTableNew />
-    </section>
-
-    <p class="text-center text-[#8E8E93] text-sm mt-10">
-      Questions about a plan?{" "}
-      <a href="/contact" class="text-[#3D78B0] hover:underline">
-        Get in touch
-      </a>
-      .
-    </p>
-  </Container>
-</Layout>
+<SiteLayout title={meta.title} description={meta.description} bodyClass={meta.bodyClass} jsonld={meta.jsonld} copy={copy} script="site">
+  <Fragment set:html={html} />
+  <script is:inline slot="scripts" src={regionalPricing}></script>
+</SiteLayout>

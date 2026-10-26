@@ -1,0 +1,101 @@
+{
+ "title": "Publish a Claude artifact to its own address · Aero",
+ "desc": "How to publish a Claude artifact as a real website at your own address, in one prompt or by uploading its HTML. Then test it with people you choose.",
+ "crumb.a": "Guides",
+ "crumb.b": "Publish a Claude artifact",
+ "h1": "Publish a Claude artifact.",
+ "answer": "Copy one prompt from Aero into the Claude chat where you made the artifact. Claude sends the files to Aero and it goes live at an address like yourname.aeroapp.ai. Or download the artifact as HTML and drop it into Aero.",
+ "meta": [
+  "About 2 minutes",
+  "Free plan works",
+  "Nothing to install"
+ ],
+ "need.h": "What you need",
+ "need": [
+  "The Claude chat where you built the artifact",
+  "An Aero account (free)",
+  "A name for the site, like pocket"
+ ],
+ "steps.h": "Steps",
+ "steps": [
+  [
+   "Start a new site from a prompt",
+   "In Aero, go to Sites, New site, and pick Prompt. Give the site a name.",
+   [
+    "prompt",
+    ".x-seg, .mhead .crumb",
+    12
+   ]
+  ],
+  [
+   "Copy the prompt",
+   "Aero shows one prompt with your key in it. Press Copy prompt. The key only lets this prompt publish sites in your account.",
+   [
+    "prompt",
+    ".x-pbox, .x-key",
+    12
+   ]
+  ],
+  [
+   "Paste it into your Claude chat",
+   "Go back to the chat where you made the artifact and paste it. Claude sends the files to Aero and replies with the address.",
+   [
+    "claude",
+    ".x-outside",
+    8,
+    {
+     "cw": 600
+    }
+   ]
+  ],
+  [
+   "Open its page in Aero",
+   "Aero updates by itself when the site is live and opens its page: the address, a preview and its versions.",
+   [
+    "justpub",
+    ".x-justpub, .x-stage, .x-addr",
+    12,
+    {
+     "cw": 560
+    }
+   ]
+  ]
+ ],
+ "alt.h": "Prefer not to use a prompt?",
+ "alt.p": "Download the artifact from Claude as an HTML file, then drop it on New site, Upload. It goes live at its own address the same way.",
+ "next.h": "Then test it.",
+ "next.p": "Start a new test and pick this site. You get a test link to send to anyone: they open it on their own computer, and you get the recording, transcript and summary back.",
+ "next.a": "How testing works",
+ "faq.h": "Questions.",
+ "faq": [
+  [
+   "Does my artifact stay on claude.ai?",
+   "Yes. Aero publishes a copy at its own address. Your chat and the artifact in Claude don’t change."
+  ],
+  [
+   "Can I use my own domain?",
+   "Yes, on Solo and up. Every site also has an aeroapp.ai address, and on Basic and up you choose its name."
+  ],
+  [
+   "How do I update it?",
+   "Ask Claude for the change in the same chat, then use the prompt again. Aero keeps every version, so you can roll back."
+  ],
+  [
+   "Can I keep it private?",
+   "Add a password on Basic and up, so only people you give it to can open it."
+  ],
+  [
+   "Does it work with ChatGPT too?",
+   "Yes. The same prompt works in the ChatGPT chat where you built it."
+  ],
+  [
+   "How long does a free site stay live?",
+   "7 days. Paid plans keep it live; they start at $3 a month with a 7-day free trial."
+  ]
+ ],
+ "rel.h": "Related guides",
+ "cta.h2": "Publish your artifact.",
+ "cta.p": "Free to start. Live at its own address, ready to test.",
+ "cta.a": "Start free",
+ "cta.b": "See pricing"
+}

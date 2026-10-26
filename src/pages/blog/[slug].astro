@@ -1,65 +1,54 @@
 ---
+// Blog posts.
+// - New posts (Oct 2026 design): one entry in src/data/blog.json, words in src/data/copy/blog/<slug>.json, body in
+//   src/markup/blog/<slug>.html. Older / Newer links are built from blog.json.
+// - The two earlier posts in src/content/blog (Markdown) still render at their old addresses.
 import { getCollection } from "astro:content";
+import SiteLayout from "../../layouts/SiteLayout.astro";
 import Layout from "../../layouts/Layout.astro";
 import Container from "../../components/container.astro";
+import "../../styles/website/site-page.css";
+import { getPage } from "../../lib/website";
+import posts from "../../data/blog.json";
 
-// Generate a new path for every collection entry
 export async function getStaticPaths() {
-  const blogEntries = await getCollection("blog");
-  return blogEntries.map((entry) => ({
-    params: { slug: entry.slug },
-    props: { entry },
+  const sorted = [...posts].sort((a, b) => a.date.localeCompare(b.date));
+  const fresh = sorted.map((p, i) => ({
+    params: { slug: p.slug },
+    props: { kind: "new", slug: p.slug, older: sorted[i - 1] || null, newer: sorted[i + 1] || null },
   }));
+  const taken = new Set(posts.map((p) => p.slug));
+  const old = (await getCollection("blog"))
+    .filter((e) => !taken.has(e.slug))
+    .map((entry) => ({ params: { slug: entry.slug }, props: { kind: "old", entry } }));
+  return [...fresh, ...old];
 }
 
-// Get the entry directly from the prop on render
-const { entry } = Astro.props;
-const { Content } = await entry.render();
+const props = Astro.props as any;
+let page: ReturnType<typeof getPage> | null = null;
+let body = "";
+let Content: any = null;
+if (props.kind === "new") {
+  page = getPage(`blog/${props.slug}`);
+  const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  const c = page.copy as Record<string, string>;
+  const a = (p: { slug: string; title: string } | null, label: string, cls = "") =>
+    p ? `<a${cls ? ` class="${cls}"` : ""} href="/blog/${p.slug}"><span class="site-eyebrow">${esc(label)}</span><b>${esc(p.title)}</b></a>` : "<span></span>";
+  body = page.html.replace("<!--prev-next-->", `<nav class="s-pn">${a(props.older, c.prev || "Older")}${a(props.newer, c.next || "Newer", "r")}</nav>`);
+} else {
+  Content = (await props.entry.render()).Content;
+}
 ---
-
-<Layout title={entry.data.title}>
-  <Container>
-    <!-- <div class="mx-auto max-w-3xl mt-14">
-      <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
-        {entry.data.category}
-      </span>
-      <h1
-        class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-1 lg:leading-tight">
-        {entry.data.title}
-      </h1>
-      {
-        entry.data.snippet && (
-          <p class="text-xl text-slate-600 mt-2 mb-2">{entry.data.snippet}</p>
-        )
-      }
-      <div
-        class="flex gap-2 mt-3 items-center flex-wrap md:flex-nowrap text-base">
-        <span class="text-gray-400">{entry.data.author}</span>
-        <span class="text-gray-400">•</span>
-        <time
-          class="text-gray-400"
-          datetime={entry.data.publishDate.toISOString()}>
-          {entry.data.publishDate.toDateString()}
-        </time>
-        <span class="text-gray-400 hidden md:block">•</span>
-        <div class="w-full md:w-auto flex flex-wrap gap-3">
-          {
-            entry.data.tags.map((tag) => (
-              <span class="text-sm text-gray-500">#{tag}</span>
-            ))
-          }
-        </div>
+{page ? (
+  <SiteLayout title={page.meta.title} description={page.meta.description} bodyClass={page.meta.bodyClass} jsonld={page.meta.jsonld} copy={page.copy} script="site">
+    <Fragment set:html={body} />
+  </SiteLayout>
+) : (
+  <Layout title={props.entry.data.title}>
+    <Container>
+      <div class="prose prose-lg mx-auto mt-14 max-w-3xl">
+        <Content />
       </div>
-    </div> -->
-    <div class="mx-auto prose prose-lg mt-6 max-w-3xl">
-      <Content />
-    </div>
-    <div class="text-center mt-8">
-      <a
-        href="/blog"
-        class="bg-gray-100 px-5 py-3 rounded-md hover:bg-gray-200 transition">
-        ← Back to Blog
-      </a>
-    </div>
-  </Container>
-</Layout>
+    </Container>
+  </Layout>
+)}

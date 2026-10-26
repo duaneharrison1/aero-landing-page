@@ -1,0 +1,28 @@
+/* Not live yet (DECISIONS, 25 Oct 2026: "go live").
+   The product pictures were drawn from the app UI v3 designs, which include a few features the app doesn't have yet.
+   Truth rule: the website only shows what the app does today. Each one is tagged data-soon="..." in src/markup and
+   hidden here. When a feature ships, delete its rule and it comes back on every page that draws it.
+   Keep in step with figmaApp docs/TODO.md ("Before the new website goes live"). */
+
+/* Tester's optional first name on the welcome screen */
+[data-soon="first-name"] { display: none !important; }
+
+/* Private sites switch, the Private filter and the Private badge */
+[data-soon="private"] { display: none !important; }
+
+/* "Taking new sessions" switch on a test */
+[data-soon="taking-sessions"] { display: none !important; }
+
+/* The owner's free "Preview as tester" runs, shown as You and left out of Insights */
+[data-soon="preview-runs"] { display: none !important; }
+
+/* A test's own custom domain and favicon, separate from the site's (figmaApp docs/TODO.md: not built yet) */
+[data-soon="test-domain"] { display: none !important; }
+
+/* Word-by-word highlight in replays, and "click a line to jump".
+   To bring it back: delete the rules below. */
+[data-soon="word-highlight"] { display: none !important; }
+.st-trs .tl.cur .w,
+.st-trs .tl.cur .w.said,
+.st-trs .tl.cur .w.now { color: inherit !important; background: none !important; box-shadow: none !important; }
+.v-q .w { animation: none !important; color: var(--ink) !important; background: none !important; }

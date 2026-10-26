@@ -1,0 +1,11 @@
+---
+// Built from src/markup/guides.html (layout and pictures) and src/data/copy/guides.json (words). See docs/website/README.md.
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import "../../styles/website/site-page.css";
+import { getPage } from "../../lib/website";
+
+const { html, copy, meta } = getPage("guides");
+---
+<SiteLayout title={meta.title} description={meta.description} bodyClass={meta.bodyClass} jsonld={meta.jsonld} copy={copy} script="site">
+  <Fragment set:html={html} />
+</SiteLayout>
