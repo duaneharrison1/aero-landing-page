@@ -1,0 +1,401 @@
+{
+ "title": "Pricing: free to start, from $3 a month · Aero",
+ "desc": "Aero plans: Free, Basic $3, Solo $6 and Pro $19 a month. Recordings on every plan. 7-day free trial, no call, no contract. Compared with Maze, Lookback, Userbrain and Lyssna, per month.",
+ "hero.eyebrow": "Pricing",
+ "hero.h1": "Priced for one designer.",
+ "hero.lead": "Not for a research department. Free to start, then from $3 a month. Every plan includes recordings of the tab and the tester’s voice.",
+ "hero.fine": [
+  "7-day free trial on paid plans",
+  "Monthly, cancel any time",
+  "No call, no contract"
+ ],
+ "plans": [
+  [
+   "Free",
+   "$0",
+   "",
+   "To try the whole loop.",
+   [
+    "3 test sessions",
+    "Recordings included",
+    "Sites stay live for 7 days"
+   ],
+   "Start free",
+   ""
+  ],
+  [
+   "Basic",
+   "$3",
+   "/month",
+   "For a portfolio or a few tests.",
+   [
+    "5 test sessions",
+    "Your own aeroapp.ai address",
+    "Password protection",
+    "Custom favicon, no Aero badge"
+   ],
+   "Try Basic free",
+   "7-day free trial"
+  ],
+  [
+   "Solo",
+   "$6",
+   "/month",
+   "For your own domain.",
+   [
+    "10 test sessions",
+    "Everything in Basic",
+    "Custom domain",
+    "Site analytics"
+   ],
+   "Try Solo free",
+   "7-day free trial"
+  ],
+  [
+   "Pro",
+   "$19",
+   "/month",
+   "For regular testing.",
+   [
+    "20 test sessions",
+    "Everything in Solo",
+    "Priority support"
+   ],
+   "Try Pro free",
+   "7-day free trial"
+  ]
+ ],
+ "plans.foot": "Prices in USD, set for your region. Test sessions are a total on your plan, not a monthly allowance.",
+ "tbl.h2": "Every plan, side by side.",
+ "tbl.rows": [
+  [
+   "Test sessions",
+   "3",
+   "5",
+   "10",
+   "20"
+  ],
+  [
+   "Tab and voice recording",
+   "y",
+   "y",
+   "y",
+   "y"
+  ],
+  [
+   "Testers need no account or software",
+   "y",
+   "y",
+   "y",
+   "y"
+  ],
+  [
+   "Publish from a prompt, HTML or Figma",
+   "y",
+   "y",
+   "y",
+   "y"
+  ],
+  [
+   "Sites stay live",
+   "7 days",
+   "y",
+   "y",
+   "y"
+  ],
+  [
+   "Your own aeroapp.ai address",
+   "",
+   "y",
+   "y",
+   "y"
+  ],
+  [
+   "Password protection",
+   "",
+   "y",
+   "y",
+   "y"
+  ],
+  [
+   "Custom favicon, no Aero badge",
+   "",
+   "y",
+   "y",
+   "y"
+  ],
+  [
+   "Custom domain",
+   "",
+   "",
+   "y",
+   "y"
+  ],
+  [
+   "Site analytics",
+   "",
+   "",
+   "y",
+   "y"
+  ],
+  [
+   "Priority support",
+   "",
+   "",
+   "",
+   "y"
+  ],
+  [
+   "7-day free trial",
+   "",
+   "y",
+   "y",
+   "y"
+  ]
+ ],
+ "cmp.eyebrow": "Compared",
+ "cmp.h2": "What testing with your own people costs elsewhere, per month.",
+ "cmp.lead": "Each tool’s cheapest plan with recordings that tests a prototype with people you invite. Every price is per month; yearly-only plans are shown as their monthly equivalent.",
+ "cmp.cols": [
+  "Aero Free",
+  "Aero Basic",
+  "Maze Free",
+  "Lookback Freelance",
+  "Userbrain Starter",
+  "Lyssna Growth"
+ ],
+ "cmp.rows": [
+  [
+   "Price per month",
+   "$0",
+   "$3",
+   "$0",
+   "$25²",
+   "$49",
+   "$199³"
+  ],
+  [
+   "Billing",
+   "Free plan",
+   "Monthly, cancel any time",
+   "Free plan",
+   "Yearly only, $299 a year",
+   "Monthly",
+   "Monthly, or $166 a month billed yearly"
+  ],
+  [
+   "Sessions with your own testers",
+   "3¹",
+   "5¹",
+   "1 study a month",
+   "10 a year",
+   "3 a month",
+   "5 in-depth studies a month"
+  ],
+  [
+   "Tab and voice recording",
+   "Yes",
+   "Yes",
+   "No",
+   "Yes",
+   "Yes",
+   "Yes"
+  ],
+  [
+   "Hosts your prototype",
+   "Yes, live for 7 days",
+   "Yes, at your own aeroapp.ai address",
+   "No",
+   "No",
+   "No",
+   "No"
+  ],
+  [
+   "Testers install nothing",
+   "Yes, in their browser⁵",
+   "Yes, in their browser⁵",
+   "Not checked",
+   "iPhone needs an app; desktop not checked",
+   "Needs a Chrome extension or app",
+   "Desktop yes; phone recording uses an app"
+  ]
+ ],
+ "cmp.notes": [
+  "¹ Aero’s sessions are a total on your plan, not a monthly allowance. The others reset each month or year, so the counts aren’t a straight comparison.",
+  "² Lookback sells yearly plans only: $299 a year, about $25 a month.",
+  "³ $199 billed monthly; $166 a month when billed yearly. Lyssna Growth also includes unlimited unmoderated responses.",
+  "⁵ Figma prototype tests also work on a phone, voice only; site and HTML tests need a computer.",
+  "Maze Free: 1 study a month and 5 seats; recordings (Clips) and interview transcription are on Enterprise only, which has no public price. Dovetail is Free or Enterprise; UserTesting publishes no prices.",
+  "Prices in USD from each company’s own pricing page and help centre, checked 24 Oct 2026. “Not checked” means we couldn’t confirm it, so we don’t claim it either way."
+ ],
+ "cmp.sources": [
+  [
+   "Maze pricing",
+   "https://maze.co/pricing/"
+  ],
+  [
+   "Lookback pricing",
+   "https://www.lookback.com/pricing"
+  ],
+  [
+   "Userbrain pricing",
+   "https://www.userbrain.com/en/pricing"
+  ],
+  [
+   "Lyssna pricing",
+   "https://www.lyssna.com/pricing/"
+  ],
+  [
+   "Lyssna pricing help",
+   "https://help.lyssna.com/en/articles/4953377-lyssna-pricing"
+  ],
+  [
+   "Lookback iOS help",
+   "https://help.lookback.io/en/articles/3087247-how-do-i-join-an-ios-live-test"
+  ],
+  [
+   "Userbrain own testers help",
+   "https://help.userbrain.com/help/how-can-i-test-with-my-own-users"
+  ],
+  [
+   "Lyssna recordings help",
+   "https://help.lyssna.com/en/articles/9398996-recordings"
+  ],
+  [
+   "UserTesting plans",
+   "https://www.usertesting.com/plans"
+  ]
+ ],
+ "host.h2": "And to put it online.",
+ "host.lead": "Hosting tools stop at the link. Here is where custom domains and passwords start on each.",
+ "host.cols": [
+  "",
+  "Free plan",
+  "Custom domain from",
+  "Password from",
+  "Testing with people"
+ ],
+ "host.rows": [
+  [
+   "Aero",
+   "Yes, sites live 7 days",
+   "Solo, $6 a month",
+   "Basic, $3 a month",
+   "Included"
+  ],
+  [
+   "Netlify",
+   "Yes",
+   "Free",
+   "Pro, $20 a month",
+   "No"
+  ],
+  [
+   "Vercel",
+   "Hobby, non-commercial use only",
+   "Free",
+   "Pro, $20 a month plus $20 a project",
+   "No"
+  ],
+  [
+   "Framer",
+   "Yes, on a Framer domain",
+   "Basic, $10 a month billed yearly",
+   "Not confirmed",
+   "No"
+  ],
+  [
+   "Figma Sites",
+   "Starter, figma.site address",
+   "Professional full seat, $16⁴",
+   "Not confirmed",
+   "No"
+  ],
+  [
+   "Claude artifacts",
+   "Share a link on any plan",
+   "Not possible, always on claude.ai",
+   "No; Pro and Max can invite by email",
+   "No"
+  ]
+ ],
+ "host.notes": [
+  "⁴ Figma’s page did not confirm whether $16 is the monthly or yearly-billed price.",
+  "“Not confirmed”: the feature is listed, but the pricing page doesn’t make clear which plan includes it."
+ ],
+ "host.sources": [
+  [
+   "Netlify pricing",
+   "https://www.netlify.com/pricing/"
+  ],
+  [
+   "Netlify password protection",
+   "https://www.netlify.com/knowledge-base/how-to-password-protect-a-netlify-site-or-deploy-previews/"
+  ],
+  [
+   "Vercel pricing",
+   "https://vercel.com/pricing"
+  ],
+  [
+   "Framer pricing",
+   "https://www.framer.com/pricing"
+  ],
+  [
+   "Figma pricing",
+   "https://www.figma.com/pricing/"
+  ],
+  [
+   "Figma custom domains",
+   "https://help.figma.com/hc/en-us/articles/31414274019863"
+  ],
+  [
+   "Claude artifact sharing",
+   "https://support.claude.com/en/articles/9547008-publish-and-share-artifacts"
+  ]
+ ],
+ "src": "Sources",
+ "faq.eyebrow": "Billing",
+ "faq.h2": "Questions about paying.",
+ "faq": [
+  [
+   "Is there a free plan?",
+   "Yes. Free has 3 test sessions with recordings included, and your sites stay live for 7 days."
+  ],
+  [
+   "How does the free trial work?",
+   "Basic, Solo and Pro each start with a 7-day free trial. You can cancel before it ends."
+  ],
+  [
+   "Can I cancel any time?",
+   "Yes. Plans are monthly, with no contract. Cancel from your account in a couple of clicks; there is no call."
+  ],
+  [
+   "What counts as a test session?",
+   "One person taking one of your tests. Today the number on your plan is a total of sessions stored, not a monthly allowance."
+  ],
+  [
+   "Why do I see a different price at checkout?",
+   "Aero has regional prices. The site shows USD; checkout shows the price for where you are."
+  ],
+  [
+   "What happens to a free site after 7 days?",
+   "It goes offline. It keeps its address and versions, and a paid plan keeps sites live."
+  ],
+  [
+   "Do my testers pay or sign up?",
+   "No. They open your link and start. They never need an account."
+  ],
+  [
+   "Is there a team or yearly plan?",
+   "Not today. Aero is priced for one person, paid monthly. There are no seats, panels or sales calls."
+  ],
+  [
+   "What does priority support mean?",
+   "On Pro, your questions go to the front of the queue."
+  ]
+ ],
+ "cta.h2": "Start free. Upgrade when you need your own address.",
+ "cta.p": "Free to start, from $3 a month. No call, no contract.",
+ "cta.a": "Start free",
+ "cta.b": "See every feature"
+}

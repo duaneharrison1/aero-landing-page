@@ -1,63 +1,11 @@
 ---
-import Container from "../components/container.astro";
-import Features from "../components/features.astro";
-import Hero from "../components/hero.astro";
-import Layout from "../layouts/Layout.astro";
+// Built from src/markup/home.html (layout and pictures) and src/data/copy/home.json (words). See docs/website/README.md.
+import SiteLayout from "../layouts/SiteLayout.astro";
+import "../styles/website/home-page.css";
+import { getPage } from "../lib/website";
 
-// NOTE: Placeholder Aero copy below — to be refined later.
-const faqs = [
-  {
-    q: "What is Aero?",
-    a: "Aero is where you publish prototypes to live URLs and run recorded user tests on them. You can publish by drag-and-drop, from an AI agent over MCP, or from a Figma link, then put the result in front of real people.",
-  },
-  {
-    q: "How does an AI agent publish to Aero?",
-    a: "Connect Aero as an MCP server to your agent, then ask it to publish your project and create a user test. Your agent gets a live URL back, and the test insights are handed back to it once sessions come in.",
-  },
-  {
-    q: "What gets captured in a user test?",
-    a: "Tests are task-based and run on your real hosted prototype. Each session records the tester's screen and voice, and you get transcripts plus AI insights.",
-  },
-  {
-    q: "Do I need to write code?",
-    a: "No. You can publish static sites by drag-and-drop or from a Figma link without touching code. Agent-driven publishing over MCP is there when you want it.",
-  },
-];
+const { html, copy, meta } = getPage("home");
 ---
-
-<Layout title="">
-  <Container>
-    <Hero />
-    <Features />
-
-    <section class="mt-24 mb-16">
-      <h2 class="text-4xl font-bold text-center mb-4 text-[#1D1D1F]">
-        Frequently Asked Questions
-      </h2>
-      <p class="text-center text-[#8E8E93] text-sm mb-10">
-        Placeholder copy — final answers to be refined.
-      </p>
-      <div class="space-y-6">
-        {
-          faqs.map((faq, i) => (
-            <details
-              class="bg-[#F9FAFB] rounded-lg border border-subtle p-4 md:p-8 transition-all duration-300 group"
-              open={i === 0}>
-              <summary class="font-semibold text-xl text-[#1D1D1F] cursor-pointer flex items-center justify-between select-none text-left">
-                {faq.q}
-                <span class="ml-4 transition-transform duration-300 group-open:rotate-180">
-                  <svg width="28" height="28" fill="none" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M8 10l4 4 4-4" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </span>
-              </summary>
-              <div class="mt-4 text-[#6B6F76] text-base leading-relaxed text-left">
-                {faq.a}
-              </div>
-            </details>
-          ))
-        }
-      </div>
-    </section>
-  </Container>
-</Layout>
+<SiteLayout title={meta.title} description={meta.description} bodyClass={meta.bodyClass} jsonld={meta.jsonld} copy={copy} script="home">
+  <Fragment set:html={html} />
+</SiteLayout>

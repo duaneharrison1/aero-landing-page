@@ -1,0 +1,9 @@
+/* Pages still built with Tailwind (about, contact, 404 and the two earlier blog posts). They now use the website's
+   header, footer and tokens (src/styles/website/aero.css); only Tailwind's utilities are added here, without its base
+   reset, so the shared header and footer look the same as on every other page. */
+@tailwind components;
+@tailwind utilities;
+
+.legacy-page { font-family: var(--sans); color: var(--ink); }
+.legacy-page .prose table { display: block; max-width: 100%; overflow-x: auto; }
+.legacy-page .prose { overflow-wrap: anywhere; }

@@ -1,0 +1,23 @@
+---
+// The website's glass header (every page). Labels and links: src/data/site.json.
+import site from "../../data/site.json";
+import { link } from "../../lib/website";
+import lockupRaw from "../../assets/brand/lockup.svg?raw";
+
+const path = Astro.url.pathname.replace(/\/$/, "") || "/";
+const lockup = lockupRaw.trim().replace('fill="#1D1D1F"', 'fill="currentColor"').replace("<svg ", '<svg aria-hidden="true" ');
+const isOn = (href: string) => path === href || path.startsWith(href + "/");
+---
+<header class="site-nav"><div class="site-wrap site-nav-in">
+<a class="site-logo" href="/" aria-label="Aero home"><Fragment set:html={lockup} /></a>
+<nav class="site-menu" id="site-menu" aria-label="Main">
+  {site.nav.map((n) => (
+    isOn(n.href)
+      ? <a href={n.href} class="on" aria-current="page"><span>{n.label}</span></a>
+      : <a href={n.href}><span>{n.label}</span></a>
+  ))}
+  <a class="site-menu-login" href={link("@login")}><span>{site.navLogin}</span></a>
+</nav>
+<div class="site-nav-r"><a class="btn g3 sm site-login" href={link("@login")} data-glass-v3="secondary"><span>{site.navLogin}</span></a>
+<a class="btn g3 sm" href={link("@signup")} data-glass-v3="primary" data-fill="rgba(29,29,31,.8)"><span>{site.navStart}</span></a>
+<button class="site-burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu"><i></i><i></i></button></div></div></header>

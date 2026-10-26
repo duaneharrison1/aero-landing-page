@@ -1,0 +1,23 @@
+{
+ "title": "Features: publish, test and review in one place · Aero",
+ "desc": "Every Aero feature, grouped by step: publish from one prompt, an HTML folder or a Figma link; test with one link and no software for testers; review transcripts, summaries and friction points across sessions.",
+ "hero.eyebrow": "Features",
+ "hero.h1": "Everything Aero does, in three steps.",
+ "hero.lead": "Publish what you made, send one link to test it, and review what people said. Here is every part of it, with the plan it comes on.",
+ "hero.note": "Every plan includes recordings of the tab and the tester’s voice.",
+ "publish.h2": "Publish.",
+ "publish.sell": "One prompt and it’s live. No hosting, no build step, no domain jargon. Bring it from Claude or ChatGPT, an HTML folder or a Figma link.",
+ "test.h2": "Test.",
+ "test.sell": "Send one link. Testers open it on their own computer: no software to install, no account, nothing for you to set up first.",
+ "review.h2": "Review.",
+ "review.sell": "No hours going through recordings. Each session comes back transcribed and summarised, and Insights puts every session together. It still reads well when you want the detail.",
+ "account.h2": "Plans and account.",
+ "account.sell": "Free to start, from $3 a month. No seats, no panels, no sales call.",
+ "soon": "Coming soon",
+ "every": "Every plan",
+ "cta.h2": "Try the whole loop on the free plan.",
+ "cta.p": "3 test sessions with recordings included. Sites stay live for 7 days.",
+ "cta.a": "Start free",
+ "cta.b": "See pricing",
+ "fine": "Pictures are the Aero app with example data. “Coming soon” marks work that is decided but not built yet."
+}
