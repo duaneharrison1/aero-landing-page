@@ -9,10 +9,12 @@
 import { SEO } from "astro-seo";
 import SiteHeader from "../components/website/SiteHeader.astro";
 import SiteFooter from "../components/website/SiteFooter.astro";
-// Favicon: the Aero mark. favicon.svg is the source; the PNGs are rasterised from it (32px for browsers without SVG
-// icons, 180px on white for iOS). All three get hashed /_astro/ paths, which the app's middleware routes here.
+// Favicon: the Aero mark. favicon.svg is the source and is linked first, so browsers with SVG icons use the vector. The
+// PNGs are rasterised from it for the rest: 32px and its @2x (64px) so retina screens get a sharp bitmap, and 180px on
+// white for iOS. All get hashed /_astro/ paths, which the app's middleware routes here.
 import favicon from "../assets/brand/favicon.svg?url";
 import favicon32 from "../assets/brand/favicon-32.png?url";
+import favicon32x2 from "../assets/brand/favicon-32@2x.png?url";
 import appleTouchIcon from "../assets/brand/apple-touch-icon.png?url";
 import glassSettings from "../glass/glass-settings.js?url";
 import glassEngine from "../glass/glass-v3.js?url";
@@ -56,8 +58,9 @@ const pageJs = script === "home" ? homeJs : script === "site" ? siteJs : null;
         image: { alt: "Aero: publish it, test it, review it" },
       }}
     />
-    <link rel="icon" href={favicon32} type="image/png" sizes="32x32" />
     <link rel="icon" href={favicon} type="image/svg+xml" />
+    <link rel="icon" href={favicon32} type="image/png" sizes="32x32" />
+    <link rel="icon" href={favicon32x2} type="image/png" sizes="64x64" />
     <link rel="apple-touch-icon" href={appleTouchIcon} sizes="180x180" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
