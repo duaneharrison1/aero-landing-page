@@ -3,8 +3,8 @@
  "links": {
   "login": "https://aeroapp.ai/login",
   "signup": "https://aeroapp.ai/signup",
-  "privacy": "https://aeroapp.ai/privacy-policy",
-  "terms": "https://aeroapp.ai/terms-and-conditions"
+  "privacy": "https://aeroapp.ai/privacy",
+  "terms": "https://aeroapp.ai/terms"
  },
  "nav": [
   { "label": "Features", "href": "/features" },
