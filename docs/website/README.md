@@ -116,8 +116,10 @@ site (`MARKETING_EXACT`, `MARKETING_PREFIXES`, `/_astro/`, `/opengraph.jpg`, sit
 built into `/_astro/` for that reason (nothing new in `public/` except `opengraph.jpg`). A new top-level page (such as
 `/use-cases` and `/guides`) also needs adding to that list in figmaApp, or aeroapp.ai shows the app instead.
 
-**Favicon.** `src/assets/brand/favicon.svg` is the Aero mark; `favicon-32.png` and `apple-touch-icon.png` (180px, full
-bleed) are rasterised from it. `src/layouts/SiteLayout.astro` links all three at their `/_astro/` paths. `public/favicon.ico`
+**Favicon.** `src/assets/brand/favicon.svg` is the "A." on a transparent background, drawn heavier than the logo so it
+holds up at 16px; it turns light in dark mode. `favicon-32.png` and the `.ico` are the ink A with a faint light edge so
+they read on dark tab bars too, and `apple-touch-icon.png` (180px) is the A. on a white square, because iOS fills
+transparency with black. All are rasterised from the SVG. `src/layouts/SiteLayout.astro` links all three at their `/_astro/` paths. `public/favicon.ico`
 (16, 32, 48) is built too, but aeroapp.ai only serves it once figmaApp's `middleware.js` adds `/favicon.ico` to
 `isMarketingRootFile`; until then that address is answered by the app.
 
