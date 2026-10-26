@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Glass round 5</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#1D1D1F;--mut:#6E6E73;--line:#E5E5EA}
+  body{margin:0;background:#fff;color:var(--ink);font:15px/1.55 Geist,system-ui,sans-serif}
+  .wrap{max-width:1560px;margin:0 auto;padding:32px 24px 64px}
+  h1{font-weight:450;font-size:34px;letter-spacing:-.03em;margin:0 0 8px}
+  h2{font-weight:500;font-size:20px;letter-spacing:-.02em;margin:40px 0 6px}
+  p,li{color:#3a3a3e;max-width:62em}
+  .pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}
+  .pair figure{margin:0}
+  .pair figcaption{font:12px/1.4 'Geist Mono',monospace;color:var(--mut);margin-bottom:6px}
+  iframe{width:100%;border:1px solid var(--line);border-radius:14px;background:#fff}
+  .tall{height:1020px}.nav{height:640px}
+  code{font:13px 'Geist Mono',monospace;background:#F2F2F4;padding:1px 5px;border-radius:5px}
+  @media (max-width:900px){.pair{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Glass, round 5</h1>
+<p>Round 4 on the left, round 5 on the right, live. Hover the buttons, tab to them for the focus state, scroll the nav pages. The "hover" rows hold the hover state still so it can be compared.</p>
+<ul>
+  <li><b>Caustic back.</b> Round 4 averaged every colour in a wash into one near-grey, so the glass saw nothing. Round 5 reads each wash where the light comes from: blue from the left of the hero, peach from the right, green from below. The colour shows inside the edges and in the wall.</li>
+  <li><b>Slab.</b> A flat face, a short bevel and a lit wall of thickness along the bottom.</li>
+  <li><b>Hover and focus.</b> White glass: the key light follows the pointer (slight) and the slab lifts. Ink: Lift only. Nothing moves or resizes; reduced motion snaps.</li>
+  <li><b>Nav.</b> Frosted glass with a clearer, refracting lower edge. Log in and Start free still read the page under it.</li>
+</ul>
+
+<h2>Buttons over the washes, next to colour, on white</h2>
+<div class="pair">
+  <figure><figcaption>Round 4</figcaption><iframe class="tall" src="scene.html?v=4&amp;s=buttons" title="Round 4 buttons"></iframe></figure>
+  <figure><figcaption>Round 5</figcaption><iframe class="tall" src="scene.html?v=5&amp;s=buttons" title="Round 5 buttons"></iframe></figure>
+</div>
+
+<h2>Nav over scrolling content (scroll inside each frame)</h2>
+<div class="pair">
+  <figure><figcaption>Round 4</figcaption><iframe class="nav" src="scene.html?v=4&amp;s=nav" title="Round 4 nav"></iframe></figure>
+  <figure><figcaption>Round 5</figcaption><iframe class="nav" src="scene.html?v=5&amp;s=nav" title="Round 5 nav"></iframe></figure>
+</div>
+<p>Shots are in <code>shots/</code>: <code>btn-v4-*</code> / <code>btn-v5-*</code>, <code>nav-v4-y*</code> / <code>nav-v5-y*</code> (1512 wide, scrolled), <code>fold-1512-v5.png</code>, <code>nav-390-*</code>, <code>states-compare.png</code>. <code>scene.html?v=shared</code> runs the copy Team H gets in <code>../shared/</code>.</p>
+</div>
+</body>
+</html>

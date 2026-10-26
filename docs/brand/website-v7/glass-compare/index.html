@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Aero Glass Compare</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1D1D1F;--mut:#6E6E73;--line:#E5E5EA}
+html,body{background:#fff}
+body{margin:0;font:14px/1.5 Geist,system-ui,sans-serif;color:var(--ink)}
+.top{padding:16px 20px 8px}
+.top h1{margin:0;font-size:20px;font-weight:500;letter-spacing:-.02em}
+.top p{margin:4px 0 0;color:var(--mut);max-width:70em}
+.g{display:grid;grid-template-columns:repeat(4,minmax(330px,1fr));gap:10px;padding:10px 20px 40px;overflow-x:auto}
+iframe{width:100%;height:2140px;border:1px solid var(--line);border-radius:12px;display:block;background:#fff}
+@media (max-width:900px){.top{padding:14px 16px 6px}.g{padding:10px 16px 30px}}
+</style></head><body>
+<div class="top"><h1>Glass compare</h1><p>The same real markup in every column, at rest and with hover held. A: the tester screen's frosted glass (no engine). B to D: the glass engine with each settings file; the code under each title is that file's hash and the time this page loaded it. Scroll sideways on a phone.</p></div>
+<div class="g">
+<iframe src="col-a.html" title="A: Tester glass"></iframe>
+<iframe src="col-b.html" title="B: Duane, 25 Oct"></iframe>
+<iframe src="col-c.html" title="C: Final, 07:01"></iframe>
+<iframe src="col-d.html" title="D: Final, now"></iframe>
+</div></body></html>

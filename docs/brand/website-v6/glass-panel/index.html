@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Glass control panel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="aero.css">
+<style>
+  :root{--gp-w:380px}
+  html,body{background:#fff}
+  body.site{margin:0}
+  body.gp-open{padding-right:var(--gp-w)}
+  .cap{font:500 11px/1.3 var(--mono);color:var(--mut2);margin:0 0 10px;letter-spacing:0}
+  /* page slice */
+  .s-hero{padding:56px 0 24px}
+  .s-hero h1{margin:0 0 14px}
+  .s-hero .lead{max-width:34em;margin:0 0 24px}
+  .ctas{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .stage{perspective:1600px;margin:-6px 0 0}
+  .screen{transform:perspective(1800px) rotateX(16deg);transform-origin:50% 0;margin:30px auto 0;max-width:880px;border-radius:14px;overflow:hidden;box-shadow:0 40px 80px -40px rgba(0,0,0,.45),0 0 0 1px rgba(0,0,0,.06);background:#fff}
+  .screen .bar{height:30px;background:#F2F2F4;display:flex;align-items:center;gap:6px;padding:0 12px}
+  .screen .bar i{width:9px;height:9px;border-radius:50%;background:#DADADF}
+  .screen .bar span{margin-left:14px;font:11px var(--mono);color:var(--mut);background:#fff;border-radius:6px;padding:2px 10px}
+  .pq{background:#FF5A36;color:#fff;padding:28px 40px 40px;min-height:340px}
+  .pq .top{display:flex;justify-content:space-between;font-size:13px;opacity:.95}
+  .pq .card{margin:28px auto 0;max-width:420px;background:#fff;color:#1D1D1F;border-radius:20px;padding:22px 24px}
+  .pq .card small{color:#8a8a90;font-size:12px}
+  .pq .amt{font-size:52px;font-weight:600;letter-spacing:-.045em;margin:10px 0 16px}
+  .pq .send{height:44px;border-radius:22px;background:#FF5A36;color:#fff;display:grid;place-items:center;font-weight:600}
+  .prose{max-width:720px;margin:64px auto;font-size:18px;line-height:1.6;color:var(--ink2)}
+  .prose h2{color:var(--ink);margin:0 0 12px}
+  .band{border-radius:28px;padding:48px 48px 44px;margin:24px 0}
+  .band p{max-width:34em;color:var(--ink2);margin:12px 0 22px}
+  .plainz{padding:40px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:48px 0}
+  .tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:32px 0}
+  .tiles div{height:200px;border-radius:22px}
+  .app-spot{margin:48px 0}
+  .app-spot .win{max-width:960px}
+  .app-body{padding:22px 24px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;background:#fff}
+  .app-body .card{height:120px;padding:14px;font-size:13px;color:var(--ink2)}
+  .app-body .thumb{height:64px;border-radius:9px;margin-bottom:10px}
+  .modal-spot{position:relative;border-radius:16px;background:#E9E9EC;padding:56px 24px;display:grid;place-items:center;overflow:hidden}
+  .modal-spot::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,#F7F7F8,#E4E6EA)}
+  .modal-spot .modal{position:relative;width:min(440px,100%)}
+  .note{font-size:13px;color:var(--mut);margin-top:8px}
+  .filler{height:900px}
+  @media (max-width:900px){
+    body.gp-open{padding-right:0;padding-bottom:58vh}
+    .band{padding:32px 18px}.tiles{grid-template-columns:1fr}.app-body{grid-template-columns:1fr}
+    .screen{transform:none}
+  }
+  /* compare overlay and embedded slices */
+  #gp-cmp{position:fixed;inset:0;z-index:300;background:#fff;display:none;flex-direction:column}
+  #gp-cmp.on{display:flex}
+  #gp-cmp .ch{display:flex;align-items:center;gap:12px;padding:12px 18px;border-bottom:1px solid #E9E9ED}
+  #gp-cmp .ch b{font-size:15px;font-weight:560}
+  #gp-cmp .ch span{color:#6E6E73;font-size:13px}
+  #gp-cmp .cg{overflow:auto;flex:1;padding:14px 18px 40px;display:grid;grid-template-columns:120px repeat(3,minmax(300px,1fr));gap:10px 12px;align-items:start}
+  #gp-cmp .cg .hd{font-weight:560;font-size:14px;position:sticky;top:-14px;background:#fff;padding:6px 0;z-index:1}
+  #gp-cmp .cg .hd small{display:block;font-weight:400;color:#86868B;font-size:12px}
+  #gp-cmp .cg .rl{font:500 12px/1.4 var(--mono);color:#6E6E73;padding-top:8px}
+  #gp-cmp iframe{width:100%;border:1px solid #ECECEF;border-radius:12px;background:#fff;display:block}
+  @media (max-width:900px){#gp-cmp .cg{grid-template-columns:repeat(3,minmax(300px,1fr))}#gp-cmp .cg .rl{grid-column:1/-1}#gp-cmp .cg .hd0{display:none}}
+  body.emb{padding:0!important;background:#fff}
+  .emb-cell{padding:14px 16px 16px}
+  .emb-cell+.emb-cell{border-top:1px dashed #E4E4E8}
+  .emb .lbl{font:500 11px var(--mono);color:#86868B;margin:0 0 10px}
+  .emb .ctas{gap:10px}
+  .emb-pq{height:34px;margin-top:22px;border-radius:12px 12px 0 0;background:#FF5A36;box-shadow:0 0 0 1px rgba(0,0,0,.05)}
+  .emb .band{margin:0;padding:20px 18px;border-radius:0}
+  .emb-nav{position:relative;height:96px;overflow:hidden;background:#FF5A36;border-radius:10px}
+  .emb-nav .bg{position:absolute;left:24px;top:30px;right:24px;height:120px;border-radius:16px;background:#fff;padding:14px 18px;font-size:40px;font-weight:600;letter-spacing:-.04em;color:#1D1D1F}
+  .emb-nav .site-nav{position:absolute;left:0;right:0;top:0}
+  .emb-nav .site-nav-in{height:60px;padding:0 14px;gap:10px}
+  .emb-nav .site-menu,.emb-nav .site-burger{display:none!important}
+  .emb-nav .site-login{display:inline-flex!important}
+  .emb .modal-spot{padding:18px 12px}
+  .gp-int{display:inline-block;font:500 10px var(--mono);color:#A1A1A6;border:1px solid #E4E4E8;border-radius:5px;padding:0 4px;margin-left:6px;vertical-align:1px}
+  .gp-gi.int label,.gp-gi.int p{color:#9a9aa0}
+  .gp-mode{display:flex;gap:4px;margin:4px 0 2px}
+  /* hold states */
+  .gp-focus .btn.g3{outline:2px solid var(--g3-ring);outline-offset:3px}
+
+  /* ===== control panel ===== */
+  #gp{position:fixed;top:0;right:0;bottom:0;width:var(--gp-w);z-index:200;background:#FBFBFC;border-left:1px solid #E4E4E8;
+    font:13px/1.45 var(--sans);color:#1D1D1F;display:flex;flex-direction:column;transition:transform .25s cubic-bezier(.3,.7,.2,1)}
+  body:not(.gp-open) #gp{transform:translateX(100%)}
+  #gp-tab{position:fixed;right:12px;bottom:12px;z-index:210;height:36px;padding:0 14px;border-radius:10px;border:0;background:#1D1D1F;color:#fff;font:500 13px var(--sans);cursor:pointer;box-shadow:0 6px 20px -6px rgba(0,0,0,.4)}
+  body.gp-open #gp-tab{display:none}
+  .gp-h{display:flex;align-items:center;gap:8px;padding:12px 14px;border-bottom:1px solid #E9E9ED;background:#fff}
+  .gp-h b{font-weight:560;font-size:14px}
+  .gp-h .sp{flex:1}
+  .gp-x{border:1px solid #E4E4E8;background:#fff;border-radius:8px;height:30px;padding:0 10px;font:inherit;cursor:pointer;color:#3a3a3e}
+  .gp-body{overflow:auto;flex:1;padding:10px 14px 40px;overscroll-behavior:contain}
+  .gp-sec{margin:12px 0 4px}
+  .gp-sec>.t{font:500 11px var(--mono);color:#86868B;margin:0 0 6px}
+  .gp-seg{display:flex;flex-wrap:wrap;gap:4px}
+  .gp-seg button{border:1px solid #E4E4E8;background:#fff;border-radius:8px;min-height:30px;padding:4px 9px;font:inherit;font-size:12.5px;cursor:pointer;color:#3a3a3e;text-align:left}
+  .gp-seg button.on{background:#1D1D1F;color:#fff;border-color:#1D1D1F}
+  .gp-seg button small{display:block;font-size:11px;opacity:.7}
+  details.g{border-top:1px solid #ECECEF;padding:4px 0}
+  details.g>summary{cursor:pointer;list-style:none;font-weight:560;padding:8px 0;display:flex;align-items:center;gap:8px}
+  details.g>summary::-webkit-details-marker{display:none}
+  details.g>summary::before{content:"";width:6px;height:6px;border-right:1.5px solid #86868B;border-bottom:1.5px solid #86868B;transform:rotate(-45deg);transition:transform .15s}
+  details.g[open]>summary::before{transform:rotate(45deg)}
+  details.g>summary small{font-weight:400;color:#86868B;margin-left:auto;font-size:11.5px}
+  .gp-gi{margin:2px 0 12px}
+  .gp-gi .r{display:flex;align-items:center;gap:8px}
+  .gp-gi label{flex:1;font-weight:500;font-size:12.5px}
+  .gp-gi output{font:11.5px var(--mono);color:#3a3a3e;min-width:44px;text-align:right}
+  .gp-gi input[type=range]{width:100%;margin:4px 0 2px;accent-color:#1D1D1F;height:22px}
+  .gp-gi p{margin:0;color:#6E6E73;font-size:12px;line-height:1.4}
+  .gp-tg{display:grid;grid-template-columns:1fr 1fr;gap:6px 10px}
+  .gp-tg label{display:flex;gap:7px;align-items:flex-start;font-size:12.5px;cursor:pointer;padding:5px 7px;border-radius:8px;background:#fff;border:1px solid #ECECEF}
+  .gp-tg label small{display:block;color:#86868B;font-size:11px}
+  .gp-tg input{margin-top:2px;accent-color:#1D1D1F}
+  .gp-json{width:100%;box-sizing:border-box;height:110px;font:11px/1.4 var(--mono);border:1px solid #E4E4E8;border-radius:8px;padding:8px;background:#fff;color:#3a3a3e;resize:vertical}
+  .gp-row2{display:flex;gap:6px;margin-top:6px}
+  .gp-row2 input[type=text]{flex:1;min-width:0;height:30px;border:1px solid #E4E4E8;border-radius:8px;padding:0 9px;font:inherit}
+  .gp-st{font:11.5px var(--mono);color:#6E6E73;margin-top:6px;min-height:16px}
+  .gp-anat svg{width:100%;height:auto;display:block;background:#fff;border:1px solid #ECECEF;border-radius:10px}
+  .gp-anat p{margin:6px 0 0;color:#3a3a3e;font-size:12.5px}
+  @media (max-width:900px){
+    #gp{top:auto;left:0;width:auto;height:58vh;border-left:0;border-top:1px solid #E4E4E8;border-radius:16px 16px 0 0;box-shadow:0 -10px 30px -12px rgba(0,0,0,.25)}
+    body:not(.gp-open) #gp{transform:translateY(100%)}
+  }
+  @media (prefers-reduced-motion:reduce){#gp{transition:none}}
+</style>
+<style id="gp-css"></style>
+</head>
+<body class="site gp-open">
+
+<header class="site-nav"><div class="site-wrap site-nav-in">
+<a class="site-logo" href="#" aria-label="Aero home"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="20 -710 2288.2 722"><path fill="currentColor" d="M20 0 276 -710H413L669 0H554L489 -185H199L135 0ZM233 -283H456L344 -607Z M951 12Q873 12 816.5 -22Q760 -56 729.5 -119Q699 -182 699 -266Q699 -350 729.5 -412.5Q760 -475 816 -509.5Q872 -544 948 -544Q1020 -544 1075 -510.5Q1130 -477 1160.5 -414Q1191 -351 1191 -262V-235H809Q813 -157 850.5 -118Q888 -79 952 -79Q999 -79 1030 -101Q1061 -123 1073 -160L1183 -153Q1162 -79 1100.5 -33.5Q1039 12 951 12ZM809 -315H1079Q1074 -386 1038.5 -420Q1003 -454 948 -454Q891 -454 854.5 -418.5Q818 -383 809 -315Z M1286 0V-532H1383L1387 -391L1378 -394Q1389 -466 1422.5 -499Q1456 -532 1513 -532H1564V-437H1513Q1473 -437 1446 -424Q1419 -411 1405.5 -384Q1392 -357 1392 -314V0Z M1847 12Q1771 12 1714 -22Q1657 -56 1626 -119Q1595 -182 1595 -266Q1595 -351 1626 -413Q1657 -475 1714 -509.5Q1771 -544 1847 -544Q1923 -544 1980 -509.5Q2037 -475 2068 -413Q2099 -351 2099 -266Q2099 -182 2068 -119Q2037 -56 1980 -22Q1923 12 1847 12ZM1847 -80Q1915 -80 1952 -129.5Q1989 -179 1989 -266Q1989 -353 1952 -402.5Q1915 -452 1847 -452Q1780 -452 1742.5 -402.5Q1705 -353 1705 -266Q1705 -179 1742.5 -129.5Q1780 -80 1847 -80Z"/><circle cx="2234.2" cy="-70" r="74" fill="#3478F6"/></svg></a>
+<nav class="site-menu" id="site-menu" aria-label="Main"><a href="#">Features</a><a href="#">Pricing</a><a href="#">Use cases</a><a href="#">Guides</a><a href="#">Blog</a><a class="site-menu-login" href="#">Log in</a></nav>
+<div class="site-nav-r"><a class="btn g3 sm site-login" href="#" data-glass-v3="secondary"><span>Log in</span></a><a class="btn g3 sm" href="#" data-glass-v3="primary" data-ink data-fill="rgba(29,29,31,.8)"><span>Start free</span></a>
+<button class="site-burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu"><i></i><i></i></button></div></div></header>
+
+<main><div class="site-wrap">
+  <section class="s-hero">
+    <p class="cap">Hero, white page (as in Duane's latest feedback), next to the Pocket screen</p>
+    <h1 class="site-h1">One prompt and it’s live<span class="hd-dot">.</span><br>One link and it’s tested<span class="hd-dot">.</span></h1>
+    <p class="site-lead lead">Send one test link: people try it on their own computer, and you get the recording, transcript and summary back.</p>
+    <div class="ctas"><a class="btn g3 lg" href="#" data-glass-v3="primary" data-ink data-fill="rgba(29,29,31,.8)"><span>Start free</span></a><a class="btn g3 lg" href="#" data-glass-v3="secondary"><span>See pricing</span></a></div>
+    <div class="stage"><div class="screen"><div class="bar"><i></i><i></i><i></i><span>pocket.aeroapp.ai</span></div>
+      <div class="pq"><div class="top"><b>● Pocket</b><span>Home · Cards · Spending</span></div>
+        <div class="card"><small>Send money</small><div class="amt">£20.00</div><div class="send">Send £20</div></div></div></div></div>
+  </section>
+
+  <div class="prose"><h2 class="site-h2">Publish<span class="hd-dot">.</span></h2>
+    <p>Paste one prompt into Claude and the page is live at its own address. Upload HTML or bring a Figma prototype if you prefer. No hosting, no domain settings.</p>
+    <p>Every site keeps its versions, can sit behind a password, and can use your own domain. Scroll this page to see the nav's glass over text, the orange screen and the colour tiles.</p></div>
+
+  <section class="band w-publish">
+    <p class="cap">Section wash (Publish), buttons on the wash</p>
+    <span class="pill pill-publish">Publish</span>
+    <h2 class="site-h2" style="margin-top:14px">One prompt and it’s live<span class="hd-dot">.</span></h2>
+    <p>Claude sends the files, Aero puts them online at pocket.aeroapp.ai. Nothing to set up.</p>
+    <div class="ctas"><a class="btn g3 md" href="#" data-glass-v3="primary" data-ink data-fill="rgba(29,29,31,.8)"><span>Start free</span></a><a class="btn g3 md" href="#" data-glass-v3="secondary"><span>How publishing works</span></a></div>
+  </section>
+
+  <section class="plainz">
+    <p class="cap">Plain white area: nothing colourful nearby, so only the light and the slab show</p>
+    <div class="ctas"><a class="btn g3 lg" href="#" data-glass-v3="primary" data-ink data-fill="rgba(29,29,31,.8)"><span>Start free</span></a><a class="btn g3 lg" href="#" data-glass-v3="secondary"><span>See pricing</span></a><a class="btn g3 sm" href="#" data-glass-v3="primary" data-ink data-fill="rgba(29,29,31,.8)"><span>Small</span></a><a class="btn g3 sm" href="#" data-glass-v3="secondary"><span>Small</span></a></div>
+  </section>
+
+  <div class="tiles"><div style="background:#4F86EA"></div><div style="background:#2FA86A"></div><div style="background:#EE8636"></div></div>
+
+  <section class="app-spot">
+    <p class="cap">In the app: dashboard header (v3 app markup; the app's primary is solid ink, as in the v3 screens)</p>
+    <div class="win"><div class="win-bar"><span style="display:flex;gap:6px"><i style="width:9px;height:9px;border-radius:50%;background:#DADADF;display:block"></i><i style="width:9px;height:9px;border-radius:50%;background:#DADADF;display:block"></i><i style="width:9px;height:9px;border-radius:50%;background:#DADADF;display:block"></i></span><div class="win-url"><span class="mono" style="font-size:11px;color:var(--mut)">app.aeroapp.ai/tests/pocket</span></div></div>
+      <div class="main"><div class="mhead"><span class="crumb">Tests <svg class="i" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 3 5 5-5 5"/></svg> <b>Pocket</b></span><div class="r" style="margin-left:auto;display:flex;gap:8px;align-items:center"><span class="gbtn">Preview as tester</span><span class="btn g3 sm" data-glass-v3="primary" data-fill="#1D1D1F" tabindex="0">Copy test link</span></div></div>
+        <div class="app-body"><div class="card"><div class="thumb" style="background:#FF5A36"></div>Pocket · 2 new sessions</div><div class="card"><div class="thumb" style="background:linear-gradient(135deg,#4F86EA,#9DC1FF)"></div>Onboarding v2</div><div class="card"><div class="thumb" style="background:linear-gradient(135deg,#2FA86A,#BDE8CF)"></div>Checkout</div></div></div></div>
+  </section>
+
+  <section class="app-spot">
+    <p class="cap">In the app: modal footer</p>
+    <div class="modal-spot"><div class="modal"><div class="mh">Stop taking new sessions?</div><div class="mb">People who open the test link will see that the test has closed. Sessions you already have are kept.</div>
+      <div class="mf"><span class="gbtn">Cancel</span><span class="btn g3 sm" data-glass-v3="primary" data-fill="#1D1D1F" tabindex="0">Stop sessions</span></div></div></div>
+  </section>
+
+  <div class="prose"><h2 class="site-h2">Test<span class="hd-dot">.</span></h2>
+    <p>Share one link. Testers open it in their browser: no software, no account. Their screen and voice are recorded while they try your tasks.</p>
+    <p>Sessions come back transcribed, with the friction points marked and a summary across everyone who tried it.</p></div>
+  <div class="tiles"><div class="w-test"></div><div class="w-review"></div><div class="w-hero"></div></div>
+  <div class="filler"></div>
+</div></main>
+
+<button id="gp-tab" type="button" aria-controls="gp">Glass controls</button>
+<aside id="gp" aria-label="Glass controls">
+  <div class="gp-h"><b>Glass controls</b><span class="sp"></span><button class="gp-x" type="button" id="gp-cmp-open">Compare</button><button class="gp-x" type="button" id="gp-close">Hide</button></div>
+  <div class="gp-body" id="gp-body"></div>
+</aside>
+<div id="gp-cmp" role="dialog" aria-label="Compare presets"><div class="ch"><b>Compare</b><span>Rest above, hovered below. Same slices, three presets.</span><span style="flex:1"></span><button class="gp-x" type="button" id="gp-cmp-close">Close</button></div><div class="cg" id="gp-cmp-grid"></div></div>
+
+<script>
+(function () {
+  'use strict';
+  document.body.classList.add('site'); if (!new URLSearchParams(location.search).get('embed')) document.body.classList.add('gp-open');
+  /* ---------- the settings: one flat JSON object ----------
+     Engine keys (read by glass-v3.js through window.GLASS_P) plus page keys (radius, shadows, fills, nav).
+     Defaults are round 5. */
+  var R5 = {
+    reach: 340, paleLo: .012, paleHi: .1, boost: 2.2, ambOut: .55, refl: 1, pick: 1,
+    glowW: .22, glowI: .27, glowWidth: 3.6,
+    causW: .62, causI: .34, causWidth: 2.6, causPos: 2.4, causTint: 1, causEnv: .7, causDown: .75, causPow: 1.1,
+    bevel: 7, wall: 3.3, wallW: .55, wallI: .5, wallTint: 1, crestW: .75, crestI: .2,
+    refrW: 18, refrI: 14, refrBlur: .3, refrSat: 1.5,
+    keyW: .7, keyI: .5, keyTight: 3,
+    followW: 1, followI: 0, keyHW: .3, keyHI: .12, glowHW: .35, glowHI: 0, glowSize: .7, spreadW: .25, spreadI: .4, followSpeed: 90,
+    liftBend: .3, liftRim: .4, liftWall: .35, liftShadow: 1, causH: .6,
+    whiteA: .38, inkA: .8, radius: 10, shadowStyle: 'slab', shadow: 1,
+    navBlur: 18, navA1: .74, navA2: .58, navSat: 190, navEdge: 9, navStrip: .85, navEdgeBlur: 3,
+    L_refr: 1, L_body: 1, L_refl: 1, L_glow: 1, L_caus: 1, L_wall: 1, L_crest: 1, L_key: 1, L_hover: 1, L_shadow: 1, L_navFrost: 1, L_navStrip: 1
+  };
+  function with_(base, o) { var r = {}, k; for (k in base) r[k] = base[k]; for (k in o) r[k] = o[k]; return r; }
+  // Round 4 = the shared glass-v3.js the round 4 homepage used (web3/glass-r5/r4), re-expressed in these numbers
+  var R4 = with_(R5, {
+    paleLo: .035, paleHi: .16, boost: 1, ambOut: .9, pick: 0, glowW: 0, glowI: 0,
+    causW: .3, causI: .16, causWidth: 4.2, causPos: 4.8, causTint: .55, causEnv: 0, causDown: 0, causPow: 1.6,
+    bevel: 12.5, wall: 0, crestW: 0, crestI: 0, refrW: 20, refrI: 20, refrSat: 1.4,
+    followW: 1, followI: 1, keyHW: 1.1, keyHI: 1.1, glowHW: 1, glowHI: 1, spreadW: .5, spreadI: .5,
+    liftBend: .3, liftRim: .5, liftWall: 0, liftShadow: 1, causH: .8, shadowStyle: 'soft',
+    navBlur: 0, navA1: 0, navA2: 0, navEdge: 0, L_navFrost: 0, L_navStrip: 0
+  });
+  // Duane's own settings, sent 25 Oct (glass-panel/saved/duane-2026-10-25.json): Subtle with no wall, no rim
+  // reflection, no shadow, white fill .33 and nav blur 15
+  var DUANE = {"reach":340,"paleLo":0.015,"paleHi":0.12,"boost":1.8,"ambOut":0.65,"refl":1,"pick":0.9,"glowW":0.12,"glowI":0.14,"glowWidth":2.6,"causW":0.32,"causI":0.2,"causWidth":2,"causPos":1.6,"causTint":0.8,"causEnv":0.7,"causDown":0.75,"causPow":1.1,"bevel":5,"wall":1.4,"wallW":0.3,"wallI":0.3,"wallTint":0.6,"crestW":0.35,"crestI":0.1,"refrW":14,"refrI":12,"refrBlur":0.3,"refrSat":1.5,"keyW":0.55,"keyI":0.4,"keyTight":3,"followW":1,"followI":0,"keyHW":0.2,"keyHI":0.08,"glowHW":0.2,"glowHI":0,"glowSize":0.7,"spreadW":0.25,"spreadI":0.4,"followSpeed":90,"liftBend":0.25,"liftRim":0.3,"liftWall":0.2,"liftShadow":0.8,"causH":0.4,"whiteA":0.33,"inkA":0.8,"radius":10,"shadowStyle":"slab","shadow":0.75,"navBlur":15,"navA1":0.72,"navA2":0.6,"navSat":190,"navEdge":3,"navStrip":0.5,"navEdgeBlur":2,"L_refr":1,"L_body":1,"L_refl":0,"L_glow":1,"L_caus":1,"L_wall":0,"L_crest":1,"L_key":1,"L_hover":1,"L_shadow":0,"L_navFrost":1,"L_navStrip":1};
+  var PRESETS = [
+    { id: 'duane', name: 'Duane, 25 Oct', sub: 'his settings', s: DUANE },
+    { id: 'v3', name: 'V3 as picked', sub: '22 Oct glass lab', s: with_(R4, { radius: 30, causW: 0, causI: 0, keyI: .3, followW: 0, followI: 0, keyHW: 0, keyHI: 0, glowHW: .8, glowHI: .8, spreadW: 0, spreadI: 0, liftBend: 0, liftRim: 0, liftShadow: 0, causH: 0, inkA: 1 }) },
+    { id: 'agreed', name: 'Agreed glass', sub: 'hover lab, before round 4', s: with_(R4, { radius: 12 }) },
+    { id: 'r4', name: 'Round 4', sub: 'homepage', s: R4 },
+    { id: 'r5', name: 'Round 5', sub: 'slab + caustic', s: R5 },
+    { id: 'subtle', name: 'Subtle', sub: 'recommended', s: with_(R5, {
+      paleLo: .015, paleHi: .12, boost: 1.8, ambOut: .65, pick: .9, glowW: .12, glowI: .14, glowWidth: 2.6,
+      causW: .32, causI: .2, causWidth: 2, causPos: 1.6, causTint: .8, bevel: 5, wall: 1.4, wallW: .3, wallI: .3, wallTint: .6, crestW: .35, crestI: .1,
+      refrW: 14, refrI: 12, keyW: .55, keyI: .4, keyHW: .2, keyHI: .08, glowHW: .2, liftBend: .25, liftRim: .3, liftWall: .2, liftShadow: .8, causH: .4,
+      shadow: .8, navBlur: 16, navA1: .72, navA2: .6, navEdge: 3, navStrip: .5, navEdgeBlur: 2 }) }
+  ];
+
+  /* ---------- controls: [key, label, min, max, step, unit, explanation] grouped ---------- */
+  var GROUPS = [
+    ['Caustic and colour pickup', 'what the glass takes from nearby', [
+      ['pick', 'Colour pickup', 0, 2, .05, '×', 'How much nearby colour gets into the glass. The page is sampled in rings around the button and the hue it sees is averaged per edge.'],
+      ['causW', 'Caustic, white glass', 0, 1.2, .02, '', 'The band of focused light inside the lower edge, on the side away from the key light. Light through the far edge concentrates there.'],
+      ['causI', 'Caustic, ink glass', 0, 1.2, .02, '', 'The same band on the ink button.'],
+      ['causTint', 'Caustic colour', 0, 1.5, .05, '×', '0 keeps the band white light; 1 tints it with the hue picked up nearby.'],
+      ['causWidth', 'Caustic band width', .3, 6, .1, 'px', 'How soft and wide the band is.'],
+      ['causPos', 'Caustic band position', 0, 8, .1, 'px', 'How far in from the wall (or the edge, when there is no wall) the band sits.'],
+      ['causDown', 'Caustic on the bottom only', 0, 1, .05, '', '1 keeps the band along the bottom edge; 0 lets it wrap up the far side too.'],
+      ['reach', 'Sampling radius', 80, 500, 10, 'px', 'How far from the button colour is looked for. Nearer things always count more.'],
+      ['paleLo', 'Ignore colours paler than', 0, .06, .002, 'C', 'Chroma below this counts as grey and never tints. Washes are about 0.03, so above that they vanish (round 4 was 0.035).'],
+      ['boost', 'Colour boost at the edge', 1, 3, .05, '×', 'Pale hues are made this much more saturated where they show in the glass.'],
+      ['ambOut', 'Ignore surrounding colour', 0, 1, .05, '', 'Colour that surrounds the button on every side (it sits on a wash) is removed from the rim reflection by this share.']
+    ]],
+    ['Edge glow and rim reflection', 'light entering through the sides', [
+      ['glowW', 'Edge glow, white glass', 0, .7, .01, '', 'A soft glow of the nearby hue just inside the edge facing it: light that came in through the side of the slab.'],
+      ['glowI', 'Edge glow, ink glass', 0, .7, .01, '', 'The same glow on the ink button (light colours read strongly on dark glass).'],
+      ['glowWidth', 'Edge glow width', .5, 8, .1, 'px', 'How far in from the edge the glow fades.'],
+      ['refl', 'Rim reflection', 0, 2, .05, '×', 'A hairline at the very edge reflecting the most colourful thing nearby (Fresnel: steep glass reflects more).']
+    ]],
+    ['Slab shape: the thick line', 'bevel, wall, crest, corners', [
+      ['bevel', 'Bevel width', 1.5, 16, .5, 'px', 'The sloped rim of the slab (at 44px tall). The page is bent here and the key light catches it.'],
+      ['wall', 'Wall depth', 0, 6, .1, 'px', 'The glass thickness seen along the bottom edge, as if looking slightly from above. Most of the "thick line" in round 5.'],
+      ['wallW', 'Wall opacity, white', 0, 1, .02, '', 'How solid the wall band looks on white glass.'],
+      ['wallI', 'Wall opacity, ink', 0, 1, .02, '', 'How solid the wall band looks on ink glass.'],
+      ['wallTint', 'Wall colour', 0, 1.5, .05, '×', 'How much the wall takes the nearby hue (0 = neutral grey glass edge).'],
+      ['crestW', 'Crest highlight, white', 0, 1, .02, '', 'The bright line where the flat face meets the wall.'],
+      ['crestI', 'Crest highlight, ink', 0, 1, .02, '', 'The same line on ink.'],
+      ['radius', 'Corner radius', 4, 30, 1, 'px', 'At 44px tall. 30 = full pill.']
+    ]],
+    ['Refraction', 'the page seen through the glass', [
+      ['refrW', 'Refraction at rest, white', 0, 40, 1, 'px', 'How far the page behind is bent at the bevel (SVG displacement, Chrome only).'],
+      ['refrI', 'Refraction at rest, ink', 0, 40, 1, 'px', 'The same on ink (only 20% of the page shows through an 80% ink fill).'],
+      ['refrBlur', 'Glass softness', 0, 3, .1, 'px', 'A slight blur of what shows through.'],
+      ['refrSat', 'Glass saturation', 1, 2.5, .05, '×', 'Colour boost of what shows through.']
+    ]],
+    ['Key light, white glass', 'the highlight on the bevel', [
+      ['keyW', 'Key light strength', 0, 1.5, .02, '', 'A fixed light from the top left catching the bevel. This is lighting, not the caustic.'],
+      ['keyTight', 'Key light tightness', .5, 5, .1, '', 'Higher hugs the very edge; lower spreads it over the bevel.'],
+      ['followW', 'Follows the pointer', 0, 1, .05, '', 'On hover the light turns toward the pointer (1 = fully).'],
+      ['keyHW', 'Extra key light on hover', 0, 2, .05, '×', 'How much brighter the key light gets on hover.'],
+      ['glowHW', 'Pointer light', 0, 1.5, .05, '', 'A soft spot of light on the rim and face under the pointer.'],
+      ['spreadW', 'Spread on hover', 0, 1, .05, '', 'How much the highlight widens on hover.']
+    ]],
+    ['Key light, ink glass', 'kept almost off on ink', [
+      ['keyI', 'Key light strength', 0, 1.5, .02, '', 'The fixed top-left highlight on the ink bevel.'],
+      ['followI', 'Follows the pointer', 0, 1, .05, '', 'Duane: a moving light does not suit ink. 0 = Lift only.'],
+      ['keyHI', 'Extra key light on hover', 0, 2, .05, '×', 'Brightening on hover.'],
+      ['glowHI', 'Pointer light', 0, 1.5, .05, '', 'Light spot under the pointer.'],
+      ['spreadI', 'Spread on hover', 0, 1, .05, '', 'Highlight widening on hover.']
+    ]],
+    ['Lift and hover timing', 'the slab rising on hover', [
+      ['liftBend', 'Lift: deeper bend', 0, 1, .05, '', 'On hover the refraction deepens by this share, as if the glass got thicker.'],
+      ['liftRim', 'Lift: brighter rim', 0, 1, .05, '', 'On hover the rim reflection brightens by this share.'],
+      ['liftWall', 'Lift: thicker wall', 0, 1, .05, '', 'On hover the wall reads this much deeper. The box never changes size.'],
+      ['liftShadow', 'Lift: softer shadow', 0, 2, .05, '', 'On hover the shadow grows wider and softer.'],
+      ['causH', 'Caustic on hover', 0, 1.5, .05, '', 'How much the caustic brightens on hover.'],
+      ['glowSize', 'Pointer light size', .2, 1.5, .05, '× h', 'Size of the pointer light, in button heights.'],
+      ['followSpeed', 'Follow speed', 20, 400, 10, 'ms', 'How quickly the light catches up with the pointer (lower is snappier).']
+    ]],
+    ['Fill and shadows', 'how solid the glass is', [
+      ['whiteA', 'White glass opacity', .1, .95, .01, '', 'The lowest opacity of the white fill. It rises by itself if the label would fail contrast.'],
+      ['inkA', 'Ink glass opacity', .4, 1, .01, '', 'The ink fill. 1 = solid ink, which also turns refraction off (solid fills show nothing through).'],
+      ['shadow', 'Shadow strength', 0, 2, .05, '×', 'Scales the drop and contact shadows. Style below.']
+    ]],
+    ['Nav glass', 'the bar the page scrolls under', [
+      ['navBlur', 'Frost blur', 0, 40, 1, 'px', 'How much the page under the nav is blurred.'],
+      ['navA1', 'Frost opacity, top', 0, 1, .01, '', 'White over the frost at the top of the bar. Higher is more readable, less glassy.'],
+      ['navA2', 'Frost opacity, bottom', 0, 1, .01, '', 'White at the bottom of the bar.'],
+      ['navSat', 'Frost saturation', 100, 250, 5, '%', 'Colour boost of the page seen through the frost.'],
+      ['navEdge', 'Refracting strip height', 0, 16, .5, 'px', 'The clearer strip along the bottom of the nav that bends what passes under it. Duane: round 5 (9px) is too thick.'],
+      ['navStrip', 'Refracting strip strength', 0, 1.5, .05, '×', 'How much the strip bends the page (Chrome only).'],
+      ['navEdgeBlur', 'Strip blur', 0, 6, .1, 'px', 'How sharp the page looks through the strip.']
+    ]]
+  ];
+  /* Simple mode: 8 sliders, each 0 to 2x of the chosen preset (1 = the preset as picked, Duane's by default) */
+  function scaleKeys(b, m, keys, o) { keys.forEach(function (k) { o[k] = +b[k] * m; }); return o; }
+  var SIMPLE = [
+    ['m_colour', 'Colour pickup', 'How much colour from nearby things gets into the glass (the caustic and glow use it).', function (b, m) { var lo = +b.paleLo * Math.max(0, 2 - m); return { pick: +b.pick * m, paleLo: lo, paleHi: Math.max(lo + .01, +b.paleHi * (1.5 - .5 * m)), boost: 1 + (+b.boost - 1) * m }; }],
+    ['m_caustic', 'Caustic', 'The band of focused, tinted light inside the lower edge.', function (b, m) { return scaleKeys(b, m, ['causW', 'causI', 'causTint', 'causH'], {}); }],
+    ['m_glow', 'Edge glow', 'Nearby colour glowing softly just inside the edges.', function (b, m) { return scaleKeys(b, m, ['glowW', 'glowI'], {}); }],
+    ['m_edge', 'Edge thickness', 'The sloped rim and the bright line along the bottom (the "thick line").', function (b, m) { var o = scaleKeys(b, m, ['crestW', 'crestI', 'wall'], {}); o.bevel = Math.max(1.5, +b.bevel * m); return o; }],
+    ['m_refr', 'Refraction', 'How much the page behind is bent at the rim.', function (b, m) { return scaleKeys(b, m, ['refrW', 'refrI'], {}); }],
+    ['m_key', 'Key light on hover', 'The highlight that follows the pointer on white glass. Ink keeps Lift only.', function (b, m) { var o = scaleKeys(b, m, ['keyHW', 'keyHI', 'glowHW'], {}); o.followI = 0; return o; }],
+    ['m_lift', 'Lift on hover', 'The slab seeming to rise: deeper bend, brighter rim, softer shadow. Nothing moves.', function (b, m) { return scaleKeys(b, m, ['liftBend', 'liftRim', 'liftWall', 'liftShadow'], {}); }],
+    ['m_nav', 'Nav glass', 'The top bar: frost blur and whiteness, and the refracting strip along its bottom.', function (b, m) { var o = scaleKeys(b, m, ['navBlur', 'navEdge', 'navStrip'], {}); o.navA1 = Math.min(.98, +b.navA1 * m); o.navA2 = Math.min(.98, +b.navA2 * m); return o; }]
+  ];
+  // fine tuning Duane can leave alone
+  var INTERNAL = ['reach', 'paleLo', 'boost', 'ambOut', 'causWidth', 'causPos', 'causDown', 'glowWidth', 'wallTint', 'refrBlur', 'refrSat', 'keyTight', 'spreadW', 'spreadI', 'glowSize', 'followSpeed', 'navSat', 'navEdgeBlur'];
+  function presetById(id) { for (var i = 0; i < PRESETS.length; i++) if (PRESETS[i].id === id) return PRESETS[i]; return PRESETS[0]; }
+  function resetSimple() { SIMPLE.forEach(function (x) { S[x[0]] = 1; }); }
+  function applySimple() { var b = with_(R5, presetById(S.base).s); SIMPLE.forEach(function (x) { var o = x[3](b, +S[x[0]]); for (var k in o) S[k] = o[k]; }); }
+  var LAYERS = [
+    ['L_refr', 'Refraction', 'page bent at the bevel'], ['L_body', 'Fill', 'white or ink body'],
+    ['L_key', 'Key light', 'highlight on the bevel'], ['L_crest', 'Crest', 'line on top of the wall'],
+    ['L_wall', 'Wall', 'thickness along the bottom'], ['L_caus', 'Caustic', 'focused light band'],
+    ['L_glow', 'Edge glow', 'nearby hue inside edges'], ['L_refl', 'Rim reflection', 'hairline at the edge'],
+    ['L_hover', 'Hover', 'key follow, pointer, lift'], ['L_shadow', 'Shadows', 'drop and contact'],
+    ['L_navFrost', 'Nav frost', 'blurred bar'], ['L_navStrip', 'Nav strip', 'refracting lower edge']
+  ];
+  var SOLO = {
+    all: { label: 'Everything', on: LAYERS.map(function (l) { return l[0]; }) },
+    light: { label: 'Lighting only', on: ['L_body', 'L_key', 'L_crest', 'L_hover', 'L_shadow', 'L_navFrost'] },
+    caustic: { label: 'Caustic only', on: ['L_body', 'L_caus', 'L_glow', 'L_refl', 'L_shadow', 'L_navFrost'] },
+    refr: { label: 'Refraction only', on: ['L_refr', 'L_body', 'L_shadow', 'L_navFrost', 'L_navStrip'] },
+    slab: { label: 'Slab only', on: ['L_body', 'L_wall', 'L_crest', 'L_shadow', 'L_navFrost'] }
+  };
+
+  var Q = new URLSearchParams(location.search), EMB = Q.get('embed');
+  var S = with_(R5, DUANE), presetName = 'Duane, 25 Oct', hold = 'rest';
+  S.base = 'duane'; resetSimple();
+  var LS = { get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
+  var mode = LS.get('gp-mode') === 'all' ? 'all' : 'simple';
+  if (EMB) { var ep = presetById(Q.get('preset') || 'duane'); S = with_(R5, ep.s); S.base = ep.id; resetSimple(); }
+  else try { var saved = JSON.parse(LS.get('gp-settings-2') || 'null'); if (saved && saved.s) { S = with_(with_(R5, DUANE), saved.s); presetName = saved.preset || 'Saved'; if (!S.base) S.base = 'duane'; SIMPLE.forEach(function (x) { if (S[x[0]] == null) S[x[0]] = 1; }); } } catch (e) {}
+
+  /* ---------- applying ---------- */
+  var SH = { // [x, y, blur, spread, alpha, inset]
+    soft: { ink: [[0, 1, 2, 0, .16], [0, 4, 12, 0, .06]], white: [[0, 1, 2, 0, .05], [0, 4, 14, 0, .05], [0, 0, 0, .5, .1, 1]] },
+    slab: { ink: [[0, 0, 0, .5, .42, 0, 1], [0, 1, 1, 0, .16], [0, 3, 6, -1, .14], [0, 12, 24, -12, .42]], white: [[0, 0, 0, .5, .07, 0, 1], [0, 1, 1, 0, .05], [0, 3, 6, -1, .06], [0, 12, 24, -12, .2]] }
+  };
+  function shadowCss(kind) {
+    var on = +S.L_shadow, k = +S.shadow;
+    return (SH[S.shadowStyle] || SH.slab)[kind].map(function (s) {
+      var a = s[6] ? s[4] : s[4] * k * on; // the hairline (s[6]) stays: it is the glass edge, not a shadow
+      return (s[5] ? 'inset ' : '') + s[0] + 'px ' + s[1] + 'px ' + s[2] + 'px ' + s[3] + 'px rgba(0,0,0,' + a.toFixed(3) + ')';
+    }).join(',');
+  }
+  var inkTpl = [];
+  function rebuildInk() {
+    var A = +S.inkA, fill = A >= .995 ? '#1D1D1F' : 'rgba(29,29,31,' + A.toFixed(2) + ')';
+    [].forEach.call(document.querySelectorAll('[data-ink]'), function (el, i) {
+      if (el.getAttribute('data-fill') === fill && el._g3) return;
+      var t = document.createElement('div'); t.innerHTML = inkTpl[i]; var fresh = t.firstElementChild;
+      fresh.setAttribute('data-fill', fill); el.parentNode.replaceChild(fresh, el);
+      if (window.GlassV3) GlassV3(fresh);
+    });
+  }
+  var applyRaf = 0;
+  function apply() {
+    window.GLASS_P = S; window.GLASS_P_V = (window.GLASS_P_V || 0) + 1;
+    var r = +S.radius >= 30 ? 999 : +S.radius, css = '';
+    css += 'body .btn.g3.lg{border-radius:' + r + 'px}body .btn.g3.md{border-radius:' + (r >= 999 ? 999 : r * .9) + 'px}body .btn.g3.sm{border-radius:' + (r >= 999 ? 999 : r * .8) + 'px}';
+    css += 'body .g3-primary{--g3-sh:' + shadowCss('ink') + '}body .g3-secondary{--g3-sh:' + shadowCss('white') + '}';
+    if (!+S.L_body) css += 'body .g3,body .g3>.g3-body{background:transparent!important}';
+    css += '.site-nav{--nav-blur:' + (+S.L_navFrost ? S.navBlur : 0) + 'px;--nav-a1:' + (+S.L_navFrost ? S.navA1 : 0) + ';--nav-a2:' + (+S.L_navFrost ? S.navA2 : 0) + ';--nav-sat:' + (+S.L_navFrost ? S.navSat : 100) + '%;--nav-edge:' + (+S.L_navStrip ? S.navEdge : 0) + 'px;--nav-edge-blur:' + S.navEdgeBlur + 'px}';
+    if (!+S.L_navStrip || !+S.navEdge) css += '.site-nav::after{display:none}';
+    if (!+S.L_navFrost) css += '.site-nav::before{box-shadow:none}';
+    document.getElementById('gp-css').textContent = css;
+    rebuildInk();
+    document.body.classList.toggle('gp-focus', hold === 'focus');
+    if (!EMB) [].forEach.call(document.querySelectorAll('[data-glass-v3]'), function (b) {
+      if (hold === 'rest') b.removeAttribute('data-force'); else { b.setAttribute('data-force', 'hover'); b.setAttribute('data-px', '.32'); b.setAttribute('data-py', '.3'); }
+    });
+    if (window.GlassV3) GlassV3.refresh();
+    updateAnatomy(); updateJson(); if (!EMB) queueSave();
+  }
+  function applySoon() { if (!applyRaf) applyRaf = requestAnimationFrame(function () { applyRaf = 0; apply(); }); }
+
+  /* ---------- saving: artifact database when present, this browser otherwise ---------- */
+  var db = null, dbLoaded = false, saveT = 0, lastSaved = '', status = null;
+  function setStatus(t) { if (status) status.textContent = t; }
+  function payload() { return { v: 2, preset: presetName, s: S }; }
+  function queueSave() {
+    var json = JSON.stringify(payload());
+    LS.set('gp-settings-2', json);
+    clearTimeout(saveT);
+    saveT = setTimeout(function () {
+      if (!db || !dbLoaded || json === lastSaved) { setStatus(db ? 'Saved' : 'Saved in this browser'); return; }
+      lastSaved = json;
+      db.collection('glass').doc('settings').set({ json: json, at: Date.now() })
+        .then(function () { setStatus('Saved to the shared settings'); })
+        .catch(function () { setStatus('Saved in this browser (shared save refused)'); });
+    }, 800);
+  }
+  function loadFromJson(json, name) {
+    try { var o = JSON.parse(json); var s = o && o.s ? o.s : o; if (!s || typeof s !== 'object') return false; S = with_(with_(R5, DUANE), s); if (!S.base) S.base = 'duane'; SIMPLE.forEach(function (x) { if (S[x[0]] == null) S[x[0]] = 1; }); presetName = (o && o.preset) || name || 'Loaded'; renderPanel(); apply(); return true; } catch (e) { return false; }
+  }
+  var userPresets = {};
+  function connectDb() {
+    if (!(window.claude && window.claude.use)) return;
+    window.claude.use('db').then(function (d) {
+      if (!d) return;
+      db = d; setStatus('Connected to the shared settings');
+      try {
+        db.collection('glass').doc('settings').onSnapshot(function (snap) {
+          var first = !dbLoaded; dbLoaded = true; // never write the shared doc before reading it once
+          if (!snap.exists) { if (first) queueSave(); return; }
+          var b = snap.data() || {}; if (typeof b.json !== 'string' || b.json === lastSaved || b.json === JSON.stringify(payload())) return;
+          lastSaved = b.json; loadFromJson(b.json); setStatus('Loaded the shared settings');
+        }, function () {});
+        db.collection('glass').onSnapshot(function (qs) {
+          var next = {};
+          qs.docs.forEach(function (doc) { if (doc.id.indexOf('preset-') === 0) { var b = doc.data() || {}; if (typeof b.json === 'string') next[doc.id] = { name: String(b.name || doc.id.slice(7)), json: b.json }; } });
+          userPresets = next; renderUserPresets();
+        }, function () {});
+      } catch (e) {}
+    }).catch(function () {});
+  }
+  function slug(t) { return String(t).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 40) || 'preset'; }
+  function savePreset(name) {
+    var id = 'preset-' + slug(name), json = JSON.stringify({ v: 2, preset: name, s: S });
+    var local = {}; try { local = JSON.parse(LS.get('gp-presets') || '{}') || {}; } catch (e) {}
+    local[id] = { name: name, json: json }; LS.set('gp-presets', JSON.stringify(local));
+    userPresets[id] = { name: name, json: json }; renderUserPresets();
+    if (db) db.collection('glass').doc(id).set({ name: name, json: json, at: Date.now() }).then(function () { setStatus('Preset "' + name + '" saved and shared'); }).catch(function () { setStatus('Preset "' + name + '" saved in this browser'); });
+    else setStatus('Preset "' + name + '" saved in this browser');
+  }
+
+  /* ---------- the panel ---------- */
+  var body = document.getElementById('gp-body');
+  function el(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
+  function fmt(v, step) { var d = step < .01 ? 3 : step < .1 ? 2 : step < 1 ? 1 : 0; return (+v).toFixed(d); }
+  var userWrap = null, jsonBox = null, anatomyTexts = {};
+  function renderUserPresets() {
+    if (!userWrap) return;
+    var local = {}; try { local = JSON.parse(LS.get('gp-presets') || '{}') || {}; } catch (e) {}
+    var all = with_(local, userPresets), ids = Object.keys(all);
+    userWrap.innerHTML = ids.length ? '' : '<span style="color:#86868B;font-size:12px">None yet</span>';
+    ids.forEach(function (id) {
+      var b = el('button', presetName === all[id].name ? 'on' : ''); b.type = 'button'; b.textContent = all[id].name;
+      b.onclick = function () { loadFromJson(all[id].json, all[id].name); };
+      userWrap.appendChild(b);
+    });
+  }
+  function renderPanel() {
+    var open = {}; [].forEach.call(body.querySelectorAll('details.g'), function (d) { open[d.getAttribute('data-k')] = d.open; });
+    var keep = body.scrollTop;
+    body.innerHTML = '';
+    // mode
+    var md = el('div', 'gp-sec'); var mseg = el('div', 'gp-seg gp-mode');
+    [['simple', 'Simple', '8 sliders'], ['all', 'All settings', 'every number and layer']].forEach(function (o) {
+      var b = el('button', mode === o[0] ? 'on' : '', o[1] + '<small>' + o[2] + '</small>'); b.type = 'button';
+      b.onclick = function () { mode = o[0]; LS.set('gp-mode', mode); renderPanel(); }; mseg.appendChild(b);
+    });
+    md.appendChild(mseg); body.appendChild(md);
+    // anatomy
+    var an = el('details', 'g gp-anat'); an.setAttribute('data-k', 'anat'); an.open = open.anat != null ? open.anat : true;
+    an.innerHTML = '<summary>Anatomy: what the button is made of<small>back to front</small></summary>' + anatomySvg() +
+      '<p>1 Shadow: drop and contact shadows. 2 Refraction: the page behind, bent at the bevel (Chrome). 3 Fill: white glass about 38% or ink about 80%. 4 Light, drawn on a canvas: edge glow, rim reflection, wall, crest, caustic, key light (each one is a layer toggle). 5 The label.</p><p><b>The "thick line"</b> along the bottom of the round 5 button is the <b>wall</b> (glass thickness, drawn ' + '<span data-a="wallpx"></span> deep at 44px tall, tinted by nearby colour) with the white <b>crest</b> on top and the <b>caustic</b> just above it, over a 1px contact shadow. Together about <span data-a="linepx"></span>. Turn off Wall and Crest in Layers to see the button without it.</p>';
+    if (mode === 'all') body.appendChild(an);
+    // presets
+    var ps = el('div', 'gp-sec'); ps.appendChild(el('div', 't', 'Presets'));
+    var sg = el('div', 'gp-seg');
+    PRESETS.forEach(function (p) {
+      var b = el('button', presetName === p.name ? 'on' : '', p.name + '<small>' + p.sub + '</small>'); b.type = 'button';
+      b.onclick = function () { S = with_(R5, p.s); S.base = p.id; resetSimple(); presetName = p.name; renderPanel(); apply(); };
+      sg.appendChild(b);
+    });
+    ps.appendChild(sg);
+    ps.appendChild(el('div', 't', 'Your presets')).style.marginTop = '10px';
+    userWrap = el('div', 'gp-seg'); ps.appendChild(userWrap);
+    var r2 = el('div', 'gp-row2'); var nm = el('input'); nm.type = 'text'; nm.placeholder = 'Name, e.g. Duane 25 Oct'; nm.setAttribute('aria-label', 'Preset name');
+    var sv = el('button', 'gp-x', 'Save as preset'); sv.type = 'button';
+    sv.onclick = function () { var n = nm.value.trim(); if (!n) { nm.focus(); setStatus('Type a name first'); return; } savePreset(n); nm.value = ''; };
+    r2.appendChild(nm); r2.appendChild(sv); ps.appendChild(r2);
+    body.appendChild(ps);
+    // simple sliders
+    if (mode === 'simple') {
+      var sm = el('div', 'gp-sec'); sm.appendChild(el('div', 't', 'Adjust (1 = ' + presetById(S.base).name + ')'));
+      SIMPLE.forEach(function (x) {
+        var w = el('div', 'gp-gi'), id = 'gp-' + x[0];
+        w.innerHTML = '<div class="r"><label for="' + id + '">' + x[1] + '</label><output></output></div><input type="range" id="' + id + '" min="0" max="2" step="0.05"><p>' + x[2] + '</p>';
+        var inp = w.querySelector('input'), out = w.querySelector('output');
+        inp.value = S[x[0]]; out.textContent = (+S[x[0]]).toFixed(2) + ' ×';
+        inp.addEventListener('input', function () { S[x[0]] = +inp.value; out.textContent = (+inp.value).toFixed(2) + ' ×'; applySimple(); presetName = 'Custom'; applySoon(); });
+        sm.appendChild(w);
+      });
+      var rb = el('button', 'gp-x', 'Back to 1 on every slider'); rb.type = 'button';
+      rb.onclick = function () { resetSimple(); applySimple(); renderPanel(); apply(); };
+      sm.appendChild(rb); body.appendChild(sm);
+    }
+    // view: solo + hold
+    var vs = el('div', 'gp-sec'); vs.appendChild(el('div', 't', mode === 'all' ? 'Show' : 'Hold every button in'));
+    var sg2 = el('div', 'gp-seg');
+    Object.keys(SOLO).forEach(function (k) {
+      var on = LAYERS.every(function (l) { return (+S[l[0]] > 0) === (SOLO[k].on.indexOf(l[0]) >= 0); });
+      var b = el('button', on ? 'on' : '', SOLO[k].label); b.type = 'button';
+      b.onclick = function () { LAYERS.forEach(function (l) { S[l[0]] = SOLO[k].on.indexOf(l[0]) >= 0 ? 1 : 0; }); renderPanel(); apply(); };
+      sg2.appendChild(b);
+    });
+    if (mode === 'all') { vs.appendChild(sg2); vs.appendChild(el('div', 't', 'Hold every button in')).style.marginTop = '10px'; }
+    var sg3 = el('div', 'gp-seg');
+    [['rest', 'Rest'], ['hover', 'Hover'], ['focus', 'Keyboard focus']].forEach(function (h) {
+      var b = el('button', hold === h[0] ? 'on' : '', h[1]); b.type = 'button';
+      b.onclick = function () { hold = h[0]; renderPanel(); apply(); }; sg3.appendChild(b);
+    });
+    vs.appendChild(sg3); body.appendChild(vs);
+    // groups
+    if (mode === 'all') GROUPS.forEach(function (g, gi) {
+      var d = el('details', 'g'); d.setAttribute('data-k', 'g' + gi); d.open = !!open['g' + gi];
+      d.innerHTML = '<summary>' + g[0] + '<small>' + g[1] + '</small></summary>';
+      g[2].forEach(function (c) {
+        var isInt = INTERNAL.indexOf(c[0]) >= 0, w = el('div', 'gp-gi' + (isInt ? ' int' : '')), id = 'gp-' + c[0];
+        w.innerHTML = '<div class="r"><label for="' + id + '">' + c[1] + (isInt ? '<span class="gp-int">internal, safe to ignore</span>' : '') + '</label><output id="' + id + '-o"></output></div><input type="range" id="' + id + '" min="' + c[2] + '" max="' + c[3] + '" step="' + c[4] + '"><p>' + c[6] + '</p>';
+        var inp = w.querySelector('input'), out = w.querySelector('output');
+        inp.value = S[c[0]]; out.textContent = fmt(S[c[0]], c[4]) + (c[5] ? ' ' + c[5] : '');
+        inp.addEventListener('input', function () { S[c[0]] = +inp.value; out.textContent = fmt(inp.value, c[4]) + (c[5] ? ' ' + c[5] : ''); presetName = 'Custom'; applySoon(); });
+        d.appendChild(w);
+      });
+      if (g[0] === 'Fill and shadows') {
+        var w2 = el('div', 'gp-gi'); w2.innerHTML = '<div class="r"><label>Shadow style</label></div>';
+        var sg4 = el('div', 'gp-seg');
+        [['soft', 'Soft (rounds 3 and 4)'], ['slab', 'Slab (round 5)']].forEach(function (o) {
+          var b = el('button', S.shadowStyle === o[0] ? 'on' : '', o[1]); b.type = 'button';
+          b.onclick = function () { S.shadowStyle = o[0]; presetName = 'Custom'; renderPanel(); apply(); }; sg4.appendChild(b);
+        });
+        w2.appendChild(sg4); w2.appendChild(el('p', '', 'Soft: a light drop shadow. Slab: a hairline edge, a tight contact shadow under the wall and a long soft drop.')); d.appendChild(w2);
+      }
+      body.appendChild(d);
+    });
+    // layers
+    var ld = el('details', 'g'); ld.setAttribute('data-k', 'layers'); ld.open = open.layers != null ? open.layers : true;
+    ld.innerHTML = '<summary>Layers: switch each one off<small>see what it adds</small></summary>';
+    var tg = el('div', 'gp-tg');
+    LAYERS.forEach(function (l) {
+      var lb = el('label', '', '<input type="checkbox"' + (+S[l[0]] ? ' checked' : '') + '><span>' + l[1] + '<small>' + l[2] + '</small></span>');
+      lb.querySelector('input').addEventListener('change', function (e) { S[l[0]] = e.target.checked ? 1 : 0; presetName = 'Custom'; renderPanel(); apply(); });
+      tg.appendChild(lb);
+    });
+    ld.appendChild(tg); if (mode === 'all') body.appendChild(ld);
+    // json
+    var js = el('div', 'gp-sec'); js.appendChild(el('div', 't', 'Settings (JSON, for Claude)'));
+    jsonBox = el('textarea', 'gp-json'); jsonBox.readOnly = true; jsonBox.setAttribute('aria-label', 'Settings as JSON'); js.appendChild(jsonBox);
+    var r3 = el('div', 'gp-row2'), cp = el('button', 'gp-x', 'Copy settings'); cp.type = 'button';
+    cp.onclick = function () {
+      var t = jsonBox.value;
+      function fallback() { jsonBox.focus(); jsonBox.select(); setStatus('Selected: press Cmd+C to copy'); }
+      try { navigator.clipboard.writeText(t).then(function () { setStatus('Copied'); }, fallback); } catch (e) { fallback(); }
+    };
+    var pasteBtn = el('button', 'gp-x', 'Load pasted'); pasteBtn.type = 'button';
+    var pasteBox = el('textarea', 'gp-json'); pasteBox.style.height = '0'; pasteBox.style.display = 'none'; pasteBox.placeholder = 'Paste settings JSON here, then Load pasted again'; pasteBox.setAttribute('aria-label', 'Paste settings JSON');
+    pasteBtn.onclick = function () {
+      if (pasteBox.style.display === 'none') { pasteBox.style.display = 'block'; pasteBox.style.height = '80px'; pasteBox.focus(); return; }
+      if (loadFromJson(pasteBox.value, 'Pasted')) setStatus('Loaded'); else setStatus('That is not valid settings JSON');
+    };
+    var exBtn = el('button', 'gp-x', 'Export for site'); exBtn.type = 'button';
+    var exBox = el('textarea', 'gp-json'); exBox.readOnly = true; exBox.style.display = 'none'; exBox.style.height = '160px'; exBox.setAttribute('aria-label', 'glass-settings.js for the site');
+    exBtn.onclick = function () {
+      var t = siteFile(); exBox.value = t; exBox.style.display = 'block';
+      function fallback() { exBox.focus(); exBox.select(); setStatus('Selected: press Cmd+C, then paste over shared/glass-settings.js'); }
+      try { navigator.clipboard.writeText(t).then(function () { setStatus('Copied: paste it over shared/glass-settings.js'); }, fallback); } catch (e) { fallback(); }
+    };
+    r3.appendChild(cp); r3.appendChild(pasteBtn); r3.appendChild(exBtn); js.appendChild(r3); js.appendChild(pasteBox); js.appendChild(exBox);
+    var rs = el('button', 'gp-x', 'Reset to Duane, 25 Oct'); rs.type = 'button'; rs.style.marginTop = '6px';
+    rs.onclick = function () { S = with_(R5, DUANE); S.base = 'duane'; resetSimple(); presetName = 'Duane, 25 Oct'; renderPanel(); apply(); };
+    js.appendChild(rs);
+    status = el('div', 'gp-st'); js.appendChild(status);
+    body.appendChild(js);
+    [].forEach.call(body.querySelectorAll('details.g'), function (d) { d.addEventListener('toggle', saveUi); });
+    renderUserPresets(); updateJson(); updateAnatomy();
+    body.scrollTop = keep;
+  }
+  // the exact text of shared/glass-settings.js for the current settings (the panel's own slider bookkeeping left out)
+  function siteFile() {
+    var o = {}; Object.keys(S).forEach(function (k) { if (k !== 'base' && k.indexOf('m_') !== 0) o[k] = S[k]; });
+    return '/* Aero glass settings: the ONE file that sets how the glass looks on every page.\n' +
+      '   To change the glass: open the glass panel (web3/glass-panel), set it up, press "Export for site" and paste\n' +
+      '   the result over this whole file. Load this file BEFORE glass-v3.js:\n' +
+      '     <script src="../shared/glass-settings.js"><\/script><script src="../shared/glass-v3.js"><\/script>\n' +
+      '   Current: "' + presetName + '", exported from the glass panel. */\n' +
+      "window.GLASS_MODE = 'subtle';\nwindow.GLASS_P = " + JSON.stringify(o, null, 1) + ';\n';
+  }
+  function updateJson() { if (jsonBox) jsonBox.value = JSON.stringify(payload()); }
+  function saveUi() { var o = {}; [].forEach.call(body.querySelectorAll('details.g'), function (d) { o[d.getAttribute('data-k')] = d.open; }); LS.set('gp-ui', JSON.stringify(o)); }
+
+  /* ---------- anatomy diagram ---------- */
+  function anatomySvg() {
+    // left: exploded stack, back to front. right: the bottom edge in section, to scale x6 at 44px tall
+    return '<svg viewBox="0 0 340 222" role="img" aria-label="Layers of the glass button and a close-up of its bottom edge">' +
+      '<g font-family="Geist, sans-serif" font-size="9.5" fill="#3a3a3e">' +
+      [['Page behind', '#F1F3F7', 0], ['1 Shadow', '#E6E6EA', 1], ['2 Refraction', '#DCE8FF', 2], ['3 Fill', '#FFFFFF', 3], ['4 Light (canvas)', '#FFF2E6', 4], ['5 Label', '#FFFFFF', 5]].map(function (l) {
+        var y = 196 - l[2] * 32;
+        return '<g><path d="M10 ' + (y + 14) + ' L46 ' + y + ' H140 L104 ' + (y + 14) + ' Z" fill="' + l[1] + '" stroke="#C9CCD3" stroke-width=".8"/><text x="148" y="' + (y + 10) + '">' + l[0] + '</text></g>';
+      }).join('') +
+      
+      '</g>' +
+      '<g transform="translate(234 8)" font-family="Geist Mono, monospace" font-size="8.5" fill="#3a3a3e">' +
+      '<text x="0" y="8" font-family="Geist, sans-serif" font-size="9.5" font-weight="600">Bottom edge, x6</text>' +
+      '<rect x="0" y="16" width="96" height="120" fill="#F7F8FA" stroke="#D6D8DE" stroke-width=".8"/>' +
+      '<rect data-a="bevelR" x="0" y="0" width="96" height="0" fill="#DCE8FF"/>' +
+      '<rect data-a="causR" x="0" y="0" width="96" height="0" fill="#FFD9C2"/>' +
+      '<rect data-a="wallR" x="0" y="0" width="96" height="0" fill="#B8C2D6"/>' +
+      '<rect data-a="crestR" x="0" y="0" width="96" height="1.6" fill="#fff" stroke="#9AA3B5" stroke-width=".4"/>' +
+      '<rect x="0" y="136" width="96" height="6" fill="#D9D9DE"/>' +
+      '<text x="0" y="152">face (flat)</text><text data-a="bevelT" x="0" y="164"></text><text data-a="wallT" x="0" y="176"></text><text data-a="causT" x="0" y="188"></text><text x="0" y="200">contact shadow</text>' +
+      '</g></svg>';
+  }
+  function updateAnatomy() {
+    var q = function (k) { return body.querySelector('[data-a="' + k + '"]'); }, sc = 6, bottom = 136;
+    if (!q('wallR')) return;
+    var wall = +S.L_wall ? +S.wall : 0, bev = +S.bevel, cp = wall + +S.causPos, cw = +S.causWidth;
+    function band(k, from, to) { var r = q(k), y1 = Math.max(16, bottom - to * sc), y2 = bottom - from * sc; r.setAttribute('y', y1); r.setAttribute('height', Math.max(0, y2 - y1)); }
+    band('bevelR', 0, Math.min(bev, 20)); band('causR', Math.max(0, cp - cw / 2), cp + cw / 2); band('wallR', 0, wall);
+    var cr = q('crestR'); cr.setAttribute('y', bottom - wall * sc - .8); cr.style.display = +S.L_crest && (+S.crestW > 0) ? '' : 'none';
+    q('causR').style.display = +S.L_caus && +S.causW > 0 ? '' : 'none';
+    q('bevelT').textContent = 'bevel ' + bev.toFixed(1) + 'px (blue)';
+    q('wallT').textContent = 'wall ' + wall.toFixed(1) + 'px (grey)';
+    q('causT').textContent = 'caustic at ' + cp.toFixed(1) + 'px';
+    var wp = body.querySelector('[data-a="wallpx"]'), lp = body.querySelector('[data-a="linepx"]');
+    if (wp) wp.textContent = wall.toFixed(1) + 'px';
+    if (lp) lp.textContent = (wall + (+S.L_caus && +S.causW ? +S.causPos + cw / 2 : 0) + 1).toFixed(1) + 'px';
+  }
+
+  /* ---------- compare: the same slices in iframes, one column per preset ---------- */
+  var CMP_COLS = ['agreed', 'subtle', 'duane'], CMP_ROWS = [['hero', 'Hero, white page', 320], ['wash', 'Section wash', 275], ['nav', 'Nav over the orange screen', 300], ['modal', 'App modal footer', 500]];
+  function openCompare() {
+    var g = document.getElementById('gp-cmp-grid');
+    if (!g.childNodes.length) {
+      var h = '<div class="hd hd0"></div>';
+      CMP_COLS.forEach(function (id) { var p = presetById(id); h += '<div class="hd">' + p.name + '<small>' + p.sub + '</small></div>'; });
+      CMP_ROWS.forEach(function (r) {
+        h += '<div class="rl">' + r[1] + '</div>';
+        CMP_COLS.forEach(function (id) { h += '<iframe loading="lazy" title="' + r[1] + ', ' + presetById(id).name + '" style="height:' + r[2] + 'px" src="?embed=' + r[0] + '&amp;preset=' + id + '"></iframe>'; });
+      });
+      g.innerHTML = h;
+    }
+    document.getElementById('gp-cmp').classList.add('on');
+  }
+  function buildEmbed(slice) {
+    function pair(size, hov) {
+      var f = hov ? ' data-force="hover" data-px=".32" data-py=".3"' : '';
+      return '<a class="btn g3 ' + size + '" href="#" data-glass-v3="primary" data-ink data-fill="rgba(29,29,31,.8)"' + f + '><span>Start free</span></a><a class="btn g3 ' + size + '" href="#" data-glass-v3="secondary"' + f + '><span>See pricing</span></a>';
+    }
+    var nav = document.querySelector('header.site-nav').outerHTML, out = '';
+    [false, true].forEach(function (hov) {
+      var lbl = '<p class="lbl">' + (hov ? 'Hovered' : 'Rest') + '</p>';
+      if (slice === 'hero') out += '<div class="emb-cell">' + lbl + '<div class="ctas">' + pair('lg', hov) + '</div><div class="emb-pq"></div></div>';
+      else if (slice === 'wash') out += '<div class="band w-publish">' + lbl + '<div class="ctas">' + pair('md', hov) + '</div></div>';
+      else if (slice === 'nav') { var n = nav; if (hov) n = n.replace(/data-glass-v3="(primary|secondary)"/g, 'data-glass-v3="$1" data-force="hover" data-px=".32" data-py=".3"'); out += '<div class="emb-cell">' + lbl + '<div class="emb-nav"><div class="bg">£20.00</div>' + n + '</div></div>'; }
+      else out += '<div class="emb-cell">' + lbl + '<div class="modal-spot"><div class="modal"><div class="mh">Stop taking new sessions?</div><div class="mb">Sessions you already have are kept.</div><div class="mf"><span class="gbtn">Cancel</span><span class="btn g3 sm" data-glass-v3="primary" data-fill="#1D1D1F"' + (hov ? ' data-force="hover" data-px=".32" data-py=".3"' : '') + '>Stop sessions</span></div></div></div></div>';
+    });
+    ['main', 'header.site-nav', '#gp', '#gp-tab', '#gp-cmp'].forEach(function (q) { var e = document.querySelector(q); if (e) e.remove(); });
+    var m = document.createElement('main'); m.innerHTML = out; document.body.appendChild(m);
+    document.body.className = 'site emb';
+  }
+
+  /* ---------- open / close ---------- */
+  function setOpen(o) { document.body.classList.toggle('gp-open', o); LS.set('gp-open', o ? '1' : '0'); setTimeout(function () { if (window.GlassV3) GlassV3.refresh(); }, 300); }
+  if (EMB) buildEmbed(EMB);
+  else {
+  document.getElementById('gp-cmp-open').onclick = openCompare;
+  document.getElementById('gp-cmp-close').onclick = function () { document.getElementById('gp-cmp').classList.remove('on'); };
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') document.getElementById('gp-cmp').classList.remove('on'); });
+  document.getElementById('gp-close').onclick = function () { setOpen(false); };
+  document.getElementById('gp-tab').onclick = function () { setOpen(true); };
+  if (LS.get('gp-open') === '0' || (window.innerWidth < 900 && LS.get('gp-open') !== '1')) document.body.classList.remove('gp-open');
+  }
+  var burger = document.querySelector('.site-burger');
+  if (burger) burger.onclick = function () { var n = document.querySelector('.site-nav'), o = !n.classList.contains('open'); n.classList.toggle('open', o); burger.setAttribute('aria-expanded', o); };
+  document.addEventListener('click', function (e) { var a = e.target.closest && e.target.closest('a[href="#"]'); if (a) e.preventDefault(); });
+
+  /* ---------- boot: keep clean copies of the ink buttons, set the numbers, then start the engine ---------- */
+  [].forEach.call(document.querySelectorAll('[data-ink]'), function (b) { inkTpl.push(b.outerHTML); });
+  if (!EMB) try { var ui = JSON.parse(LS.get('gp-ui') || '{}'); body.innerHTML = ''; renderPanel(); [].forEach.call(body.querySelectorAll('details.g'), function (d) { var k = d.getAttribute('data-k'); if (ui[k] != null) d.open = ui[k]; }); } catch (e) { renderPanel(); }
+  window.GLASS_MODE = 'subtle'; window.GLASS_P = S; window.GLASS_P_V = 1;
+  // ink fill before the engine reads it
+  [].forEach.call(document.querySelectorAll('[data-ink]'), function (b) { b.setAttribute('data-fill', +S.inkA >= .995 ? '#1D1D1F' : 'rgba(29,29,31,' + (+S.inkA).toFixed(2) + ')'); });
+  inkTpl = []; [].forEach.call(document.querySelectorAll('[data-ink]'), function (b) { inkTpl.push(b.outerHTML); });
+  var sc = document.createElement('script'); sc.src = 'glass-v3.js';
+  sc.onload = function () { apply(); if (EMB) return; setStatus(LS.get('gp-settings-2') ? 'Restored from this browser' : 'Duane, 25 Oct settings'); connectDb(); };
+  document.body.appendChild(sc);
+})();
+</script>
+</body>
+</html>

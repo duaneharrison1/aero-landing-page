@@ -1,0 +1,682 @@
+{
+ "o1": [
+  {
+   "name": "Secondary, page header",
+   "t": 4.5,
+   "ratio": 16.829972351390765,
+   "bg": "#FFFFFF",
+   "fg": "#1D1D1F",
+   "varied": false
+  },
+  {
+   "name": "Primary, page header",
+   "t": 4.5,
+   "ratio": 16.829972351390765,
+   "bg": "#1D1D1F",
+   "fg": "#FFFFFF",
+   "varied": false
+  },
+  {
+   "name": "Small secondary, list row",
+   "t": 4.5,
+   "ratio": 16.829972351390765,
+   "bg": "#FFFFFF",
+   "fg": "#1D1D1F",
+   "varied": false
+  },
+  {
+   "name": "Secondary, session header",
+   "t": 4.5,
+   "ratio": 16.829972351390765,
+   "bg": "#FFFFFF",
+   "fg": "#1D1D1F",
+   "varied": false
+  },
+  {
+   "name": "Task chip over the recording",
+   "t": 4.5,
+   "ratio": 16.829972351390765,
+   "bg": "#FFFFFF",
+   "fg": "#1D1D1F",
+   "varied": false
+  },
+  {
+   "name": "Pause over the recording (icon, 3:1)",
+   "t": 3,
+   "ratio": 16.829972351390765,
+   "bg": "#1D1D1F",
+   "fg": "#FFFFFF",
+   "varied": false
+  },
+  {
+   "name": "Speed over the recording",
+   "t": 4.5,
+   "ratio": 8.402469732999977,
+   "bg": "#E1E1E2",
+   "fg": "#3C3C40",
+   "varied": true
+  },
+  {
+   "name": "Primary, modal",
+   "t": 4.5,
+   "ratio": 16.829972351390765,
+   "bg": "#1D1D1F",
+   "fg": "#FFFFFF",
+   "varied": false
+  },
+  {
+   "name": "Secondary, modal",
+   "t": 4.5,
+   "ratio": 16.829972351390765,
+   "bg": "#FFFFFF",
+   "fg": "#1D1D1F",
+   "varied": false
+  },
+  {
+   "name": "Secondary, confirm",
+   "t": 4.5,
+   "ratio": 16.829972351390765,
+   "bg": "#FFFFFF",
+   "fg": "#1D1D1F",
+   "varied": false
+  },
+  {
+   "name": "Destructive, confirm",
+   "t": 4.5,
+   "ratio": 5.49281088010676,
+   "bg": "#C4321F",
+   "fg": "#FFFFFF",
+   "varied": false
+  },
+  {
+   "name": "Primary, modal (Continue)",
+   "t": 4.5,
+   "ratio": 16.829972351390765,
+   "bg": "#1D1D1F",
+   "fg": "#FFFFFF",
+   "varied": false
+  },
+  {
+   "name": "Primary, tester panel",
+   "t": 4.5,
+   "ratio": 16.829972351390765,
+   "bg": "#1D1D1F",
+   "fg": "#FFFFFF",
+   "varied": false
+  },
+  {
+   "name": "Secondary, tester panel",
+   "t": 4.5,
+   "ratio": 16.829972351390765,
+   "bg": "#FFFFFF",
+   "fg": "#1D1D1F",
+   "varied": false
+  },
+  {
+   "name": "Folded pill over coral",
+   "t": 4.5,
+   "ratio": 14.249827753763682,
+   "bg": "#FFE7E2",
+   "fg": "#1D1D1F",
+   "varied": false
+  },
+  {
+   "name": "Folded pill over busy colour",
+   "t": 4.5,
+   "ratio": 12.977514672996303,
+   "bg": "#E5DFF4",
+   "fg": "#1D1D1F",
+   "varied": true
+  },
+  {
+   "name": "Folded pill over black with text",
+   "t": 4.5,
+   "ratio": 12.390948996054824,
+   "bg": "#DDDDDD",
+   "fg": "#1D1D1F",
+   "varied": false
+  },
+  {
+   "name": "Disabled primary (exempt)",
+   "t": 0,
+   "ratio": 2.1494455719966816,
+   "bg": "#EDEDF0",
+   "fg": "#A3A3A8",
+   "varied": false
+  },
+  {
+   "name": "Loading primary (Publishing)",
+   "t": 4.5,
+   "ratio": 11.309129683002759,
+   "bg": "#3A3A3F",
+   "fg": "#FFFFFF",
+   "varied": false
+  },
+  {
+   "name": "Primary, hover",
+   "t": 4.5,
+   "ratio": 11.309129683002759,
+   "bg": "#3A3A3F",
+   "fg": "#FFFFFF",
+   "varied": false
+  },
+  {
+   "name": "Secondary, hover",
+   "t": 4.5,
+   "ratio": 15.32141133016124,
+   "bg": "#F4F4F6",
+   "fg": "#1D1D1F",
+   "varied": false
+  }
+ ],
+ "o2": [
+  {
+   "name": "Secondary, page header",
+   "t": 4.5,
+   "ratio": 16.829972351390765,
+   "bg": "#FFFFFF",
+   "fg": "#1D1D1F",
+   "varied": false
+  },
+  {
+   "name": "Primary, page header",
+   "t": 4.5,
+   "ratio": 8.596719872953093,
+   "bg": "#254A8D",
+   "fg": "#FFFFFF",
+   "varied": false
+  },
+  {
+   "name": "Small secondary, list row",
+   "t": 4.5,
+   "ratio": 16.829972351390765,
+   "bg": "#FFFFFF",
+   "fg": "#1D1D1F",
+   "varied": false
+  },
+  {
+   "name": "Secondary, session header",
+   "t": 4.5,
+   "ratio": 16.829972351390765,
+   "bg": "#FFFFFF",
+   "fg": "#1D1D1F",
+   "varied": false
+  },
+  {
+   "name": "Task chip over the recording",
+   "t": 4.5,
+   "ratio": 16.829972351390765,
+   "bg": "#FFFFFF",
+   "fg": "#1D1D1F",
+   "varied": false
+  },
+  {
+   "name": "Pause over the recording (icon, 3:1)",
+   "t": 3,
+   "ratio": 8.596719872953093,
+   "bg": "#254A8D",
+   "fg": "#FFFFFF",
+   "varied": false
+  },
+  {
+   "name": "Speed over the recording",
+   "t": 4.5,
+   "ratio": 8.402469732999977,
+   "bg": "#E1E1E2",
+   "fg": "#3C3C40",
+   "varied": true
+  },
+  {
+   "name": "Primary, modal",
+   "t": 4.5,
+   "ratio": 8.596719872953093,
+   "bg": "#254A8D",
+   "fg": "#FFFFFF",
+   "varied": false
+  },
+  {
+   "name": "Secondary, modal",
+   "t": 4.5,
+   "ratio": 16.829972351390765,
+   "bg": "#FFFFFF",
+   "fg": "#1D1D1F",
+   "varied": false
+  },
+  {
+   "name": "Secondary, confirm",
+   "t": 4.5,
+   "ratio": 16.829972351390765,
+   "bg": "#FFFFFF",
+   "fg": "#1D1D1F",
+   "varied": false
+  },
+  {
+   "name": "Destructive, confirm",
+   "t": 4.5,
+   "ratio": 5.49281088010676,
+   "bg": "#C4321F",
+   "fg": "#FFFFFF",
+   "varied": false
+  },
+  {
+   "name": "Primary, modal (Continue)",
+   "t": 4.5,
+   "ratio": 8.596719872953093,
+   "bg": "#254A8D",
+   "fg": "#FFFFFF",
+   "varied": false
+  },
+  {
+   "name": "Primary, tester panel",
+   "t": 4.5,
+   "ratio": 8.596719872953093,
+   "bg": "#254A8D",
+   "fg": "#FFFFFF",
+   "varied": false
+  },
+  {
+   "name": "Secondary, tester panel",
+   "t": 4.5,
+   "ratio": 16.829972351390765,
+   "bg": "#FFFFFF",
+   "fg": "#1D1D1F",
+   "varied": false
+  },
+  {
+   "name": "Folded pill over coral",
+   "t": 4.5,
+   "ratio": 14.249827753763682,
+   "bg": "#FFE7E2",
+   "fg": "#1D1D1F",
+   "varied": false
+  },
+  {
+   "name": "Folded pill over busy colour",
+   "t": 4.5,
+   "ratio": 12.977514672996303,
+   "bg": "#E5DFF4",
+   "fg": "#1D1D1F",
+   "varied": true
+  },
+  {
+   "name": "Folded pill over black with text",
+   "t": 4.5,
+   "ratio": 12.390948996054824,
+   "bg": "#DDDDDD",
+   "fg": "#1D1D1F",
+   "varied": false
+  },
+  {
+   "name": "Disabled primary (exempt)",
+   "t": 0,
+   "ratio": 2.1060582090491495,
+   "bg": "#ECEEF2",
+   "fg": "#A0A6B1",
+   "varied": false
+  },
+  {
+   "name": "Loading primary (Publishing)",
+   "t": 4.5,
+   "ratio": 7.511392074950477,
+   "bg": "#2D5397",
+   "fg": "#FFFFFF",
+   "varied": false
+  },
+  {
+   "name": "Primary, hover",
+   "t": 4.5,
+   "ratio": 7.511392074950477,
+   "bg": "#2D5397",
+   "fg": "#FFFFFF",
+   "varied": false
+  },
+  {
+   "name": "Secondary, hover",
+   "t": 4.5,
+   "ratio": 15.419308949080643,
+   "bg": "#F3F5F9",
+   "fg": "#1D1D1F",
+   "varied": false
+  }
+ ],
+ "o3": [
+  {
+   "name": "Secondary, page header",
+   "t": 4.5,
+   "ratio": 16.829972351390765,
+   "bg": "#FFFFFF",
+   "fg": "#1D1D1F",
+   "varied": false
+  },
+  {
+   "name": "Primary, page header",
+   "t": 4.5,
+   "ratio": 16.829972351390765,
+   "bg": "#1D1D1F",
+   "fg": "#FFFFFF",
+   "varied": false
+  },
+  {
+   "name": "Small secondary, list row",
+   "t": 4.5,
+   "ratio": 16.829972351390765,
+   "bg": "#FFFFFF",
+   "fg": "#1D1D1F",
+   "varied": false
+  },
+  {
+   "name": "Secondary, session header",
+   "t": 4.5,
+   "ratio": 16.829972351390765,
+   "bg": "#FFFFFF",
+   "fg": "#1D1D1F",
+   "varied": false
+  },
+  {
+   "name": "Task chip over the recording",
+   "t": 4.5,
+   "ratio": 4.761542075278359,
+   "bg": "#88888B",
+   "fg": "#1D1D1F",
+   "varied": false
+  },
+  {
+   "name": "Pause over the recording (icon, 3:1)",
+   "t": 3,
+   "ratio": 16.829972351390765,
+   "bg": "#1D1D1F",
+   "fg": "#FFFFFF",
+   "varied": false
+  },
+  {
+   "name": "Speed over the recording",
+   "t": 4.5,
+   "ratio": 4.680723237503242,
+   "bg": "#868789",
+   "fg": "#1D1D1F",
+   "varied": true
+  },
+  {
+   "name": "Primary, modal",
+   "t": 4.5,
+   "ratio": 16.829972351390765,
+   "bg": "#1D1D1F",
+   "fg": "#FFFFFF",
+   "varied": false
+  },
+  {
+   "name": "Secondary, modal",
+   "t": 4.5,
+   "ratio": 16.829972351390765,
+   "bg": "#FFFFFF",
+   "fg": "#1D1D1F",
+   "varied": false
+  },
+  {
+   "name": "Secondary, confirm",
+   "t": 4.5,
+   "ratio": 16.829972351390765,
+   "bg": "#FFFFFF",
+   "fg": "#1D1D1F",
+   "varied": false
+  },
+  {
+   "name": "Destructive, confirm",
+   "t": 4.5,
+   "ratio": 5.49281088010676,
+   "bg": "#C4321F",
+   "fg": "#FFFFFF",
+   "varied": false
+  },
+  {
+   "name": "Primary, modal (Continue)",
+   "t": 4.5,
+   "ratio": 16.829972351390765,
+   "bg": "#1D1D1F",
+   "fg": "#FFFFFF",
+   "varied": false
+  },
+  {
+   "name": "Primary, tester panel",
+   "t": 4.5,
+   "ratio": 16.829972351390765,
+   "bg": "#1D1D1F",
+   "fg": "#FFFFFF",
+   "varied": false
+  },
+  {
+   "name": "Secondary, tester panel",
+   "t": 4.5,
+   "ratio": 16.829972351390765,
+   "bg": "#FFFFFF",
+   "fg": "#1D1D1F",
+   "varied": false
+  },
+  {
+   "name": "Folded pill over coral",
+   "t": 4.5,
+   "ratio": 7.563754339835722,
+   "bg": "#FF8F75",
+   "fg": "#1D1D1F",
+   "varied": false
+  },
+  {
+   "name": "Folded pill over busy colour",
+   "t": 4.5,
+   "ratio": 4.904159878549216,
+   "bg": "#9A76E7",
+   "fg": "#1D1D1F",
+   "varied": true
+  },
+  {
+   "name": "Folded pill over black with text",
+   "t": 4.5,
+   "ratio": 4.756877435738315,
+   "bg": "#88888A",
+   "fg": "#1D1D1F",
+   "varied": true
+  },
+  {
+   "name": "Disabled primary (exempt)",
+   "t": 0,
+   "ratio": 2.1494455719966816,
+   "bg": "#EDEDF0",
+   "fg": "#A3A3A8",
+   "varied": false
+  },
+  {
+   "name": "Loading primary (Publishing)",
+   "t": 4.5,
+   "ratio": 11.309129683002759,
+   "bg": "#3A3A3F",
+   "fg": "#FFFFFF",
+   "varied": false
+  },
+  {
+   "name": "Primary, hover",
+   "t": 4.5,
+   "ratio": 11.309129683002759,
+   "bg": "#3A3A3F",
+   "fg": "#FFFFFF",
+   "varied": false
+  },
+  {
+   "name": "Secondary, hover",
+   "t": 4.5,
+   "ratio": 15.32141133016124,
+   "bg": "#F4F4F6",
+   "fg": "#1D1D1F",
+   "varied": false
+  }
+ ],
+ "o4": [
+  {
+   "name": "Secondary, page header",
+   "t": 4.5,
+   "ratio": 12.309176050090453,
+   "bg": "#EFECE7",
+   "fg": "#2B2926",
+   "varied": false
+  },
+  {
+   "name": "Primary, page header",
+   "t": 4.5,
+   "ratio": 9.621124873000205,
+   "bg": "#45413C",
+   "fg": "#FAF9F7",
+   "varied": false
+  },
+  {
+   "name": "Small secondary, list row",
+   "t": 4.5,
+   "ratio": 12.309176050090453,
+   "bg": "#EFECE7",
+   "fg": "#2B2926",
+   "varied": false
+  },
+  {
+   "name": "Secondary, session header",
+   "t": 4.5,
+   "ratio": 12.309176050090453,
+   "bg": "#EFECE7",
+   "fg": "#2B2926",
+   "varied": false
+  },
+  {
+   "name": "Task chip over the recording",
+   "t": 4.5,
+   "ratio": 12.309176050090453,
+   "bg": "#EFECE7",
+   "fg": "#2B2926",
+   "varied": false
+  },
+  {
+   "name": "Pause over the recording (icon, 3:1)",
+   "t": 3,
+   "ratio": 9.621124873000205,
+   "bg": "#45413C",
+   "fg": "#FAF9F7",
+   "varied": false
+  },
+  {
+   "name": "Speed over the recording",
+   "t": 4.5,
+   "ratio": 7.162620122764595,
+   "bg": "#E1E1E2",
+   "fg": "#4A4641",
+   "varied": true
+  },
+  {
+   "name": "Primary, modal",
+   "t": 4.5,
+   "ratio": 9.621124873000205,
+   "bg": "#45413C",
+   "fg": "#FAF9F7",
+   "varied": false
+  },
+  {
+   "name": "Secondary, modal",
+   "t": 4.5,
+   "ratio": 12.309176050090453,
+   "bg": "#EFECE7",
+   "fg": "#2B2926",
+   "varied": false
+  },
+  {
+   "name": "Secondary, confirm",
+   "t": 4.5,
+   "ratio": 12.309176050090453,
+   "bg": "#EFECE7",
+   "fg": "#2B2926",
+   "varied": false
+  },
+  {
+   "name": "Destructive, confirm",
+   "t": 4.5,
+   "ratio": 6.57428861557707,
+   "bg": "#B42318",
+   "fg": "#FFFFFF",
+   "varied": false
+  },
+  {
+   "name": "Primary, modal (Continue)",
+   "t": 4.5,
+   "ratio": 9.621124873000205,
+   "bg": "#45413C",
+   "fg": "#FAF9F7",
+   "varied": false
+  },
+  {
+   "name": "Primary, tester panel",
+   "t": 4.5,
+   "ratio": 9.621124873000205,
+   "bg": "#45413C",
+   "fg": "#FAF9F7",
+   "varied": false
+  },
+  {
+   "name": "Secondary, tester panel",
+   "t": 4.5,
+   "ratio": 12.309176050090453,
+   "bg": "#EFECE7",
+   "fg": "#2B2926",
+   "varied": false
+  },
+  {
+   "name": "Folded pill over coral",
+   "t": 4.5,
+   "ratio": 14.249827753763682,
+   "bg": "#FFE7E2",
+   "fg": "#1D1D1F",
+   "varied": false
+  },
+  {
+   "name": "Folded pill over busy colour",
+   "t": 4.5,
+   "ratio": 12.977514672996303,
+   "bg": "#E5DFF4",
+   "fg": "#1D1D1F",
+   "varied": true
+  },
+  {
+   "name": "Folded pill over black with text",
+   "t": 4.5,
+   "ratio": 12.390948996054824,
+   "bg": "#DDDDDD",
+   "fg": "#1D1D1F",
+   "varied": false
+  },
+  {
+   "name": "Disabled primary (exempt)",
+   "t": 0,
+   "ratio": 2.096408517685099,
+   "bg": "#F3F1EE",
+   "fg": "#ADA8A0",
+   "varied": false
+  },
+  {
+   "name": "Loading primary (Publishing)",
+   "t": 4.5,
+   "ratio": 7.346941326144051,
+   "bg": "#57524C",
+   "fg": "#FAF9F7",
+   "varied": false
+  },
+  {
+   "name": "Primary, hover",
+   "t": 4.5,
+   "ratio": 7.346941326144051,
+   "bg": "#57524C",
+   "fg": "#FAF9F7",
+   "varied": false
+  },
+  {
+   "name": "Secondary, hover",
+   "t": 4.5,
+   "ratio": 11.234368639630604,
+   "bg": "#E6E2DB",
+   "fg": "#2B2926",
+   "varied": false
+  }
+ ]
+}

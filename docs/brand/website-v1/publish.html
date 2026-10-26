@@ -1,0 +1,813 @@
+<title>Aero Homepage Round</title>
+
+
+<meta name="description" content="Put a Claude artifact, Figma prototype, Lovable app or HTML site online at its own address, share one test link, and get each session back transcribed and summarised. Free to start.">
+<link rel="canonical" href="https://aeroapp.ai/">
+<meta property="og:title" content="Aero: publish your prototype, watch people use it">
+<meta property="og:description" content="One prompt and it's live. One link to test it. Each session comes back in their own words.">
+<meta property="og:url" content="https://aeroapp.ai/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="aero.css">
+<link rel="stylesheet" href="aero-make.css">
+<link rel="stylesheet" href="aero-review.css">
+
+<!-- =====================================================================
+     CONTENT: every word, example and timing on this page lives in this one block.
+     Change copy, the example story or the app UI data here; no rebuild needed.
+     Rules: British spelling, sentence case, no em dashes, AI never the headline,
+     plans only from docs/brand/PRICING-FACTS.md, example names labelled Example.
+     ===================================================================== -->
+<script>
+window.PAGE = {
+  nav: {
+    links: [
+      { label: "How it works", href: "#how" },
+      { label: "Pricing", href: "#pricing" },
+      { label: "Questions", href: "#questions" }
+    ],
+    login: { label: "Log in", href: "https://app.aeroapp.ai/login" },
+    cta: { label: "Start free", href: "https://app.aeroapp.ai/signup" }
+  },
+
+  hero: {
+    eyebrow: "Prototype hosting and user testing",
+    lead: "Publish your",
+    rotate: ["Claude artifact", "Figma prototype", "Lovable app", "HTML site"],
+    rotateEveryMs: 2800,
+    tail: "Watch people use it",
+    sub: "Paste a Figma link, drop an HTML folder, or copy one prompt into the chat where you built it. Share one test link. Each session comes back transcribed and summarised.",
+    ctas: [
+      { label: "Start free", href: "https://app.aeroapp.ai/signup", primary: true },
+      { label: "See an example", href: "#example" }
+    ],
+    note: "Free to start, recordings included. Paid plans from $3 a month. No call, no contract.",
+    exampleLabel: "Example data"
+  },
+
+  // The hero loop: a site is published, then a session arrives, then its first quote.
+  loop: {
+    url: "aeroapp.ai/home",
+    site: { name: "Pocket", addr: "pocket.aeroapp.ai", version: 4 },
+    tester: { name: "Maya", initial: "M", av: "a" },
+    publishTime: "10:02", sessionTime: "11:47", transcriptTime: "11:48",
+    publishing: "Publishing version 4.",
+    published: "Version 4 published at {addr}.",
+    arriving: "{name} finished a session. The transcript arrives in about a minute.",
+    arrived: "{name} finished a session. 7 minutes, 3 friction points.",
+    quote: "I thought my cards would be on the home screen. Is it under More?",
+    quoteAt: "03:08",
+    // timings in ms from the start of each loop
+    beats: { publish: 900, live: 2600, session: 5200, transcript: 8200, hold: 14500 },
+    progress: [
+      { step: "Publish", label: "Live at pocket.aeroapp.ai", time: "10:02" },
+      { step: "Test", label: "Maya finished a session", time: "11:47" },
+      { step: "Review", label: "In her own words", time: "11:48" }
+    ]
+  },
+
+  // What's new, as it stands before the loop adds to it (the real Home screen, Example data)
+  app: {
+    today: "Thu 23 Oct",
+    events: [
+      { day: "Today", date: "Thu 23 Oct" },
+      { t: "09:12", k: "ses", h: "Onboarding v2", who: ["J", "d", "Jonas"], txt: "Jonas finished a session. 6 minutes, 2 friction points.", act: "Open" },
+      { t: "08:20", k: "pub", h: "Checkout", txt: "Version 8 published at <span class='mono'>checkout.aeroapp.ai</span>.", act: "Copy address" },
+      { day: "Yesterday", date: "Wed 22 Oct" },
+      { t: "18:00", k: "visits", h: "Kestrel portfolio", txt: "31 visits yesterday, 214 this week. Most opened the Pocket case study.", act: "Visits" },
+      { t: "16:05", k: "review", h: "Onboarding v2", txt: "Review ready for 2 sessions. Both testers skipped the second screen.", act: "Review" },
+      { t: "11:22", k: "made", h: "Checkout", txt: "Test made from <span class='mono'>checkout.aeroapp.ai</span> v8, with its own link.", act: "Copy test link" }
+    ],
+    sites: [
+      { name: "Kestrel portfolio", addr: "kestrel.studio", thumb: "pf" },
+      { name: "Checkout", addr: "checkout.aeroapp.ai", thumb: "co" }
+    ],
+    tests: [
+      { name: "Pocket", small: "3 sessions · Tue", dots: ["", "", ""], st: "Open" },
+      { name: "Onboarding v2", small: "2 sessions · Yesterday", dots: ["", ""], st: "Open" },
+      { name: "Checkout", small: "No sessions yet", dots: [], st: "Open" }
+    ],
+    sidebarTests: ["Pocket", "Onboarding v2", "Checkout", "Very serious portfolio", "Sign-up flow"],
+    plan: { name: "Solo plan", used: 6, of: 10 },
+    account: { initial: "M", name: "Mia Chen", email: "mia@kestrel.studio" }
+  },
+
+  steps: [
+    {
+      id: "publish", label: "Publish",
+      title: "One prompt and it's live.",
+      line: "Paste a Figma link, drop an HTML folder, or copy one prompt into Claude or ChatGPT. It goes live at its own address in seconds to a minute.",
+      prompt: "Publish the app you just built to Aero as a site called “pocket”. Send every file through the Aero API at aeroapp.ai/api/v1/sites with my key aero_sk_••••7Q2c, then reply with the address.",
+      promptNote: "It's a prompt, nothing to install.",
+      sources: ["Figma link", "HTML folder", "One prompt"]
+    },
+    {
+      id: "test", label: "Test",
+      title: "One link. Their screen and their voice.",
+      line: "Send the test link to a client, a friend or a classmate. They open it on their own device. No account, nothing to install.",
+      link: "aeroapp.ai/t/pocket-7k2"
+    },
+    {
+      id: "review", label: "Review",
+      title: "In their own words.",
+      line: "About a minute after each session, it's transcribed and summarised: the friction points, the moment each one happened, and what keeps coming up across sessions."
+    }
+  ],
+
+  // C's moment: one tester, one Sunday morning (Example)
+  moment: {
+    kicker: "One session, start to finish",
+    title: "Seven minutes on a Sunday morning.",
+    body: "Maya opens the link on her laptop and talks as she goes. You aren't there, and you don't need to be. About a minute after she finishes, her words are written down and the moment she got stuck is marked.",
+    who: { name: "Maya", initial: "M", av: "a", meta: "Sunday 11:40 · Laptop · Example" },
+    playing: "Playing back her recording",
+    from: "02:41", to: "03:40", total: "07:12",
+    lines: [
+      { t: "02:41", s: 161, text: "Right, sent. How do I get back? There's an arrow but it doesn't say where to." },
+      { t: "03:02", s: 182, text: "Is the balance a button? I keep wanting to tap it." },
+      { t: "03:08", s: 188, text: "I thought my cards would be on the home screen. Is it under More?", tag: { kind: "issue", word: "Issue", sev: "Major", title: "Cards are hidden under More" } },
+      { t: "03:31", s: 211, text: "Oh, there they are. Under More. I wouldn't have looked there." }
+    ],
+    timelineTitle: "From prompt to first session",
+    timelineNote: "Example times. Publishing takes seconds to a minute; the transcript about a minute after a session. The only real wait is for your tester.",
+    timeline: [
+      { t: "10:02", h: "You copy one prompt", s: "Into the chat where you built it" },
+      { t: "10:03", h: "Pocket is live", s: "pocket.aeroapp.ai" },
+      { t: "10:04", h: "Test link sent", s: "To a client, a friend and a classmate" },
+      { t: "11:40", h: "Maya opens it", s: "On her own laptop" },
+      { t: "11:47", h: "She finishes", s: "7 minutes, 2 tasks" },
+      { t: "11:48", h: "Transcribed and summarised", s: "3 friction points, in her words" }
+    ]
+  },
+
+  facts: {
+    title: "Good to know",
+    items: [
+      { h: "Every publish is a version.", p: "Roll back to any of them. The address stays the same.", ui: "versions" },
+      { h: "Free sites stay live for 7 days.", p: "On the Free plan a site goes offline after 7 days. Paid plans keep it online.", ui: "offline" },
+      { h: "Bring your own testers.", p: "No panel to buy, no seats, no sales call. Anyone you send the link to can take part.", ui: "none" }
+    ]
+  },
+
+  pricing: {
+    title: "Free to start. From $3 a month.",
+    line: "Every paid plan starts with a 7-day free trial. Monthly, no call, no contract, cancel any time.",
+    plans: [
+      { name: "Free", price: "$0", per: "", items: ["3 test sessions", "Recordings included", "Sites stay live 7 days"], cta: "Start free" },
+      { name: "Basic", price: "$3", per: "a month", items: ["5 test sessions", "Your own aeroapp.ai address", "Password protection", "Custom favicon", "No Aero badge"], cta: "Start 7-day trial" },
+      { name: "Solo", price: "$6", per: "a month", items: ["10 test sessions", "Everything in Basic", "Custom domain", "Site analytics"], cta: "Start 7-day trial" },
+      { name: "Pro", price: "$19", per: "a month", items: ["20 test sessions", "Everything in Solo", "Priority support"], cta: "Start 7-day trial" }
+    ],
+    note: "Prices in US dollars. Your local price is shown at checkout."
+  },
+
+  faq: {
+    title: "Questions",
+    items: [
+      { q: "What can I put online?", a: "A Figma prototype (paste its link), an HTML folder or zip, or anything you built in Claude or ChatGPT, which can send it to Aero with one prompt. Each one gets its own address on aeroapp.ai." },
+      { q: "How does publishing from Claude or ChatGPT work?", a: "Aero gives you a prompt with your key in it. Paste it into the chat where you built the page. The chat sends the files to Aero and replies with the address. There's nothing to install." },
+      { q: "Do my testers need an account?", a: "No. They open the test link on their own device and start. Aero asks their permission to record their screen and voice, and they can stop at any time." },
+      { q: "What is recorded?", a: "Their screen and their voice as they think aloud. Never their face: there is no webcam recording. The recording doesn't show the mouse pointer." },
+      { q: "How soon can I read a session?", a: "You can watch it as soon as it ends. The transcript and summary follow about a minute later, with friction points in their own words and the time each one happened." },
+      { q: "How long is a session?", a: "As long as your tester needs. There is no set length and no timer on their screen." },
+      { q: "What happens to my site on the Free plan?", a: "It stays live for 7 days, then goes offline. Any paid plan keeps it online, and every plan keeps your versions." },
+      { q: "Can I use my own domain or a password?", a: "Password protection and a custom favicon come with Basic and up. A custom domain comes with Solo and up." }
+    ]
+  },
+
+  cta: { title: "From prompt to first session.", line: "Free to start, recordings included. No call, no contract.", primary: "Start free", secondary: "See an example" },
+
+  footer: {
+    line: "Made for people who make things.",
+    cols: [
+      { h: "Product", links: ["How it works", "Pricing", "Questions", "Log in"] },
+      { h: "Guides", links: ["Publish a Claude artifact", "Publish a Figma prototype", "Test a Figma prototype", "Host an HTML site"] },
+      { h: "Aero", links: ["About", "Privacy", "Terms", "Contact"] }
+    ],
+    small: "© 2026 Aero. Names and data in the examples on this page are made up."
+  }
+};
+</script>
+
+<style>
+/* ===================== homepage layer (on top of the v3 app tokens; no new colours) ===================== */
+html{overflow-x:clip}
+body{font-size:16px;background:var(--bg)}
+.hp-c{max-width:1240px;margin:0 auto;padding:0 40px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.hp-dot{display:inline-block;width:.15em;height:.15em;border-radius:50%;background:var(--accent);margin-left:.035em;vertical-align:baseline}
+.hp-eyebrow{font-family:var(--mono);font-size:12px;color:var(--mut);letter-spacing:0}
+.hp-label{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;color:var(--ink2)}
+.hp-label::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ink)}
+.hp-ex{font-family:var(--mono);font-size:11px;color:var(--mut2)}
+.hp-btn{text-decoration:none}
+
+/* nav: no colour */
+.hp-nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
+.hp-nav.scrolled{border-bottom-color:var(--line)}
+.hp-nav .hp-c{display:flex;align-items:center;gap:32px;height:68px}
+.hp-logo{display:inline-flex;color:var(--ink)}.hp-logo svg{height:22px;width:auto;display:block}
+.hp-links{display:flex;gap:28px;font-size:15px;color:var(--ink2)}
+.hp-links a:hover{color:var(--ink)}
+.hp-nav .r{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:15px}
+.hp-menu{display:none;width:38px;height:38px;border-radius:9px;border:1px solid var(--line);background:var(--surface);align-items:center;justify-content:center;color:var(--ink)}
+.hp-menu svg{width:16px;height:16px}
+.hp-sheet{display:none;border-top:1px solid var(--line);padding:8px 16px 16px;flex-direction:column}
+.hp-sheet a{padding:12px 0;font-size:17px;border-bottom:1px solid var(--line2)}
+.hp-nav.open .hp-sheet{display:flex}
+
+/* hero */
+.hp-hero{position:relative;overflow:hidden;padding:48px 0 0}
+.hp-hero h1{font-weight:420;letter-spacing:-.038em;line-height:1.04;color:var(--ink);font-size:clamp(42px,4.6vw,66px)}
+.hp-hero h1 .ln{display:block}
+.hp-rot{display:inline-grid;vertical-align:top}
+.hp-rot>span{grid-area:1/1;opacity:0;transform:translateY(.22em);transition:opacity .7s ease,transform .9s cubic-bezier(.2,.7,.2,1);white-space:nowrap}
+.hp-rot>span.on{opacity:1;transform:none}
+.hp-rot>span.out{opacity:0;transform:translateY(-.18em)}
+.hp-sub{font-size:18px;line-height:1.5;color:var(--ink2);max-width:580px;letter-spacing:-.012em}
+.hp-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.hp-note{font-size:13.5px;color:var(--mut)}
+.hp-stage{position:relative;border-radius:28px;overflow:hidden;background:var(--grain),var(--wash-hero)}
+.hp-stage .hp-ex{position:absolute;right:22px;bottom:16px}
+
+/* hero A: window centred under the headline */
+.hero-a .hp-copy{text-align:center;display:flex;flex-direction:column;align-items:center;gap:22px}
+.hero-a .hp-rot{justify-items:center}
+.hero-a .hp-sub{text-align:center}
+.hero-a .hp-stage{margin-top:44px;padding:48px 56px 0}
+.hero-a .hp-winwrap{max-width:1180px;margin:0 auto}
+.hero-a .hp-win .win{border-bottom-left-radius:0;border-bottom-right-radius:0}
+
+/* hero B: headline left, window right, larger, bleeding off the edge */
+.hero-b{padding-top:0}
+.hero-b .hp-bgrid{position:relative;display:grid;grid-template-columns:minmax(0,520px) minmax(0,1fr);gap:56px;align-items:center;min-height:760px}
+.hero-b .hp-copy{display:flex;flex-direction:column;gap:22px;padding:64px 0}
+.hero-b h1{font-size:clamp(40px,3.8vw,56px)}
+.hero-b .hp-prog .s .row{flex-direction:column;gap:2px;white-space:normal}
+.hero-b .hp-bstage{position:absolute;top:28px;bottom:28px;left:calc(50% - 620px + 40px + 520px + 40px);right:-40px;border-radius:28px 0 0 28px;overflow:hidden;background:var(--grain),var(--wash-hero)}
+.hero-b .hp-bwin{position:absolute;top:64px;left:40px;width:1240px}
+.hero-b .hp-bex{position:absolute;left:24px;bottom:16px}
+.hero-b .hp-bprog{display:none}
+
+/* progress line (D): runs with the loop */
+.hp-prog{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;padding:20px 0 0}
+.hp-prog .s{display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--mut);min-width:0}
+.hp-prog .hp-bar{height:2px;border-radius:2px;background:var(--line);overflow:hidden}
+.hp-prog .hp-bar b{display:block;height:100%;width:0;background:var(--ink);transition:width .6s ease}
+.hp-prog .s.on .bar b{background:var(--ink)}
+.hp-prog .s .row{display:flex;gap:10px;align-items:baseline;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hp-prog .s .row b{font-weight:500;color:var(--ink)}
+.hp-prog .s .mono{font-size:11.5px;color:var(--mut2)}
+.hp-prog .s.on .row{color:var(--ink2)}
+.hero-a .hp-prog{max-width:1180px;margin:0 auto;padding:22px 0 0}
+.hero-b .hp-prog{max-width:520px;padding-top:12px}
+
+/* the hero loop parts inside the real Home screen */
+.hp-slot{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .7s cubic-bezier(.3,.7,.2,1),opacity .6s ease .1s}
+.hp-slot>div{min-height:0;overflow:hidden}
+.hp-slot.in{grid-template-rows:1fr;opacity:1}
+.x-ev.k-load .x-mk{background:var(--accent);box-shadow:0 0 0 3px var(--surface);animation:dotload 1.4s ease-in-out infinite}
+.hp-q{margin:8px 0 2px;max-width:470px}
+.hp-q .qc{background:var(--surface)}
+.hp-q .qc q{font-size:13.5px}
+.hp-new{animation:hpflash 2.4s ease}
+@keyframes hpflash{0%{background:var(--cur)}100%{background:transparent}}
+.x-mini.hp-slot{display:grid}
+.hp-sitein{transition:opacity .6s ease,transform .7s cubic-bezier(.3,.7,.2,1)}
+.sb-t.hp-hide,.hp-hide{opacity:0}
+.sb-t{transition:opacity .5s}
+.hp-win .x-tlw{padding-top:2px}
+.hp-win .x-ev{border-radius:8px}
+
+/* compact window (phones): rail sidebar, What's new only */
+.hp-win.compact .x-homeA{grid-template-columns:minmax(0,1fr)}
+.hp-win.compact .x-homeA>div:first-child{border-right:0;padding-right:0}
+.hp-win.compact .x-rc{display:none}
+
+/* steps */
+.hp-sec{padding:120px 0 0}
+.hp-sechead{display:flex;flex-direction:column;gap:14px;max-width:760px}
+.hp-sechead h2,.hp-h2{font-size:clamp(34px,4vw,54px);font-weight:440;letter-spacing:-.035em;line-height:1.05}
+.hp-sechead p{font-size:18px;color:var(--ink2);line-height:1.5}
+.hp-steps{display:flex;flex-direction:column;gap:28px;margin-top:48px}
+.hp-step{border-radius:28px;overflow:hidden;display:grid;grid-template-columns:minmax(0,400px) minmax(0,1fr);gap:40px;padding:56px;min-height:540px;align-items:center}
+.hp-step.publish{background:var(--grain),var(--wash-publish)}
+.hp-step.test{background:var(--grain),var(--wash-test)}
+.hp-step.review{background:var(--grain),var(--wash-review)}
+.hp-step .txt{display:flex;flex-direction:column;gap:16px;align-self:start;padding-top:8px}
+.hp-step h3{font-size:clamp(30px,3.2vw,44px);font-weight:440;letter-spacing:-.033em;line-height:1.08}
+.hp-step p{font-size:17px;line-height:1.5;color:var(--ink2)}
+.hp-step .ui{display:flex;flex-direction:column;gap:20px;align-items:center;min-width:0}
+.hp-step .ui .fit{width:100%}
+.fit{display:flex;justify-content:center}
+.fit>.fitc{flex:none}
+
+/* publish: the prompt card (the app's own copy, simplified) */
+.hp-prompt{width:600px;padding:26px 28px;border-radius:20px;background:var(--surface);box-shadow:var(--card-shadow)}
+.hp-prompt .ways{display:flex;gap:6px;margin-bottom:18px}
+.hp-prompt .ways span{display:inline-flex;align-items:center;height:30px;padding:0 12px;border-radius:8px;font-size:13.5px;color:var(--mut);box-shadow:inset 0 0 0 1px var(--line)}
+.hp-prompt .ways span.on{color:var(--ink);background:var(--sel);box-shadow:none;font-weight:500}
+.hp-prompt h4{font-size:19px;font-weight:500;letter-spacing:-.015em}
+.hp-prompt .pn{font-size:14px;color:var(--mut);margin:4px 0 14px}
+.hp-prompt .pr{font-family:var(--mono);font-size:13.5px;line-height:1.6;color:var(--ink2);background:var(--sunk);border-radius:12px;padding:14px 16px}
+.hp-prompt .row{display:flex;align-items:center;gap:12px;margin-top:14px}
+.hp-prompt .row .wait{display:inline-flex;align-items:center;gap:9px;font-size:13.5px;color:var(--mut);margin-left:auto}
+.hp-prompt .row .wait.done{color:var(--green-text)}
+
+/* test: link card + the session arriving */
+.mk-row{width:900px}
+
+/* review: quote + player */
+.mk-quote .wave i{transition:background .2s}
+
+/* moment (C) */
+.hp-moment{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:64px;align-items:start}
+.hp-moment .txt{display:flex;flex-direction:column;gap:18px;position:sticky;top:110px}
+.hp-moment .txt p{font-size:18px;line-height:1.55;color:var(--ink2)}
+.hp-who{display:flex;align-items:center;gap:12px}
+.hp-who b{font-weight:500;font-size:16px;display:block}
+.hp-who small{font-family:var(--mono);font-size:11.5px;color:var(--mut)}
+.hp-tr{border-radius:24px;background:var(--surface);box-shadow:var(--card-shadow);padding:28px 32px 26px}
+.hp-tr .top{display:flex;align-items:center;gap:16px;margin-bottom:22px}
+.hp-tr .top .wave{flex:1;height:34px}
+.hp-tr .top .tc{font-family:var(--mono);font-size:14px;color:var(--accent-text);min-width:46px;text-align:right}
+.hp-tr .playing{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--mut);margin-bottom:14px}
+.hp-tr .row{display:grid;grid-template-columns:62px minmax(0,1fr);gap:10px;padding:9px 0}
+.hp-tr .row .mono{font-size:13.5px;color:var(--mut2);padding-top:6px}
+.hp-tr .row.cur .mono{color:var(--accent-text)}
+.hp-tr .row .tx{font-size:23px;line-height:1.38;letter-spacing:-.022em;color:var(--faint)}
+.hp-tr .w{transition:color .25s,background .25s,box-shadow .25s;border-radius:5px}
+.hp-tr .w.said{color:var(--ink)}
+.hp-tr .w.now{color:var(--ink);background:rgba(var(--accent-rgb),.16);box-shadow:0 0 0 3px rgba(var(--accent-rgb),.16)}
+.hp-tr .tagline{display:flex;align-items:center;gap:10px;margin-top:8px;font-size:13.5px;color:var(--mut)}
+.hp-tr .tagline .tg{font-size:13.5px}
+
+/* timeline strip (D's line) */
+.hp-tl{margin-top:96px}
+.hp-tl h3{font-size:24px;font-weight:450;letter-spacing:-.02em}
+.hp-tl .hp-line{position:relative;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px;margin-top:28px;padding-top:26px}
+.hp-tl .hp-line::before{content:"";position:absolute;left:0;right:calc((100% + 16px) / 6 - 12px);top:5px;height:2px;background:var(--line)}
+.hp-tl .hp-line .hp-fill{position:absolute;left:0;top:5px;height:2px;width:0;background:var(--ink);transition:width 2.4s cubic-bezier(.4,.1,.2,1)}
+.hp-tl.hp-seen .hp-line .hp-fill{width:calc(100% - (100% + 16px) / 6 + 12px)}
+.hp-tl .hp-pt{position:relative;display:flex;flex-direction:column;gap:5px;min-width:0}
+.hp-tl .hp-pt::before{content:"";position:absolute;top:-26px;left:0;width:12px;height:12px;border-radius:50%;background:var(--surface);box-shadow:inset 0 0 0 2px var(--line-strong);transition:box-shadow .3s,background .3s}
+.hp-tl.hp-seen .hp-pt::before{background:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.hp-tl.hp-seen .hp-pt:last-child::before{background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.hp-tl .hp-pt .mono{font-size:13px;color:var(--mut)}
+.hp-tl .hp-pt b{font-weight:500;font-size:15.5px;letter-spacing:-.01em}
+.hp-tl .hp-pt span{font-size:13.5px;color:var(--mut)}
+.hp-tl .nt{margin-top:22px;font-size:13.5px;color:var(--mut);max-width:720px}
+
+/* facts */
+.hp-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:40px}
+.hp-fact{border-radius:20px;box-shadow:inset 0 0 0 1px var(--line);padding:26px;display:flex;flex-direction:column;gap:10px;background:var(--surface)}
+.hp-fact h3{font-size:19px;font-weight:500;letter-spacing:-.015em}
+.hp-fact p{font-size:15px;color:var(--ink2);line-height:1.5}
+.hp-fact .ui{margin-top:auto;padding-top:14px}
+.hp-vers{border-radius:12px;box-shadow:inset 0 0 0 1px var(--line);overflow:hidden;font-size:13px}
+.hp-vers div{display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 12px;border-top:1px solid var(--line2)}
+.hp-vers div:first-child{border-top:0}
+.hp-vers .mono{font-size:12px;color:var(--ink)}
+.hp-vers small{color:var(--mut);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hp-vers .lnk{font-size:12px;font-weight:400;color:var(--ink2)}
+.hp-fact .x-ev{padding:4px 0}
+.hp-fact .x-tlw{border-radius:12px;box-shadow:inset 0 0 0 1px var(--line);padding:8px 12px 8px 0}
+.hp-byo{display:flex;gap:8px;flex-wrap:wrap}
+.hp-byo span{display:inline-flex;align-items:center;gap:7px;height:30px;padding:0 11px;border-radius:8px;box-shadow:inset 0 0 0 1px var(--line);font-size:13px;color:var(--ink2)}
+
+/* pricing */
+.hp-plans{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:44px}
+.hp-plan{border-radius:20px;box-shadow:inset 0 0 0 1px var(--line);padding:26px 24px 24px;display:flex;flex-direction:column;gap:16px;background:var(--surface)}
+.hp-plan h3{font-size:16px;font-weight:500}
+.hp-plan .pr{display:flex;align-items:baseline;gap:8px}
+.hp-plan .pr b{font-size:44px;font-weight:440;letter-spacing:-.04em;line-height:1}
+.hp-plan .pr span{font-size:14px;color:var(--mut)}
+.hp-plan ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;font-size:14.5px;color:var(--ink2)}
+.hp-plan li{display:flex;gap:10px;align-items:baseline}
+.hp-plan li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--ink2);flex:none;transform:translateY(-2px)}
+.hp-plan li:first-child{color:var(--ink);font-weight:500}
+.hp-plan .btn{margin-top:auto;width:100%}
+.hp-plan .gb{border:1px solid var(--line-strong)}
+.hp-pnote{margin-top:18px;font-size:13.5px;color:var(--mut)}
+
+/* faq */
+.hp-faq{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:64px}
+.hp-faq details{border-top:1px solid var(--line);padding:4px 0}
+.hp-faq details:last-child{border-bottom:1px solid var(--line)}
+.hp-faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:16px;padding:18px 0;font-size:18px;font-weight:450;letter-spacing:-.012em}
+.hp-faq summary::-webkit-details-marker{display:none}
+.hp-faq summary::after{content:"";margin-left:auto;width:9px;height:9px;border-right:1.5px solid var(--mut);border-bottom:1.5px solid var(--mut);transform:rotate(45deg) translateY(-3px);transition:transform .25s;flex:none}
+.hp-faq details[open] summary::after{transform:rotate(225deg) translate(-2px,-1px)}
+.hp-faq details p{font-size:16px;line-height:1.55;color:var(--ink2);padding:0 40px 20px 0;max-width:680px}
+
+/* closing CTA and footer */
+.hp-end{margin-top:120px;border-radius:28px;background:var(--grain),var(--wash-hero);padding:88px 56px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px}
+.hp-end p{font-size:17px;color:var(--ink2)}
+.hp-foot{padding:72px 0 48px;margin-top:40px;border-top:1px solid var(--line)}
+.hp-foot .g{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:32px}
+.hp-foot .g p{font-size:15px;color:var(--ink2);margin-top:14px}
+.hp-foot h4{font-family:var(--mono);font-size:12px;font-weight:400;color:var(--mut);margin:0 0 14px}
+.hp-foot ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:14.5px;color:var(--ink2)}
+.hp-foot .small{margin-top:56px;font-size:12.5px;color:var(--mut2)}
+
+/* option switcher (review only, not part of the page) */
+.hp-opt{position:fixed;left:16px;bottom:16px;z-index:40;display:flex;gap:2px;padding:3px;border-radius:10px;background:var(--surface);box-shadow:var(--pop-shadow);font-size:12.5px}
+.hp-opt a{padding:6px 10px;border-radius:7px;color:var(--mut)}
+.hp-opt a.on{background:var(--sel);color:var(--ink);font-weight:500}
+.shooting .hp-opt{display:none}
+
+/* ===================== phone ===================== */
+@media (max-width:1100px){
+  .hero-b .hp-bgrid{grid-template-columns:minmax(0,1fr);min-height:0}
+  .hero-b .hp-bstage{position:relative;top:auto;bottom:auto;left:auto;right:auto;margin:8px 0 0 40px;padding:40px 0 0 40px;border-radius:28px 0 0 0}
+  .hero-b .hp-bwin{position:static;width:auto}
+  .hero-b .hp-bex{display:none}
+  .hero-b .hp-copy .hp-prog{display:none}
+  .hero-b .hp-bprog{display:block}
+  .hero-b .hp-bprog .hp-prog{max-width:none}
+  .hero-b .hp-copy{padding:56px 0 24px}
+  .hp-step{grid-template-columns:minmax(0,1fr);padding:44px;min-height:0}
+  .hp-moment,.hp-faq{grid-template-columns:minmax(0,1fr);gap:36px}
+  .hp-moment .txt{position:static}
+  .hp-plans{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:760px){
+  .hp-c{padding:0 16px}
+  .hp-links,.hp-nav .r .hp-login{display:none}
+  .hp-menu{display:inline-flex}
+  .hp-nav .hp-c{height:60px;gap:12px}
+  .hp-logo svg{height:19px}
+  .hp-hero{padding-top:40px}
+  .hp-hero h1{font-size:39px}
+  .hp-stage .hp-ex{top:7px;bottom:auto;right:14px}
+  .hp-step.test .fit[data-w="900"]{display:none}
+  .hero-a .hp-copy,.hero-a .hp-sub{text-align:left;align-items:flex-start}
+  .hero-a .hp-rot{justify-items:start}
+  .hp-sub{font-size:17px}
+  .hp-ctas .btn{flex:1}
+  .hero-a .hp-stage{margin-top:36px;padding:24px 0 0 16px;border-radius:20px}
+  .hero-b .hp-copy{padding:0 0 24px}
+  .hero-b .hp-bstage{margin:4px 0 0 16px;padding:24px 0 0 16px;border-radius:20px 0 0 0}
+  .hero-a .hp-winwrap{max-width:none}
+  .hp-win .win{border-top-right-radius:0;border-bottom-right-radius:0}
+  .hp-prog{grid-template-columns:minmax(0,1fr);gap:12px}
+  .hp-sec{padding-top:80px}
+  .hp-step{padding:28px 20px;border-radius:22px;gap:28px}
+  .hp-steps{gap:16px;margin-top:32px}
+  .hp-tr{padding:20px 18px}
+  .hp-tr .row{grid-template-columns:48px minmax(0,1fr)}
+  .hp-tr .row .tx{font-size:18px}
+  .hp-tr .row .mono{font-size:12px;padding-top:4px}
+  .hp-tl .hp-line{grid-template-columns:minmax(0,1fr);gap:18px;padding:0 0 0 28px}
+  .hp-tl .hp-line::before{left:5px;right:auto;top:0;bottom:0;width:2px;height:auto}
+  .hp-tl .hp-line .hp-fill{left:5px;top:0;width:2px!important;height:0;transition:height 2.4s cubic-bezier(.4,.1,.2,1)}
+  .hp-tl.hp-seen .hp-line .hp-fill{height:100%}
+  .hp-tl .hp-pt::before{top:3px;left:-28px}
+  .hp-facts,.hp-plans{grid-template-columns:minmax(0,1fr)}
+  .hp-faq summary{font-size:16.5px}
+  .hp-end{padding:56px 20px;border-radius:22px;margin-top:80px}
+  .hp-foot .g{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hp-foot .g>div:first-child{grid-column:1/-1}
+}
+@media (prefers-reduced-motion:reduce){
+  .hp-rot>span,.hp-slot,.hp-tl .hp-line .hp-fill,.hp-prog .hp-bar b{transition:none!important}
+  .x-ev.k-load .x-mk{animation:none}
+}
+</style>
+
+<script>document.documentElement.setAttribute("data-theme","light");document.body&&0;</script>
+<div>
+<a class="sr-only" href="#main">Skip to content</a>
+<header class="hp-nav" id="nav"></header>
+<main id="main">
+  <section class="hp-hero" id="hero" aria-labelledby="h1"></section>
+  <section class="hp-sec" id="how" aria-labelledby="how-h"><div class="hp-c" id="steps"></div></section>
+  <section class="hp-sec" id="example" aria-labelledby="moment-h"><div class="hp-c" id="moment"></div></section>
+  <section class="hp-sec" id="facts" aria-labelledby="facts-h"><div class="hp-c" id="factsc"></div></section>
+  <section class="hp-sec" id="pricing" aria-labelledby="pricing-h"><div class="hp-c" id="pricingc"></div></section>
+  <section class="hp-sec" id="questions" aria-labelledby="faq-h"><div class="hp-c" id="faqc"></div></section>
+  <div class="hp-c" id="endc"></div>
+</main>
+<footer class="hp-foot"><div class="hp-c" id="foot"></div></footer>
+<nav class="hp-opt" aria-label="Hero option (review only)"><a href="#heroa" id="opt-a">Hero A</a><a href="#herob" id="opt-b">Hero B</a></nav>
+
+<script>
+(function(){
+'use strict';
+var P = window.PAGE;
+var Q = new URLSearchParams(location.search);
+var HERO = (location.hash === '#herob' || (Q.get('hero') || '').toLowerCase() === 'b') ? 'b' : 'a';
+window.addEventListener('hashchange', function(){ location.reload(); });
+var RM = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (Q.get('shoot')) document.documentElement.classList.add('shooting');
+document.getElementById('opt-' + HERO).classList.add('on');
+var $ = function(s, r){ return (r || document).querySelector(s); };
+var $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+var esc = function(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); };
+var fill = function(s, o){ return s.replace(/\{(\w+)\}/g, function(_, k){ return o[k]; }); };
+
+/* ---------- icons and logo (from the v3 app) ---------- */
+var I = function(d){ return '<svg class="i" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + d + '</svg>'; };
+var IC = {
+  home: '<path d="M2.5 7 8 2.5 13.5 7v6.5h-4v-4h-3v4h-4z"/>',
+  sites: '<rect x="2" y="3" width="12" height="10" rx="2"/><path d="M2 6h12"/>',
+  tests: '<circle cx="8" cy="8" r="5.5"/><circle cx="8" cy="8" r="2"/>',
+  back: '<path d="M10 3 5 8l5 5"/>', arrow: '<path d="M3 8h10M9 4l4 4-4 4"/>',
+  search: '<circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 3 3"/>', plus: '<path d="M8 3v10M3 8h10"/>',
+  copy: '<rect x="5" y="5" width="8" height="8" rx="1.5"/><path d="M3 10V4a1 1 0 0 1 1-1h6"/>',
+  play: '<path d="m5.5 3.5 7 4.5-7 4.5z"/>', lock: '<rect x="3.5" y="7" width="9" height="6.5" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/>',
+  screen: '<rect x="1.5" y="3" width="13" height="10" rx="1.6"/><path d="M1.5 6h13M5 3v3"/>',
+  mic: '<rect x="6" y="2" width="4" height="8" rx="2"/><path d="M3.5 8a4.5 4.5 0 0 0 9 0M8 12.5V14"/>',
+  menu: '<path d="M2.5 5h11M2.5 11h11"/>', user: '<circle cx="8" cy="5.5" r="2.5"/><path d="M3 13.5a5 5 0 0 1 10 0"/>'
+};
+var LOGO = '<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="20 -710 2272.2 722"><path fill="currentColor" d="M20 0 276 -710H413L669 0H554L489 -185H199L135 0ZM233 -283H456L344 -607Z M951 12Q873 12 816.5 -22Q760 -56 729.5 -119Q699 -182 699 -266Q699 -350 729.5 -412.5Q760 -475 816 -509.5Q872 -544 948 -544Q1020 -544 1075 -510.5Q1130 -477 1160.5 -414Q1191 -351 1191 -262V-235H809Q813 -157 850.5 -118Q888 -79 952 -79Q999 -79 1030 -101Q1061 -123 1073 -160L1183 -153Q1162 -79 1100.5 -33.5Q1039 12 951 12ZM809 -315H1079Q1074 -386 1038.5 -420Q1003 -454 948 -454Q891 -454 854.5 -418.5Q818 -383 809 -315Z M1286 0V-532H1383L1387 -391L1378 -394Q1389 -466 1422.5 -499Q1456 -532 1513 -532H1564V-437H1513Q1473 -437 1446 -424Q1419 -411 1405.5 -384Q1392 -357 1392 -314V0Z M1847 12Q1771 12 1714 -22Q1657 -56 1626 -119Q1595 -182 1595 -266Q1595 -351 1626 -413Q1657 -475 1714 -509.5Q1771 -544 1847 -544Q1923 -544 1980 -509.5Q2037 -475 2068 -413Q2099 -351 2099 -266Q2099 -182 2068 -119Q2037 -56 1980 -22Q1923 12 1847 12ZM1847 -80Q1915 -80 1952 -129.5Q1989 -179 1989 -266Q1989 -353 1952 -402.5Q1915 -452 1847 -452Q1780 -452 1742.5 -402.5Q1705 -353 1705 -266Q1705 -179 1742.5 -129.5Q1780 -80 1847 -80Z"/><circle cx="2226.2" cy="-62" r="66" fill="#3478F6"/></svg>';
+var MARK = '<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="20 -710 823.5 714"><path fill="currentColor" d="M20 0 276 -710H413L669 0H554L489 -185H199L135 0ZM233 -283H456L344 -607Z"/><circle cx="777.5" cy="-62" r="66" fill="#3478F6"/></svg>';
+
+/* ---------- the example prototypes (the tester's content, from the v3 app: fixed colours) ---------- */
+var PHONE = '<div class="ph"><div class="ph-scr"><div class="ph-home"><div class="ph-status"><span>9:41</span><span>●●●</span></div><div class="ph-hi"><span class="pa">S</span><div><small>Good morning</small><b>Sam</b></div></div><div class="ph-bal"><small>Balance</small><b>£1,240.50</b><span>+£86.20 this week</span></div><div class="ph-acts"><div><i><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></i>Send</div><div><i><svg viewBox="0 0 16 16"><path d="M11 5 5 11M10 11H5V6"/></svg></i>Request</div><div><i><svg viewBox="0 0 16 16"><path d="M8 4v8M4 8h8"/></svg></i>Top up</div><div><i><svg viewBox="0 0 16 16"><circle cx="4" cy="8" r=".8"/><circle cx="8" cy="8" r=".8"/><circle cx="12" cy="8" r=".8"/></svg></i>More</div></div><div class="ph-sec">Recent<span>See all</span></div><div class="ph-row"><i style="background:#FFE1D2"></i><div><b>Coffee Lab</b><small>Today</small></div><b>−£4.20</b></div><div class="ph-row"><i style="background:#D7F0E2"></i><div><b>Salary</b><small>Mon</small></div><b>+£2,100.00</b></div><div class="ph-row"><i style="background:#DCE8FF"></i><div><b>Rail ticket</b><small>Sun</small></div><b>−£12.80</b></div><div class="ph-row"><i style="background:#EFE6FF"></i><div><b>Bookshop</b><small>Sat</small></div><b>−£18.00</b></div><div class="ph-tab"><span class="on">Home</span><span>Activity</span><span>Profile</span></div></div><div class="ph-scrim"></div><div class="ph-sheet"><div class="hd"></div><div class="ph-sec">More<span></span></div><div class="sr k"><i></i><b>Cards</b></div><div class="sr"><i></i>Statements</div><div class="sr"><i></i>Savings pots</div><div class="sr"><i></i>Help</div></div></div></div>';
+var PF = '<div class="pf"><div class="pf-top"><b>Kestrel</b><span>Work</span><span>About</span><span>Contact</span></div><h6>Product design for money, travel and health apps.</h6><p>A small studio in Leeds. Example.</p><div class="pf-grid"><i style="background:#E9E2D6"></i><i style="background:#1F2A44"></i><i style="background:#F2B8A0"></i><i style="background:#C9D8C5"></i></div></div>';
+var CO = '<div class="co"><div class="top">Paper &amp; Co<span>Basket (3)</span></div><div class="cob"><div><h6>Checkout</h6><div class="it"><i style="background:#FFE1D2"></i><div><b>Linen tote</b><small>Natural · 1</small></div><b>£28.00</b></div><div class="it"><i style="background:#D7F0E2"></i><div><b>Field notebook</b><small>A5 · 2</small></div><b>£14.00</b></div><div class="it"><i style="background:#DCE8FF"></i><div><b>Pencil set</b><small>6 pack</small></div><b>£6.00</b></div><div style="margin-top:14px" class="fld">Email</div><div class="fld">Card number</div></div><div class="sum"><div><span>Subtotal</span><span>£48.00</span></div><div><span>Delivery</span><span>Free</span></div><div class="tot"><span>Total</span><span>£48.00</span></div><div class="pay">Pay £48.00</div></div></div></div>';
+var CONTENT = { ph: PHONE, pf: PF, co: CO };
+function thumb(kind, w, h, scale, top){
+  var desk = kind !== 'ph';
+  return '<div class="th ' + (desk ? 'desk' : '') + '" style="width:' + w + 'px;height:' + h + 'px"><div class="sc" style="top:' + top + '%;transform:translateX(-50%) scale(' + scale + ')">' + CONTENT[kind] + '</div></div>';
+}
+
+/* ---------- waveform (seeded, so every render matches) ---------- */
+function rng(seed){ return function(){ seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }; }
+function waveBars(n, seed, played, quiet){
+  var r = rng(seed), s = '';
+  for (var i = 0; i < n; i++){
+    var h = quiet && quiet(i / n) ? 8 : Math.round(30 + r() * 64);
+    s += '<i class="' + (i < played ? 'p' : '') + '" style="height:' + h + '%"></i>';
+  }
+  return s;
+}
+var GL = function(fill){ return ' data-glass-v3="primary" data-fill="' + (fill || '#1D1D1F') + '"'; };
+var PAUSE = '<svg viewBox="0 0 10 10"><rect x="1.5" y="1" width="2.4" height="8" rx=".6"/><rect x="6.1" y="1" width="2.4" height="8" rx=".6"/></svg>';
+var PLAY = '<svg viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z"/></svg>';
+
+/* ===================== NAV ===================== */
+$('#nav').innerHTML = '<div class="hp-c"><a class="hp-logo" href="#" aria-label="Aero home">' + LOGO + '</a>' +
+  '<nav class="hp-links" aria-label="Main">' + P.nav.links.map(function(l){ return '<a href="' + l.href + '">' + esc(l.label) + '</a>'; }).join('') + '</nav>' +
+  '<div class="r"><a class="hp-login" href="' + P.nav.login.href + '">' + esc(P.nav.login.label) + '</a>' +
+  '<a class="btn sm hp-btn"' + GL() + ' href="' + P.nav.cta.href + '">' + esc(P.nav.cta.label) + '</a>' +
+  '<button class="hp-menu" aria-label="Menu" aria-expanded="false">' + I(IC.menu) + '</button></div></div>' +
+  '<nav class="hp-sheet" aria-label="Menu">' + P.nav.links.concat([P.nav.login]).map(function(l){ return '<a href="' + l.href + '">' + esc(l.label) + '</a>'; }).join('') + '</nav>';
+$('.hp-menu').addEventListener('click', function(){ var o = $('#nav').classList.toggle('open'); this.setAttribute('aria-expanded', o); });
+$$('.hp-sheet a').forEach(function(a){ a.addEventListener('click', function(){ $('#nav').classList.remove('open'); }); });
+addEventListener('scroll', function(){ $('#nav').classList.toggle('scrolled', scrollY > 8); }, { passive: true });
+
+/* ===================== HERO ===================== */
+var H = P.hero, L = P.loop, A = P.app;
+var fullH1 = H.lead + ' ' + H.rotate.slice(0, -1).join(', ') + ' or ' + H.rotate[H.rotate.length - 1] + '. ' + H.tail + '.';
+var rot = '<span class="hp-rot" aria-hidden="true">' + H.rotate.map(function(w, i){ return '<span class="' + (i === 0 ? 'on' : '') + '">' + esc(w) + '.</span>'; }).join('') + '</span>';
+var h1 = '<h1 id="h1"><span class="sr-only">' + esc(fullH1) + '</span><span aria-hidden="true"><span class="ln">' + esc(H.lead) + '</span><span class="ln">' + rot + '</span><span class="ln">' + esc(H.tail) + '<span class="hp-dot" aria-hidden="true"></span></span></span></h1>';
+var copy = '<div class="hp-copy"><span class="hp-eyebrow">' + esc(H.eyebrow) + '</span>' + h1 +
+  '<p class="hp-sub">' + esc(H.sub) + '</p>' +
+  '<div class="hp-ctas">' + H.ctas.map(function(c){ return '<a href="' + c.href + '" class="btn md hp-btn"' + (c.primary ? GL() : ' style="box-shadow:inset 0 0 0 1px var(--line-strong)"') + '>' + esc(c.label) + '</a>'; }).join('') + '</div>' +
+  '<p class="hp-note">' + esc(H.note) + '</p></div>';
+
+function evRow(e, extra){
+  if (e.day) return '<div class="x-day">' + esc(e.day) + '<span class="mono">' + esc(e.date) + '</span></div>';
+  var who = e.who ? '<span class="x-who"><span class="av ' + e.who[1] + '">' + e.who[0] + '</span>' + esc(e.who[2]) + '</span>' : '';
+  var act = e.act ? '<span class="gbtn">' + (/Copy/.test(e.act) ? I(IC.copy) : '') + esc(e.act) + '</span>' : '';
+  return '<div class="x-ev k-' + e.k + (extra || '') + '"' + (e.id ? ' id="' + e.id + '"' : '') + '><span class="x-t mono">' + e.t + '</span><span class="x-mk"></span><div class="x-evb"><div class="x-evh"><b>' + esc(e.h) + '</b>' + who + '</div><div class="x-evt">' + e.txt + '</div>' + (e.more || '') + '</div><div class="x-eva">' + act + '</div></div>';
+}
+function homeWindow(){
+  var sb = '<aside class="sb"><div class="sb-top"><span class="sb-logo">' + LOGO + '</span><span class="sb-mark">' + MARK + '</span><span class="sb-collapse" title="Hide sidebar">' + I(IC.back) + '</span></div>' +
+    '<nav class="sb-nav"><div class="sb-item on">' + I(IC.home) + '<span class="sb-l">Home</span></div><div class="sb-item">' + I(IC.sites) + '<span class="sb-l">Sites</span><span class="sb-ct" id="hp-sitect">' + A.sites.length + '</span></div><div class="sb-item">' + I(IC.tests) + '<span class="sb-l">Tests</span><span class="sb-ct">' + A.sidebarTests.length + '</span></div>' +
+    '<div class="sb-sub">' + A.sidebarTests.map(function(t, i){ return '<div class="sb-si"><span class="sb-st' + (i === 4 ? ' off' : '') + '"' + (i === 0 ? ' id="hp-sbst"' : '') + '></span><span class="sb-nm">' + esc(t) + '</span>' + (i === 0 ? '<span class="sb-t new hp-hide" id="hp-sbnew">1 new</span>' : '') + (/serious/.test(t) ? '<span class="sb-tag">Example</span>' : '') + '</div>'; }).join('') + '</div></nav>' +
+    '<div class="sb-foot"><div class="sb-plan"><div class="sb-ph"><span>' + A.plan.name + '</span><span class="sb-pu" id="hp-pu">' + A.plan.used + ' of ' + A.plan.of + '</span></div><i class="sb-meter"><b id="hp-meter" style="width:' + (A.plan.used / A.plan.of * 100) + '%;transition:width .6s"></b></i><small>Test sessions used</small></div>' +
+    '<div class="sb-acct"><span class="av m lg">' + A.account.initial + '</span><span class="sb-who"><b>' + esc(A.account.name) + '</b><small>' + esc(A.account.email) + '</small></span><span class="sb-ex">Example</span></div></div></aside>';
+  var t = L.tester, s = L.site;
+  var quote = '<div class="hp-q"><div class="qc"><span class="play">' + PLAY + '</span><div class="who"><span class="av ' + t.av + '">' + t.initial + '</span><b>' + esc(t.name) + '</b><span class="mono">' + L.quoteAt + '</span></div><q>' + esc(L.quote) + '</q></div></div>';
+  var sesEv = { id: 'hp-ses', t: L.sessionTime, k: 'proc', h: s.name, who: [t.initial, t.av, t.name], txt: '<span id="hp-sestxt">' + fill(L.arriving, t) + '</span>', more: '<div class="hp-slot" id="hp-qslot"><div>' + quote + '</div></div>', act: 'Watch' };
+  var pubEv = { id: 'hp-pub', t: L.publishTime, k: 'load', h: s.name, txt: '<span id="hp-pubtxt">' + esc(L.publishing) + '</span>', act: 'Copy address' };
+  var list = evRow(A.events[0]) +
+    '<div class="hp-slot" id="hp-sesslot"><div>' + evRow(sesEv) + '</div></div>' +
+    '<div class="hp-slot" id="hp-pubslot"><div>' + evRow(pubEv) + '</div></div>' +
+    A.events.slice(1).map(function(e){ return evRow(e); }).join('');
+  var mini = function(x){ return '<div class="x-mini">' + thumb(x.thumb, 150, 78, x.thumb === 'ph' ? 0.3 : 0.21, x.thumb === 'ph' ? 8 : 10) + '<div class="x-mm"><b>' + esc(x.name) + '</b><span class="addr">' + esc(x.addr) + '</span><span class="st live">Live</span></div></div>'; };
+  var pocketMini = '<div class="hp-slot" id="hp-siteslot"><div><div class="x-mini">' + thumb('ph', 150, 78, 0.3, 8) + '<div class="x-mm"><b>' + esc(s.name) + '</b><span class="addr">' + esc(s.addr) + '</span><span class="st live">Live</span></div></div></div></div>';
+  var tests = A.tests.map(function(x, i){
+    return '<div class="x-tline c">' + thumb(i === 2 ? 'co' : 'ph', 40, 32, i === 2 ? 0.06 : 0.09, 8) + '<div class="x-tn"><b>' + esc(x.name) + '</b><small' + (i === 0 ? ' id="hp-tsmall"' : '') + '>' + esc(x.small) + '</small></div><span class="sdots"' + (i === 0 ? ' id="hp-tdots"' : '') + '>' + x.dots.map(function(){ return '<i></i>'; }).join('') + '</span><span class="st live"' + (i === 0 ? ' id="hp-tst"' : '') + '>' + x.st + '</span></div>';
+  }).join('');
+  var right = '<div class="x-rc"><div class="hh"><h3>Sites</h3><span class="mono" id="hp-sitect2">' + A.sites.length + '</span><span class="r lnk">All sites ' + I(IC.arrow) + '</span></div><div class="x-mgrid">' + pocketMini + A.sites.map(mini).join('') + '</div>' +
+    '<div class="hh" style="margin-top:22px"><h3>Tests</h3><span class="mono">' + A.sidebarTests.length + '</span><span class="r lnk">All tests ' + I(IC.arrow) + '</span></div><div class="x-tlist c">' + tests + '</div></div>';
+  var main = '<div class="main"><div class="mhead"><span class="crumb"><b>Home</b></span><div class="r"><span class="gbtn ic">' + I(IC.search) + '</span><span class="gbtn">' + I(IC.plus) + 'New test</span><span class="btn g3 sm"' + GL() + '>' + I(IC.plus) + 'New site</span></div></div>' +
+    '<div class="mbody"><div class="x-homeA"><div><div class="hh"><h3>What’s new</h3><span class="mono">since you looked, ' + A.today.split(' ')[0] + ' 09:30</span><span class="r lnk">Mark all as seen</span></div><div class="x-tlw">' + list + '</div></div>' + right + '</div></div></div>';
+  return '<div class="win"><div class="win-bar"><span class="lights"><i></i><i></i><i></i></span><span class="win-url"><span>' + I(IC.lock) + esc(L.url) + '</span></span><span class="sp"></span></div><div class="app" style="--h:720px">' + sb + main + '</div></div>';
+}
+var prog = '<div class="hp-prog" aria-hidden="true">' + L.progress.map(function(p, i){ return '<div class="s" data-i="' + i + '"><div class="hp-bar"><b></b></div><div class="row"><b>' + esc(p.step) + '</b><span>' + esc(p.label) + '</span><span class="mono">' + p.time + '</span></div></div>'; }).join('') + '</div>';
+var win = '<div class="hp-win fit" data-w="1240" role="img" aria-label="The Aero app, Home: a site is published, then a tester\'s session arrives with her first quote. Example data."><div class="fitc">' + homeWindow() + '</div></div>';
+
+var hero = $('#hero');
+hero.classList.add('hero-' + HERO);
+if (HERO === 'a'){
+  hero.innerHTML = '<div class="hp-c">' + copy + '</div><div class="hp-c"><div class="hp-stage"><div class="hp-winwrap">' + win + '</div><span class="hp-ex">' + esc(H.exampleLabel) + '</span></div>' + prog + '</div>';
+} else {
+  hero.innerHTML = '<div class="hp-c"><div class="hp-bgrid">' + copy + '</div></div>' +
+    '<div class="hp-bstage"><div class="hp-bwin">' + win + '</div><span class="hp-ex hp-bex">' + esc(H.exampleLabel) + '</span></div>' +
+    '<div class="hp-c hp-bprog">' + prog + '</div>';
+  $('.hp-bgrid .hp-copy').insertAdjacentHTML('beforeend', prog);
+}
+
+/* rotating headline: calm crossfade, stops for reduced motion */
+(function(){
+  var items = $$('#hero .hp-rot>span');
+  if (RM || Q.get('still')) return;
+  var i = 0;
+  setInterval(function(){
+    var a = items[i]; i = (i + 1) % items.length; var b = items[i];
+    a.classList.remove('on'); a.classList.add('out');
+    b.classList.remove('out'); b.classList.add('on');
+    setTimeout(function(){ a.classList.remove('out'); }, 900);
+  }, H.rotateEveryMs);
+})();
+
+/* ===================== STEPS ===================== */
+var S = P.steps;
+function mkSite(){
+  return '<div class="mk mk-site">' + thumb('ph', 560, 250, 0.66, 8) + '<div class="meta"><span class="addr">' + esc(L.site.addr) + '</span><span class="v">v' + L.site.version + '</span><span class="st live">Live</span></div></div>';
+}
+function promptCard(st){
+  return '<div class="hp-prompt"><div class="ways">' + st.sources.map(function(x, i){ return '<span class="' + (i === 2 ? 'on' : '') + '">' + esc(x) + '</span>'; }).join('') + '</div>' +
+    '<h4>Copy this into the chat where you built it</h4><p class="pn">' + esc(st.promptNote) + '</p><div class="pr">' + esc(st.prompt) + '</div>' +
+    '<div class="row"><span class="btn g3 sm"' + GL() + '>' + I(IC.copy) + 'Copy prompt</span><span class="wait" id="hp-wait"><span class="dotload"></span>Waiting for your chat</span></div></div>';
+}
+function linkCard(st){
+  return '<div class="mk mk-link"><div class="l">Send this to your testers</div><div class="url">' + esc(st.link) + '<span class="btn g3 md"' + GL() + '>' + I(IC.copy) + 'Copy link</span></div><div class="rec"><span>' + I(IC.screen) + 'Their screen</span><span>' + I(IC.mic) + 'Their voice</span><span>No account</span></div></div>';
+}
+function sessionRow(){
+  var t = L.tester;
+  return '<div class="mk mk-row"><span class="av xl ' + t.av + '">' + t.initial + '</span><div class="w"><b>' + esc(t.name) + '</b><span>07:12 · 2 of 2 tasks</span></div><q>' + esc(L.quote) + '</q>' +
+    '<div class="c"><span class="tg issue"><b>Issue</b></span><b>2</b></div><div class="c"><span class="tg conf"><b>Confusion</b></span><b>1</b></div><div class="c"><span class="tg good"><b>Works well</b></span><b>2</b></div>' +
+    '<span class="btn g3 lg"' + GL() + '>' + I(IC.play) + 'Watch</span></div>';
+}
+function quoteCard(){
+  var t = L.tester;
+  return '<div class="mk mk-quote"><div class="top"><span class="play lg pause">' + PAUSE + '</span><div class="wave">' + waveBars(64, 7, 22) + '</div><span class="tc mono">' + L.quoteAt + '</span></div><q>' + esc(L.quote) + '</q>' +
+    '<div class="by"><span class="av lg ' + t.av + '">' + t.initial + '</span><b>' + esc(t.name) + '</b><span>Finding your cards</span><span class="r"><span class="tg issue"><b>Issue</b> <span class="sev">· Major</span> <span class="sev3 s2"><i></i><i></i><i></i></span></span></span></div></div>';
+}
+function player(){
+  var quiet = function(f){ return f < 0.035 || f > 0.83; };
+  return '<div class="mk mk-player"><div class="v"><div class="ph bare">' + PHONE.replace(/^<div class="ph">/, '').replace(/<\/div>$/, '') + '</div><span class="taskpill"><span class="dot"></span><span class="mono">Task 2</span>Find your cards</span></div>' +
+    '<div class="ctl"><span class="play lg pause">' + PAUSE + '</span><span class="tc mono">03:09 <span>/ 07:12</span></span><div class="tw"><div class="tline"><div class="lanes"><div class="ticks"></div><div class="tasks"><span class="task" style="left:4.17%;width:calc(31.94% - 3px)"><span class="mono">1</span>Send £20 to Sam</span><span class="task on" style="left:36.11%;width:calc(44.91% - 3px)"><span class="mono">2</span>Find your cards</span></div>' +
+    '<div class="wave">' + waveBars(110, 11, 48, quiet) + '</div><div class="marks"><span class="m good" style="left:16.67%"></span><span class="m issue" style="left:37.27%"></span><span class="m issue hot" style="left:43.52%"></span><span class="m good" style="left:58.33%"></span></div><span class="ph-line" style="left:43.75%"><b></b></span></div></div></div></div></div>';
+}
+var fitw = function(w, html){ return '<div class="fit" data-w="' + w + '"><div class="fitc">' + html + '</div></div>'; };
+var stepUI = {
+  publish: function(st){ return fitw(600, promptCard(st)) + fitw(560, mkSite()); },
+  test: function(st){ return fitw(600, linkCard(st)) + fitw(900, sessionRow()); },
+  review: function(){ return fitw(640, quoteCard()) + fitw(720, player()); }
+};
+$('#steps').innerHTML = '<div class="hp-sechead"><span class="hp-eyebrow">How it works</span><h2 id="how-h">' + S.map(function(s){ return esc(s.label); }).join(', ') + '<span class="hp-dot" aria-hidden="true"></span></h2></div>' +
+  '<div class="hp-steps">' + S.map(function(st){
+    return '<article class="hp-step ' + st.id + '" id="step-' + st.id + '"><div class="txt"><span class="hp-label">' + esc(st.label) + '</span><h3>' + esc(st.title) + '</h3><p>' + esc(st.line) + '</p></div><div class="ui">' + stepUI[st.id](st) + '</div></article>';
+  }).join('') + '</div>';
+
+/* ===================== MOMENT (C) + the line (D) ===================== */
+var M = P.moment;
+var words = [];
+var trRows = M.lines.map(function(l, li){
+  var ws = l.text.split(' ');
+  var tx = ws.map(function(w, wi){ words.push({ li: li, s: l.s + wi * 0.38 }); return '<span class="w" data-li="' + li + '">' + esc(w) + '</span>'; }).join(' ');
+  var tag = l.tag ? '<div class="tagline"><span class="tg ' + l.tag.kind + '"><b>' + esc(l.tag.word) + '</b> <span class="sev">· ' + esc(l.tag.sev) + '</span> <span class="sev3 s2"><i></i><i></i><i></i></span></span><span>' + esc(l.tag.title) + '</span></div>' : '';
+  return '<div class="row" data-li="' + li + '"><span class="mono">' + l.t + '</span><div><div class="tx">' + tx + '</div>' + tag + '</div></div>';
+}).join('');
+$('#moment').innerHTML = '<div class="hp-moment"><div class="txt"><span class="hp-eyebrow">' + esc(M.kicker) + '</span><h2 class="hp-h2" id="moment-h">' + esc(M.title) + '</h2><p>' + esc(M.body) + '</p>' +
+  '<div class="hp-who"><span class="av xl ' + M.who.av + '">' + M.who.initial + '</span><span><b>' + esc(M.who.name) + '</b><small>' + esc(M.who.meta) + '</small></span></div></div>' +
+  '<div class="hp-tr" id="hp-tr"><div class="playing"><span class="dotload"></span>' + esc(M.playing) + '</div><div class="top"><span class="play lg pause">' + PAUSE + '</span><div class="wave" id="hp-trwave">' + waveBars(72, 21, 0) + '</div><span class="tc" id="hp-trtc">' + M.from + '</span></div>' + trRows + '</div></div>' +
+  '<div class="hp-tl" id="hp-tl"><h3>' + esc(M.timelineTitle) + '<span class="hp-dot" aria-hidden="true"></span></h3><div class="hp-line"><span class="hp-fill"></span>' + M.timeline.map(function(p){ return '<div class="hp-pt"><span class="mono">' + p.t + '</span><b>' + esc(p.h) + '</b><span>' + esc(p.s) + '</span></div>'; }).join('') + '</div><p class="nt">' + esc(M.timelineNote) + '</p></div>';
+
+/* ===================== FACTS ===================== */
+var F = P.facts;
+var factUI = {
+  versions: '<div class="hp-vers"><div><span class="mono">v4</span><small>Today, 10:02 · from a prompt</small><span class="st live">Live</span></div><div><span class="mono">v3</span><small>Mon 20 Oct · pocket-v3.zip</small><span class="lnk">Roll back</span></div><div><span class="mono">v2</span><small>Fri 17 Oct · Figma link</small><span class="lnk">Roll back</span></div></div>',
+  offline: '<div class="x-tlw">' + evRow({ t: "Free", k: "soon", h: "Offline soon", txt: "<span class='mono'>pocket.aeroapp.ai</span> goes offline in 2 days." }) + '</div>',
+  none: '<div class="hp-byo"><span>' + I(IC.user) + 'A client</span><span>' + I(IC.user) + 'A friend</span><span>' + I(IC.user) + 'A classmate</span></div>'
+};
+$('#factsc').innerHTML = '<div class="hp-sechead"><h2 id="facts-h">' + esc(F.title) + '<span class="hp-dot" aria-hidden="true"></span></h2></div><div class="hp-facts">' + F.items.map(function(f){ return '<div class="hp-fact"><h3>' + esc(f.h) + '</h3><p>' + esc(f.p) + '</p><div class="ui">' + factUI[f.ui] + '</div></div>'; }).join('') + '</div>';
+
+/* ===================== PRICING ===================== */
+var PR = P.pricing;
+$('#pricingc').innerHTML = '<div class="hp-sechead"><span class="hp-eyebrow">Pricing</span><h2 id="pricing-h">' + esc(PR.title) + '</h2><p>' + esc(PR.line) + '</p></div><div class="hp-plans">' +
+  PR.plans.map(function(p, i){ return '<div class="hp-plan"><h3>' + esc(p.name) + '</h3><div class="pr"><b>' + p.price + '</b><span>' + esc(p.per) + '</span></div><ul>' + p.items.map(function(x){ return '<li>' + esc(x) + '</li>'; }).join('') + '</ul><a href="' + P.nav.cta.href + '" class="btn md hp-btn' + (i ? ' gb' : '') + '"' + (i ? '' : GL()) + '>' + esc(p.cta) + '</a></div>'; }).join('') +
+  '</div><p class="hp-pnote">' + esc(PR.note) + '</p>';
+
+/* ===================== FAQ ===================== */
+$('#faqc').innerHTML = '<div class="hp-faq"><div class="hp-sechead"><h2 id="faq-h">' + esc(P.faq.title) + '<span class="hp-dot" aria-hidden="true"></span></h2></div><div>' + P.faq.items.map(function(f, i){ return '<details' + (i === 0 ? ' open' : '') + '><summary>' + esc(f.q) + '</summary><p>' + esc(f.a) + '</p></details>'; }).join('') + '</div></div>';
+var ld = { "@context": "https://schema.org", "@graph": [
+  { "@type": "SoftwareApplication", "name": "Aero", "url": "https://aeroapp.ai/", "applicationCategory": "DesignApplication", "operatingSystem": "Web",
+    "offers": PR.plans.map(function(p){ return { "@type": "Offer", "name": p.name, "price": p.price.replace('$', ''), "priceCurrency": "USD" }; }) },
+  { "@type": "FAQPage", "mainEntity": P.faq.items.map(function(f){ return { "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } }; }) } ] };
+var ldS = document.createElement('script'); ldS.type = 'application/ld+json'; ldS.textContent = JSON.stringify(ld); document.head.appendChild(ldS);
+
+/* ===================== END + FOOTER ===================== */
+var C = P.cta;
+$('#endc').innerHTML = '<div class="hp-end"><h2 class="hp-h2">' + esc(C.title.replace(/\.$/, '')) + '<span class="hp-dot" aria-hidden="true"></span></h2><p>' + esc(C.line) + '</p><div class="hp-ctas"><a class="btn md hp-btn"' + GL() + ' href="' + P.nav.cta.href + '">' + esc(C.primary) + '</a><a class="btn md hp-btn" style="box-shadow:inset 0 0 0 1px var(--line-strong)" href="#example">' + esc(C.secondary) + '</a></div></div>';
+var FT = P.footer;
+$('#foot').innerHTML = '<div class="g"><div><a class="hp-logo" href="#" aria-label="Aero home">' + LOGO + '</a><p>' + esc(FT.line) + '</p></div>' + FT.cols.map(function(c){ return '<div><h4>' + esc(c.h) + '</h4><ul>' + c.links.map(function(l){ return '<li><a href="#">' + esc(l) + '</a></li>'; }).join('') + '</ul></div>'; }).join('') + '</div><p class="small">' + esc(FT.small) + '</p>';
+
+/* ===================== FIT: real components drawn at their own size, scaled to the column ===================== */
+function fitAll(){
+  var phone = innerWidth <= 760;
+  $$('.hp-win').forEach(function(w){ w.classList.toggle('compact', phone); var app = $('.app', w); if (app) app.classList.toggle('rail', phone); });
+  $$('.fit').forEach(function(f){
+    var c = f.firstElementChild, w = +f.dataset.w;
+    if (f.classList.contains('hp-win') && phone) w = 640;
+    c.style.width = w + 'px';
+    if (f.closest('.hp-bstage') && innerWidth > 1100){ c.style.zoom = 0.86; return; }
+    var avail = f.clientWidth;
+    c.style.zoom = Math.min(1, avail / w);
+  });
+}
+fitAll(); addEventListener('resize', fitAll);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitAll);
+
+/* ===================== HERO LOOP ===================== */
+var B = L.beats, timers = [];
+function at(ms, fn){ timers.push(setTimeout(fn, ms)); }
+function each(sel, fn){ $$(sel).forEach(fn); }
+function progress(n, frac){
+  each('.hp-prog .s', function(s){
+    var i = +s.dataset.i; s.classList.toggle('on', i <= n);
+    $('.hp-bar b', s).style.width = (i < n ? 100 : i === n ? frac : 0) + '%';
+  });
+}
+function setState(st){
+  var t = L.tester, s = L.site;
+  each('#hp-pubslot', function(e){ e.classList.toggle('in', st >= 1); });
+  each('#hp-pub', function(e){ e.className = 'x-ev ' + (st >= 2 ? 'k-pub' : 'k-load'); });
+  each('#hp-pubtxt', function(e){ e.innerHTML = st >= 2 ? fill(L.published, { addr: '<span class="mono">' + s.addr + '</span>' }) : esc(L.publishing); });
+  each('#hp-siteslot', function(e){ e.classList.toggle('in', st >= 2); });
+  each('#hp-sitect,#hp-sitect2', function(e){ e.textContent = A.sites.length + (st >= 2 ? 1 : 0); });
+  each('#hp-sesslot', function(e){ e.classList.toggle('in', st >= 3); });
+  each('#hp-ses', function(e){ e.className = 'x-ev ' + (st >= 4 ? 'k-ses' : 'k-proc'); });
+  each('#hp-sestxt', function(e){ e.textContent = fill(st >= 4 ? L.arrived : L.arriving, t); });
+  each('#hp-qslot', function(e){ e.classList.toggle('in', st >= 4); });
+  each('#hp-sbnew', function(e){ e.classList.toggle('hp-hide', st < 3); });
+  each('#hp-sbst', function(e){ e.classList.toggle('new', st >= 3); });
+  each('#hp-pu', function(e){ e.textContent = (A.plan.used + (st >= 3 ? 1 : 0)) + ' of ' + A.plan.of; });
+  each('#hp-meter', function(e){ e.style.width = ((A.plan.used + (st >= 3 ? 1 : 0)) / A.plan.of * 100) + '%'; });
+  each('#hp-tsmall', function(e){ e.textContent = st >= 3 ? '4 sessions · ' + L.sessionTime + ' today' : A.tests[0].small; });
+  each('#hp-tdots', function(e){ e.innerHTML = '<i></i><i></i><i></i>' + (st >= 3 ? '<i class="' + (st >= 4 ? 'nw' : 'pr') + '"></i>' : ''); });
+  each('#hp-tst', function(e){ e.className = st >= 3 ? 'st new' : 'st live'; e.textContent = st >= 3 ? '1 new' : 'Open'; });
+  var w = $('#hp-wait'); if (w){ w.className = 'wait' + (st >= 2 ? ' done' : ''); w.innerHTML = st >= 2 ? '<span class="st live">Live at ' + s.addr + '</span>' : '<span class="dotload"></span>Waiting for your chat'; }
+  if (st === 0) progress(-1, 0);
+  if (st === 1) progress(0, 45);
+  if (st === 2) progress(0, 100);
+  if (st === 3) progress(1, 100);
+  if (st === 4) progress(2, 100);
+}
+window.__heroState = setState;
+function runLoop(){
+  timers.forEach(clearTimeout); timers = [];
+  setState(0);
+  at(B.publish, function(){ setState(1); });
+  at(B.live, function(){ setState(2); });
+  at(B.session, function(){ setState(3); });
+  at(B.transcript, function(){ setState(4); });
+  at(B.hold, runLoop);
+}
+var fixed = Q.get('state');
+if (fixed !== null) setState(+fixed);
+else if (RM) setState(4);
+else runLoop();
+
+/* ===================== TRANSCRIPT PLAYBACK (a recorded session playing back; never live) ===================== */
+(function(){
+  var tr = $('#hp-tr'); if (!tr) return;
+  var ws = $$('.w', tr), rows = $$('.row', tr), bars = $$('#hp-trwave i'), tc = $('#hp-trtc');
+  var t0 = M.lines[0].s, t1 = 220;
+  function show(t){
+    var cur = -1;
+    ws.forEach(function(el, i){ var said = words[i].s <= t; el.classList.toggle('said', said); if (said) cur = i; });
+    ws.forEach(function(el, i){ el.classList.toggle('now', i === cur && t < t1 - 0.5); });
+    var li = cur >= 0 ? words[cur].li : -1;
+    rows.forEach(function(r, i){ r.classList.toggle('cur', i === li); });
+    var f = (t - t0) / (t1 - t0);
+    bars.forEach(function(b, i){ b.classList.toggle('p', i / bars.length <= f); });
+    var m = Math.floor(t / 60), s = Math.floor(t % 60);
+    tc.textContent = ('0' + m).slice(-2) + ':' + ('0' + s).slice(-2);
+  }
+  if (RM || Q.get('still')){ show(188.4); return; }
+  var t = t0, running = false;
+  function tick(){ if (!running) return; t += 0.12 * 2.4; if (t > t1 + 4) t = t0; show(Math.min(t, t1)); setTimeout(tick, 120); }
+  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ var was = running; running = e.isIntersecting; if (running && !was) tick(); }); }, { threshold: 0.3 });
+  io.observe(tr); show(t0);
+})();
+(function(){
+  var tl = $('#hp-tl'); if (!tl) return;
+  if (RM || Q.get('shoot')){ tl.classList.add('hp-seen'); return; }
+  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ tl.classList.add('hp-seen'); io.disconnect(); } }); }, { threshold: 0.4 });
+  io.observe(tl);
+})();
+})();
+</script>
+<script>window.GLASS_MODE='subtle';</script><script src="glass-v3.js"></script>
+</div>

@@ -1,0 +1,143 @@
+<title>Aero UI Directions</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+:root{--bg:#f6f6f3;--panel:#ffffff;--ink:#17181a;--mute:#62656b;--faint:#8b8e94;--line:#e3e3de;--blue:#2f6bff;--keep:#1d7a4a;--part:#9a6a00;--drop:#b3372f;--shadow:0 1px 2px rgba(20,22,26,.05),0 8px 24px rgba(20,22,26,.06);
+--A:#e9a27b;--B:#e2b33a;--C:#9a8f7a;--D:#2a2d33;--E:#2f6bff;--T:#8b8e94;--K:#5b5fd6}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121315;--panel:#1b1c1f;--ink:#ecece8;--mute:#a3a6ad;--faint:#7a7d84;--line:#2c2e33;--blue:#6b95ff;--keep:#58c48b;--part:#e0b44f;--drop:#ef7c73;--shadow:none;--D:#cfd2d8;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121315;--panel:#1b1c1f;--ink:#ecece8;--mute:#a3a6ad;--faint:#7a7d84;--line:#2c2e33;--blue:#6b95ff;--keep:#58c48b;--part:#e0b44f;--drop:#ef7c73;--shadow:none;--D:#cfd2d8;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 Geist,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;margin:0}
+.wrap{max-width:1680px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-weight:500;letter-spacing:-.01em;text-wrap:balance;margin:0}
+.mono{font-family:"Geist Mono",ui-monospace,monospace}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.top{padding-block:56px 32px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:48px;align-items:start}
+.top h1{font-size:44px;line-height:1.08}
+.top h1 b{font-weight:500;color:var(--blue)}
+.kicker{font:500 12px/1 "Geist Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin:0 0 18px}
+.intro p{max-width:62ch;color:var(--mute);margin:14px 0 0}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+.box h4{margin:0 0 10px;font:500 12px/1 "Geist Mono",monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.box ul{margin:0;padding-left:18px}.box li{margin:4px 0}
+.side{display:grid;gap:14px}
+nav.jump{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-block:1px solid var(--line)}
+nav.jump .wrap{display:flex;gap:4px;overflow-x:auto;padding-block:10px;align-items:center}
+nav.jump a{color:var(--ink);text-decoration:none;padding:6px 11px;border-radius:8px;white-space:nowrap;font-size:14px}
+nav.jump a:hover{background:var(--panel)}
+.filt{margin-left:auto;display:flex;gap:4px;padding-left:12px}
+.filt button{font:500 12px/1 "Geist Mono",monospace;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:7px;padding:7px 9px;cursor:pointer}
+.filt button[aria-pressed="false"]{opacity:.4}
+.lay{margin-left:10px;font:500 12px/1 'Geist Mono',monospace;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:7px;padding:7px 10px;cursor:pointer;white-space:nowrap}.lay[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.sec{padding-block:56px 8px;scroll-margin-top:60px}
+.sech{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 18px;align-items:baseline;margin-bottom:20px}
+.num{grid-row:span 2;font:500 13px/1 "Geist Mono",monospace;color:var(--faint);margin:0}
+.sech h2{font-size:30px}
+.q{margin:0;color:var(--mute);max-width:80ch}
+.take{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin:0 0 22px;max-width:1000px}
+.take h4{margin:0 0 6px;font:500 12px/1 "Geist Mono",monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--blue)}
+.take p{margin:6px 0 0}
+.tiles{display:grid;grid-template-columns:minmax(0,1fr);gap:28px}
+body.two .tiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+body.two .talk .cols{grid-template-columns:1fr}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;min-width:0;overflow:hidden}
+.tile[hidden]{display:none!important}
+.tile header{display:flex;align-items:center;gap:10px;padding:14px 18px 12px}
+.tile h3{font-size:16px}
+.tk{font:600 12px/1 "Geist Mono",monospace;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;color:#fff;flex:none}
+.tk-A{background:var(--A)}.tk-B{background:var(--B);color:#1a1a1a}.tk-C{background:var(--C)}.tk-D{background:var(--D);color:var(--bg)}.tk-E{background:var(--E)}.tk-T{background:var(--T)}.tk-K{background:var(--K)}
+.pics{display:grid;gap:14px;padding:4px 12px 0}
+.pics figure{margin:0}.pics figcaption{font:500 11px/1.3 'Geist Mono',monospace;color:var(--faint);margin:2px 2px 6px}
+.shot{all:unset;cursor:zoom-in;display:block;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.shot:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.shot img{display:block;width:100%;height:auto}
+.noimg{border:1px dashed var(--line);border-radius:10px;padding:40px 16px;text-align:center;color:var(--faint)}
+.talk{padding:2px 18px 12px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:18px;align-items:start}
+body.two .talk{grid-template-columns:1fr}
+.talk .cols:only-child{grid-column:1/-1}
+.idea{margin:0 0 10px;color:var(--mute)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cols h4{margin:0 0 4px;font:500 11px/1 "Geist Mono",monospace;letter-spacing:.06em;text-transform:uppercase}
+.cols div:first-child h4{color:var(--keep)}.cols div:last-child h4{color:var(--drop)}
+.cols ul{margin:0;padding-left:16px;font-size:14px}.cols li{margin:3px 0}
+.vote{display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:12px 18px 16px;border-top:1px solid var(--line);margin-top:14px}
+.vq{font:500 11px/1 "Geist Mono",monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-right:4px}
+.vote button{font:inherit;font-size:13px;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:5px 12px;cursor:pointer}
+.vote button[aria-pressed="true"][data-c="keep"]{background:var(--keep);border-color:var(--keep);color:#fff}
+.vote button[aria-pressed="true"][data-c="part"]{background:var(--part);border-color:var(--part);color:#fff}
+.vote button[aria-pressed="true"][data-c="drop"]{background:var(--drop);border-color:var(--drop);color:#fff}
+.vote input{flex:1 1 200px;min-width:0;font:inherit;font-size:13px;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:8px;padding:6px 10px}
+.saved{font-size:12px;color:var(--faint)}
+.end{padding-block:56px 80px}
+.end a{color:var(--blue)}
+.end ol{max-width:80ch;padding-left:20px}.end li{margin:8px 0}
+#lb{position:fixed;inset:0;z-index:20;background:rgba(10,11,13,.86);overflow:auto;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) 16px max(16px,env(safe-area-inset-left,0px))}
+#lb img{display:block;max-width:100%;margin:0 auto;border-radius:8px;background:#fff}
+#lb button{position:sticky;top:0;float:right;font:inherit;background:#fff;color:#111;border:0;border-radius:999px;padding:8px 14px;cursor:pointer;margin-bottom:8px}
+#tally{font-size:14px}
+#tally p{margin:4px 0}
+@media (max-width:1000px){.top{grid-template-columns:1fr}.tiles,body.two .tiles{grid-template-columns:1fr}.talk{grid-template-columns:1fr}}
+@media (max-width:520px){.top h1{font-size:32px}.cols{grid-template-columns:1fr}.sech h2{font-size:24px}}
+</style>
+
+<header class="wrap top">
+  <div class="intro">
+    <p class="kicker">Aero · step 5a · UI directions</p>
+    <h1>Every main screen, in every direction. <b>Pick what works</b> before the components.</h1>
+    {{INTRO}}
+  </div>
+  <div class="side">
+    <div class="box"><h4>Who looked at it</h4><ul>{{ROLES}}</ul></div>
+    <div class="box"><h4>Banned: looks AI-made</h4><ul>{{PATTERNS}}</ul></div>
+    <div class="box"><h4>Your calls so far</h4><div id="tally"><p class="saved">Mark tiles Keep, Parts of it or Drop. I read them back before the next round.</p></div></div>
+  </div>
+</header>
+
+<nav class="jump" aria-label="Sections"><div class="wrap">{{NAV}}
+  <span class="filt" role="group" aria-label="Show directions">
+    <button data-f="A" aria-pressed="true">A</button><button data-f="B" aria-pressed="true">B</button><button data-f="C" aria-pressed="true">C</button><button data-f="D" aria-pressed="true">D</button><button data-f="E" aria-pressed="true">E</button><button data-f="T" aria-pressed="true">Today</button>
+  </span><button type="button" id="two" class="lay" aria-pressed="false">Side by side</button></div></nav>
+
+<main class="wrap">
+{{SECTIONS}}
+<section class="end" id="next"><p class="kicker">What I would do next</p><h2>My read, for discussion</h2><ol>{{RECOMMEND}}</ol>
+<div class="box" style="margin-top:28px;max-width:900px"><h4>Live pages (real glass, hover, motion)</h4><p style="margin:0">Open each team's full page: <a href="live/studio.html">A · Studio</a> · <a href="live/colour.html">B · Colour</a> · <a href="live/story.html">C · Story</a> · <a href="live/replay.html">D · Replay</a> · <a href="live/kit.html">Buttons and logo</a> · <a href="live/kit2.html">Buttons in the app</a>. Earlier boards: round 5 mockups and the app UI round are linked in the playbook.</p></div></section>
+</main>
+
+<div id="lb" hidden><button type="button">Close</button><img alt=""></div>
+
+<script>
+(function(){
+  var lb=document.getElementById('lb'),lbi=lb.querySelector('img'),opener=null;
+  document.addEventListener('click',function(ev){var b=ev.target.closest('.shot');if(!b)return;opener=b;lbi.src=b.dataset.full;lb.hidden=false;lb.scrollTop=0;lb.querySelector('button').focus();});
+  function close(){lb.hidden=true;lbi.removeAttribute('src');if(opener)opener.focus();}
+  lb.querySelector('button').onclick=close;lb.addEventListener('click',function(e){if(e.target===lb)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb.hidden)close();});
+
+  var hidden={};try{hidden=JSON.parse(localStorage.getItem('aeui-x-filter')||'{}')}catch(e){}
+  function applyF(){document.querySelectorAll('.filt button').forEach(function(b){b.setAttribute('aria-pressed',hidden[b.dataset.f]?'false':'true')});document.querySelectorAll('.tile').forEach(function(t){var k=t.dataset.k;t.hidden=!!hidden[k==='K'?'_':k]})}
+  document.querySelectorAll('.filt button').forEach(function(b){b.onclick=function(){hidden[b.dataset.f]=!hidden[b.dataset.f];try{localStorage.setItem('aeui-x-filter',JSON.stringify(hidden))}catch(e){}applyF()}});applyF();
+
+  var tw=document.getElementById('two');function setTwo(on){document.body.classList.toggle('two',on);tw.setAttribute('aria-pressed',on?'true':'false');try{localStorage.setItem('aeui-x-two',on?'1':'0')}catch(e){}}
+  var two0=false;try{two0=localStorage.getItem('aeui-x-two')==='1'}catch(e){}setTwo(two0);tw.onclick=function(){setTwo(!document.body.classList.contains('two'))};
+  var state={},db=null;
+  var names={};document.querySelectorAll('.tile').forEach(function(t){var s=t.closest('.sec');names[t.querySelector('.vote').dataset.v]=s.querySelector('h2').textContent+': '+t.querySelector('h3').textContent});
+  function paint(){
+    document.querySelectorAll('.vote').forEach(function(v){var s=state[v.dataset.v]||{};v.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-pressed',s.call===b.dataset.c?'true':'false')});var i=v.querySelector('input');if(document.activeElement!==i)i.value=s.note||''});
+    var c={keep:[],part:[],drop:[]};Object.keys(state).forEach(function(k){var s=state[k];if(s.call&&c[s.call])c[s.call].push(names[k]||k)});
+    var t=document.getElementById('tally');t.textContent='';
+    var n=c.keep.length+c.part.length+c.drop.length;
+    if(!n){var p=document.createElement('p');p.className='saved';p.textContent=db?'Nothing marked yet. Your marks are saved for me to read.':'Mark tiles Keep, Parts of it or Drop. (Saving needs you signed in to claude.ai; otherwise tell me in chat.)';t.appendChild(p);return}
+    [['keep','Keep'],['part','Parts of it'],['drop','Drop']].forEach(function(x){if(!c[x[0]].length)return;var p=document.createElement('p');p.innerHTML='<b></b> ';p.querySelector('b').textContent=x[1]+' ('+c[x[0]].length+'):';p.appendChild(document.createTextNode(c[x[0]].join(' · ')));t.appendChild(p)});
+  }
+  function save(id){var s=state[id]||{};if(!db)return;db.collection('votes').doc(id).set({call:s.call||'',note:s.note||'',at:Date.now()}).catch(function(){});}
+  document.querySelectorAll('.vote').forEach(function(v){
+    var id=v.dataset.v,tm;
+    v.querySelectorAll('button').forEach(function(b){b.onclick=function(){var s=state[id]=state[id]||{};s.call=s.call===b.dataset.c?'':b.dataset.c;paint();save(id)}});
+    var i=v.querySelector('input');i.addEventListener('input',function(){var s=state[id]=state[id]||{};s.note=i.value;clearTimeout(tm);tm=setTimeout(function(){save(id);paint()},700)});
+  });
+  paint();
+  if(window.claude&&window.claude.use){window.claude.use('db').then(function(d){if(!d)return;db=d;paint();d.collection('votes').onSnapshot(function(snap){snap.docs.forEach(function(x){var v=x.data()||{};var cur=state[x.id]||{};state[x.id]={call:v.call||'',note:(document.activeElement&&document.activeElement.closest('[data-v="'+x.id+'"]'))?cur.note:(v.note||'')}});paint()},function(){})}).catch(function(){})}
+})();
+</script>
