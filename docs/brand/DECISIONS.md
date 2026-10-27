@@ -1,6 +1,6 @@
 ---
 brand-sync: figmaApp docs/brand is the source. Copy this file unchanged to aero-landing-page/docs/brand/.
-version: 2026-10-26.1
+version: 2026-10-26.2
 ---
 
 # Aero brand and product decisions
@@ -265,3 +265,8 @@ Rounds named: 1 = round 5 A (liked), 2 = rework on round 5 A's structure, 3 = th
 ## 21 Oct 2026: repair
 - AI back on OpenRouter with a fallback list (GLM flash, then Qwen flash); synthesis runs Qwen first.
 - Transcription runs once per session (transaction claim).
+
+## 26 Oct 2026: site tests in one tab
+- Site tests run in one tab for sites Aero hosts: the site sits in a full-viewport frame, one Start press shares this tab (Chrome's "share this tab" prompt, no Window or Screen option, no macOS Screen Recording dialog) and asks for the microphone.
+- The two-tab flow stays only as a fallback (test page not on an aeroapp.ai host, or a browser that is not Chromium), and asks for tabs only.
+- Setup labels are sentence case; "Customise" not "Customize"; "From: <site>" appears once (the header).
