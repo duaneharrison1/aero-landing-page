@@ -280,7 +280,7 @@ Rounds named: 1 = round 5 A (liked), 2 = rework on round 5 A's structure, 3 = th
 - Onboarding popup: one design for everyone (no layout A/B), "Figmafolio, upgraded" upsell copy, video zoomed in.
 - Tester UI matches the website demo: a separate glass "Recording" pill, the frosted task panel, flat switches on settings pages.
 - A silent session says "Nothing was said", never "Transcript arriving".
-- New site page: heading stays "How did you make it?"; tiles in this order: Upload HTML, Claude or ChatGPT, Figma. Tiles on top, the chosen way below, fields and "What happens next" in the right column; no Back or Close.
+- New site page: heading "How is your site made?" (neutral, not conversational), no subtitle; tiles in this order: Upload HTML, Claude or ChatGPT, Figma. Tiles on top, the chosen way below, fields and "What happens next" in the right column; no Back or Close.
 - The prompt path needs no name: the site keeps its generated address and can be renamed later. Say "prompt", not "agent", in the UI.
 - Drafts: only saved after real input, shown in one "Unfinished" row, never as cards in the Sites grid. Bigger site cards, closer to the demo.
 - Work runs on Sonnet agents by default, conservative with tokens.
