@@ -1,6 +1,6 @@
 ---
 brand-sync: figmaApp docs/brand is the source. Copy this file unchanged to aero-landing-page/docs/brand/.
-version: 2026-10-26.2
+version: 2026-10-26.3
 ---
 
 # Aero brand and product decisions
@@ -270,3 +270,17 @@ Rounds named: 1 = round 5 A (liked), 2 = rework on round 5 A's structure, 3 = th
 - Site tests run in one tab for sites Aero hosts: the site sits in a full-viewport frame, one Start press shares this tab (Chrome's "share this tab" prompt, no Window or Screen option, no macOS Screen Recording dialog) and asks for the microphone.
 - The two-tab flow stays only as a fallback (test page not on an aeroapp.ai host, or a browser that is not Chromium), and asks for tabs only.
 - Setup labels are sentence case; "Customise" not "Customize"; "From: <site>" appears once (the header).
+
+## 26 Oct 2026: core pages, Figma and tests (later the same day)
+- Test page tabs: Sessions, Insights, Setup. No Share tab.
+- Site page becomes one page (sections, not tabs); old tab links scroll to their section.
+- /t/ short test links: low priority, in TODO.
+- Figma route: paste the link first; converting and the plugin sit under "Other ways". One Figma link to start; screen-size links later in Settings.
+- Guide people to set Figma sharing to "Anyone with the link can view" so testers need no Figma account. Figma breakpoints for Aero: later, in TODO.
+- Onboarding popup: one design for everyone (no layout A/B), "Figmafolio, upgraded" upsell copy, video zoomed in.
+- Tester UI matches the website demo: a separate glass "Recording" pill, the frosted task panel, flat switches on settings pages.
+- A silent session says "Nothing was said", never "Transcript arriving".
+- New site page: heading "How is your site made?" (neutral, not conversational), no subtitle; tiles in this order: Upload HTML, Claude or ChatGPT, Figma. Tiles on top, the chosen way below, fields and "What happens next" in the right column; no Back or Close.
+- The prompt path needs no name: the site keeps its generated address and can be renamed later. Say "prompt", not "agent", in the UI.
+- Drafts: only saved after real input, shown in one "Unfinished" row, never as cards in the Sites grid. Bigger site cards, closer to the demo.
+- Work runs on Sonnet agents by default, conservative with tokens.
