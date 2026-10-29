@@ -1,6 +1,6 @@
 ---
 brand-sync: figmaApp docs/brand is the source. Copy this file unchanged to aero-landing-page/docs/brand/.
-version: 2026-10-26.3
+version: 2026-10-28.1
 ---
 
 # Aero brand and product decisions
@@ -269,6 +269,7 @@ Rounds named: 1 = round 5 A (liked), 2 = rework on round 5 A's structure, 3 = th
 ## 26 Oct 2026: site tests in one tab
 - Site tests run in one tab for sites Aero hosts: the site sits in a full-viewport frame, one Start press shares this tab (Chrome's "share this tab" prompt, no Window or Screen option, no macOS Screen Recording dialog) and asks for the microphone.
 - The two-tab flow stays only as a fallback (test page not on an aeroapp.ai host, or a browser that is not Chromium), and asks for tabs only.
+- **One tester panel only (28 Oct).** There must never be a second or backup panel. In a one-tab test the panel is drawn on the test page above the frame (movable frosted glass, tasks, end the test), so it survives outside links, 404s and sites that rewrite their own page, and it is in the tab recording. The site's overlay only reports page loads there; it draws a panel only in the two-tab fallback. The panel starts bottom left. Board with every state and the open picks: `app-ui/tester-panel.html`.
 - Setup labels are sentence case; "Customise" not "Customize"; "From: <site>" appears once (the header).
 
 ## 26 Oct 2026: core pages, Figma and tests (later the same day)
