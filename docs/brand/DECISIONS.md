@@ -1,11 +1,20 @@
 ---
 brand-sync: figmaApp docs/brand is the source. Copy this file unchanged to aero-landing-page/docs/brand/.
-version: 2026-10-28.1
+version: 2026-11-03.1
 ---
 
 # Aero brand and product decisions
 
 The running log of what Duane decided, newest first. Add a line whenever he decides something; never delete a line, strike it through and say what replaced it. The full evidence is in `research/conversation-audit.md`.
+
+## 3 Nov 2026: the free plan, offline sites and upgrade routes
+- The free plan's 7 days start with the project (the first site going live), not at sign-up. Figmafolio and Aero count the same way, everywhere: the site gates, the dashboards, Settings and the cleanup job that deletes old test sessions.
+- One rule for who is online, in every product and on every address (Figma sites, HTML sites, custom domains): a paid subscription (active, trialing or past due), a one-time payment, or an admin plan override on a paid tier keeps a site online. A "free" override never takes a paying customer offline.
+- One set of words on every "unavailable" page in both brands: "This site is unavailable. Please contact the site owner for access to this content." Each brand keeps its own look. The custom-domain page gets the branded page too.
+- Owner-facing word is "offline" in both brands (Figmafolio's bar said "private").
+- Aero's note to the owner on their own Free site is an Aero bar (days left, and offline), and its Upgrade opens Settings' plan picker, not Figmafolio billing.
+- Aero Sites cards and the site page say "Offline: free plan ended" and "Free plan: N days left" instead of "Live".
+- The Figmafolio dashboard tile follows the Aero card layout in Figmafolio's own styles (issue 305): the preview opens the site's settings, the live address is a link shown as figmafolio.com/slug, the menu sits on the preview, an offline tile links Upgrade.
 
 ## 26 Oct 2026: after the app phases
 - Match the product demo in the app: chevron breadcrumbs, sessions easy to find ("N new" in the sidebar, tests open on Sessions), Test this site.
