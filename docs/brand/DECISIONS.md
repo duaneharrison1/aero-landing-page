@@ -1,6 +1,6 @@
 ---
 brand-sync: figmaApp docs/brand is the source. Copy this file unchanged to aero-landing-page/docs/brand/.
-version: 2026-11-04.1
+version: 2026-11-04.2
 ---
 
 # Aero brand and product decisions
@@ -11,7 +11,9 @@ The running log of what Duane decided, newest first. Add a line whenever he deci
 - One logic for Figmafolio and Aero, two looks: converting links, the sharing check, the polling guide and all the words live once (`utils/figmaPaste.js`, `useFigmaLinkRows.js`, `useSharePolling.js`, `figmaLinkCopy.js`). Each brand has its own note and guide (Aero's: `AeroFigmaLinkNote`, `AeroShareGuideModal`, `AeroFigmaLinkField`).
 - A pasted design, file or branch link is turned into a prototype link for the user, with a quiet line that says so and no Undo. Converted links fit to width, like every pasted prototype link. A page-only link gets no start point.
 - The sharing check runs for one site at a time: when a link is pasted, when the owner opens that site's settings page, and while the guide is open. Never from the dashboard or in bulk, so an admin with 50 sites does not send 50 requests. It never blocks Save or Preview, and shows nothing when it cannot run.
-- One animated guide, not two videos: share, Anyone, View, copy link. It checks again by itself and closes when the prototype is shared, so there is no "check again" to press. It uses Figma's own screens with an outline on top, not a redrawn Figma.
+- One animated guide, not two videos: open Share, Anyone, View, Save, then come back. There is no copy and paste step, because the link does not change. It checks again by itself (every few seconds, when the tab regains focus, and once more when the guide is closed) and closes when the prototype is shared. It draws a simplified share dialog in HTML and CSS (`ShareDialogMock`), with the person's own file name and account name, not screenshots of Figma.
+- Figma shares the design file and the prototype separately (Present, then Share prototype). The guide says so, and tells people who see no access options there to set it from the file's Share instead. The check always tests the prototype link, so it is the judge either way.
+- A Figma site's own page shows the live prototype, not the stored snapshot (which is only the file's cover thumbnail and does not follow the link). Snapshots stay in lists.
 - Figmafolio keeps its own save code for now. The shared embed helper adds a second scaling to responsive links, so one helper for both brands waits until that difference is a decision (frozen in `figmaEmbedUrl.parity.test.js`).
 
 ## 3 Nov 2026: the free plan, offline sites and upgrade routes
