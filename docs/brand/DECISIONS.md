@@ -1,6 +1,6 @@
 ---
 brand-sync: figmaApp docs/brand is the source. Copy this file unchanged to aero-landing-page/docs/brand/.
-version: 2026-11-04.6
+version: 2026-11-04.7
 ---
 
 # Aero brand and product decisions
@@ -16,6 +16,7 @@ The running log of what Duane decided, newest first. Add a line whenever he deci
 - A Figma site's own page shows the live prototype, not the stored snapshot (which is only the file's cover thumbnail and does not follow the link). Snapshots stay in lists until they are captured from the live page.
 - Breakpoints (Figmafolio and Aero, one editor): a new site shows one row, "All screens". "Add breakpoint" opens a short menu (Phone, Tablet, Large desktop, Custom width). Rows run smallest first (Phone on top, as before); the biggest row is the one the others borrow from, with no "primary" label. (Webflow and Framer list largest first; we kept our existing order.) An empty row says "Same as Desktop" (clear the field to go back to that; there is no Reset button). Every width chip is a visible, editable box, including the smallest row's "up to 767px", which moves the start of the row above it. Adding a Tablet puts it in the middle and moves Desktop up to 1024px, so nothing changes for visitors until a link is pasted. A width can be used once; making a row bigger than the next one moves it. The phone link's help says to copy the link to the phone flow's starting frame in Figma: sharing never mentions flows. The mobile editor keeps its own rows for now.
 - A Figma site's thumbnail on the Sites list is a capture of its live page (the saved links are part of the signature, so a link change recaptures), falling back to Figma's file cover when the page capture fails or is blank. Figma tests keep the file cover.
+- A site's own page shows the stored snapshot first (a screenshot of the real page at desktop size, the same picture as the list), not the live iframe: it opens instantly and has the shape a visitor sees. "Try it live" swaps in the iframe; a small line says how fresh the picture is ("Preview updated 2 minutes ago", "Updating preview…") and "Refresh preview" asks for a new one. Without a snapshot (new sites, password-protected sites) the live site shows. Same for HTML and Figma sites.
 - The Sites list shows the newest change first (updated, else created), not alphabetical.
 - Figmafolio keeps its own save code for now. The shared embed helper adds a second scaling to responsive links, so one helper for both brands waits until that difference is a decision (frozen in `figmaEmbedUrl.parity.test.js`).
 
