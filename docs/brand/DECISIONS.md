@@ -1,11 +1,18 @@
 ---
 brand-sync: figmaApp docs/brand is the source. Copy this file unchanged to aero-landing-page/docs/brand/.
-version: 2026-11-03.1
+version: 2026-11-04.1
 ---
 
 # Aero brand and product decisions
 
 The running log of what Duane decided, newest first. Add a line whenever he decides something; never delete a line, strike it through and say what replaced it. The full evidence is in `research/conversation-audit.md`.
+
+## 4 Nov 2026: Figma links (issue 304, "Prototype not found")
+- One logic for Figmafolio and Aero, two looks: converting links, the sharing check, the polling guide and all the words live once (`utils/figmaPaste.js`, `useFigmaLinkRows.js`, `useSharePolling.js`, `figmaLinkCopy.js`). Each brand has its own note and guide (Aero's: `AeroFigmaLinkNote`, `AeroShareGuideModal`, `AeroFigmaLinkField`).
+- A pasted design, file or branch link is turned into a prototype link for the user, with a quiet line that says so and no Undo. Converted links fit to width, like every pasted prototype link. A page-only link gets no start point.
+- The sharing check runs for one site at a time: when a link is pasted, when the owner opens that site's settings page, and while the guide is open. Never from the dashboard or in bulk, so an admin with 50 sites does not send 50 requests. It never blocks Save or Preview, and shows nothing when it cannot run.
+- One animated guide, not two videos: share, Anyone, View, copy link. It checks again by itself and closes when the prototype is shared, so there is no "check again" to press. It uses Figma's own screens with an outline on top, not a redrawn Figma.
+- Figmafolio keeps its own save code for now. The shared embed helper adds a second scaling to responsive links, so one helper for both brands waits until that difference is a decision (frozen in `figmaEmbedUrl.parity.test.js`).
 
 ## 3 Nov 2026: the free plan, offline sites and upgrade routes
 - The free plan's 7 days start with the project (the first site going live), not at sign-up. Figmafolio and Aero count the same way, everywhere: the site gates, the dashboards, Settings and the cleanup job that deletes old test sessions.
