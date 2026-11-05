@@ -1,11 +1,16 @@
 ---
 brand-sync: figmaApp docs/brand is the source. Copy this file unchanged to aero-landing-page/docs/brand/.
-version: 2026-11-04.10
+version: 2026-11-05.1
 ---
 
 # Aero brand and product decisions
 
 The running log of what Duane decided, newest first. Add a line whenever he decides something; never delete a line, strike it through and say what replaced it. The full evidence is in `research/conversation-audit.md`.
+
+## 5 Nov 2026: Build real code from your design
+- Figma "Convert with AI" becomes "Build real code from your design", kept under "Other ways" on the Figma tile with an "Advanced" tag. Two ways: "With Claude or ChatGPT" (the prompt) and "With pxCode" (an outbound link, then upload the HTML or zip). Copy says plainly it is a static page from one frame, not the clickable prototype.
+- Seat wording: a Dev or Full seat on a paid Figma plan (other seats get 20 Figma tool calls a month). Source: developers.figma.com/docs/figma-mcp-server/rate-limits-access.
+- Which way people pick is counted in stats/creationSource (choice_aero_ai_convert_prompt, choice_aero_pxcode_click) and shown in the admin dashboard. A pxCode click is an intent only: no draft, no site.
 
 ## 4 Nov 2026: handoff screens, recording pill, subscribers by brand
 - The recording pill is its own glass pill at the top centre of the tab, apart from the task panel; the panel header only says "Test". Every pill state is in the style guide's Tester section (`RecordingPill`).
