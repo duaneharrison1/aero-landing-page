@@ -1,11 +1,20 @@
 ---
 brand-sync: figmaApp docs/brand is the source. Copy this file unchanged to aero-landing-page/docs/brand/.
-version: 2026-11-04.10
+version: 2026-11-05.1
 ---
 
 # Aero brand and product decisions
 
 The running log of what Duane decided, newest first. Add a line whenever he decides something; never delete a line, strike it through and say what replaced it. The full evidence is in `research/conversation-audit.md`.
+
+## 5 Nov 2026: pages build (site page and test page, locked rows)
+- One skeleton on the site page and the test page: work on the left, a Settings rail on the right (stacks on a phone), hairline rows. Switches save at once, text saves on blur and shows "Saved", only side-effect actions get a button (new address, new password, connecting a domain). Delete lives in the ⋯ menu; the Danger zone card is gone. The test's Setup loses its Save button (autosave). "Target responses" stays for now.
+- Locked rows use treatment A: a small grey lock and a grey plan word, the row stays readable, no coloured pill. A click opens a popover on the row (a bottom sheet under 768px) with one line on what it does, the plan that includes it and "Compare plans", which opens the plans dialog with that plan chosen. No prices in the popover. No "Try free for 7 days" button yet: starting a trial from a row is new checkout work (follow-up).
+- Address group: "Aero address" and "Your own domain" ("Use your own address, like app.yourname.com"). The custom domain is Solo, per PRICING-FACTS.
+- The per-block upgrade banners on the Aero site page are dropped. The one card left is the Free plan clock (7 days live, or offline), drawn from the existing free-plan states. The page does not say paid sites never go offline.
+- Site page: one Update block with three tiles (files, prompt, Figma link) replaces Drop a new version, Update with a prompt and Site source; "Publish uploads straight away" sits under it. A Tests section holds Test this site. The ⋯ menu has Visit site, Copy address, Test this site and Delete (no Download files: the app has no such action). "Visit site" is the prominent button.
+- Visits: four headline numbers that switch one chart, and three lists (where from, country, device), only from the data api/plausible.js already returns. Solo and above; Free and Basic see a plain locked skeleton with no sample numbers.
+- Test page: preview at the top of Setup using the site page's preview small, a thumbnail by the title, a ⋯ menu, the page centres on Sessions as sessions arrive; tasks are plain white rows that autosave with "Saved". Tests row reads "3 sessions · 2 new": one value per column, "2 new" in ink with an --aero-accent dot (the blue was off-brand).
 
 ## 4 Nov 2026: handoff screens, recording pill, subscribers by brand
 - The recording pill is its own glass pill at the top centre of the tab, apart from the task panel; the panel header only says "Test". Every pill state is in the style guide's Tester section (`RecordingPill`).
