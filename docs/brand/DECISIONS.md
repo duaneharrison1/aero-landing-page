@@ -1,11 +1,20 @@
 ---
 brand-sync: figmaApp docs/brand is the source. Copy this file unchanged to aero-landing-page/docs/brand/.
-version: 2026-11-04.7
+version: 2026-11-04.9
 ---
 
 # Aero brand and product decisions
 
 The running log of what Duane decided, newest first. Add a line whenever he decides something; never delete a line, strike it through and say what replaced it. The full evidence is in `research/conversation-audit.md`.
+
+## 4 Nov 2026: handoff screens, recording pill, subscribers by brand
+- The recording pill is its own glass pill at the top centre of the tab, apart from the task panel; the panel header only says "Test". Every pill state is in the style guide's Tester section (`RecordingPill`).
+- The three screens between Figmafolio and Aero follow the v3 look: "Figmafolio is now Aero" (rows Publish, Test, Review), the "Try it on Aero" gate (words unchanged), and "Signing you in" at /redeem (the Aero lockup, the blue dot as the loader). All use the real `GlassButton` (ink and glass). While the handoff runs the button shows the dot and says "Taking you to Aero"; the gate stays open and cannot be dismissed or clicked twice.
+- The Figmafolio sign-up button shows its loading state while the account is made.
+- Style guide: everything above "Earlier components" is the decided v3 system; the earlier glass fills (grey, aero-lt and the rest) stay documented below it until their screens move.
+- Aero and Figmafolio sell the same plans at the same regional prices from one Stripe account. No duplicate Aero plans (30 more prices and three ID lists to keep in step, and no history for existing subscribers). Instead each new checkout is labelled `brand: aero | figmafolio` in the subscription metadata, and the nightly rollup counts paying subscribers by that label (`globalStats/current.paidByBrand`). Older subscriptions are shown as unlabelled, split by sign-up product. Record: `docs/PRICING-REGIONS.md`.
+- Yearly price rule: monthly x 12, less 20%, rounded down (US Pro is a round $199 on purpose). TW Pro ($130 shown) and JP Pro ($168 shown) broke it; Stripe's $124 and $153 follow it, so the shown prices were corrected to Stripe's. Firestore `config/pricing` is a manual console edit.
+- Admin: the onboarding-modal variants A, B and D are gone. The migration test is control vs aero only, and `/admin/ab-preview` shows the one "Figmafolio is now Aero" screen. User rows show "Solo: Aero" or "Solo: Figmafolio" for paying users (estimated from sign-up, and marked "est.", for subscriptions that pre-date the label); the overall numbers add Paid on Aero, Paid on Figmafolio and Paid, unlabelled.
 
 ## 4 Nov 2026: Figma links (issue 304, "Prototype not found")
 - One logic for Figmafolio and Aero, two looks: converting links, the sharing check, the polling guide and all the words live once (`utils/figmaPaste.js`, `useFigmaLinkRows.js`, `useSharePolling.js`, `figmaLinkCopy.js`). Each brand has its own note and guide (Aero's: `AeroFigmaLinkNote`, `AeroShareGuideModal`, `AeroFigmaLinkField`).
