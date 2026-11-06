@@ -416,5 +416,11 @@
     }
    }
   ]
+ },
+ "how-findings-are-made": {
+  "route": "/features/how-findings-are-made",
+  "title": "How Aero turns test sessions into findings",
+  "description": "See how Aero records a session, finds the moments people got stuck, and ranks what to fix first across sessions, with quotes you can check.",
+  "bodyClass": "site s-page"
  }
 }
