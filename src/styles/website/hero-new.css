@@ -1,0 +1,130 @@
+/* Homepage hero video, new look (6 Nov 2026). Scoped to .hm-stage.hn, so the classic video (?hero=classic) never sees it.
+   Shapes and values follow figmaApp's shipped UI (LabelIcon.js and .aero-ct in LabelIcon.css, SiteDetailHead, SitePreviewHero,
+   insights-v6.css, TesterParts), written with this site's own tokens (aero.css). */
+s-cx{display:none}
+s-nx{display:contents}
+.hm-stage.hn{
+  --nu-ic-issue:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 2.2 14.5 13.5H1.5L8 2.2Z'/%3E%3Cpath d='M8 6.5v3.2'/%3E%3Cpath d='M8 11.6v.1'/%3E%3C/svg%3E");
+  --nu-ic-conf:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='8' cy='8' r='6.3'/%3E%3Cpath d='M6.3 6.4a1.8 1.8 0 1 1 2.4 1.7c-.5.2-.7.6-.7 1.1v.3'/%3E%3Cpath d='M8 11.6v.1'/%3E%3C/svg%3E");
+  --nu-ic-req:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5.6 10.4A4.2 4.2 0 1 1 10.4 10.4c-.4.3-.6.8-.6 1.3H6.2c0-.5-.2-1-.6-1.3Z'/%3E%3Cpath d='M6.4 13.6h3.2'/%3E%3C/svg%3E");
+  --nu-ic-good:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 8.4 6.4 11.6 13 4.6'/%3E%3C/svg%3E");
+}
+
+/* count chip: a muted square with a mono number; ink when something is new. No dots, no "new" words. */
+.hn .aero-ct,.hn .sb-ct{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 4px;box-sizing:border-box;border-radius:var(--r-md);background:var(--sunk);color:var(--mut);font-family:var(--mono);font-size:10px;font-weight:400;font-variant-numeric:tabular-nums;line-height:1}
+.hn .aero-ct.is-new{color:var(--ink);font-weight:500}
+.hn .sb-ct,.hn .sb-si .aero-ct{margin-left:auto}
+.hn .sb-item.on .sb-ct,.hn .sb-si.on .aero-ct{background:var(--surface)}
+.hn .mtabs span .aero-ct{padding:0 4px;color:var(--mut)}
+
+/* label icons: bare glyphs in the kind colour, calm text, the same everywhere */
+.hn .tg::before,.hn .tq .tqm,.hn .tline .m,.hn .lk{content:"";display:inline-block;flex:none;width:14px;height:14px;margin:0;border-radius:0;transform:none;box-shadow:none;background:currentColor;-webkit-mask:center/contain no-repeat;mask:center/contain no-repeat}
+.hn .tg.issue::before,.hn .tq.issue .tqm,.hn .tline .m.issue,.hn .lk.issue{background:var(--t-issue);-webkit-mask-image:var(--nu-ic-issue);mask-image:var(--nu-ic-issue)}
+.hn .tg.conf::before,.hn .tq.conf .tqm,.hn .tline .m.conf,.hn .lk.conf{background:var(--t-conf);-webkit-mask-image:var(--nu-ic-conf);mask-image:var(--nu-ic-conf)}
+.hn .tg.good::before,.hn .tq.good .tqm,.hn .tline .m.good,.hn .lk.good{background:var(--t-good);-webkit-mask-image:var(--nu-ic-good);mask-image:var(--nu-ic-good)}
+.hn .tg.req::before,.hn .tq.req .tqm,.hn .tline .m.req,.hn .lk.req{background:var(--accent);-webkit-mask-image:var(--nu-ic-req);mask-image:var(--nu-ic-req)}
+.hn .tg b,.hn .tg.issue b,.hn .tg.conf b,.hn .tg.good b{color:var(--ink2);font-weight:400}
+.hn .tq .tqk{color:var(--ink2)}
+.hn .tline .m.hot{box-shadow:none;filter:drop-shadow(0 0 4px var(--accent-soft)) drop-shadow(0 0 1px var(--accent-line))}
+
+/* site page */
+.hn .nu-top{padding:18px 28px 0;flex:none}
+.hn .nu-top h2{margin:0;font-size:24px;line-height:1.15;font-weight:440;letter-spacing:-.03em;color:var(--ink)}
+.hn .x-addr.nu-addr{display:flex;align-items:center;gap:12px;padding:0;border:0;margin-top:6px;font-size:12.5px;color:var(--mut)}
+.hn .x-addr.nu-addr>.mono{font-size:13px;letter-spacing:0}
+.hn .nu-tabs{display:flex;gap:20px;margin:14px 28px 0;border-bottom:1px solid var(--line);flex:none}
+.hn .nu-tabs>span{display:inline-flex;align-items:center;gap:8px;height:36px;margin-bottom:-1px;border-bottom:2px solid transparent;font-size:13px;color:var(--mut);white-space:nowrap}
+.hn .nu-tabs>span.on{color:var(--ink);font-weight:500;border-bottom-color:var(--ink)}
+.hn .x-sp{grid-template-columns:minmax(0,1fr) 340px}
+.hn .x-spm{padding:16px 28px 0}
+.hn .x-justpub{margin-bottom:12px;padding:8px 8px 8px 12px}
+.hn .x-stage{padding:14px 24px 0}
+.hn .x-stage .th{height:218px!important}
+.hn .nu-pvbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:8px;padding:6px 8px 6px 12px;border-radius:var(--r-lg);background:var(--sunk);font-size:12.5px;color:var(--mut)}
+.hn .nu-pva{display:inline-flex;gap:8px}
+.hn .nu-h{margin:16px 0 8px;font-size:13.5px;font-weight:500;color:var(--ink)}
+.hn .nu-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.hn .nu-tiles>div{display:flex;flex-direction:column;gap:4px;padding:11px 12px;border-radius:var(--r-lg);box-shadow:inset 0 0 0 1px var(--line);font-size:11.5px;color:var(--mut);line-height:1.4}
+.hn .nu-tiles>div:first-child{background:var(--accent-soft);box-shadow:none}
+.hn .nu-tiles .i{width:13px;height:13px;color:var(--ink2)}
+.hn .nu-tiles b{font-size:12.5px;font-weight:500;color:var(--ink)}
+.hn .nu-next{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px;padding:10px 12px;border-radius:var(--r-lg);background:var(--sunk)}
+.hn .nu-next b{display:block;font-size:12.5px;font-weight:500;color:var(--ink)}
+.hn .nu-next small{font-size:11.5px;color:var(--mut)}
+/* the Settings rail: no box, no rule under the heading */
+.hn .x-sps{border-left:0;background:none;padding:16px 28px 0 6px;gap:0}
+.hn .nu-rh{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px}
+.hn .nu-rh h4{margin:0;font-size:14px;font-weight:500;color:var(--ink)}
+.hn .nu-rh span{font-size:11.5px;color:var(--mut2)}
+.hn .nu-g{margin:8px 0 0;font-size:11.5px;color:var(--mut2)}
+.hn .nu-f{display:flex;flex-direction:column;gap:5px;padding:11px 0;border-bottom:1px solid var(--line2);font-size:12px}
+.hn .nu-f:last-child{border-bottom:0}
+.hn .nu-f label{font-size:12px;font-weight:500;color:var(--ink)}
+.hn .nu-f small{font-size:11px;color:var(--mut);line-height:1.4}
+.hn .nu-in2{display:flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11.5px;color:var(--mut)}
+.hn .nu-in2 .x-in{flex:1}
+
+/* test page */
+.hn .x-tss{border-left:0;background:none}
+.hn .x-linkc{background:none;box-shadow:none;padding:0}
+.hn .nu-src{margin-bottom:14px}
+.hn .nu-src .x-stage{padding:12px 20px 0;border-radius:var(--r-xl)}
+.hn .nu-src .x-stage .th{height:132px!important}
+.hn .nu-srcl{margin-top:8px;font-size:12px;color:var(--mut)}
+.hn .nu-srcl .mono{font-size:11.5px;color:var(--ink2)}
+.hn .nu-srcl .lnk{color:var(--accent-text);text-decoration:underline;text-underline-offset:2px}
+.hn .nu-saved{margin-left:auto;font-size:11px;font-weight:400;color:var(--mut2)}
+.hn .x-recs.nu-rec{font-size:11.5px;color:var(--mut)}
+
+/* tester: Allow recording */
+.hn .x-tcard.nu-perm{width:470px;padding:26px 26px 22px}
+.hn .nu-perm h3{font-size:22px;margin:0 0 6px}
+.hn .nu-perm>p{margin-bottom:12px;font-size:13px}
+.hn .nu-pr{display:grid;grid-template-columns:32px minmax(0,1fr) auto;gap:12px;align-items:center;margin-top:8px;padding:12px 14px;border-radius:var(--r-xl);box-shadow:inset 0 0 0 1px var(--line)}
+.hn .nu-pr.on{box-shadow:inset 0 0 0 2px var(--ink)}
+.hn .nu-ic{display:grid;place-items:center;width:32px;height:32px;border-radius:var(--r-lg);background:var(--sunk);color:var(--ink2)}
+.hn .nu-pr:not(.on) .nu-ic{background:var(--t-good-soft);color:var(--t-good-text)}
+.hn .nu-ic .i{width:15px;height:15px}
+.hn .nu-pr b{display:block;font-size:13px;font-weight:500;color:var(--ink)}
+.hn .nu-pr small{display:block;font-size:11.5px;color:var(--mut);line-height:1.45}
+.hn .nu-pr .nu-hint{margin-top:10px;color:var(--ink2)}
+.hn .nu-ok{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:var(--t-good-text)}
+.hn .nu-ok .i{width:12px;height:12px}
+.hn .nu-skip{display:inline-block;margin-top:8px;font-size:11.5px;color:var(--mut);text-decoration:underline;text-underline-offset:2px}
+.hn .nu-start{display:grid;place-items:center;height:40px;margin-top:14px;border-radius:var(--r-lg);background:var(--sunk);color:var(--mut2);font-size:13px;font-weight:500}
+.hn .x-tkmore{width:28px;height:28px;border-radius:9px;display:grid;place-items:center;margin-left:auto}
+.hn .x-tkmore .i{width:13px;height:13px;opacity:.7}
+.hn .x-tkmore+.x-tkmin{margin-left:0}
+
+/* session review: one track, very faint waveform, bare icons on it, one-row toolbar */
+.hn .nu-prow{gap:12px}
+.hn .nu-seg{display:inline-flex;gap:2px}
+.hn .nu-seg span{display:inline-flex;align-items:center;height:26px;padding:0 9px;border-radius:7px;font-size:12px;color:var(--mut);white-space:nowrap}
+.hn .nu-seg span.on{background:var(--sunk);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.hn .nu-seg span.off{opacity:.5}
+.hn .tline .wave i{background:var(--wv);opacity:.5}
+.hn .tline .wave i.p{background:var(--wv-played);opacity:.55}
+.hn .tline .marks{height:0;margin-top:0}
+.hn .tline .wave{height:34px}
+.hn .tline .m{top:-27px;width:16px;height:16px;margin-left:-8px;transform:none}
+.hn .tline .m.hot{transform:scale(1.2)}
+.hn .tline .task{background:none;box-shadow:none;color:var(--mut)}
+.hn .nu-filt{display:flex;gap:6px;margin-top:10px;padding-bottom:10px}
+.hn .nu-filt>span{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 9px;border-radius:7px;box-shadow:inset 0 0 0 1px var(--line);color:var(--ink2);font-size:12px}
+.hn .nu-filt>span.on{background:var(--sunk);box-shadow:inset 0 0 0 1px var(--line-strong);color:var(--ink)}
+.hn .nu-filt .lk{width:13px;height:13px}
+.hn .nu-filt .aero-ct{height:18px;min-width:18px}
+
+/* insights */
+.hn .sdots{display:none}
+.hn .cnt2 b{font-size:15px;font-weight:500;letter-spacing:-.01em}
+.hn .cnt2 small{margin-bottom:0}
+.hn .nu-sev{display:inline-flex;align-items:center;height:20px;padding:0 8px;border-radius:var(--r-md);font-size:12px;font-weight:500;line-height:1}
+.hn .nu-sev.crit{background:var(--t-issue);color:var(--surface)}
+.hn .nu-sev.major{background:var(--t-issue-soft);color:var(--t-issue-text)}
+.hn .nu-sev.minor{box-shadow:inset 0 0 0 1px var(--t-issue);color:var(--t-issue-text)}
+.hn .it1{gap:10px}
+.hn .qc .who .av{width:16px;height:16px;font-size:9px;background:var(--ink);color:var(--surface)}
+.hn .tline{padding-top:14px}
+.hn .pctl{padding-bottom:0}
+.hm-stage.hn .cxe{display:none}
