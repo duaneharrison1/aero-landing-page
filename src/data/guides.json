@@ -1,0 +1,702 @@
+[
+ {
+  "slug": "publish-a-claude-artifact",
+  "group": "publish",
+  "title": "Publish a Claude artifact",
+  "existing": true
+ },
+ {
+  "slug": "publish-a-chatgpt-canvas",
+  "group": "publish",
+  "title": "Publish a ChatGPT canvas",
+  "metaTitle": "Publish a ChatGPT canvas as a website · Aero",
+  "description": "Put a page you made in ChatGPT online at its own address. Paste one prompt into the chat, or save the code as index.html and upload it.",
+  "answer": "Copy one prompt from Aero into the ChatGPT chat where you made the page. ChatGPT sends the files to Aero and replies with the address. Or copy the code out of the canvas, save it as index.html and upload it.",
+  "facts": [
+   "Free plan works",
+   "Nothing to install"
+  ],
+  "needs": [
+   "The ChatGPT chat where you made the page",
+   "An Aero account (free)"
+  ],
+  "steps": [
+   {
+    "name": "Start a new site from a prompt",
+    "text": "In Aero, go to Sites, New site, and pick From Claude or ChatGPT."
+   },
+   {
+    "name": "Copy the prompt",
+    "text": "Aero shows one prompt with your publish key in it. Press Copy prompt. The key only lets this prompt publish sites in your account. Treat it like a password."
+   },
+   {
+    "name": "Paste it into your ChatGPT chat",
+    "text": "Go back to the chat where you made the page, paste the prompt and send it. ChatGPT sends the files to Aero and replies with the address."
+   },
+   {
+    "name": "Open the site in Aero",
+    "text": "The page in Aero updates by itself when the site is live. Press Done to open its page: the address, a preview and its versions."
+   }
+  ],
+  "alt": {
+   "h": "Prefer to upload it?",
+   "p": "Copy the code from the canvas into a text file and save it as index.html. Then go to New site, Upload HTML and drop the file in."
+  },
+  "gets": [
+   "A live site at an address like yourname.aeroapp.ai",
+   "A copy of your page. The canvas in ChatGPT doesn’t change",
+   "Every version kept, so you can go back",
+   "On the free plan the site stays live for 7 days"
+  ],
+  "faq": [
+   [
+    "Does my page stay in ChatGPT?",
+    "Yes. Aero publishes a copy at its own address. Your chat and the canvas don’t change."
+   ],
+   [
+    "How do I update the site?",
+    "Ask ChatGPT for the change in the same chat, then use the prompt again. Aero keeps every version."
+   ],
+   [
+    "Can I keep it private?",
+    "Add a password on Basic and up, so only people you give it to can open it."
+   ],
+   [
+    "How long does a free site stay live?",
+    "7 days. Paid plans keep it live; they start at $3 a month with a 7-day free trial."
+   ],
+   [
+    "Can I test it with people?",
+    "Yes. Start a new test and pick this site. You get a test link to send to anyone."
+   ]
+  ],
+  "related": [
+   "publish-a-claude-artifact",
+   "publish-an-html-site-or-zip",
+   "user-test-an-html-site",
+   "publish-a-figma-prototype"
+  ],
+  "next": {
+   "slug": "user-test-an-html-site"
+  },
+  "cta": "Publish your page"
+ },
+ {
+  "slug": "publish-a-lovable-app",
+  "group": "publish",
+  "title": "Publish a Lovable app",
+  "metaTitle": "Publish a Lovable app on its own address · Aero",
+  "description": "Aero publishes the built files of a Lovable app. Export the code, build it, drop the output folder in, and it’s live at an aeroapp.ai address.",
+  "answer": "Aero has no Lovable integration. Get your project’s code out of Lovable, build it into static files, then drop the folder or a zip of it into Aero. Or open the project in a coding agent and paste Aero’s publish prompt.",
+  "facts": [
+   "Free plan works",
+   "No integration needed"
+  ],
+  "needs": [
+   "Your project’s code, out of Lovable",
+   "Node.js on your computer, to build it (or a coding agent that does it for you)",
+   "An Aero account (free)"
+  ],
+  "steps": [
+   {
+    "name": "Get the code out of Lovable",
+    "text": "Export the project’s code from Lovable, for example through its GitHub connection, and put it in a folder on your computer."
+   },
+   {
+    "name": "Build it into static files",
+    "text": "Lovable projects are code, not finished pages, so they need a build first. In the project folder, run npm run build. The output folder (often called dist) is what Aero hosts."
+   },
+   {
+    "name": "Start a new site in Aero",
+    "text": "Go to Sites, New site, and pick Upload HTML. Give the site a name."
+   },
+   {
+    "name": "Drop in the build folder",
+    "text": "Drop the build folder, or a zip of it. index.html needs to be at the top. The site is live in seconds."
+   },
+   {
+    "name": "Open the site",
+    "text": "Aero opens the site’s page: the address, a preview and its versions."
+   }
+  ],
+  "alt": {
+   "h": "Prefer to let a coding agent do it?",
+   "p": "Open the project in Claude Code, Cursor or Codex, then copy the prompt from New site, From Claude or ChatGPT and paste it there. The prompt tells the agent to build the project, zip the output and send it to Aero. Nothing to install."
+  },
+  "gets": [
+   "A live site at an address like yourname.aeroapp.ai",
+   "A static copy of your build. The project in Lovable doesn’t change",
+   "Every version kept, so you can go back",
+   "On the free plan the site stays live for 7 days"
+  ],
+  "faq": [
+   [
+    "Is there a Lovable integration?",
+    "No. Aero doesn’t connect to Lovable. You export the code, build it, and upload the result, or let a coding agent do those steps."
+   ],
+   [
+    "Does my Lovable project change?",
+    "No. Aero hosts a copy of the built files. Your project in Lovable stays as it is."
+   ],
+   [
+    "How do I update the site?",
+    "Change the project, build it again and upload the new folder to the same site. Aero keeps every version."
+   ],
+   [
+    "Can I keep it private?",
+    "Add a password on Basic and up, so only people you give it to can open it."
+   ],
+   [
+    "How long does a free site stay live?",
+    "7 days. Paid plans keep it live; they start at $3 a month with a 7-day free trial."
+   ]
+  ],
+  "related": [
+   "publish-a-bolt-app",
+   "publish-a-v0-app",
+   "publish-an-html-site-or-zip",
+   "user-test-an-html-site"
+  ],
+  "next": {
+   "slug": "user-test-an-html-site"
+  },
+  "cta": "Publish your Lovable app"
+ },
+ {
+  "slug": "publish-a-bolt-app",
+  "group": "publish",
+  "title": "Publish a Bolt app",
+  "metaTitle": "Publish a Bolt app on its own address · Aero",
+  "description": "Aero publishes the built files of a Bolt app. Download the code, build it, drop the output folder in, and it’s live at an aeroapp.ai address.",
+  "answer": "Aero has no Bolt integration. Get your project’s code out of Bolt, build it into static files, then drop the folder or a zip of it into Aero. Or open the project in a coding agent and paste Aero’s publish prompt.",
+  "facts": [
+   "Free plan works",
+   "No integration needed"
+  ],
+  "needs": [
+   "Your project’s code, out of Bolt",
+   "Node.js on your computer, to build it (or a coding agent that does it for you)",
+   "An Aero account (free)"
+  ],
+  "steps": [
+   {
+    "name": "Get the code out of Bolt",
+    "text": "Download the project’s code from Bolt and unzip it into a folder on your computer."
+   },
+   {
+    "name": "Build it into static files",
+    "text": "Bolt projects are code, not finished pages, so they need a build first. In the project folder, run npm run build. The output folder (often called dist) is what Aero hosts."
+   },
+   {
+    "name": "Start a new site in Aero",
+    "text": "Go to Sites, New site, and pick Upload HTML. Give the site a name."
+   },
+   {
+    "name": "Drop in the build folder",
+    "text": "Drop the build folder, or a zip of it. index.html needs to be at the top. The site is live in seconds."
+   },
+   {
+    "name": "Open the site",
+    "text": "Aero opens the site’s page: the address, a preview and its versions."
+   }
+  ],
+  "alt": {
+   "h": "Prefer to let a coding agent do it?",
+   "p": "Open the project in Claude Code, Cursor or Codex, then copy the prompt from New site, From Claude or ChatGPT and paste it there. The prompt tells the agent to build the project, zip the output and send it to Aero. Nothing to install."
+  },
+  "gets": [
+   "A live site at an address like yourname.aeroapp.ai",
+   "A static copy of your build. The project in Bolt doesn’t change",
+   "Every version kept, so you can go back",
+   "On the free plan the site stays live for 7 days"
+  ],
+  "faq": [
+   [
+    "Is there a Bolt integration?",
+    "No. Aero doesn’t connect to Bolt. You download the code, build it, and upload the result, or let a coding agent do those steps."
+   ],
+   [
+    "Does my Bolt project change?",
+    "No. Aero hosts a copy of the built files. Your project in Bolt stays as it is."
+   ],
+   [
+    "How do I update the site?",
+    "Change the project, build it again and upload the new folder to the same site. Aero keeps every version."
+   ],
+   [
+    "Can I keep it private?",
+    "Add a password on Basic and up, so only people you give it to can open it."
+   ],
+   [
+    "How long does a free site stay live?",
+    "7 days. Paid plans keep it live; they start at $3 a month with a 7-day free trial."
+   ]
+  ],
+  "related": [
+   "publish-a-lovable-app",
+   "publish-a-v0-app",
+   "publish-an-html-site-or-zip",
+   "user-test-an-html-site"
+  ],
+  "next": {
+   "slug": "user-test-an-html-site"
+  },
+  "cta": "Publish your Bolt app"
+ },
+ {
+  "slug": "publish-a-v0-app",
+  "group": "publish",
+  "title": "Publish a v0 app",
+  "metaTitle": "Publish a v0 app on its own address · Aero",
+  "description": "Aero publishes the built files of a v0 app. Download the code, build it to static files, drop the output in, and it’s live at an aeroapp.ai address.",
+  "answer": "Aero has no v0 integration. Get your project’s code out of v0, build it into static files, then drop the folder or a zip of it into Aero. Or open the project in a coding agent and paste Aero’s publish prompt.",
+  "facts": [
+   "Free plan works",
+   "No integration needed"
+  ],
+  "needs": [
+   "Your project’s code, out of v0",
+   "Node.js on your computer, to build it (or a coding agent that does it for you)",
+   "An Aero account (free)"
+  ],
+  "steps": [
+   {
+    "name": "Get the code out of v0",
+    "text": "Download the project’s code from v0 and unzip it into a folder on your computer."
+   },
+   {
+    "name": "Build it into static files",
+    "text": "v0 projects are usually Next.js, which Aero can’t run as it is. Aero hosts static files, so build the project to a static folder first (in Next.js that is the static export setting), then drop that output folder in."
+   },
+   {
+    "name": "Start a new site in Aero",
+    "text": "Go to Sites, New site, and pick Upload HTML. Give the site a name."
+   },
+   {
+    "name": "Drop in the build folder",
+    "text": "Drop the build folder, or a zip of it. index.html needs to be at the top. The site is live in seconds."
+   },
+   {
+    "name": "Open the site",
+    "text": "Aero opens the site’s page: the address, a preview and its versions."
+   }
+  ],
+  "alt": {
+   "h": "Prefer to let a coding agent do it?",
+   "p": "Open the project in Claude Code, Cursor or Codex, then copy the prompt from New site, From Claude or ChatGPT and paste it there. The prompt tells the agent to build the project, zip the output and send it to Aero. Nothing to install."
+  },
+  "gets": [
+   "A live site at an address like yourname.aeroapp.ai",
+   "A static copy of your build. The project in v0 doesn’t change",
+   "Every version kept, so you can go back",
+   "On the free plan the site stays live for 7 days"
+  ],
+  "faq": [
+   [
+    "Is there a v0 integration?",
+    "No. Aero doesn’t connect to v0. You download the code, build it, and upload the result, or let a coding agent do those steps."
+   ],
+   [
+    "Why does it need to be static?",
+    "Aero hosts built files. It doesn’t run a server for your app, so pages that need one won’t work until they are built to static files."
+   ],
+   [
+    "How do I update the site?",
+    "Change the project, build it again and upload the new folder to the same site. Aero keeps every version."
+   ],
+   [
+    "Can I keep it private?",
+    "Add a password on Basic and up, so only people you give it to can open it."
+   ],
+   [
+    "How long does a free site stay live?",
+    "7 days. Paid plans keep it live; they start at $3 a month with a 7-day free trial."
+   ]
+  ],
+  "related": [
+   "publish-a-lovable-app",
+   "publish-a-bolt-app",
+   "publish-an-html-site-or-zip",
+   "user-test-an-html-site"
+  ],
+  "next": {
+   "slug": "user-test-an-html-site"
+  },
+  "cta": "Publish your v0 app"
+ },
+ {
+  "slug": "publish-a-figma-prototype",
+  "group": "publish",
+  "title": "Publish a Figma prototype",
+  "metaTitle": "Publish a Figma prototype at its own address · Aero",
+  "description": "Turn a Figma prototype link into a site at its own aeroapp.ai address. Share the prototype, paste the link into Aero, and send the address.",
+  "answer": "Share your prototype in Figma so anyone with the link can view it, then paste its link into Aero. You get a site at its own address that shows the live prototype.",
+  "facts": [
+   "Free plan works",
+   "Nothing to install",
+   "About a minute"
+  ],
+  "needs": [
+   "A Figma prototype",
+   "The prototype shared so anyone with the link can view it",
+   "An Aero account (free)"
+  ],
+  "steps": [
+   {
+    "name": "Share the prototype in Figma",
+    "text": "Back in your Figma file, click Share, choose Anyone and View. Aero checks this for you and tells you if the link can’t be opened yet."
+   },
+   {
+    "name": "Start a new site from Figma",
+    "text": "In Aero, go to Sites, New site, and pick From Figma."
+   },
+   {
+    "name": "Paste the link",
+    "text": "Paste your prototype link. If you paste a design or file link instead, Aero turns it into a prototype link and says so."
+   },
+   {
+    "name": "Publish and open the site",
+    "text": "Aero opens the site’s page with its address and a preview. Send the address to anyone."
+   }
+  ],
+  "alt": {
+   "h": "Want real HTML instead of an embed?",
+   "p": "Under Other ways on the same screen, Convert with AI lets Claude or ChatGPT read your design and build HTML (it needs a paid Figma seat). Export with a plugin points you to Anima, Figma to Code or pxCode, then you drop the HTML file in."
+  },
+  "gets": [
+   "A site at its own address that shows your live Figma prototype",
+   "One link for now. You can add links for other screen sizes later in Settings",
+   "On the free plan the site stays live for 7 days"
+  ],
+  "faq": [
+   [
+    "Does the Figma file need to be public?",
+    "The prototype needs to be viewable by anyone with the link. Sharing is about access: the link decides which screen opens first."
+   ],
+   [
+    "Does Aero copy my design?",
+    "The site shows your live prototype from Figma. Nothing is converted unless you choose Convert with AI or a plugin."
+   ],
+   [
+    "Can I keep it private?",
+    "Add a password on Basic and up, so only people you give it to can open it."
+   ],
+   [
+    "How long does a free site stay live?",
+    "7 days. Paid plans keep it live; they start at $3 a month with a 7-day free trial."
+   ],
+   [
+    "Can I test it with people?",
+    "Yes. Start a new test with the same link and send people the test link."
+   ]
+  ],
+  "related": [
+   "user-test-a-figma-prototype",
+   "publish-an-html-site-or-zip",
+   "publish-a-claude-artifact",
+   "user-test-an-html-site"
+  ],
+  "next": {
+   "slug": "user-test-a-figma-prototype"
+  },
+  "cta": "Publish your prototype"
+ },
+ {
+  "slug": "publish-an-html-site-or-zip",
+  "group": "publish",
+  "title": "Publish an HTML site or zip",
+  "metaTitle": "Publish an HTML site or zip at its own address · Aero",
+  "description": "Host a static HTML file, folder or zip at its own aeroapp.ai address. Drop it into Aero and it is live in seconds.",
+  "answer": "Go to New site, Upload HTML, and drop in your HTML file, folder or zip. It is live at its own address in seconds.",
+  "facts": [
+   "Free plan works",
+   "Nothing to install",
+   "Live in seconds"
+  ],
+  "needs": [
+   "A self-contained HTML file, or a folder or zip with index.html at the top",
+   "An Aero account (free)"
+  ],
+  "steps": [
+   {
+    "name": "Start a new site",
+    "text": "In Aero, go to Sites, New site, and pick Upload HTML."
+   },
+   {
+    "name": "Drop in your files",
+    "text": "Drop a folder or a zip, or choose files. index.html needs to be at the top."
+   },
+   {
+    "name": "Open the site",
+    "text": "Aero puts the site live and opens its page: the address, a preview and its versions."
+   }
+  ],
+  "alt": {
+   "h": "Prefer to let a coding agent do it?",
+   "p": "Open the project in Claude Code, Cursor or Codex, then copy the prompt from New site, From Claude or ChatGPT and paste it there. The prompt tells the agent to build the project, zip the output and send it to Aero."
+  },
+  "gets": [
+   "A live site at an address like yourname.aeroapp.ai",
+   "Every version kept, so you can go back",
+   "On the free plan the site stays live for 7 days"
+  ],
+  "faq": [
+   [
+    "What should be in the zip?",
+    "The built site, with index.html at the top of the zip rather than inside another folder."
+   ],
+   [
+    "Can I use my own domain?",
+    "Yes, on Solo and up. Every site also has an aeroapp.ai address, and on Basic and up you choose its name."
+   ],
+   [
+    "Can I keep it private?",
+    "Add a password on Basic and up, so only people you give it to can open it."
+   ],
+   [
+    "How long does a free site stay live?",
+    "7 days. Paid plans keep it live; they start at $3 a month with a 7-day free trial."
+   ],
+   [
+    "Can I test it with people?",
+    "Yes. Start a new test and pick this site. You get a test link to send to anyone."
+   ]
+  ],
+  "related": [
+   "publish-a-claude-artifact",
+   "publish-a-lovable-app",
+   "publish-a-figma-prototype",
+   "user-test-an-html-site"
+  ],
+  "next": {
+   "slug": "user-test-an-html-site"
+  },
+  "cta": "Publish your site"
+ },
+ {
+  "slug": "user-test-a-figma-prototype",
+  "group": "test",
+  "title": "User test a Figma prototype",
+  "metaTitle": "User test a Figma prototype with a link · Aero",
+  "description": "Run a think-aloud test on a Figma prototype. Paste the link into Aero, add tasks, send the test link, and get recordings and summaries back.",
+  "answer": "Paste your Figma prototype link into a new test in Aero, add a few tasks, and send the test link. Testers talk through it, and you get the recording, transcript and summary back.",
+  "facts": [
+   "Free plan works",
+   "No account for testers"
+  ],
+  "needs": [
+   "A Figma prototype shared so anyone with the link can view it",
+   "An Aero account (free)",
+   "A few people to send the link to"
+  ],
+  "steps": [
+   {
+    "name": "Share the prototype in Figma",
+    "text": "Click Share, choose Anyone and View. Aero checks this when you paste the link."
+   },
+   {
+    "name": "Start a new test from Figma",
+    "text": "In Aero, go to Tests, start a new test, and pick From Figma. Paste your prototype link."
+   },
+   {
+    "name": "Add tasks (optional)",
+    "text": "Write 1 to 5 short tasks, like “Find your cards”. With no tasks, testers explore freely and the review sums up the whole session."
+   },
+   {
+    "name": "Send the test link",
+    "text": "Copy the test link and send it to your testers. They open it on their own computer and talk through what they do."
+   },
+   {
+    "name": "Review the sessions",
+    "text": "Each session comes back with the recording, a transcript about a minute after they finish, and a summary."
+   }
+  ],
+  "alt": {
+   "h": "Already published the prototype as a site?",
+   "p": "Start a new test and pick One of your sites. The test uses that site."
+  },
+  "gets": [
+   "A recording of the tester’s browser tab and their voice",
+   "A transcript about a minute after they finish",
+   "A summary of each session, with friction points",
+   "A test link that works without an account"
+  ],
+  "faq": [
+   [
+    "Do testers need an account?",
+    "No. They open the test link and follow the tasks."
+   ],
+   [
+    "Does Aero find testers for me?",
+    "No. You send the link to your own people: friends, clients or classmates."
+   ],
+   [
+    "What is recorded?",
+    "The tester’s browser tab and their voice. Not their face."
+   ],
+   [
+    "How many sessions do I get?",
+    "Free has 3 test sessions. Basic has 5, Solo 10 and Pro 20. Every plan includes transcripts and summaries."
+   ]
+  ],
+  "related": [
+   "publish-a-figma-prototype",
+   "user-test-a-claude-artifact",
+   "user-test-an-html-site"
+  ],
+  "next": null,
+  "cta": "Test your prototype"
+ },
+ {
+  "slug": "user-test-a-claude-artifact",
+  "group": "test",
+  "title": "User test a Claude artifact",
+  "metaTitle": "User test a Claude artifact with real people · Aero",
+  "description": "Set up a recorded test on a Claude artifact from the same chat. Claude publishes it, asks for tasks and replies with the live and test links.",
+  "answer": "Copy a prompt from Aero into the Claude chat where you built the artifact. Claude publishes it, asks for a few tasks, and replies with the live address and a test link.",
+  "facts": [
+   "Free plan works",
+   "Nothing to install"
+  ],
+  "needs": [
+   "The Claude chat where you built the artifact",
+   "An Aero account (free)",
+   "A few people to send the link to"
+  ],
+  "steps": [
+   {
+    "name": "Start a new test from a prompt",
+    "text": "In Aero, go to Tests, start a new test, and pick From Claude or ChatGPT."
+   },
+   {
+    "name": "Copy the prompt",
+    "text": "Press Copy prompt. Aero adds your publish key. The key only lets this prompt publish sites in your account. Treat it like a password."
+   },
+   {
+    "name": "Paste it into your Claude chat",
+    "text": "Claude asks you for 1 to 5 short tasks for testers, publishes the artifact, and sets up the test."
+   },
+   {
+    "name": "Send the test link",
+    "text": "Claude replies with the live address and the test link. Send the test link to your testers."
+   },
+   {
+    "name": "Review the sessions",
+    "text": "Each session comes back with the recording, a transcript about a minute after they finish, and a summary."
+   }
+  ],
+  "alt": {
+   "h": "Already published the artifact?",
+   "p": "Start a new test and pick One of your sites. A test keeps a copy of the site as it was, so updating the site later doesn’t change it."
+  },
+  "gets": [
+   "A recording of the tester’s browser tab and their voice",
+   "A transcript about a minute after they finish",
+   "A summary of each session, with friction points",
+   "A test link that works without an account"
+  ],
+  "faq": [
+   [
+    "Do testers need an account?",
+    "No. They open the test link and follow the tasks."
+   ],
+   [
+    "Does Aero find testers for me?",
+    "No. You send the link to your own people: friends, clients or classmates."
+   ],
+   [
+    "What is recorded?",
+    "The tester’s browser tab and their voice. Not their face."
+   ],
+   [
+    "How many sessions do I get?",
+    "Free has 3 test sessions. Basic has 5, Solo 10 and Pro 20. Every plan includes transcripts and summaries."
+   ],
+   [
+    "Does it work with ChatGPT?",
+    "The same prompt works in the ChatGPT chat where you built it."
+   ]
+  ],
+  "related": [
+   "publish-a-claude-artifact",
+   "user-test-an-html-site",
+   "user-test-a-figma-prototype"
+  ],
+  "next": null,
+  "cta": "Test your artifact"
+ },
+ {
+  "slug": "user-test-an-html-site",
+  "group": "test",
+  "title": "User test an HTML site",
+  "metaTitle": "User test an HTML site or prototype · Aero",
+  "description": "Run a recorded think-aloud test on an HTML site or prototype. Drop in the files, add tasks, send the test link and get summaries back.",
+  "answer": "Drop your HTML site into a new test in Aero, add a few tasks, and send the test link. Testers see your site with a small task panel on top, and you get recordings and summaries back.",
+  "facts": [
+   "Free plan works",
+   "No account for testers"
+  ],
+  "needs": [
+   "An HTML file, or a folder or zip with index.html at the top",
+   "An Aero account (free)",
+   "A few people to send the link to"
+  ],
+  "steps": [
+   {
+    "name": "Start a new test",
+    "text": "In Aero, go to Tests, start a new test, and pick Upload HTML."
+   },
+   {
+    "name": "Drop in your files",
+    "text": "Drop a folder or a zip, or choose files. index.html needs to be at the top."
+   },
+   {
+    "name": "Add tasks (optional)",
+    "text": "Write 1 to 5 short tasks. With no tasks, testers explore freely and the review sums up the whole session."
+   },
+   {
+    "name": "Send the test link",
+    "text": "Copy the test link and send it to your testers. They open it on their own computer, see your site with a small task panel on top, and talk through what they do."
+   },
+   {
+    "name": "Review the sessions",
+    "text": "Each session comes back with the recording, a transcript about a minute after they finish, and a summary."
+   }
+  ],
+  "alt": {
+   "h": "Already published the site?",
+   "p": "Start a new test and pick One of your sites. A test keeps a copy of the site as it was, so updating the site later doesn’t change it."
+  },
+  "gets": [
+   "A recording of the tester’s browser tab and their voice",
+   "A transcript about a minute after they finish",
+   "A summary of each session, with friction points",
+   "A test link that works without an account"
+  ],
+  "faq": [
+   [
+    "Do testers need an account?",
+    "No. They open the test link and follow the tasks."
+   ],
+   [
+    "Does Aero find testers for me?",
+    "No. You send the link to your own people: friends, clients or classmates."
+   ],
+   [
+    "What is recorded?",
+    "The tester’s browser tab and their voice. Not their face."
+   ],
+   [
+    "How many sessions do I get?",
+    "Free has 3 test sessions. Basic has 5, Solo 10 and Pro 20. Every plan includes transcripts and summaries."
+   ]
+  ],
+  "related": [
+   "publish-an-html-site-or-zip",
+   "user-test-a-claude-artifact",
+   "user-test-a-figma-prototype"
+  ],
+  "next": null,
+  "cta": "Test your site"
+ }
+]

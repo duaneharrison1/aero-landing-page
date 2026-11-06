@@ -28,8 +28,8 @@
    ] },
    { "title": "Guides", "links": [
     { "label": "Publish a Claude artifact", "href": "/guides/publish-a-claude-artifact" },
-    { "label": "Test a Figma prototype", "href": "/guides" },
-    { "label": "Host an HTML site", "href": "/guides" }
+    { "label": "User test a Figma prototype", "href": "/guides/user-test-a-figma-prototype" },
+    { "label": "Publish an HTML site or zip", "href": "/guides/publish-an-html-site-or-zip" }
    ] },
    { "title": "Aero", "links": [
     { "label": "Log in", "href": "@login" },

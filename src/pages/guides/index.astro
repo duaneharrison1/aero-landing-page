@@ -3,8 +3,14 @@
 import SiteLayout from "../../layouts/SiteLayout.astro";
 import "../../styles/website/site-page.css";
 import { getPage } from "../../lib/website";
+import { inGroup, cardHtml } from "../../lib/guides";
 
-const { html, copy, meta } = getPage("guides");
+const page = getPage("guides");
+const { copy, meta } = page;
+// Cards for the live guides come from src/data/guides.json (see docs/website/README.md, "Guides").
+const html = page.html
+  .replace("<!--guides:publish-->", inGroup("publish").map((g) => cardHtml(g)).join(""))
+  .replace("<!--guides:test-->", inGroup("test").map((g) => cardHtml(g)).join(""));
 ---
 <SiteLayout title={meta.title} description={meta.description} bodyClass={meta.bodyClass} jsonld={meta.jsonld} copy={copy} script="site">
   <Fragment set:html={html} />
