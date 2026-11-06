@@ -14,12 +14,21 @@ each thing is, so a change is one edit in one place.
 | `/use-cases` | `src/pages/use-cases.astro` | `src/markup/use-cases.html` | `src/data/copy/use-cases.json` |
 | `/guides` | `src/pages/guides/index.astro` | `src/markup/guides.html` | `src/data/copy/guides.json` |
 | `/guides/publish-a-claude-artifact` | `src/pages/guides/publish-a-claude-artifact.astro` | `src/markup/publish-a-claude-artifact.html` | `src/data/copy/publish-a-claude-artifact.json` |
+| `/guides/<slug>` | `src/pages/guides/[slug].astro` | in the template | `src/data/guides.json` |
 | `/blog` | `src/pages/blog/index.astro` | `src/markup/blog.html` (the list comes from `src/data/blog.json`) | `src/data/copy/blog.json` |
 | `/blog/<slug>` | `src/pages/blog/[slug].astro` | `src/markup/blog/<slug>.html` | `src/data/copy/blog/<slug>.json` |
 | `/about`, `/contact`, 404 | their `.astro` files (Tailwind, `src/layouts/Layout.astro`) | in the file | in the file |
 
 The page title, meta description, JSON-LD (FAQ, HowTo, breadcrumbs) and body class of each new page are in
 `src/data/pages.json`. The sitemap is made by `@astrojs/sitemap` at build time.
+
+## Guides (task pages)
+
+Each task guide is one entry in `src/data/guides.json` (title, meta title under 60 characters, description under 155,
+one-line answer, steps, "what you get", FAQ, related guides). `src/pages/guides/[slug].astro` is the template and
+`src/lib/guides.ts` makes the FAQ, HowTo and breadcrumb JSON-LD. To add a guide: add an entry (group `publish` or
+`test`), check every step against the app's real flow, and build. It appears at `/guides/<slug>`, on the `/guides`
+index under its group, and in the sitemap. `publish-a-claude-artifact` keeps its own hand-built page (it has `existing: true`).
 
 ## Change words
 

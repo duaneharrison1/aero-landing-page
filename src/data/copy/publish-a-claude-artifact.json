@@ -20,7 +20,7 @@
  "steps": [
   [
    "Start a new site from a prompt",
-   "In Aero, go to Sites, New site, and pick Prompt. Give the site a name.",
+   "In Aero, go to Sites, New site, and pick From Claude or ChatGPT. Give the site a name.",
    [
     "prompt",
     ".x-seg, .mhead .crumb",
