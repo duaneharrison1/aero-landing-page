@@ -3,17 +3,9 @@
  "meta.desc": "Put a Claude, Figma or HTML prototype online, send one test link, and get recordings, transcripts and what to fix first. Free to start.",
  "p1.h1": [
   "From an idea you had today",
-  "to findings you can show your team"
+  "to findings for your team"
  ],
- "p1.lead": "Turn an idea into a live site with a prompt, a link or a Figma prototype. Send one test link, and Aero turns every session into findings: what to fix first, how many people hit it, and quotes to play.",
- "p2.h1": [
-  "Test it the day you make it"
- ],
- "p2.lead": "Put it online at your own aeroapp.ai address and share one test link. Hear where people got stuck, in their own words. Testers need no software or account.",
- "p3.h1": [
-  "From prompt to first session"
- ],
- "p3.lead": "Aero puts it online and gives you a link to test it. Testers need no download, and each session comes back transcribed and summarised.",
+ "p1.lead": ", send one test link, and get findings: what to fix first, and the quotes to play.",
  "hero.made.sr": "Publish your Claude artifact, Figma prototype, Lovable app or HTML site.",
  "hero.made.a": "Publish your",
  "hero.made": [
@@ -22,6 +14,14 @@
   "Lovable app",
   "HTML site"
  ],
+ "p2.h1": [
+  "Test it the day you make it"
+ ],
+ "p2.lead": "Put it online at your own aeroapp.ai address and share one test link. Hear where people got stuck, in their own words. Testers need no software or account.",
+ "p3.h1": [
+  "From prompt to first session"
+ ],
+ "p3.lead": "Aero puts it online and gives you a link to test it. Testers need no download, and each session comes back transcribed and summarised.",
  "hero.cta1": "Start free",
  "hero.cta2": "See pricing",
  "hero.fine": [

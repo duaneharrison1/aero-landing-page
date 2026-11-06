@@ -50,7 +50,7 @@
 .hm-rot{position:relative;display:inline-block;vertical-align:bottom;height:1.5em;overflow:hidden;transition:width .45s cubic-bezier(.3,.7,.2,1)}
 .hm-w{position:absolute;left:0;right:0;top:0;text-align:left;white-space:nowrap;opacity:0;transform:translateY(.7em);transition:opacity .35s,transform .45s cubic-bezier(.3,.7,.2,1);color:var(--ink)}
 .hm-w u{text-decoration:underline;text-decoration-color:var(--blue);text-decoration-thickness:2px;text-underline-offset:4px}
-.hm-made{display:block}
+.hm-made{display:inline}
 .hm-w.on{opacity:1;transform:none}
 .hm-w.out{opacity:0;transform:translateY(-.7em)}
 .hm-act{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:16px}

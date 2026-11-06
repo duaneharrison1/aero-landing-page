@@ -50,7 +50,7 @@
 
   /* ---------- the made-with rotator ---------- */
   var rot = D.querySelector('.hm-rot'), words = rot ? [].slice.call(rot.querySelectorAll('.hm-w')) : [], wi = 0;
-  function rotW() { if (!rot) return; var m = 0; words.forEach(function (w) { w.style.right = 'auto'; m = Math.max(m, w.offsetWidth); w.style.right = ''; }); rot.style.width = m + 'px'; }
+  function rotW() { if (!rot) return; var w = words[wi]; w.style.right = 'auto'; var m = w.offsetWidth; w.style.right = ''; rot.style.width = m + 'px'; } // sized to the word showing, so the comma after it stays close
   if (rot && !RM && !Q.has('t')) setInterval(function () {
     if (D.hidden) return;
     var a = words[wi]; wi = (wi + 1) % words.length; var b = words[wi];
