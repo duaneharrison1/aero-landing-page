@@ -86,6 +86,15 @@
   function txt(el, v) { if (el && el._t !== v) { el._t = v; el.textContent = v; } }
   function op(el, v) { css(el, 'opacity', (+v).toFixed(3)); }
 
+  /* The new and classic videos share one DOM. <s-nx> holds what only the new video shows, <s-cx> what only the classic
+     one shows. Keep one side and unwrap it (so the classic DOM is exactly what it was), drop the other. */
+  (function () {
+    var keep = CLASSIC ? 's-cx' : 's-nx', drop = CLASSIC ? 's-nx' : 's-cx';
+    $$(drop).forEach(function (el) { el.parentNode.removeChild(el); });
+    $$(keep).forEach(function (el) { var p = el.parentNode; while (el.firstChild) p.insertBefore(el.firstChild, el); p.removeChild(el); });
+    $$(CLASSIC ? '.nxe' : '.cxe').forEach(function (el) { el.parentNode.removeChild(el); });
+    var stg = $('.hm-stage'); if (stg && CLASSIC) stg.classList.remove('hn');
+  })();
   var OW = $('.hv-frame:not(.hv-mframe)'), MF = $('.hv-mframe');
   var S = world && {
     frame: OW, url: $('.hv-u', OW), urlBox: $('.hv-url', OW), prog: $('.hv-prog', OW),
