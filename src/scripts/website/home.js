@@ -11,6 +11,11 @@
   var Q = new URLSearchParams(location.search);
   if (Q.has('t')) D.documentElement.classList.add('rec');
   if (Q.has('review') || /^#p[123]$/.test(location.hash)) D.documentElement.classList.add('review'); // the headline switcher is a review tool
+  /* Which hero video plays. HERO_DEFAULT is the one switch: 'new' (round 4: no WhatsApp scenes, no cursor in the owner's
+     window, more time on Publish and Review) or 'classic' (the round 9 sequence, kept intact below). ?hero=classic or
+     ?hero=new on any address overrides it, so the old video is one word away. */
+  var HERO_DEFAULT = 'new';
+  var CLASSIC = (Q.get('hero') || HERO_DEFAULT) === 'classic';
   var LAY = Q.get('l') || 'c'; if (/^[bc]$/.test(LAY)) D.documentElement.classList.add('lay-' + LAY); // hero layout: c (centred, decided 25 Oct), or ?l=a / ?l=b
 
   /* ---------- copy ---------- */
@@ -21,6 +26,7 @@
       var v = get(el.getAttribute('data-c'));
       if (typeof v === 'string' && !el.children.length) el.textContent = v;
     });
+    if (CLASSIC && C['hero.aria.classic']) { var stg0 = D.querySelector('.hm-stage'); if (stg0) stg0.setAttribute('aria-label', C['hero.aria.classic']); }
   } catch (e) { /* the built words stay */ }
 
   /* nav (phone): nav.js, shared with every page */
@@ -44,7 +50,7 @@
 
   /* ---------- the made-with rotator ---------- */
   var rot = D.querySelector('.hm-rot'), words = rot ? [].slice.call(rot.querySelectorAll('.hm-w')) : [], wi = 0;
-  function rotW() { if (!rot) return; var m = 0; words.forEach(function (w) { w.style.right = 'auto'; m = Math.max(m, w.offsetWidth); w.style.right = ''; }); rot.style.width = m + 'px'; }
+  function rotW() { if (!rot) return; var w = words[wi]; w.style.right = 'auto'; var m = w.offsetWidth; w.style.right = ''; rot.style.width = m + 'px'; } // sized to the word showing, so the comma after it stays close
   if (rot && !RM && !Q.has('t')) setInterval(function () {
     if (D.hidden) return;
     var a = words[wi]; wi = (wi + 1) % words.length; var b = words[wi];
@@ -111,13 +117,16 @@
   }
 
   // the owner's window: which page, when (crossfades 0.2 s)
-  var SCENES = [['claude', 0, 7.3], ['prompt', 7.3, 8.5], ['aero', 8.5, 10.75], ['site', 10.75, 13.2], ['aero', 13.2, 16.1], ['setup', 16.1, 19.65],
-                ['wa', 19.65, 34.6], ['watch', 34.6, 38.6], ['ins', 38.6, 46.6], ['sites', 46.6, 47.5], ['prompt2', 47.5, 49.25], ['claude', 49.25, 99]];
+  var SCENES = CLASSIC ? [['claude', 0, 7.3], ['prompt', 7.3, 8.5], ['aero', 8.5, 10.75], ['site', 10.75, 13.2], ['aero', 13.2, 16.1], ['setup', 16.1, 19.65],
+                ['wa', 19.65, 34.6], ['watch', 34.6, 38.6], ['ins', 38.6, 46.6], ['sites', 46.6, 47.5], ['prompt2', 47.5, 49.25], ['claude', 49.25, 99]]
+    : [['claude', 0, 7.3], ['prompt', 7.3, 8.5], ['aero', 8.5, 10.75], ['site', 10.75, 13.2], ['aero', 13.2, 16.1], ['setup', 16.1, 34.4],
+       ['watch', 34.4, 38.6], ['ins', 38.6, 49.2], ['claude', 49.2, 99]];
   var URL = { claude: 'claude.ai/chat/pocket', prompt: 'aeroapp.ai/new?from=prompt', prompt2: 'aeroapp.ai/new?from=prompt', aero: 'aeroapp.ai/sites/pocket', site: 'pocket.aeroapp.ai',
               setup: 'aeroapp.ai/tests/pocket/setup', wa: 'web.whatsapp.com', watch: 'aeroapp.ai/tests/pocket/sessions/6', ins: 'aeroapp.ai/tests/pocket/insights', sites: 'aeroapp.ai/sites' };
   var TABON = { claude: 'claude', site: 'site', wa: 'wa' };
-  var LOADS = [8.5, 10.75, 16.1, 46.6, 47.5];
-  var MS = [['wa', 0, 24.3], ['w', 24.3, 26.4], ['p', 26.4, 27.6], ['t', 27.6, 99]];
+  var LOADS = CLASSIC ? [8.5, 10.75, 16.1, 46.6, 47.5] : [8.5, 10.75, 16.1];
+  var MS = CLASSIC ? [['wa', 0, 24.3], ['w', 24.3, 26.4], ['p', 26.4, 27.6], ['t', 27.6, 99]] : [['w', 22.0, 26.4], ['p', 26.4, 27.6], ['t', 27.6, 99]];
+  var MW0 = CLASSIC ? 24.3 : 22.0; // when Maya's test page opens (its tab grows, its bar loads)
   function scene(t) { for (var i = 0; i < SCENES.length; i++) if (t < SCENES[i][2]) return SCENES[i][0]; return 'claude'; }
 
   // the owner's cursor (never on Maya's screen, never in the review): [time, target]
@@ -131,7 +140,8 @@
   var CLICKS = [[1.3, 'inp'], [3.5, 'send'], [7.25, 'tab:aero'], [10.7, 'visit'], [13.15, 'tab:aero'], [14.4, 'more'], [16.0, 'mi'], [18.6, 'copy'],
                 [19.6, 'tab:wa'], [20.1, 'wa:field'], [21.05, 'wa:send'],
                 [45.7, 'tabx'], [46.5, 'sb:sites'], [47.4, 'newsite'], [48.2, 'pcopy'], [49.15, 'tab:claude']];
-  var CURON = [[0, 21.8], [45.0, 99]];
+  if (!CLASSIC) CLICKS = []; // the new loop shows no cursor, click ring or key hint in the owner's window
+  var CURON = CLASSIC ? [[0, 21.8], [45.0, 99]] : [];
   function curPos(t) {
     for (var i = 1; i < CUR.length; i++) if (t <= CUR[i][0]) {
       var a = P[CUR[i - 1][1]], b = P[CUR[i][1]], k = sm(r(t, CUR[i - 1][0], CUR[i][0]));
@@ -185,7 +195,11 @@
 
   // phone width: windows flat; the camera follows the action. [time, target, zoom] (zoom: world px across the
   // screen; 520 to read, 720 for moves)
-  var CAM = [[0, 'cam:claude', 600], [1.0, 'inp', 520], [4.2, 'cam:msgs', 560], [6.8, 'tab:aero', 640], [7.6, 'cam:pdone', 520], [8.8, 'cam:banner', 560],
+  var CAM = !CLASSIC ? [[0, 'cam:claude', 600], [1.0, 'inp', 520], [4.2, 'cam:msgs', 560], [6.8, 'tab:aero', 640], [7.6, 'cam:pdone', 520], [8.8, 'cam:banner', 560],
+             [10.0, 'visit', 600], [11.4, 'cam:site', 720], [12.6, 'cam:site', 720], [14.0, 'cam:menu', 520], [16.6, 'cam:setup', 560], [19.0, 'cam:setup', 560],
+             [22.5, 'cam:wcard#', 520], [26.6, 'cam:pcard#', 520], [27.8, 'cam:rec#', 640], [28.4, 'cam:tk#', 640], [30.0, 'cam:say#', 640],
+             [32.0, 'cam:tk#', 640], [34.8, 'cam:video', 640], [36.0, 'cam:trs', 520], [38.8, 'cam:sum', 520], [41.3, 'cam:iss', 560],
+             [48.4, 'cam:claude', 600], [T + 1, 'cam:claude', 600]] : [[0, 'cam:claude', 600], [1.0, 'inp', 520], [4.2, 'cam:msgs', 560], [6.8, 'tab:aero', 640], [7.6, 'cam:pdone', 520], [8.8, 'cam:banner', 560],
              [10.0, 'visit', 600], [11.4, 'cam:site', 720], [12.6, 'tab:aero', 640], [14.0, 'cam:menu', 520], [16.6, 'cam:setup', 560], [18.2, 'copy', 560],
              [19.4, 'tab:wa', 640], [20.2, 'wa:field', 560], [21.3, 'cam:wanew', 560], [22.6, 'cam:mlabel#', 640], [23.4, 'cam:mnew#', 560],
              [24.6, 'cam:wcard#', 520], [26.6, 'cam:pcard#', 520], [27.8, 'cam:rec#', 640], [28.4, 'cam:tk#', 640], [30.0, 'cam:say#', 640],
@@ -225,8 +239,9 @@
   var LEN = 214, NARROW = false, LASTSC = '';
   var TILT = 'rotateY(-7deg) rotateX(3deg)';
 
-  function at(t) {
+  function at(t, ts) {
     if (!S) return;
+    if (ts == null) ts = t; // t: the classic clock the scenes are written in; ts: the loop's own script time (the new loop remaps it to t)
     var s, tx = 0, ty = 0, maya = t >= 22.45 && t < 34.4;
     if (NARROW) {
       var c = cam(t); s = VW / c[2];
@@ -243,7 +258,7 @@
     show(S.frame, own); css(S.frame, 'transform', NARROW ? '' : TILT);
     show(S.mframe, mon); css(S.mframe, 'transform', NARROW ? '' : TILT);
 
-    var cur = scene(t), mcur = t < 24.3 ? 'wa' : t < 26.4 ? 'w' : t < 27.6 ? 'p' : 't';
+    var cur = scene(t), mcur = CLASSIC && t < 24.3 ? 'wa' : t < 26.4 ? 'w' : t < 27.6 ? 'p' : 't';
     if (cur + mcur !== LASTSC) { LASTSC = cur + mcur; if (W.GlassV3 && W.GlassV3.refresh) try { W.GlassV3.refresh(); } catch (e) { /* glass is optional */ } }
     Object.keys(S.sc).forEach(function (k) {
       var o = 0;
@@ -253,7 +268,8 @@
     txt(S.url, URL[cur]);
     var dk = cur === 'watch' || cur === 'ins' ? 'dark' : 'light';
     if (S.frame._th !== dk) { S.frame._th = dk; S.frame.setAttribute('data-theme', dk); }
-    ['claude', 'aero', 'wa'].forEach(function (k) { cls(S.tabs[k], 'show', 1); });
+    (CLASSIC ? ['claude', 'aero', 'wa'] : ['claude', 'aero']).forEach(function (k) { cls(S.tabs[k], 'show', 1); });
+    if (!CLASSIC) cls(S.tabs.wa, 'show', 0);
     var siteTab = t >= 10.75 && t < 45.75;
     cls(S.tabs.site, 'show', siteTab);
     if (siteTab) tabGrow(S.tabs.site, t, 10.75); else { css(S.tabs.site, 'transform', ''); cls(S.tabs.site, 'load', 0); }
@@ -274,7 +290,7 @@
     op(S.done, sm(r(t, 5.6, 5.9)));
     glow(S.used, io(t, 5.6, 5.75, 6.8, 7.2), '94,140,74');
     var keyAt = t < 10 ? 1.35 : 20.15, keyP = t < 10 ? P.inp : P['wa:field'];
-    if (S.key && keyP) { op(S.key, io(t, keyAt, keyAt + .1, keyAt + .65, keyAt + .8)); css(S.key, 'transform', 'translate(' + (keyP[0] - 60).toFixed(0) + 'px,' + (keyP[1] - 54).toFixed(0) + 'px)'); }
+    if (CLASSIC && S.key && keyP) { op(S.key, io(t, keyAt, keyAt + .1, keyAt + .65, keyAt + .8)); css(S.key, 'transform', 'translate(' + (keyP[0] - 60).toFixed(0) + 'px,' + (keyP[1] - 54).toFixed(0) + 'px)'); }
 
     // 2 Aero: Published (the page updated by itself); the site's page, live; Visit opens a new tab, which loads
     glow(S.pdone, io(t, 7.4, 7.6, 8.1, 8.4), '31,143,95');
@@ -310,19 +326,19 @@
     // 5 Maya's computer: the message arrives in the group she's reading; she opens the link; the test runs.
     if (mon > 0) {
       var arrived = t >= 23.0;
-      if (S.mNew) { var na = eo(r(t, 23.0, 23.3)); css(S.mNew, 'display', arrived ? '' : 'none'); op(S.mNew, na); css(S.mNew, 'transform', 'translateY(' + ((1 - na) * 12).toFixed(1) + 'px)'); }
-      txt(S.mLast, arrived ? 'Mia Chen: Could you try this for me?' : S.mLast0); txt(S.mTime, arrived ? '21:04' : '20:58');
-      glow(S.mLink, io(t, 23.6, 23.8, 24.0, 24.3)); press(S.mLink, t, 24.1);
+      if (CLASSIC && S.mNew) { var na = eo(r(t, 23.0, 23.3)); css(S.mNew, 'display', arrived ? '' : 'none'); op(S.mNew, na); css(S.mNew, 'transform', 'translateY(' + ((1 - na) * 12).toFixed(1) + 'px)'); }
+      if (CLASSIC) { txt(S.mLast, arrived ? 'Mia Chen: Could you try this for me?' : S.mLast0); txt(S.mTime, arrived ? '21:04' : '20:58');
+        glow(S.mLink, io(t, 23.6, 23.8, 24.0, 24.3)); press(S.mLink, t, 24.1); }
       Object.keys(S.ms).forEach(function (k) {
         var o = 0; MS.forEach(function (m) { if (m[0] === k) o = Math.max(o, (m[1] === 0 ? 1 : sm(r(t, m[1] - .15, m[1] + .05))) * (1 - sm(r(t, m[2] - .15, m[2])))); });
         show(S.ms[k], o);
       });
-      txt(S.murl, t < 24.3 ? 'web.whatsapp.com' : 'aeroapp.ai/t/pocket-7k2');
-      cls(S.mtabs.wa, 'show', 1);
-      cls(S.mtabs.ctl, 'show', t >= 24.3); if (t >= 24.3) tabGrow(S.mtabs.ctl, t, 24.3);
+      txt(S.murl, CLASSIC && t < 24.3 ? 'web.whatsapp.com' : 'aeroapp.ai/t/pocket-7k2');
+      cls(S.mtabs.wa, 'show', CLASSIC);
+      cls(S.mtabs.ctl, 'show', t >= MW0); if (t >= MW0) tabGrow(S.mtabs.ctl, t, MW0);
       cls(S.mtabs.pk, 'show', t >= 27.6); if (t >= 27.6) tabGrow(S.mtabs.pk, t, 27.6);
-      cls(S.mtabs.wa, 'on', t < 24.3); cls(S.mtabs.ctl, 'on', within(t, 24.3, 27.6)); cls(S.mtabs.pk, 'on', t >= 27.6);
-      prog(S.mprog, t, [24.3, 27.6]);
+      cls(S.mtabs.wa, 'on', CLASSIC && t < 24.3); cls(S.mtabs.ctl, 'on', within(t, MW0, 27.6)); cls(S.mtabs.pk, 'on', t >= 27.6);
+      prog(S.mprog, t, [MW0, 27.6]);
       press(S.mcont, t, 26.2); press(S.mshare, t, 27.4);
       op(S.rec, eo(r(t, 27.8, 28.1)));
       var sd = sm(r(t, 28.6, 28.85)) * (1 - sm(r(t, 30.3, 30.55))), sp = sm(r(t, 30.9, 31.15));
@@ -362,20 +378,36 @@
     }
 
     // the steps: Publish from the owner's return to Aero (45.0 s); Test 13.2; Review 34.6
-    var u = (t - JUMP[0] + T) % T, b1 = (JUMP[1] - JUMP[0] + T) % T, b2 = (JUMP[2] - JUMP[0] + T) % T;
-    [[0, b1], [b1, b2], [b2, T]].forEach(function (ab, i) {
+    var TT = CLASSIC ? T : T + 2.7, u = (ts - JUMP[0] + TT) % TT, b1 = (JUMP[1] - JUMP[0] + TT) % TT, b2 = (JUMP[2] - JUMP[0] + TT) % TT;
+    [[0, b1], [b1, b2], [b2, TT]].forEach(function (ab, i) {
       var st = S.steps[i]; if (!st) return;
       css(st.querySelector('.hm-bar b'), 'width', (r(u, ab[0], ab[1]) * 100).toFixed(1) + '%');
       cls(st, 'on', u >= ab[0] && u < ab[1]);
     });
   }
-  var JUMP = [45.0, 13.2, 34.6], JT = [46.4, 13.2, 34.6]; // JT: where a click lands (Publish: just as Sites is clicked)
+  // JT: where a click lands. Classic: Publish just as Sites is clicked. New: clock seconds (0 / 14.2 / 30.8).
+  var JUMP = CLASSIC ? [45.0, 13.2, 34.6] : [0, 14.2, 30.8], JT = CLASSIC ? [46.4, 13.2, 34.6] : [0, 14.2, 30.8];
+  /* The new loop is written as a remap of the visitor's clock (0 to 52.3 s) onto the classic scene clock:
+     [clock start, clock end, classic start, classic end]. Equal classic times are a hold. It skips the WhatsApp scenes
+     (classic 19.65 to 22.0, and Maya's WhatsApp 22.9 to 25.2). Round 4b pacing: Publish is 14.2 s (was 17.7), the Claude
+     paste, send and "live" part 7 s (was 10.1); Review is 21.5 s (was 18), with Insights building for 10 s and a 5.6 s
+     hold. The loop length is unchanged. */
+  var RMAP = [[0, 1.4, 0, 1.4], [1.4, 7.0, 1.4, 7.3], [7.0, 11.0, 7.3, 10.75], [11.0, 12.6, 10.75, 12.8], [12.6, 14.2, 12.8, 12.8],
+              [14.2, 17.3, 13.0, 16.1], [17.3, 20.2, 16.1, 19.0], [20.2, 21.1, 19.0, 19.0], [21.1, 22.0, 22.0, 22.9], [22.0, 23.2, 25.2, 26.4],
+              [23.2, 24.4, 26.4, 27.6], [24.4, 30.8, 27.6, 34.0], [30.8, 31.2, 34.0, 34.4], [31.2, 32.2, 34.4, 35.0], [32.2, 36.2, 35.0, 38.4],
+              [36.2, 40.2, 38.4, 41.1], [40.2, 46.2, 41.1, 44.2], [46.2, 51.8, 44.2, 44.2], [51.8, T + 2.7, 49.1, T]];
+  function remap(rt) {
+    for (var i = 0; i < RMAP.length; i++) { var g = RMAP[i]; if (rt < g[1]) return g[2] + (g[3] - g[2]) * Math.max(0, rt - g[0]) / (g[1] - g[0]); }
+    return T;
+  }
+  function A(rt) { if (CLASSIC) { var st = warp(rt); at(st, st); } else at(remap(rt), rt); } // draw the frame at visitor clock rt
   // Pace: the paste, the send and Claude "working" get more time. Times above are script time; the visitor's clock
   // runs through warp(), which stretches script 1.4 to 7.3 s over 1.4 to 10.1 s.
   var WA0 = 1.4, WA1 = 7.3, WSTR = 2.7, TR = T + WSTR;
   function warp(rt) { return rt < WA0 ? rt : rt < WA1 + WSTR ? WA0 + (rt - WA0) * (WA1 - WA0) / (WA1 - WA0 + WSTR) : rt - WSTR; }
   function unwarp(st) { return st < WA0 ? st : st < WA1 ? WA0 + (st - WA0) * (WA1 - WA0 + WSTR) / (WA1 - WA0) : st + WSTR; }
-  W.__heroAt = function (rt) { clock = rt; fit(); at(warp(rt)); };
+  W.__heroAt = function (rt) { clock = rt; fit(); A(rt); };
+  W.__heroClassic = CLASSIC;
   W.__heroT = TR; W.__unwarp = unwarp;
 
 
@@ -383,7 +415,7 @@
   function loop(now) {
     raf = 0;
     if (last != null) clock = (clock + Math.min(.1, (now - last) / 1000)) % TR;
-    last = now; at(warp(clock));
+    last = now; A(clock);
     if (playing && visible && !D.hidden) raf = requestAnimationFrame(loop); else last = null;
   }
   function kick() { if (!raf && playing && visible && !D.hidden && !RM && !Q.has('t')) raf = requestAnimationFrame(loop); }
@@ -405,7 +437,7 @@
   $$('.hm-stepb').forEach(function (b, i) {
     b.addEventListener('click', function () {
       if (b.parentNode.classList.contains('on') && !RM) { setPlaying(!playing); return; }
-      clock = unwarp(JT[i]); started = true; fit(); at(JT[i]); setPlaying(!RM);
+      clock = CLASSIC ? unwarp(JT[i]) : JT[i]; started = true; fit(); A(clock); setPlaying(!RM);
     });
   });
 
@@ -415,7 +447,7 @@
     var io2 = new IntersectionObserver(function (es) {
       es.forEach(function (en) {
         if (en.target.classList.contains('hm-stage')) {
-          if (!started && en.intersectionRatio >= .6) { started = true; clock = 0; at(0); }
+          if (!started && en.intersectionRatio >= .6) { started = true; clock = 0; A(0); }
           visible = started && en.intersectionRatio >= .15; kick();
         } else if (!RM) en.target.classList.toggle('is-running', en.isIntersecting);
       });
@@ -426,10 +458,10 @@
 
   function start() {
     fit(); rotW();
-    if (Q.has('t')) { clock = +Q.get('t') || 0; at(warp(clock)); return; }
-    if (RM) { at(29.2); S && S.steps.forEach(function (s) { s.querySelector('.hm-bar b').style.width = '100%'; }); return; }
-    at(0); kick();
+    if (Q.has('t')) { clock = +Q.get('t') || 0; A(clock); return; }
+    if (RM) { A(CLASSIC ? unwarp(29.2) : 25.5); S && S.steps.forEach(function (s) { s.querySelector('.hm-bar b').style.width = '100%'; }); return; }
+    A(0); kick();
   }
-  W.addEventListener('resize', function () { fit(); rotW(); at(warp(clock)); });
+  W.addEventListener('resize', function () { fit(); rotW(); A(clock); });
   if (D.fonts && D.fonts.ready) D.fonts.ready.then(start); else W.addEventListener('load', start);
 })();
