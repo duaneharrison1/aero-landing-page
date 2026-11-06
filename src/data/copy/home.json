@@ -1,6 +1,6 @@
 {
- "meta.title": "Aero: one prompt and it’s live, one link and it’s tested",
- "meta.desc": "Publish a Claude artifact, Figma prototype, Lovable app or HTML site to its own address, then send one test link. People try it on their own computer; you get the recording, transcript and summary back. Free to start.",
+ "meta.title": "Aero: publish a prototype, test it, get findings",
+ "meta.desc": "Put a Claude, Figma or HTML prototype online, send one test link, and get recordings, transcripts and what to fix first. Free to start.",
  "p1.h1": [
   "From an idea you had today",
   "to findings you can show your team"

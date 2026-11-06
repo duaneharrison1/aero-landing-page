@@ -378,34 +378,35 @@
     }
 
     // the steps: Publish from the owner's return to Aero (45.0 s); Test 13.2; Review 34.6
-    var u = (ts - JUMP[0] + T) % T, b1 = (JUMP[1] - JUMP[0] + T) % T, b2 = (JUMP[2] - JUMP[0] + T) % T;
-    [[0, b1], [b1, b2], [b2, T]].forEach(function (ab, i) {
+    var TT = CLASSIC ? T : T + 2.7, u = (ts - JUMP[0] + TT) % TT, b1 = (JUMP[1] - JUMP[0] + TT) % TT, b2 = (JUMP[2] - JUMP[0] + TT) % TT;
+    [[0, b1], [b1, b2], [b2, TT]].forEach(function (ab, i) {
       var st = S.steps[i]; if (!st) return;
       css(st.querySelector('.hm-bar b'), 'width', (r(u, ab[0], ab[1]) * 100).toFixed(1) + '%');
       cls(st, 'on', u >= ab[0] && u < ab[1]);
     });
   }
-  // JT: where a click lands. Classic: Publish just as Sites is clicked. New: the loop's own script time (0 / 15.0 / 31.6).
-  var JUMP = CLASSIC ? [45.0, 13.2, 34.6] : [0, 15.0, 31.6], JT = CLASSIC ? [46.4, 13.2, 34.6] : [0, 15.0, 31.6];
-  /* The new loop is written as a remap onto the classic clock: [new start, new end, classic start, classic end]. Equal
-     classic times are a hold. It skips the WhatsApp scenes (classic 19.65 to 22.0, and Maya's WhatsApp 22.9 to 25.2),
-     holds the live site and the copied link, and slows the session and Insights so Review has 18 s. Script length stays
-     49.6 s (52.3 s with the paste pause), the same as the classic loop. */
-  var RMAP = [[0, 7.3, 0, 7.3], [7.3, 11.3, 7.3, 10.75], [11.3, 12.9, 10.75, 12.8], [12.9, 15.0, 12.8, 12.8], [15.0, 18.1, 13.0, 16.1],
-              [18.1, 21.0, 16.1, 19.0], [21.0, 21.9, 19.0, 19.0], [21.9, 22.8, 22.0, 22.9], [22.8, 24.0, 25.2, 26.4], [24.0, 25.2, 26.4, 27.6],
-              [25.2, 31.6, 27.6, 34.0], [31.6, 32.0, 34.0, 34.4], [32.0, 33.0, 34.4, 35.0], [33.0, 37.0, 35.0, 38.4], [37.0, 40.0, 38.4, 41.1],
-              [40.0, 46.0, 41.1, 44.2], [46.0, 49.1, 44.2, 44.2], [49.1, T, 49.1, T]];
-  function remap(st) {
-    for (var i = 0; i < RMAP.length; i++) { var g = RMAP[i]; if (st < g[1]) return g[2] + (g[3] - g[2]) * Math.max(0, st - g[0]) / (g[1] - g[0]); }
+  // JT: where a click lands. Classic: Publish just as Sites is clicked. New: clock seconds (0 / 14.2 / 30.8).
+  var JUMP = CLASSIC ? [45.0, 13.2, 34.6] : [0, 14.2, 30.8], JT = CLASSIC ? [46.4, 13.2, 34.6] : [0, 14.2, 30.8];
+  /* The new loop is written as a remap of the visitor's clock (0 to 52.3 s) onto the classic scene clock:
+     [clock start, clock end, classic start, classic end]. Equal classic times are a hold. It skips the WhatsApp scenes
+     (classic 19.65 to 22.0, and Maya's WhatsApp 22.9 to 25.2). Round 4b pacing: Publish is 14.2 s (was 17.7), the Claude
+     paste, send and "live" part 7 s (was 10.1); Review is 21.5 s (was 18), with Insights building for 10 s and a 5.6 s
+     hold. The loop length is unchanged. */
+  var RMAP = [[0, 1.4, 0, 1.4], [1.4, 7.0, 1.4, 7.3], [7.0, 11.0, 7.3, 10.75], [11.0, 12.6, 10.75, 12.8], [12.6, 14.2, 12.8, 12.8],
+              [14.2, 17.3, 13.0, 16.1], [17.3, 20.2, 16.1, 19.0], [20.2, 21.1, 19.0, 19.0], [21.1, 22.0, 22.0, 22.9], [22.0, 23.2, 25.2, 26.4],
+              [23.2, 24.4, 26.4, 27.6], [24.4, 30.8, 27.6, 34.0], [30.8, 31.2, 34.0, 34.4], [31.2, 32.2, 34.4, 35.0], [32.2, 36.2, 35.0, 38.4],
+              [36.2, 40.2, 38.4, 41.1], [40.2, 46.2, 41.1, 44.2], [46.2, 51.8, 44.2, 44.2], [51.8, T + 2.7, 49.1, T]];
+  function remap(rt) {
+    for (var i = 0; i < RMAP.length; i++) { var g = RMAP[i]; if (rt < g[1]) return g[2] + (g[3] - g[2]) * Math.max(0, rt - g[0]) / (g[1] - g[0]); }
     return T;
   }
-  function A(st) { at(CLASSIC ? st : remap(st), st); } // draw the frame at script time st
+  function A(rt) { if (CLASSIC) { var st = warp(rt); at(st, st); } else at(remap(rt), rt); } // draw the frame at visitor clock rt
   // Pace: the paste, the send and Claude "working" get more time. Times above are script time; the visitor's clock
   // runs through warp(), which stretches script 1.4 to 7.3 s over 1.4 to 10.1 s.
   var WA0 = 1.4, WA1 = 7.3, WSTR = 2.7, TR = T + WSTR;
   function warp(rt) { return rt < WA0 ? rt : rt < WA1 + WSTR ? WA0 + (rt - WA0) * (WA1 - WA0) / (WA1 - WA0 + WSTR) : rt - WSTR; }
   function unwarp(st) { return st < WA0 ? st : st < WA1 ? WA0 + (st - WA0) * (WA1 - WA0 + WSTR) / (WA1 - WA0) : st + WSTR; }
-  W.__heroAt = function (rt) { clock = rt; fit(); A(warp(rt)); };
+  W.__heroAt = function (rt) { clock = rt; fit(); A(rt); };
   W.__heroClassic = CLASSIC;
   W.__heroT = TR; W.__unwarp = unwarp;
 
@@ -414,7 +415,7 @@
   function loop(now) {
     raf = 0;
     if (last != null) clock = (clock + Math.min(.1, (now - last) / 1000)) % TR;
-    last = now; A(warp(clock));
+    last = now; A(clock);
     if (playing && visible && !D.hidden) raf = requestAnimationFrame(loop); else last = null;
   }
   function kick() { if (!raf && playing && visible && !D.hidden && !RM && !Q.has('t')) raf = requestAnimationFrame(loop); }
@@ -436,7 +437,7 @@
   $$('.hm-stepb').forEach(function (b, i) {
     b.addEventListener('click', function () {
       if (b.parentNode.classList.contains('on') && !RM) { setPlaying(!playing); return; }
-      clock = unwarp(JT[i]); started = true; fit(); A(JT[i]); setPlaying(!RM);
+      clock = CLASSIC ? unwarp(JT[i]) : JT[i]; started = true; fit(); A(clock); setPlaying(!RM);
     });
   });
 
@@ -457,10 +458,10 @@
 
   function start() {
     fit(); rotW();
-    if (Q.has('t')) { clock = +Q.get('t') || 0; A(warp(clock)); return; }
-    if (RM) { A(CLASSIC ? 29.2 : 26.8); S && S.steps.forEach(function (s) { s.querySelector('.hm-bar b').style.width = '100%'; }); return; }
+    if (Q.has('t')) { clock = +Q.get('t') || 0; A(clock); return; }
+    if (RM) { A(CLASSIC ? unwarp(29.2) : 25.5); S && S.steps.forEach(function (s) { s.querySelector('.hm-bar b').style.width = '100%'; }); return; }
     A(0); kick();
   }
-  W.addEventListener('resize', function () { fit(); rotW(); A(warp(clock)); });
+  W.addEventListener('resize', function () { fit(); rotW(); A(clock); });
   if (D.fonts && D.fonts.ready) D.fonts.ready.then(start); else W.addEventListener('load', start);
 })();
