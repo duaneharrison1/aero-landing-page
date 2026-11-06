@@ -127,3 +127,10 @@ rasterised from the SVG at its own size, never scaled up. `src/layouts/SiteLayou
 ## Checking a change
 
 `npm run build` must pass. `npx astro preview` serves the built site on port 4321.
+
+## Homepage hero video: new and classic
+
+`src/scripts/website/home.js` plays one of two hero sequences. `HERO_DEFAULT` near the top of the file sets which ('new' or
+'classic'); `/?hero=classic` or `/?hero=new` overrides it for a single visit. Classic is the round 9 loop, unchanged. New
+(round 4) has no WhatsApp scenes and no cursor in the owner's window, and gives Publish and Review more time. It is written
+as a remap (`RMAP`) onto the classic clock, so both stay in one file.
