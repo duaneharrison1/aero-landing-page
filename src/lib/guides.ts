@@ -4,7 +4,7 @@ import data from "../data/guides.json";
 export type GuideStep = { name: string; text: string };
 export type Guide = {
   slug: string;
-  group: "publish" | "test";
+  group: "publish" | "test" | "review";
   title: string;
   /** Present only on guides that keep their own hand-built page (publish-a-claude-artifact). */
   existing?: boolean;
@@ -24,7 +24,7 @@ export type Guide = {
 
 export const GUIDES = data as Guide[];
 export const bySlug = (s: string) => GUIDES.find((g) => g.slug === s);
-export const inGroup = (g: "publish" | "test") => GUIDES.filter((x) => x.group === g);
+export const inGroup = (g: "publish" | "test" | "review") => GUIDES.filter((x) => x.group === g);
 
 const tick = '<svg class="i" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7"/></svg>';
 const arr = '<svg class="i" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>';
@@ -32,8 +32,8 @@ export const ICON = { tick, arr };
 export const PILL = {
   publish: '<span class="pill pill-publish"><svg class="i" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 13.5v-8M4.5 9 8 5.5 11.5 9M3 2.5h10"/></svg>Publish</span>',
   test: '<span class="pill pill-test"><svg class="i" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 9.5a2.5 2.5 0 0 0 3.5 0l2-2a2.5 2.5 0 0 0-3.5-3.5l-.6.6M9 6.5a2.5 2.5 0 0 0-3.5 0l-2 2A2.5 2.5 0 0 0 7 12l.6-.6"/></svg>Test</span>',
+  review: '<span class="pill pill-review"><svg class="i" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 13.5h11M4.5 11V8M8 11V4.5M11.5 11V6.5"/></svg>Review</span>',
 };
-
 const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 export { esc };
 
