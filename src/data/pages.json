@@ -106,33 +106,33 @@
  "guides": {
   "route": "/guides",
   "title": "Guides: publish and test, one job at a time · Aero",
-  "description": "Step-by-step guides for Aero: publish a Claude artifact, a Lovable app, a Figma prototype or an HTML folder, then test it with your own people.",
+  "description": "Step-by-step guides for Aero: publish a Claude artifact, a Figma prototype or an HTML folder, test it with your own people, and review what they said.",
   "bodyClass": "site s-page"
  },
  "publish-a-claude-artifact": {
   "route": "/guides/publish-a-claude-artifact",
   "title": "Publish a Claude artifact to its own address · Aero",
-  "description": "How to publish a Claude artifact as a real website at your own address, in one prompt or by uploading its HTML. Then test it with people you choose.",
+  "description": "How to publish a Claude artifact as a real website at its own address, in one prompt or by uploading its HTML. Then test it with people you choose.",
   "bodyClass": "site s-page",
   "jsonld": [
    {
     "@context": "https://schema.org",
     "@type": "HowTo",
     "name": "Publish a Claude artifact",
-    "description": "Copy one prompt from Aero into the Claude chat where you made the artifact. Claude sends the files to Aero and it goes live at an address like yourname.aeroapp.ai. Or download the artifact as HTML and drop it into Aero.",
+    "description": "To publish a Claude artifact, copy one prompt from Aero into the Claude chat where you made it. Claude sends the files to Aero and it goes live at an address like yourname.aeroapp.ai. Or download the artifact as HTML and drop it into Aero.",
     "totalTime": "PT2M",
     "step": [
      {
       "@type": "HowToStep",
       "position": 1,
       "name": "Start a new site from a prompt",
-      "text": "In Aero, go to Sites, New site, and pick From Claude or ChatGPT. Give the site a name."
+      "text": "In Aero, go to Sites, New site, and pick From Claude or ChatGPT. The name is optional: leave it blank and the site is named after its address."
      },
      {
       "@type": "HowToStep",
       "position": 2,
       "name": "Copy the prompt",
-      "text": "Aero shows one prompt with your key in it. Press Copy prompt. The key only lets this prompt publish sites in your account."
+      "text": "Press Copy prompt. Copying it adds your personal publish key, so keep the prompt to yourself, like a password."
      },
      {
       "@type": "HowToStep",
@@ -144,7 +144,7 @@
       "@type": "HowToStep",
       "position": 4,
       "name": "Open its page in Aero",
-      "text": "Aero updates by itself when the site is live and opens its page: the address, a preview and its versions."
+      "text": "Aero sees the site go live and says so. Press Done to open its page: the address, a preview and its versions."
      }
     ]
    },
@@ -173,7 +173,7 @@
       "name": "How do I update it?",
       "acceptedAnswer": {
        "@type": "Answer",
-       "text": "Ask Claude for the change in the same chat, then use the prompt again. Aero keeps every version, so you can roll back."
+       "text": "Ask Claude for the change in the same chat. On the site’s page, Ask Claude or ChatGPT gives you a prompt that publishes the next version to the same address. Aero keeps every version, so you can roll back."
       }
      },
      {
@@ -197,7 +197,7 @@
       "name": "How long does a free site stay live?",
       "acceptedAnswer": {
        "@type": "Answer",
-       "text": "7 days. Paid plans keep it live; they start at $3 a month with a 7-day free trial."
+       "text": "7 days, counted from when your first site goes live. Then it goes offline and keeps its address. Paid plans keep sites live, from $3 a month with a 7-day free trial."
       }
      }
     ]

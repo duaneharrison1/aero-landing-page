@@ -10,8 +10,8 @@
   "group": "publish",
   "title": "Publish a ChatGPT canvas",
   "metaTitle": "Publish a ChatGPT canvas as a website · Aero",
-  "description": "Put a page you made in ChatGPT online at its own address. Paste one prompt into the chat, or save the code as index.html and upload it.",
-  "answer": "Copy one prompt from Aero into the ChatGPT chat where you made the page, and send it. The prompt tells ChatGPT to publish the files to Aero and reply with the live link. Or copy the code out of the canvas, save it as index.html and upload it.",
+  "description": "Put a page you made in ChatGPT online at its own address. Paste one prompt from Aero into the chat, or save the code as index.html and upload it.",
+  "answer": "To publish a ChatGPT canvas, copy one prompt from Aero into the ChatGPT chat where you made the page and send it. The prompt tells ChatGPT to publish the files to Aero and reply with the live link. Or save the code as index.html and upload it.",
   "facts": [
    "Free plan works",
    "Nothing to install"
@@ -27,7 +27,7 @@
    },
    {
     "name": "Copy the prompt",
-    "text": "Aero shows one prompt with your publish key in it. Press Copy prompt. The key only lets this prompt publish sites in your account. Treat it like a password."
+    "text": "Press Copy prompt. Copying it adds your personal publish key, so keep the prompt to yourself, like a password."
    },
    {
     "name": "Paste it into your ChatGPT chat",
@@ -35,18 +35,18 @@
    },
    {
     "name": "Open the site in Aero",
-    "text": "The page in Aero updates by itself when the site is live. Press Done to open its page: the address, a preview and its versions."
+    "text": "Aero sees the site go live and says so. Press Done to open its page: the address, a preview and its versions."
    }
   ],
   "alt": {
    "h": "Prefer to upload it?",
-   "p": "Copy the code from the canvas into a text file and save it as index.html. Then go to New site, Upload HTML and drop the file in."
+   "p": "Copy the code from the canvas into a text file and save it as index.html. Then go to New site, Upload HTML, drop the file in and press Publish."
   },
   "gets": [
-   "A live site at an address like yourname.aeroapp.ai",
-   "A copy of your page at its own address",
+   "A live site at its own aeroapp.ai address",
+   "A copy of your page. Your chat stays as it was",
    "Versions you can go back to",
-   "On the free plan the site stays live for 7 days"
+   "On the free plan, sites stay live for 7 days"
   ],
   "faq": [
    [
@@ -55,7 +55,7 @@
    ],
    [
     "How do I update the site?",
-    "Ask ChatGPT for the change in the same chat, then use the prompt again. Aero keeps the versions."
+    "Ask ChatGPT for the change in the same chat. On the site’s page, Ask Claude or ChatGPT gives you a prompt that publishes the next version to the same address. Aero keeps the old versions."
    ],
    [
     "Can I keep it private?",
@@ -63,18 +63,18 @@
    ],
    [
     "How long does a free site stay live?",
-    "7 days. Paid plans keep it live; they start at $3 a month with a 7-day free trial."
+    "7 days, counted from when your first site goes live. Then it goes offline and keeps its address. Paid plans keep sites live, from $3 a month with a 7-day free trial."
    ],
    [
     "Can I test it with people?",
-    "Yes. Start a new test and pick this site. You get a test link to send to anyone."
+    "Yes. On the site’s page, press Test this site. You get a test link to send to anyone."
    ]
   ],
   "related": [
    "publish-a-claude-artifact",
+   "update-a-published-site",
    "publish-an-html-site-or-zip",
-   "user-test-an-html-site",
-   "publish-a-figma-prototype"
+   "user-test-an-html-site"
   ],
   "next": {
    "slug": "user-test-an-html-site"
@@ -86,8 +86,8 @@
   "group": "publish",
   "title": "Publish a Lovable app",
   "metaTitle": "Publish a Lovable app on its own address · Aero",
-  "description": "Aero publishes the built files of a Lovable app. Export the code, build it, drop the output folder in, and it’s live at an aeroapp.ai address.",
-  "answer": "Aero has no Lovable integration. Get your project’s code out of Lovable, build it into static files, then drop the folder or a zip of it into Aero. Or open the project in a coding agent and paste Aero’s publish prompt.",
+  "description": "Aero publishes the built files of a Lovable app. Export the code, build it, drop the output folder in, and it’s live at its own aeroapp.ai address.",
+  "answer": "To publish a Lovable app on Aero, get your project’s code out of Lovable, build it into static files, and drop the folder or a zip of it into Aero. There is no Lovable integration. Or open the project in a coding agent and paste Aero’s publish prompt.",
   "facts": [
    "Free plan works",
    "No integration needed"
@@ -108,26 +108,26 @@
    },
    {
     "name": "Start a new site in Aero",
-    "text": "Go to Sites, New site, and pick Upload HTML. Give the site a name."
+    "text": "Go to Sites, New site, and pick Upload HTML."
    },
    {
     "name": "Drop in the build folder",
-    "text": "Drop the build folder, or a zip of it. index.html needs to be at the top. The site is live in seconds."
+    "text": "Drop the build folder, or a zip of it, with index.html at the top. The name is optional: leave it blank and the site is named after its address."
    },
    {
-    "name": "Open the site",
-    "text": "Aero opens the site’s page: the address, a preview and its versions."
+    "name": "Publish and open the site",
+    "text": "Press Publish. The site is live in seconds and Aero opens its page: the address, a preview and its versions."
    }
   ],
   "alt": {
    "h": "Prefer to let a coding agent do it?",
-   "p": "Open the project in Claude Code, Cursor or Codex, then copy the prompt from New site, From Claude or ChatGPT and paste it there. The prompt tells the agent to build the project, zip the output and send it to Aero. Nothing to install."
+   "p": "Open the project in Claude Code, Cursor or Codex. In Aero, go to New site, From Claude or ChatGPT, copy the prompt and paste it there. The prompt tells the agent to build the project, zip the output and send it to Aero. Nothing to install."
   },
   "gets": [
-   "A live site at an address like yourname.aeroapp.ai",
+   "A live site at its own aeroapp.ai address",
    "A static copy of your build. The project in Lovable doesn’t change",
    "Every version kept, so you can go back",
-   "On the free plan the site stays live for 7 days"
+   "On the free plan, sites stay live for 7 days"
   ],
   "faq": [
    [
@@ -140,7 +140,7 @@
    ],
    [
     "How do I update the site?",
-    "Change the project, build it again and upload the new folder to the same site. Aero keeps every version."
+    "Change the project and build it again. On the site’s page, drop the new folder on Drop files. It becomes the next version at the same address, and Aero keeps the old ones."
    ],
    [
     "Can I keep it private?",
@@ -148,14 +148,14 @@
    ],
    [
     "How long does a free site stay live?",
-    "7 days. Paid plans keep it live; they start at $3 a month with a 7-day free trial."
+    "7 days, counted from when your first site goes live. Then it goes offline and keeps its address. Paid plans keep sites live, from $3 a month with a 7-day free trial."
    ]
   ],
   "related": [
    "publish-a-bolt-app",
    "publish-a-v0-app",
    "publish-an-html-site-or-zip",
-   "user-test-an-html-site"
+   "update-a-published-site"
   ],
   "next": {
    "slug": "user-test-an-html-site"
@@ -167,8 +167,8 @@
   "group": "publish",
   "title": "Publish a Bolt app",
   "metaTitle": "Publish a Bolt app on its own address · Aero",
-  "description": "Aero publishes the built files of a Bolt app. Download the code, build it, drop the output folder in, and it’s live at an aeroapp.ai address.",
-  "answer": "Aero has no Bolt integration. Get your project’s code out of Bolt, build it into static files, then drop the folder or a zip of it into Aero. Or open the project in a coding agent and paste Aero’s publish prompt.",
+  "description": "Aero publishes the built files of a Bolt app. Download the code, build it, drop the output folder in, and it’s live at its own aeroapp.ai address.",
+  "answer": "To publish a Bolt app on Aero, get your project’s code out of Bolt, build it into static files, and drop the folder or a zip of it into Aero. There is no Bolt integration. Or open the project in a coding agent and paste Aero’s publish prompt.",
   "facts": [
    "Free plan works",
    "No integration needed"
@@ -189,26 +189,26 @@
    },
    {
     "name": "Start a new site in Aero",
-    "text": "Go to Sites, New site, and pick Upload HTML. Give the site a name."
+    "text": "Go to Sites, New site, and pick Upload HTML."
    },
    {
     "name": "Drop in the build folder",
-    "text": "Drop the build folder, or a zip of it. index.html needs to be at the top. The site is live in seconds."
+    "text": "Drop the build folder, or a zip of it, with index.html at the top. The name is optional: leave it blank and the site is named after its address."
    },
    {
-    "name": "Open the site",
-    "text": "Aero opens the site’s page: the address, a preview and its versions."
+    "name": "Publish and open the site",
+    "text": "Press Publish. The site is live in seconds and Aero opens its page: the address, a preview and its versions."
    }
   ],
   "alt": {
    "h": "Prefer to let a coding agent do it?",
-   "p": "Open the project in Claude Code, Cursor or Codex, then copy the prompt from New site, From Claude or ChatGPT and paste it there. The prompt tells the agent to build the project, zip the output and send it to Aero. Nothing to install."
+   "p": "Open the project in Claude Code, Cursor or Codex. In Aero, go to New site, From Claude or ChatGPT, copy the prompt and paste it there. The prompt tells the agent to build the project, zip the output and send it to Aero. Nothing to install."
   },
   "gets": [
-   "A live site at an address like yourname.aeroapp.ai",
+   "A live site at its own aeroapp.ai address",
    "A static copy of your build. The project in Bolt doesn’t change",
    "Every version kept, so you can go back",
-   "On the free plan the site stays live for 7 days"
+   "On the free plan, sites stay live for 7 days"
   ],
   "faq": [
    [
@@ -221,7 +221,7 @@
    ],
    [
     "How do I update the site?",
-    "Change the project, build it again and upload the new folder to the same site. Aero keeps every version."
+    "Change the project and build it again. On the site’s page, drop the new folder on Drop files. It becomes the next version at the same address, and Aero keeps the old ones."
    ],
    [
     "Can I keep it private?",
@@ -229,14 +229,14 @@
    ],
    [
     "How long does a free site stay live?",
-    "7 days. Paid plans keep it live; they start at $3 a month with a 7-day free trial."
+    "7 days, counted from when your first site goes live. Then it goes offline and keeps its address. Paid plans keep sites live, from $3 a month with a 7-day free trial."
    ]
   ],
   "related": [
    "publish-a-lovable-app",
    "publish-a-v0-app",
    "publish-an-html-site-or-zip",
-   "user-test-an-html-site"
+   "update-a-published-site"
   ],
   "next": {
    "slug": "user-test-an-html-site"
@@ -248,8 +248,8 @@
   "group": "publish",
   "title": "Publish a v0 app",
   "metaTitle": "Publish a v0 app on its own address · Aero",
-  "description": "Aero publishes the built files of a v0 app. Download the code, build it to static files, drop the output in, and it’s live at an aeroapp.ai address.",
-  "answer": "Aero has no v0 integration. Get your project’s code out of v0, build it into static files, then drop the folder or a zip of it into Aero. Or open the project in a coding agent and paste Aero’s publish prompt.",
+  "description": "Aero publishes the built files of a v0 app. Download the code, build it to static files, drop the output in, and it’s live at its own aeroapp.ai address.",
+  "answer": "To publish a v0 app on Aero, get your project’s code out of v0, build it into static files, and drop the folder or a zip of it into Aero. There is no v0 integration. Or open the project in a coding agent and paste Aero’s publish prompt.",
   "facts": [
    "Free plan works",
    "No integration needed"
@@ -270,26 +270,26 @@
    },
    {
     "name": "Start a new site in Aero",
-    "text": "Go to Sites, New site, and pick Upload HTML. Give the site a name."
+    "text": "Go to Sites, New site, and pick Upload HTML."
    },
    {
     "name": "Drop in the build folder",
-    "text": "Drop the build folder, or a zip of it. index.html needs to be at the top. The site is live in seconds."
+    "text": "Drop the build folder, or a zip of it, with index.html at the top. The name is optional: leave it blank and the site is named after its address."
    },
    {
-    "name": "Open the site",
-    "text": "Aero opens the site’s page: the address, a preview and its versions."
+    "name": "Publish and open the site",
+    "text": "Press Publish. The site is live in seconds and Aero opens its page: the address, a preview and its versions."
    }
   ],
   "alt": {
    "h": "Prefer to let a coding agent do it?",
-   "p": "Open the project in Claude Code, Cursor or Codex, then copy the prompt from New site, From Claude or ChatGPT and paste it there. The prompt tells the agent to build the project, zip the output and send it to Aero. Nothing to install."
+   "p": "Open the project in Claude Code, Cursor or Codex. In Aero, go to New site, From Claude or ChatGPT, copy the prompt and paste it there. The prompt tells the agent to build the project, zip the output and send it to Aero. Nothing to install."
   },
   "gets": [
-   "A live site at an address like yourname.aeroapp.ai",
+   "A live site at its own aeroapp.ai address",
    "A static copy of your build. The project in v0 doesn’t change",
    "Every version kept, so you can go back",
-   "On the free plan the site stays live for 7 days"
+   "On the free plan, sites stay live for 7 days"
   ],
   "faq": [
    [
@@ -302,7 +302,7 @@
    ],
    [
     "How do I update the site?",
-    "Change the project, build it again and upload the new folder to the same site. Aero keeps every version."
+    "Change the project and build it again. On the site’s page, drop the new folder on Drop files. It becomes the next version at the same address, and Aero keeps the old ones."
    ],
    [
     "Can I keep it private?",
@@ -310,14 +310,14 @@
    ],
    [
     "How long does a free site stay live?",
-    "7 days. Paid plans keep it live; they start at $3 a month with a 7-day free trial."
+    "7 days, counted from when your first site goes live. Then it goes offline and keeps its address. Paid plans keep sites live, from $3 a month with a 7-day free trial."
    ]
   ],
   "related": [
    "publish-a-lovable-app",
    "publish-a-bolt-app",
    "publish-an-html-site-or-zip",
-   "user-test-an-html-site"
+   "update-a-published-site"
   ],
   "next": {
    "slug": "user-test-an-html-site"
@@ -330,7 +330,7 @@
   "title": "Publish a Figma prototype",
   "metaTitle": "Publish a Figma prototype at its own address · Aero",
   "description": "Turn a Figma prototype link into a site at its own aeroapp.ai address. Share the prototype, paste the link into Aero, and send the address.",
-  "answer": "Share your prototype in Figma so anyone with the link can view it, then paste its link into Aero. You get a site at its own address that shows the live prototype.",
+  "answer": "To publish a Figma prototype, share it in Figma so anyone with the link can view it, then paste its link into a new site in Aero. You get a site at its own address that shows the live prototype.",
   "facts": [
    "Free plan works",
    "Nothing to install",
@@ -344,7 +344,7 @@
   "steps": [
    {
     "name": "Share the prototype in Figma",
-    "text": "Back in your Figma file, click Share, choose Anyone and View. Aero checks this for you and tells you if the link can’t be opened yet."
+    "text": "In your Figma file, click Share and choose Anyone and View. Aero checks the link for you and, if it can’t be opened yet, shows you how to share it."
    },
    {
     "name": "Start a new site from Figma",
@@ -352,21 +352,26 @@
    },
    {
     "name": "Paste the link",
-    "text": "Paste your prototype link. If you paste a design or file link instead, Aero turns it into a prototype link and says so."
+    "text": "Paste your prototype link into the All screens row. If you paste a design or file link instead, Aero turns it into a prototype link and says so."
    },
    {
-    "name": "Publish and open the site",
-    "text": "Aero opens the site’s page with its address and a preview. Send the address to anyone."
+    "name": "Add other screen sizes (optional)",
+    "text": "Add breakpoint lets you give phones or tablets their own link. Leave it and one link serves every screen."
+   },
+   {
+    "name": "Create the site",
+    "text": "The name is optional. Press Create site and Aero opens the site’s page with its address. Send the address to anyone."
    }
   ],
   "alt": {
    "h": "Want real HTML instead of an embed?",
-   "p": "Under Other ways on the same screen, Convert with AI lets Claude or ChatGPT read your design and build HTML (it needs a paid Figma seat). Export with a plugin points you to Anima, Figma to Code or pxCode, then you drop the HTML file in."
+   "p": "Under Other ways on the same screen, Convert with AI gives you a prompt for Claude or ChatGPT. It reads your design through the Figma connector, builds the page and publishes it to Aero. It needs the Figma connector, and a Dev or Full seat on a paid Figma plan gives the most room. Or build real code with pxCode."
   },
   "gets": [
    "A site at its own address that shows your live Figma prototype",
-   "One link for now. You can add links for other screen sizes later in Settings",
-   "On the free plan the site stays live for 7 days"
+   "Changes you make in Figma show up on their own",
+   "Separate links for phones or tablets, if you add them",
+   "On the free plan, sites stay live for 7 days"
   ],
   "faq": [
    [
@@ -375,7 +380,7 @@
    ],
    [
     "Does Aero copy my design?",
-    "The site shows your live prototype from Figma. Nothing is converted unless you choose Convert with AI or a plugin."
+    "No. The site shows your live prototype from Figma. Nothing is converted unless you choose Convert with AI or pxCode."
    ],
    [
     "Can I keep it private?",
@@ -383,11 +388,11 @@
    ],
    [
     "How long does a free site stay live?",
-    "7 days. Paid plans keep it live; they start at $3 a month with a 7-day free trial."
+    "7 days, counted from when your first site goes live. Then it goes offline and keeps its address. Paid plans keep sites live, from $3 a month with a 7-day free trial."
    ],
    [
     "Can I test it with people?",
-    "Yes. Start a new test with the same link and send people the test link."
+    "Yes. Start a new test, pick From Figma and paste the same link. You get a test link to send to anyone."
    ]
   ],
   "related": [
@@ -406,8 +411,8 @@
   "group": "publish",
   "title": "Publish an HTML site or zip",
   "metaTitle": "Publish an HTML site or zip at its own address · Aero",
-  "description": "Host a static HTML file, folder or zip at its own aeroapp.ai address. Drop it into Aero and it is live in seconds.",
-  "answer": "Go to New site, Upload HTML, and drop in your HTML file, folder or zip. It is live at its own address in seconds.",
+  "description": "Host a static HTML file, folder or zip at its own aeroapp.ai address. Drop it into Aero, press Publish, and it’s live in seconds. Free to start.",
+  "answer": "To publish an HTML site, go to New site in Aero, pick Upload HTML, drop in your file, folder or zip and press Publish. It is live at its own address in seconds.",
   "facts": [
    "Free plan works",
    "Nothing to install",
@@ -424,21 +429,21 @@
    },
    {
     "name": "Drop in your files",
-    "text": "Drop a folder or a zip, or choose files. index.html needs to be at the top."
+    "text": "Drop a folder or a zip, or choose files. index.html needs to be at the top. The name is optional: leave it blank and the site is named after its address."
    },
    {
-    "name": "Open the site",
-    "text": "Aero puts the site live and opens its page: the address, a preview and its versions."
+    "name": "Publish and open the site",
+    "text": "Press Publish. Aero puts the site live and opens its page: the address, a preview and its versions."
    }
   ],
   "alt": {
    "h": "Prefer to let a coding agent do it?",
-   "p": "Open the project in Claude Code, Cursor or Codex, then copy the prompt from New site, From Claude or ChatGPT and paste it there. The prompt tells the agent to build the project, zip the output and send it to Aero."
+   "p": "Open the project in Claude Code, Cursor or Codex. In Aero, go to New site, From Claude or ChatGPT, copy the prompt and paste it there. The prompt tells the agent to build the project, zip the output and send it to Aero."
   },
   "gets": [
-   "A live site at an address like yourname.aeroapp.ai",
+   "A live site at its own aeroapp.ai address",
    "Every version kept, so you can go back",
-   "On the free plan the site stays live for 7 days"
+   "On the free plan, sites stay live for 7 days"
   ],
   "faq": [
    [
@@ -455,16 +460,16 @@
    ],
    [
     "How long does a free site stay live?",
-    "7 days. Paid plans keep it live; they start at $3 a month with a 7-day free trial."
+    "7 days, counted from when your first site goes live. Then it goes offline and keeps its address. Paid plans keep sites live, from $3 a month with a 7-day free trial."
    ],
    [
     "Can I test it with people?",
-    "Yes. Start a new test and pick this site. You get a test link to send to anyone."
+    "Yes. On the site’s page, press Test this site. You get a test link to send to anyone."
    ]
   ],
   "related": [
+   "update-a-published-site",
    "publish-a-claude-artifact",
-   "publish-a-lovable-app",
    "publish-a-figma-prototype",
    "user-test-an-html-site"
   ],
@@ -478,8 +483,8 @@
   "group": "test",
   "title": "User test a Figma prototype",
   "metaTitle": "User test a Figma prototype with a link · Aero",
-  "description": "Run a think-aloud test on a Figma prototype. Paste the link into Aero, add tasks, send the test link, and get recordings and summaries back.",
-  "answer": "Paste your Figma prototype link into a new test in Aero, add a few tasks, and send the test link. Testers talk through it, and you get the recording, transcript and summary back.",
+  "description": "Run a think-aloud test on a Figma prototype. Paste the link into Aero, add tasks, send the test link, and get recordings, transcripts and summaries back.",
+  "answer": "To user test a Figma prototype, paste its link into a new test in Aero, add a few tasks, and send the test link. Testers talk through it, and you get the recording, transcript and summary back.",
   "facts": [
    "Free plan works",
    "No account for testers"
@@ -496,19 +501,19 @@
    },
    {
     "name": "Start a new test from Figma",
-    "text": "In Aero, go to Tests, start a new test, and pick From Figma. Paste your prototype link."
+    "text": "In Aero, go to Tests, start a new test, and pick From Figma. Paste your prototype link and press Create test."
    },
    {
     "name": "Add tasks (optional)",
-    "text": "Write 1 to 5 short tasks, like “Find your cards”. With no tasks, testers explore freely and the review sums up the whole session."
+    "text": "Add a few short tasks, like “Find your cards”. With no tasks, testers explore freely and the review sums up the whole session."
    },
    {
     "name": "Send the test link",
-    "text": "Copy the test link and send it to your testers. They open it on their own computer and talk through what they do."
+    "text": "Press Copy test link and send it to your testers. On a computer, Aero records their tab and voice. On a phone, their voice only."
    },
    {
     "name": "Review the sessions",
-    "text": "Each session comes back with the recording, a transcript about a minute after they finish, and a summary."
+    "text": "Each session shows up in Sessions when the tester finishes. The transcript and summary follow: about a minute for a short session, longer for a long one."
    }
   ],
   "alt": {
@@ -517,32 +522,36 @@
   },
   "gets": [
    "A recording of the tester’s browser tab and their voice",
-   "A transcript about a minute after they finish",
-   "A summary of each session, with friction points",
+   "A transcript and a summary of each session, with the moments they got stuck",
+   "Insights across sessions once two are analysed",
    "A test link that works without an account"
   ],
   "faq": [
    [
     "Do testers need an account?",
-    "No. They open the test link and follow the tasks."
+    "No. They open the test link, allow their microphone and the tab, and start."
    ],
    [
     "Does Aero find testers for me?",
-    "No. You send the link to your own people: friends, clients or classmates."
+    "No. Bring your own testers: friends, clients, colleagues or classmates."
    ],
    [
     "What is recorded?",
-    "The tester’s browser tab and their voice. Not their face."
+    "The tester’s browser tab and their voice. Never their camera, and not their mouse pointer."
+   ],
+   [
+    "Can people test on a phone?",
+    "A Figma prototype test works on a phone and records their voice only. A site or HTML test needs a computer, because Aero records the tab."
    ],
    [
     "How many sessions do I get?",
-    "Free has 3 test sessions. Basic has 5, Solo 10 and Pro 20. Every plan includes transcripts and summaries."
+    "Free has 3 test sessions, Basic 5, Solo 10 and Pro 20. They are a total on your plan, not a monthly allowance. Transcripts and summaries are on every plan."
    ]
   ],
   "related": [
    "publish-a-figma-prototype",
-   "user-test-a-claude-artifact",
-   "user-test-an-html-site"
+   "write-user-test-tasks",
+   "send-a-user-test-link"
   ],
   "next": null,
   "cta": "Test your prototype"
@@ -553,7 +562,7 @@
   "title": "User test a Claude artifact",
   "metaTitle": "User test a Claude artifact with real people · Aero",
   "description": "Set up a recorded test on a Claude artifact from the same chat. Claude publishes it, asks for tasks and replies with the live and test links.",
-  "answer": "Copy a prompt from Aero into the Claude chat where you built the artifact. Claude publishes it, asks for a few tasks, and replies with the live address and a test link.",
+  "answer": "To user test a Claude artifact, copy a prompt from Aero into the Claude chat where you built it. Claude publishes it, asks you for a few tasks, and replies with the live address and a test link.",
   "facts": [
    "Free plan works",
    "Nothing to install"
@@ -570,7 +579,7 @@
    },
    {
     "name": "Copy the prompt",
-    "text": "Press Copy prompt. Aero adds your publish key. The key only lets this prompt publish sites in your account. Treat it like a password."
+    "text": "Press Copy prompt. Copying it adds your personal publish key, so keep the prompt to yourself, like a password."
    },
    {
     "name": "Paste it into your Claude chat",
@@ -578,39 +587,39 @@
    },
    {
     "name": "Send the test link",
-    "text": "Claude replies with the live address and the test link. Send the test link to your testers."
+    "text": "Claude replies with the live address and the test link. Send the test link to your testers. They open it on a computer."
    },
    {
     "name": "Review the sessions",
-    "text": "Each session comes back with the recording, a transcript about a minute after they finish, and a summary."
+    "text": "Each session shows up in Sessions when the tester finishes. The transcript and summary follow: about a minute for a short session, longer for a long one."
    }
   ],
   "alt": {
    "h": "Already published the artifact?",
-   "p": "Start a new test and pick One of your sites. A test keeps a copy of the site as it was, so updating the site later doesn’t change it."
+   "p": "On the site’s page, press Test this site, or start a new test and pick One of your sites. A test keeps a copy of the site as it was, so updating the site later doesn’t change it."
   },
   "gets": [
    "A recording of the tester’s browser tab and their voice",
-   "A transcript about a minute after they finish",
-   "A summary of each session, with friction points",
+   "A transcript and a summary of each session, with the moments they got stuck",
+   "Insights across sessions once two are analysed",
    "A test link that works without an account"
   ],
   "faq": [
    [
     "Do testers need an account?",
-    "No. They open the test link and follow the tasks."
+    "No. They open the test link, allow their microphone and the tab, and start."
    ],
    [
     "Does Aero find testers for me?",
-    "No. You send the link to your own people: friends, clients or classmates."
+    "No. Bring your own testers: friends, clients, colleagues or classmates."
    ],
    [
     "What is recorded?",
-    "The tester’s browser tab and their voice. Not their face."
+    "The tester’s browser tab and their voice. Never their camera, and not their mouse pointer."
    ],
    [
     "How many sessions do I get?",
-    "Free has 3 test sessions. Basic has 5, Solo 10 and Pro 20. Every plan includes transcripts and summaries."
+    "Free has 3 test sessions, Basic 5, Solo 10 and Pro 20. They are a total on your plan, not a monthly allowance. Transcripts and summaries are on every plan."
    ],
    [
     "Does it work with ChatGPT?",
@@ -630,11 +639,12 @@
   "group": "test",
   "title": "User test an HTML site",
   "metaTitle": "User test an HTML site or prototype · Aero",
-  "description": "Run a recorded think-aloud test on an HTML site or prototype. Drop in the files, add tasks, send the test link and get summaries back.",
-  "answer": "Drop your HTML site into a new test in Aero, add a few tasks, and send the test link. Testers see your site with a small task panel on top, and you get recordings and summaries back.",
+  "description": "Run a recorded think-aloud test on an HTML site or prototype. Drop in the files, add tasks, send the test link and get transcripts and summaries back.",
+  "answer": "To user test an HTML site, drop it into a new test in Aero, add a few tasks, and send the test link. Testers see your site with a small task panel on top, and you get recordings, transcripts and summaries back.",
   "facts": [
    "Free plan works",
-   "No account for testers"
+   "No account for testers",
+   "Testers use a computer"
   ],
   "needs": [
    "An HTML file, or a folder or zip with index.html at the top",
@@ -648,47 +658,51 @@
    },
    {
     "name": "Drop in your files",
-    "text": "Drop a folder or a zip, or choose files. index.html needs to be at the top."
+    "text": "Drop a folder or a zip, or choose files. index.html needs to be at the top. Press Publish and continue."
    },
    {
     "name": "Add tasks (optional)",
-    "text": "Write 1 to 5 short tasks. With no tasks, testers explore freely and the review sums up the whole session."
+    "text": "Add a few short tasks. With no tasks, testers explore freely and the review sums up the whole session."
    },
    {
     "name": "Send the test link",
-    "text": "Copy the test link and send it to your testers. They open it on their own computer, see your site with a small task panel on top, and talk through what they do."
+    "text": "Press Copy test link and send it to your testers. They open it on their own computer, see your site with a small task panel they can move, and talk through what they do."
    },
    {
     "name": "Review the sessions",
-    "text": "Each session comes back with the recording, a transcript about a minute after they finish, and a summary."
+    "text": "Each session shows up in Sessions when the tester finishes. The transcript and summary follow: about a minute for a short session, longer for a long one."
    }
   ],
   "alt": {
    "h": "Already published the site?",
-   "p": "Start a new test and pick One of your sites. A test keeps a copy of the site as it was, so updating the site later doesn’t change it."
+   "p": "On the site’s page, press Test this site, or start a new test and pick One of your sites. A test keeps a copy of the site as it was, so updating the site later doesn’t change it."
   },
   "gets": [
    "A recording of the tester’s browser tab and their voice",
-   "A transcript about a minute after they finish",
-   "A summary of each session, with friction points",
+   "A transcript and a summary of each session, with the moments they got stuck",
+   "Insights across sessions once two are analysed",
    "A test link that works without an account"
   ],
   "faq": [
    [
     "Do testers need an account?",
-    "No. They open the test link and follow the tasks."
+    "No. They open the test link, allow their microphone and the tab, and start."
    ],
    [
     "Does Aero find testers for me?",
-    "No. You send the link to your own people: friends, clients or classmates."
+    "No. Bring your own testers: friends, clients, colleagues or classmates."
    ],
    [
     "What is recorded?",
-    "The tester’s browser tab and their voice. Not their face."
+    "The tester’s browser tab and their voice. Never their camera, and not their mouse pointer."
+   ],
+   [
+    "Can people test on a phone?",
+    "Not a site test. Aero records the tab, which phones and tablets can’t share, so testers are asked to open the link on a computer."
    ],
    [
     "How many sessions do I get?",
-    "Free has 3 test sessions. Basic has 5, Solo 10 and Pro 20. Every plan includes transcripts and summaries."
+    "Free has 3 test sessions, Basic 5, Solo 10 and Pro 20. They are a total on your plan, not a monthly allowance. Transcripts and summaries are on every plan."
    ]
   ],
   "related": [
@@ -704,8 +718,8 @@
   "group": "review",
   "title": "Watch a user test recording",
   "metaTitle": "Watch a user test recording · Aero",
-  "description": "Open a finished session in Aero and watch what the tester did on screen while they talked. Speed it up, skip the quiet bits, go full screen.",
-  "answer": "Open Tests, pick the test, then Sessions, and open a session. The recording plays with the tester’s voice. You can change the speed, skip long pauses and jump to any task.",
+  "description": "Open a finished session in Aero and watch what the tester did on screen while they talked. Change the speed, skip silence and go full screen.",
+  "answer": "To watch a user test recording, open Tests, pick the test, then Sessions, and open a session. The recording plays with the tester’s voice. You can change the speed, skip silence and jump to any task.",
   "facts": [
    "Recording on every plan",
    "Screen and voice"
@@ -725,21 +739,21 @@
    },
    {
     "name": "Change how you watch",
-    "text": "Pick a speed from the Speed menu. Switch on Skip silence to jump over pauses longer than 2 seconds. Use the full screen button for a bigger view."
+    "text": "Pick a speed from the Speed menu. Turn on Skip to jump over pauses longer than 2 seconds; the timeline shortens to match. Use the full screen button for a bigger view."
    },
    {
-    "name": "Jump to a task",
-    "text": "If your test has tasks, each one shows on the timeline and in the Summary tab. Press a task’s start time to play from there."
+    "name": "Jump to a moment",
+    "text": "Hover a mark on the timeline to read it and click it to play from there. Press a task’s start time in the Summary tab to play from that task."
    },
    {
     "name": "Check the details",
-    "text": "The session shows its length, the device and screen size, and how the tester rated difficulty, when they gave a rating."
+    "text": "Details in the Summary tab show when it ran, its length, the device and screen size, and how the tester rated difficulty, when they gave a rating."
    }
   ],
   "gets": [
    "The screen recording with the tester’s voice",
    "The tester’s tasks, with done or couldn’t do it and the time spent",
-   "A download menu for the video, audio and transcript"
+   "A Download menu for the video, audio and transcript"
   ],
   "faq": [
    [
@@ -752,11 +766,11 @@
    ],
    [
     "What if the tester was on a phone?",
-    "Phones can’t share a tab, so you get their voice only. The session says so."
+    "Phones can’t share a tab, so a Figma test on a phone records their voice only. The session says so."
    ],
    [
     "Can I delete a recording?",
-    "Yes. Deleting a session removes the recording, the transcript and the summary for good."
+    "Yes. Delete session is in the Download menu. It removes the recording, the transcript and the summary for good."
    ]
   ],
   "related": [
@@ -776,8 +790,8 @@
   "group": "review",
   "title": "Get a transcript of a user test",
   "metaTitle": "Get a transcript of a user test · Aero",
-  "description": "Every Aero session is transcribed after the tester finishes. Read it next to the recording, click a line to jump, or download it as a text file.",
-  "answer": "Aero transcribes the tester’s voice when they finish. It usually takes about a minute after a short session, and longer after a long one. Open the session, pick Transcript, and read along with the recording.",
+  "description": "Every Aero session is transcribed after the tester finishes. Read it beside the recording, click a line to jump, or download it as a text file.",
+  "answer": "To get a transcript of a user test, open the session in Aero and pick Transcript. It arrives after the tester finishes: about a minute for a short session, longer for a long one.",
   "facts": [
    "Transcripts on every plan",
    "About a minute after a short session"
@@ -788,11 +802,11 @@
   "steps": [
    {
     "name": "Wait for it to arrive",
-    "text": "The transcript follows after the tester finishes, never during. Until then the session says it is arriving, and the recording is ready to watch."
+    "text": "The transcript follows after the tester finishes, never during. Until then the session says Transcript arriving, and the recording is ready to watch."
    },
    {
     "name": "Open the Transcript tab",
-    "text": "Open the session and pick Transcript next to Summary. Switch on Follow the recording to have it scroll as the recording plays."
+    "text": "Open the session and pick Transcript next to Summary. Turn on Follow the recording to have it scroll as the recording plays."
    },
    {
     "name": "Click a line",
@@ -800,7 +814,7 @@
    },
    {
     "name": "Download it",
-    "text": "Open the download menu and pick Transcript (.txt). You can also download the video and audio there."
+    "text": "Open the Download menu and pick Transcript (.txt). You can also download the video and audio there."
    }
   ],
   "gets": [
@@ -811,7 +825,7 @@
   "faq": [
    [
     "How long does a transcript take?",
-    "About a minute after a short session. A long session takes longer."
+    "About a minute for a short session, longer for a long one."
    ],
    [
     "Is it live while the tester talks?",
@@ -819,7 +833,7 @@
    ],
    [
     "What if the microphone was off?",
-    "Then there is no transcript or summary. The recording and the task results still count."
+    "Then there is no transcript or summary. The recording and the tasks still count."
    ],
    [
     "What if the tester said nothing?",
@@ -827,7 +841,7 @@
    ],
    [
     "Does it cost extra?",
-    "No. Transcripts and summaries are on every plan, free included."
+    "No. Transcripts and summaries are on every plan, Free included."
    ]
   ],
   "related": [
@@ -843,8 +857,8 @@
   "group": "review",
   "title": "Find what to fix first from several user tests",
   "metaTitle": "Find what to fix first across user test sessions · Aero",
-  "description": "Insights puts your sessions together: a summary, up to 5 fixes ranked by severity, recurring themes and where testers disagreed.",
-  "answer": "Open your test and pick Insights. Once two sessions have a finished summary, Aero puts them together into a short summary and up to 5 fixes, ranked by severity and by how many testers hit them.",
+  "description": "Insights puts your sessions together: a summary, up to 5 numbered fixes ranked by severity, how many testers hit each one, and their quotes.",
+  "answer": "To find what to fix first, open your test in Aero and pick Insights. Once two sessions are analysed, it puts them together: a short summary and up to 5 numbered fixes, ranked by severity and by how many testers hit them.",
   "facts": [
    "Needs 2 sessions",
    "Reads up to your 40 newest"
@@ -855,7 +869,7 @@
   "steps": [
    {
     "name": "Run two or more sessions",
-    "text": "Insights starts once two sessions have a finished summary. Before that, the tab tells you what it is waiting for."
+    "text": "Insights start once two sessions are analysed. Before that, the tab tells you what it is waiting for."
    },
    {
     "name": "Open Insights",
@@ -863,11 +877,15 @@
    },
    {
     "name": "Read what to fix first",
-    "text": "Each fix has the issue, a suggested fix, a severity (critical, major or minor) and how many sessions it came up in. There are up to 5."
+    "text": "Each fix is numbered, with its severity (Critical, Major or Minor), a suggested fix and how many testers hit it, such as “2 of 3 testers”."
+   },
+   {
+    "name": "Play the quotes",
+    "text": "Quote cards under a fix show the tester, the time and their words. Press play to hear the moment."
    },
    {
     "name": "Check the themes",
-    "text": "Recurring themes group what several testers ran into. Where testers disagreed shows both sides and who said what."
+    "text": "Recurring themes group what came up in more than one session. Where testers disagreed shows both sides and who said what, and What worked lists what went well."
    },
    {
     "name": "Update it as sessions arrive",
@@ -876,26 +894,30 @@
   ],
   "gets": [
    "A short summary across your sessions",
-   "Up to 5 fixes, most serious first",
-   "Recurring themes",
-   "Where testers disagreed"
+   "Up to 5 numbered fixes, most serious first",
+   "Quotes you can play, from the testers who hit each one",
+   "Recurring themes, where testers disagreed, and what worked"
   ],
   "faq": [
    [
     "How many sessions does it need?",
-    "At least 2 with a finished summary."
+    "At least 2 that have been analysed."
    ],
    [
     "Is there an upper limit?",
-    "Aero reads your 40 newest sessions. The page says “Based on N of M sessions”."
+    "Aero reads your 40 newest sessions. The line at the top says “Based on N of M sessions”."
    ],
    [
     "How do I know which sessions it used?",
-    "The line at the top shows how many it used, and when it was last updated."
+    "The line at the top shows how many it used and when it was last updated. In this summary lists the sessions."
+   ],
+   [
+    "Do my own preview runs count?",
+    "No. Preview as tester runs show as You and stay out of Insights."
    ],
    [
     "Can I edit the fixes?",
-    "Not today. Open the sessions behind a fix to check it."
+    "Not the fixes themselves. In a session you can change a finding’s label or mark it Not a finding, and its quote then stops showing here."
    ]
   ],
   "related": [
@@ -911,10 +933,10 @@
   "group": "review",
   "title": "Review a user test session on a timeline",
   "metaTitle": "Review a user test session on a timeline · Aero",
-  "description": "The timeline shows each task, when the tester was talking and moments worth a look. Click it to jump. Read view puts the transcript first.",
-  "answer": "Open a session and look under the recording. The timeline shows your tasks as blocks and when the tester was talking. Click or drag it to jump. Read view puts the summary and transcript first, with a small recording beside it.",
+  "description": "One track shows the tester’s voice, your tasks and a mark for each finding. Hover a mark to read it, click to play. Lanes splits them into rows.",
+  "answer": "To review a session on a timeline, open it in Aero and look under the recording. One track shows the tester’s voice with a mark for each finding. Hover a mark to read it and click to play from there.",
   "facts": [
-   "Click or drag to seek",
+   "One track or Lanes",
    "Watch view and Read view"
   ],
   "needs": [
@@ -926,35 +948,43 @@
     "text": "Go to Tests, open your test, then Sessions, and pick a session."
    },
    {
-    "name": "Read the timeline",
-    "text": "Minute ticks run along the top. Task blocks show where each task started and ended. A lane below shows when the tester was talking, from the word timings."
+    "name": "Read the track",
+    "text": "One track is the default: a faint waveform of the tester’s voice, your tasks as regions, and a label icon for each finding. A warning triangle is an issue, a question mark is confusion, a lightbulb is a request and a tick is something that works well."
    },
    {
     "name": "Jump around",
-    "text": "Click or drag the timeline to move the recording. Press a task in the Summary tab to play from its start."
+    "text": "Click or drag the timeline to move the recording. Hover a mark to read it and click it to play from there."
    },
    {
-    "name": "Filter the tags",
-    "text": "When a session has timed findings, Show tags lets you pick All, Issues, Confusion or Works well. Matching marks stay bright on the timeline."
+    "name": "Filter the marks",
+    "text": "Under the track, pick All, Issues, Confusion, Works well or Requests to show one kind."
    },
    {
-    "name": "Try Read view",
-    "text": "Switch to Read view for a page you read like an article: summary, tasks, then the transcript, with a small recording in the corner."
+    "name": "Try Lanes",
+    "text": "Switch Timeline view to Lanes to give tasks, voice and quotes their own rows. Its Summary switch can show the summary above them."
+   },
+   {
+    "name": "Change a label",
+    "text": "If you disagree with a finding, use its label button in the Summary tab to change its kind or severity, or mark it Not a finding. It shows “Changed by you”, and Back to the original undoes it."
    }
   ],
   "gets": [
    "Tasks on a timeline, with done or couldn’t do it",
-   "A view for watching and a view for reading",
-   "Quotes and findings tied to a moment in the recording"
+   "Findings marked at the moment they were said",
+   "A view for watching and a view for reading"
   ],
   "faq": [
    [
-    "Is the lane a waveform?",
-    "No. It shows when the tester was talking."
+    "Is that a waveform?",
+    "Yes, a faint one of the tester’s voice. Older sessions show when the tester was talking instead."
    ],
    [
     "Does the timeline show the tester’s mouse?",
     "No. Browser-tab recordings show no mouse."
+   ],
+   [
+    "Does changing a label change the analysis?",
+    "No. Your change is kept beside it and shown as “Changed by you”. The analysis itself is never edited."
    ],
    [
     "Why are some task times marked as estimated?",
@@ -971,66 +1001,70 @@
    "find-what-to-fix-first"
   ],
   "next": null,
-  "cta": "Review your first session"
+  "cta": "Review your first session",
+  "alt": {
+   "h": "Prefer to read?",
+   "p": "Switch to Read view for a page you read like an article: the summary, tasks, then the transcript, with a small recording in the corner."
+  }
  },
  {
   "slug": "send-a-user-test-link",
   "group": "test",
   "title": "Send a user test link with no account needed",
   "metaTitle": "Send a user test link, no account needed · Aero",
-  "description": "Copy a test link from Aero and send it to anyone. They open it on a computer, say what they think, and you get the recording back. No sign-up for them.",
-  "answer": "Open your test, go to Setup and copy the test link. Send it to anyone. They open it on a computer, allow their microphone and the tab, and start. They don’t need an Aero account.",
+  "description": "Copy a test link from Aero and send it to anyone. They open it, allow the microphone and the tab, and talk as they go. No sign-up for them.",
+  "answer": "To send a user test link, open your test in Aero, press Copy test link and send it to anyone. They open it, allow their microphone and the tab, and start. They don’t need an Aero account.",
   "facts": [
    "Testers need no account",
-   "Works on a computer"
+   "Nothing to install"
   ],
   "needs": [
-   "A test with a prototype source",
-   "An Aero account (free)"
+   "A test in Aero",
+   "A few people to send the link to"
   ],
   "steps": [
    {
-    "name": "Set up the test",
-    "text": "Go to Tests, start a new test and pick a Figma link or one of your sites. Tasks are optional."
-   },
-   {
     "name": "Copy the link",
-    "text": "Press Copy link. Send it by email, chat or anywhere else."
+    "text": "Open your test and press Copy test link at the top, or Copy link in Setup. Send it by email, chat or anywhere else."
    },
    {
-    "name": "Tell the tester what to expect",
-    "text": "They see who asked them, what happens, what is recorded and that they can stop at any time. They can add their name, and that is all."
+    "name": "What they see first",
+    "text": "Who asked them, what happens, what is recorded (their voice and this tab, never the camera) and that they can stop at any time. They can add their first name, or leave it blank."
+   },
+   {
+    "name": "Allow recording",
+    "text": "One card, Allow recording, has a Microphone row and a Screen recording row, each with Allow. In Chrome’s list they pick this tab, then press Share. Nothing is recorded until they press Start the test."
    },
    {
     "name": "Let them run it",
-    "text": "They allow their microphone and this tab, try the tasks or look around, and press Finish."
+    "text": "They try the tasks in a small panel they can drag anywhere, talk as they go, and press Finish. They see Thank you straight away while the last part saves."
    },
    {
-    "name": "Open or close the link",
-    "text": "Taking new sessions switches the link on or off. When it is closed, testers see a closed message."
+    "name": "Close the link",
+    "text": "Switch off Taking new sessions in Setup when you have enough. Testers who open the link then see a closed message, and the sessions you have stay."
    }
   ],
   "gets": [
    "A recording, transcript and summary for each tester",
    "One link you can send to as many people as you like",
-   "A switch to close the link when you have enough"
+   "A switch to stop new sessions when you have enough"
   ],
   "faq": [
    [
     "Does the tester need an Aero account?",
-    "No."
+    "No. They open the link and start."
    ],
    [
     "Does it use their camera?",
     "No. Aero records the screen and the voice."
    ],
    [
-    "Can they test on a phone?",
-    "They can, but a phone can’t share a tab, so you get their voice only. A computer is best."
+    "Can people test on a phone?",
+    "A Figma prototype test works on a phone and records their voice only. A site or HTML test needs a computer, because Aero records the tab."
    ],
    [
     "How many sessions can I run?",
-    "The free plan has 3 test sessions. Basic has 5, Solo 10 and Pro 20."
+    "Free has 3 test sessions, Basic 5, Solo 10 and Pro 20. Your own Preview as tester runs don’t count."
    ],
    [
     "Does Aero find testers for me?",
@@ -1040,18 +1074,22 @@
   "related": [
    "write-user-test-tasks",
    "watch-a-user-test-recording",
-   "get-a-transcript-of-a-user-test"
+   "find-what-to-fix-first"
   ],
   "next": null,
-  "cta": "Send your first test link"
+  "cta": "Send your first test link",
+  "alt": {
+   "h": "Want to try it yourself first?",
+   "p": "Press Preview as tester at the top of the test. Your own runs show as You, don’t use up your sessions and stay out of Insights."
+  }
  },
  {
   "slug": "write-user-test-tasks",
   "group": "test",
   "title": "Write user test tasks",
   "metaTitle": "Write user test tasks testers understand · Aero",
-  "description": "Tasks are optional in Aero. Add one or more in Setup, each with a short description, and testers see them while they use your prototype.",
-  "answer": "Open your test and go to Setup. Under Tasks, press Add task and write what you want them to try. Add a short description if it helps. Without tasks, testers explore freely.",
+  "description": "Tasks are optional in Aero. Add them in the test’s Setup, give each a short description if it helps, and testers see them in a panel as they go.",
+  "answer": "To write user test tasks in Aero, open your test, go to Setup, type a task in Add a task and press Enter. Write the goal, not the clicks. Tasks are optional: without them, testers explore freely.",
   "facts": [
    "Tasks are optional",
    "Each can have a description"
@@ -1062,15 +1100,15 @@
   "steps": [
    {
     "name": "Open Setup",
-    "text": "Go to Tests, open your test, then Setup. Tasks are listed in the Setup tab."
+    "text": "Go to Tests, open your test, then Setup. Tasks have their own section."
    },
    {
     "name": "Add a task",
-    "text": "Press Add task. Write what they should try, for example “Send $20 to Sam”. Example."
+    "text": "Type what they should try in Add a task and press Enter. For example: “Send £20 to Maya”. Example."
    },
    {
     "name": "Add a description if needed",
-    "text": "The description is optional and shows under the task. For example: “Start from the home screen.” Example."
+    "text": "Open the task’s menu and pick Edit. Add a short description, such as “Start from the home screen”, then press Save or Enter. Esc cancels."
    },
    {
     "name": "Keep each task to one thing",
@@ -1078,13 +1116,13 @@
    },
    {
     "name": "Order and remove",
-    "text": "Tasks are numbered in the order you add them. Delete one with its Delete task button."
+    "text": "Drag a task by its handle to reorder it, or hold Alt and press the arrow keys. Delete is in the task’s menu, with Undo straight after."
    }
   ],
   "gets": [
-   "Tasks shown to the tester while they test",
+   "Tasks shown to the tester in a panel while they test",
    "Done or couldn’t do it, with time spent, for each task in the session",
-   "Task blocks on the timeline"
+   "Task regions on the review timeline"
   ],
   "faq": [
    [
@@ -1092,8 +1130,16 @@
     "No. Without any, testers explore freely."
    ],
    [
+    "How many tasks should I write?",
+    "A few short ones. When Claude sets up a test from a prompt, it asks you for 1 to 5."
+   ],
+   [
     "Can I ask testers to rate difficulty?",
-    "Yes. The difficulty rating option in Setup asks them after each task."
+    "Yes. Switch on Difficulty rating in Setup and testers rate each task after they finish it."
+   ],
+   [
+    "Can I change the welcome and thank-you messages?",
+    "Yes. Messages in Setup has both. Edit one, press Save, and Show how this looks previews it."
    ],
    [
     "Can I turn off voice or screen recording?",
@@ -1113,8 +1159,8 @@
   "group": "publish",
   "title": "Password-protect a prototype",
   "metaTitle": "Password-protect a prototype · Aero",
-  "description": "Add a password to a site in Aero so only people you give it to can open it. Needs the Basic plan or above.",
-  "answer": "Open your site, go to Settings, and switch on Require a password to view this site. Enter a password of at least 6 characters and save. Viewers enter it once and stay signed in for a week.",
+  "description": "Add a password to a site in Aero so only people you give it to can open it. Set it in the site’s Settings. Needs the Basic plan or above.",
+  "answer": "To password-protect a prototype in Aero, open its site, type a password of 6 or more characters under Password in Settings, press Set password, then turn the switch on. Needs Basic or above.",
   "facts": [
    "Basic plan and up",
    "Password of 6 or more characters"
@@ -1126,43 +1172,43 @@
   "steps": [
    {
     "name": "Open the site",
-    "text": "Go to Sites and open the site."
+    "text": "Go to Sites and open the site. Its Settings sit beside the Site, Versions and Analytics tabs (below them on a phone)."
    },
    {
-    "name": "Go to Settings",
-    "text": "Find Password protection. On the free plan it shows as locked."
+    "name": "Find Password",
+    "text": "On the Free plan the row shows a small lock and the word Basic. Click it to see what it does and compare plans."
    },
    {
-    "name": "Switch it on",
-    "text": "Turn on Require a password to view this site and enter a password. It must be at least 6 characters."
+    "name": "Set a password",
+    "text": "Type a password of at least 6 characters and press Set password."
    },
    {
-    "name": "Save and share",
-    "text": "Press Save, then send people the address and the password."
+    "name": "Turn it on",
+    "text": "Turn on the switch beside Password. It saves straight away. Send people the address and the password."
    },
    {
     "name": "Change or remove it",
-    "text": "Enter a new password and save to change it. Switch the option off to remove it."
+    "text": "Type a new password and press Set password to change it. Turn the switch off to remove the password."
    }
   ],
   "gets": [
    "A site that asks for a password",
-   "Viewers who stay signed in for a week"
+   "Visitors who enter it once and stay signed in for a week"
   ],
   "faq": [
    [
     "Which plan do I need?",
-    "Basic ($3 a month) or above."
+    "Basic ($3 a month) or above. Every paid plan starts with a 7-day free trial."
    ],
    [
-    "How long does a viewer stay signed in?",
+    "How long does a visitor stay signed in?",
     "A week."
    ]
   ],
   "related": [
    "put-a-prototype-on-your-own-domain",
    "see-who-visits-your-prototype",
-   "roll-back-to-an-earlier-version"
+   "update-a-published-site"
   ],
   "next": null,
   "cta": "Protect your site"
@@ -1172,8 +1218,8 @@
   "group": "publish",
   "title": "Put a prototype on your own domain",
   "metaTitle": "Put a prototype on your own domain · Aero",
-  "description": "Connect a domain you own to a site in Aero. Add the DNS records Aero shows, save, and the certificate is issued automatically. Needs the Solo plan.",
-  "answer": "Open your site, go to Domain and enter a domain you own. Add the DNS records Aero shows at your registrar, then save. The certificate is issued automatically once the records resolve. Needs the Solo plan or above.",
+  "description": "Connect a domain you own to a site in Aero. Type it in Settings, press Connect and add the DNS records Aero shows. Needs the Solo plan or above.",
+  "answer": "To put a prototype on your own domain, open its site in Aero, type the domain under Your own domain in Settings and press Connect. Add the two DNS records Aero shows with your registrar. Needs Solo or above.",
   "facts": [
    "Solo plan and up",
    "Certificate issued for you"
@@ -1185,24 +1231,24 @@
   ],
   "steps": [
    {
-    "name": "Open the Domain tab",
-    "text": "Go to Sites, open the site, then Domain."
+    "name": "Open the site",
+    "text": "Go to Sites and open the site. Find Your own domain under Address in Settings. On Free and Basic it shows a small lock and the word Solo."
    },
    {
     "name": "Enter your domain",
-    "text": "Under Custom domain, type something like yourdomain.com. Example."
+    "text": "Type a domain you own, like app.yourname.com (Example), and press Connect."
    },
    {
     "name": "Add the DNS records",
-    "text": "Aero lists an A record and a CNAME record. Add them with your domain registrar."
+    "text": "Aero lists an A record and a CNAME record. Add both with your domain registrar."
    },
    {
-    "name": "Save",
-    "text": "Press Save. The certificate is issued automatically once the records resolve."
+    "name": "Wait for them to resolve",
+    "text": "The certificate is issued once the records resolve, and the site is live at your domain."
    },
    {
     "name": "Or pick a shorter Aero address",
-    "text": "On Basic and up you can swap the generated address for a short aeroapp.ai one."
+    "text": "On Basic and up, an HTML site can swap its generated address for a short one, like pocket.aeroapp.ai. Changing it breaks the old link straight away."
    }
   ],
   "gets": [
@@ -1219,14 +1265,18 @@
     "It depends on how quickly your DNS records resolve."
    ],
    [
-    "Can I use a name that is taken?",
-    "Aero addresses must be unique. If one is taken, Aero says so."
+    "Can I change the domain later?",
+    "Yes. Type the new domain and press Connect. Aero takes the old one off the site."
+   ],
+   [
+    "Can I use an Aero address that is taken?",
+    "No. Aero addresses must be unique. If one is taken, Aero says so."
    ]
   ],
   "related": [
    "password-protect-a-prototype",
    "see-who-visits-your-prototype",
-   "roll-back-to-an-earlier-version"
+   "update-a-published-site"
   ],
   "next": null,
   "cta": "Use your own domain"
@@ -1235,12 +1285,12 @@
   "slug": "see-who-visits-your-prototype",
   "group": "publish",
   "title": "See who visits your prototype",
-  "metaTitle": "See who visits your prototype · Aero",
-  "description": "The Analytics tab on a site in Aero shows visits and where they come from. Needs the Solo plan.",
-  "answer": "Open your site and go to Analytics. It shows visits to your site and where they come from, such as sources, devices, browsers and countries. Needs the Solo plan or above.",
+  "metaTitle": "Site analytics: see who visits your prototype · Aero",
+  "description": "The Analytics tab on a site in Aero shows visitors, where they came from, their country and their device. Needs the Solo plan or above.",
+  "answer": "To see who visits your prototype, open its site in Aero and pick the Analytics tab. It shows visitors and visits, where they came from, their country or city, and their device, browser and system. Needs Solo or above.",
   "facts": [
    "Solo plan and up",
-   "Part of the site page"
+   "Visits to the live site"
   ],
   "needs": [
    "A published site",
@@ -1253,56 +1303,61 @@
    },
    {
     "name": "Go to Analytics",
-    "text": "Pick the Analytics tab."
+    "text": "Pick the Analytics tab. On Free and Basic it shows a small lock and the word Solo. Click it to see what it does and compare plans."
    },
    {
-    "name": "Read the breakdown",
-    "text": "See visits and where they come from. The page also splits visitors by device, browser, operating system and country."
+    "name": "Pick a period",
+    "text": "Choose Today, 7 days, 30 days, This month or 12 months."
    },
    {
-    "name": "Compare with your tests",
-    "text": "Test sessions come from the test link and show in Tests."
+    "name": "Pick a number",
+    "text": "Visitors, Visits, Pageviews and Visit time each switch the chart. Under it you see views per visit and the bounce rate."
+   },
+   {
+    "name": "Read the lists",
+    "text": "Where from shows the sources. Place splits by country or city, and Device by device, browser or operating system."
    }
   ],
   "gets": [
-   "Visits to your site",
-   "Sources, devices, browsers and countries"
+   "Visitors, visits, pageviews and visit time over time",
+   "Where visits came from, by source, country and city",
+   "Devices, browsers and operating systems"
   ],
   "faq": [
    [
     "Which plan do I need?",
-    "Solo ($6 a month) or above."
+    "Solo ($6 a month) or above. Every paid plan starts with a 7-day free trial."
    ],
    [
     "Does it show who the visitors are?",
-    "It shows where visits come from and what they used, not who they are."
+    "No. It shows numbers, where visits came from and what people used, not who they are."
    ],
    [
-    "Is it the same as a user test?",
-    "No. Analytics counts visits. A test records what a tester does and says."
+    "Are test sessions counted?",
+    "No. Analytics counts visits to the live site. Test sessions show in Tests, with a recording of what each tester did and said."
    ]
   ],
   "related": [
    "password-protect-a-prototype",
    "put-a-prototype-on-your-own-domain",
-   "roll-back-to-an-earlier-version"
+   "update-a-published-site"
   ],
   "next": null,
-  "cta": "See your visits"
+  "cta": "See your visitors"
  },
  {
   "slug": "roll-back-to-an-earlier-version",
   "group": "publish",
   "title": "Roll back to an earlier version of a site",
   "metaTitle": "Roll back to an earlier version of a site · Aero",
-  "description": "Aero keeps a version each time you publish. Open the Versions tab and restore an older one to put it live again.",
-  "answer": "Open your site and go to Versions. Each publish is a row, and the live one is marked Live. Open the menu on an older row and pick Restore this version.",
+  "description": "Aero keeps a version each time you publish an HTML site. Open the Versions tab and restore an older one to put it live again.",
+  "answer": "To roll back a site in Aero, open it and go to Versions. Each publish is a row, and the live one is marked Live. Open the menu on an older row and pick Restore this version.",
   "facts": [
    "A version per publish",
    "One live at a time"
   ],
   "needs": [
-   "A site with more than one version"
+   "An HTML site with more than one version. A Figma site shows your live prototype, so it has no versions"
   ],
   "steps": [
    {
@@ -1319,11 +1374,11 @@
    },
    {
     "name": "Restore it",
-    "text": "Open the row’s menu and pick Restore this version. It goes live."
+    "text": "Open the row’s menu and pick Restore this version. It goes live at the same address."
    },
    {
     "name": "Drafts",
-    "text": "A version newer than the live one shows as a draft. Pick Publish to make it live, or Discard draft."
+    "text": "Files you add with Publish straight away switched off are saved as a draft. Pick Publish in the row’s menu to make it live, or Discard draft."
    }
   ],
   "gets": [
@@ -1336,16 +1391,91 @@
     "No. They stay in the list as drafts until you discard them."
    ],
    [
-    "Does a test use the live version?",
-    "A test is pinned to a version. Setup shows when the site has a newer one and lets you update the test."
+    "Does a test change when I roll back?",
+    "No. A test keeps its own copy of the version it was made from. Its Setup says which, such as “Testing Pocket, version 4”, and Change makes a separate test from another version."
    ]
   ],
   "related": [
-   "password-protect-a-prototype",
-   "put-a-prototype-on-your-own-domain",
-   "see-who-visits-your-prototype"
+   "update-a-published-site",
+   "publish-an-html-site-or-zip",
+   "password-protect-a-prototype"
   ],
   "next": null,
   "cta": "Publish and go back any time"
+ },
+ {
+  "slug": "update-a-published-site",
+  "group": "publish",
+  "title": "Update a published site",
+  "metaTitle": "Update a published site at the same address · Aero",
+  "description": "Publish a new version of a site at the same address. Drop new files on its page in Aero, or paste a prompt into your chat. Every version is kept.",
+  "answer": "To update a published site, open it in Aero and drop the new files on Drop files, or use Ask Claude or ChatGPT to get a prompt for your chat. The new version goes live at the same address, and the old one is kept.",
+  "facts": [
+   "Free plan works",
+   "Same address",
+   "Every version kept"
+  ],
+  "needs": [
+   "An HTML site in Aero",
+   "The new files, or the chat where you built it"
+  ],
+  "steps": [
+   {
+    "name": "Open the site",
+    "text": "Go to Sites and open the site. The Update section is on the Site tab."
+   },
+   {
+    "name": "Drop the new files",
+    "text": "Drop a folder, a zip or a few files on Drop files, or press Choose files."
+   },
+   {
+    "name": "Publish straight away, or save a draft",
+    "text": "A dialog lists the files. With Publish straight away on, press Publish and they go live. Switch it off to save a draft and publish it later from Versions."
+   },
+   {
+    "name": "Or ask your chat",
+    "text": "Ask Claude or ChatGPT gives you a prompt. Paste it into the chat where you built the site and it publishes the next version here."
+   },
+   {
+    "name": "Check the version",
+    "text": "The new version shows in Versions, marked Live. Restore an older one any time."
+   }
+  ],
+  "alt": {
+   "h": "Is it a Figma site?",
+   "p": "A Figma site shows your live prototype, so changes you make in Figma show up on their own. There is nothing to upload."
+  },
+  "gets": [
+   "The new version live at the same address",
+   "Every earlier version kept, so you can go back",
+   "Drafts, when you want to check before going live"
+  ],
+  "faq": [
+   [
+    "Does the address change?",
+    "No. Each update becomes the next version at the same address."
+   ],
+   [
+    "Can I check an update before it goes live?",
+    "Yes. Switch off Publish straight away and the files are saved as a draft. Open it from Versions, then publish it or discard it."
+   ],
+   [
+    "Do my tests change when I update?",
+    "No. A test keeps its own copy of the version it was made from. Make a new test from the site to test the update."
+   ],
+   [
+    "Is there a limit on versions?",
+    "Aero keeps every version you publish."
+   ]
+  ],
+  "related": [
+   "roll-back-to-an-earlier-version",
+   "publish-an-html-site-or-zip",
+   "publish-a-claude-artifact"
+  ],
+  "next": {
+   "slug": "user-test-an-html-site"
+  },
+  "cta": "Update your site"
  }
 ]
