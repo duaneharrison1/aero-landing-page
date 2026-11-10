@@ -17,7 +17,7 @@
  "p2.h1": [
   "Test it the day you make it"
  ],
- "p2.lead": "Put it online at your own aeroapp.ai address and share one test link. Hear where people got stuck, in their own words. Testers need no software or account.",
+ "p2.lead": "Put it online at its own aeroapp.ai address and share one test link. Hear where people got stuck, in their own words. Testers need no software or account.",
  "p3.h1": [
   "From prompt to first session"
  ],
@@ -52,7 +52,7 @@
  "st.claude.done": "Done. It’s live at pocket.aeroapp.ai, version 1.",
  "st.claude.input": "Reply to Claude",
  "st.msg.to": "To Maya",
- "st.msg": "Could you try this for me? Takes a few minutes. aeroapp.ai/t/pocket-7k2",
+ "st.msg": "Could you try this for me? Takes a few minutes. aeroapp.ai/pocket-test?test=1",
  "st.copied": "Copied",
  "st.who.maya": "Maya’s computer",
  "st.note.from": "Mia Chen",
@@ -66,8 +66,8 @@
  "st.wa.members": "Maya, Tom, Priya, Jonas, Ana, Leo, You",
  "st.wa.ok": "Sure, send it over",
  "st.wa.ask2": "Could you try this for me? Takes a few minutes.",
- "st.wa.link": "aeroapp.ai/t/pocket-7k2",
- "hero.aria": "How Aero works, a 50-second loop. In Claude, Aero’s one prompt is pasted and Claude publishes Pocket to pocket.aeroapp.ai. In Aero the site is live, and its own tab opens. From the site’s menu, “User test this site” creates a test with its own link. On Maya’s own computer she opens the link, allows the microphone and the tab, and tries two tasks while her tab and voice are recorded. Back in Aero her session is transcribed with friction points, and Insights puts every session together: what to fix first, with quotes. The Publish, Test and Review buttons jump to each step; pressing the step that is playing pauses it.",
+ "st.wa.link": "aeroapp.ai/pocket-test?test=1",
+ "hero.aria": "How Aero works, a 50-second loop. In Claude, Aero’s one prompt is pasted and Claude publishes Pocket to pocket.aeroapp.ai. In Aero the site is live, and its own tab opens. From the site’s menu, “Test this site” creates a test with its own link. On Maya’s own computer she opens the link, allows the microphone and the tab, and tries two tasks while her tab and voice are recorded. Back in Aero her session is transcribed with friction points, and Insights puts every session together: what to fix first, with quotes. The Publish, Test and Review buttons jump to each step; pressing the step that is playing pauses it.",
  "pub.k": "Publish",
  "pub.h2": "Start from an idea, a link or a Figma file",
  "pub.body": "Describe it in a prompt and build it in Claude or ChatGPT, then paste Aero’s prompt into the same chat. It’s published at its own aeroapp.ai address, with nothing to install.",
@@ -106,7 +106,7 @@
  ],
  "test.k": "Test",
  "test.h2": "Get real sessions with one link",
- "test.body": "Every site can become a test with its own short link. They open it on their own computer, allow the microphone and the tab with your prototype, and talk through your tasks as they go. This is where the findings come from.",
+ "test.body": "Every site can become a test with its own link. They open it on their own computer, allow the microphone and the tab with your prototype, and talk through your tasks as they go. This is where the findings come from.",
  "test.more": "No app to install, no account to make, no session to book.",
  "test.facts": [
   [
@@ -132,13 +132,13 @@
  ],
  "rev.k": "Review",
  "rev.h2": "Findings you can take to your team",
- "rev.body": "Each session is transcribed in about a minute. Insights then puts every session together: what to fix first, how many testers hit it, and the quotes, ready to play in a meeting.",
- "rev.more": "Not a summary of one call. Patterns across sessions, ranked, each with the moment it was said. Download the report to share.",
+ "rev.body": "Each session is transcribed and summarised soon after it ends: about a minute for a short one. Insights then puts every session together: what to fix first, how many testers hit it, and the quotes, ready to play in a meeting.",
+ "rev.more": "Not a summary of one call. Patterns across sessions, ranked, each with the moment it was said.",
  "rev.facts": [
   [
    "book",
    "Transcript and summary",
-   "About a minute after"
+   "About a minute for a short session"
   ],
   [
    "chart",
@@ -153,7 +153,7 @@
   [
    "down",
    "Download",
-   "The report, the transcript, the video"
+   "The video, the audio, the transcript"
   ]
  ],
  "more.pub": "Every Publish feature",
@@ -219,11 +219,11 @@
   ],
   [
    "How soon is the transcript ready?",
-   "About a minute after each session ends, with a short summary and the friction points in the tester’s own words."
+   "About a minute after a short session ends, longer after a long one, with a short summary and the friction points in the tester’s own words."
   ],
   [
    "Is the test link the same as my site’s?",
-   "No. Testing a site makes a copy with its own short link, so you can change the test without touching the live site."
+   "No. Testing a site makes a copy with its own link, so you can change the test without touching the live site."
   ],
   [
    "Can I use my own domain?",
@@ -240,7 +240,7 @@
  ],
  "close.h2": "Put it online. Find out what people think",
  "close.p": "Free to start. From $3 a month. No call, no contract.",
- "hero.aria.classic": "How Aero works, a 50-second loop. In Claude, Aero’s one prompt is pasted and Claude publishes Pocket to pocket.aeroapp.ai. In Aero the site is live; Visit opens it in a new tab. From the site’s menu, “User test this site” creates a test with its own link, which is copied and sent to six testers in a WhatsApp group. On Maya’s own computer the message arrives; she opens the link, allows the microphone and the tab, and tries two tasks while her tab and voice are recorded. Back in Aero her session is transcribed with friction points, and Insights sums up every session. Then the owner starts a new site and copies the prompt again. The Publish, Test and Review buttons jump to each step; pressing the step that is playing pauses it.",
+ "hero.aria.classic": "How Aero works, a 50-second loop. In Claude, Aero’s one prompt is pasted and Claude publishes Pocket to pocket.aeroapp.ai. In Aero the site is live; Visit opens it in a new tab. From the site’s menu, “Test this site” creates a test with its own link, which is copied and sent to six testers in a WhatsApp group. On Maya’s own computer the message arrives; she opens the link, allows the microphone and the tab, and tries two tasks while her tab and voice are recorded. Back in Aero her session is transcribed with friction points, and Insights sums up every session. Then the owner starts a new site and copies the prompt again. The Publish, Test and Review buttons jump to each step; pressing the step that is playing pauses it.",
  "pr.plans": [
   [
    "Free",
