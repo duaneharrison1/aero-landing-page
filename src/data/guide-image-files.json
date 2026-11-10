@@ -1,0 +1,142 @@
+{
+  "analytics": {
+    "src": "/guides/analytics.webp",
+    "width": 1346,
+    "height": 1280,
+    "cut": true,
+    "dark": false
+  },
+  "domain": {
+    "src": "/guides/domain.webp",
+    "width": 852,
+    "height": 1016,
+    "cut": false,
+    "dark": false
+  },
+  "insights": {
+    "src": "/guides/insights.webp",
+    "width": 1440,
+    "height": 1037,
+    "cut": true,
+    "dark": false
+  },
+  "new-site": {
+    "src": "/guides/new-site.webp",
+    "width": 1440,
+    "height": 472,
+    "cut": false,
+    "dark": false
+  },
+  "new-site-figma": {
+    "src": "/guides/new-site-figma.webp",
+    "width": 1408,
+    "height": 1160,
+    "cut": false,
+    "dark": false
+  },
+  "new-site-prompt": {
+    "src": "/guides/new-site-prompt.webp",
+    "width": 1408,
+    "height": 1222,
+    "cut": false,
+    "dark": false
+  },
+  "new-site-upload": {
+    "src": "/guides/new-site-upload.webp",
+    "width": 1408,
+    "height": 978,
+    "cut": false,
+    "dark": false
+  },
+  "new-test": {
+    "src": "/guides/new-test.webp",
+    "width": 1440,
+    "height": 903,
+    "cut": false,
+    "dark": false
+  },
+  "password": {
+    "src": "/guides/password.webp",
+    "width": 852,
+    "height": 328,
+    "cut": false,
+    "dark": false
+  },
+  "review-arriving": {
+    "src": "/guides/review-arriving.webp",
+    "width": 808,
+    "height": 500,
+    "cut": true,
+    "dark": true
+  },
+  "review-read": {
+    "src": "/guides/review-read.webp",
+    "width": 1440,
+    "height": 869,
+    "cut": true,
+    "dark": true
+  },
+  "review-timeline": {
+    "src": "/guides/review-timeline.webp",
+    "width": 1310,
+    "height": 362,
+    "cut": false,
+    "dark": true
+  },
+  "review-transcript": {
+    "src": "/guides/review-transcript.webp",
+    "width": 808,
+    "height": 1280,
+    "cut": true,
+    "dark": true
+  },
+  "review-watch": {
+    "src": "/guides/review-watch.webp",
+    "width": 1440,
+    "height": 1043,
+    "cut": false,
+    "dark": true
+  },
+  "sessions": {
+    "src": "/guides/sessions.webp",
+    "width": 1440,
+    "height": 759,
+    "cut": false,
+    "dark": false
+  },
+  "site-page": {
+    "src": "/guides/site-page.webp",
+    "width": 1440,
+    "height": 936,
+    "cut": false,
+    "dark": false
+  },
+  "task-edit": {
+    "src": "/guides/task-edit.webp",
+    "width": 1314,
+    "height": 858,
+    "cut": false,
+    "dark": false
+  },
+  "test-link": {
+    "src": "/guides/test-link.webp",
+    "width": 852,
+    "height": 780,
+    "cut": false,
+    "dark": false
+  },
+  "test-setup": {
+    "src": "/guides/test-setup.webp",
+    "width": 1440,
+    "height": 1130,
+    "cut": false,
+    "dark": false
+  },
+  "versions": {
+    "src": "/guides/versions.webp",
+    "width": 1346,
+    "height": 1104,
+    "cut": false,
+    "dark": false
+  }
+}
