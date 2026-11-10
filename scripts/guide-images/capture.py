@@ -49,7 +49,9 @@ FIGMA_DESKTOP = "https://www.figma.com/proto/ExAmPle1234/Pocket-example?node-id=
 #   frame   CSS selector of the style guide frame, with optional has_text / has (a selector inside it) and nth
 #   width   frame width in CSS px for this shot (a narrower window; the components lay themselves out)
 #   do      steps before the picture: ("click", selector), ("fill", selector, text), ("wait", ms)
+#   seek    optional: seconds to move the recording to before the picture (review shots)
 #   crop    selectors inside the frame ("FRAME" for the whole frame); the picture is the box around all of them, plus pad
+#   page_crop  optional: the crop selectors are looked up on the whole page (a dialog drawn over it)
 #   right_of  optional: end the picture at this element's right edge (+ right_pad), to leave out a side column
 #   max_h   optional: cut the picture at this height (CSS px); the page fades the cut edge
 SHOTS = [
@@ -74,6 +76,20 @@ SHOTS = [
         "width": 860,
         "do": [("click", 'button:has-text("Upload HTML")'), ("wait", 800)],
         "crop": [".createflow-page-panel", ".createflow-solo-actions"],
+        "pad": 16,
+    },
+    {
+        "id": "new-site-figma-link",
+        "frame": {"sel": ".sc-create-frame"},
+        "width": 860,
+        "do": [
+            ("click", 'button:has-text("From Figma")'),
+            ("wait", 800),
+            ("fill", 'input[placeholder^="https://www.figma.com"] >> nth=0', FIGMA_DESKTOP),
+            ("wait", 800),
+            ("blur",),
+        ],
+        "crop": [".createflow-page-panel"],
         "pad": 16,
     },
     {
@@ -130,6 +146,23 @@ SHOTS = [
         "max_h": 640,
     },
     {
+        "id": "site-update",
+        "frame": {"sel": ".sc-sites-frame", "has": ".aero-sd-tabs", "nth": 0},
+        "width": 1100,
+        "crop": ['.aero-sd-sec:has(.aero-sd-sec-title:text-is("Update"))'],
+        "pad": 16,
+        "right_of": ".aero-sd-main",
+        "right_pad": 16,
+    },
+    {
+        "id": "publish-dialog",
+        "frame": {"sel": ".sc-sites-frame", "has_text": "Open the publish dialog"},
+        "do": [("click", 'button:has-text("Open the publish dialog")'), ("wait", 800)],
+        "crop": [".aero-pfd"],
+        "page_crop": True,
+        "pad": 0,
+    },
+    {
         "id": "password",
         "frame": {"sel": ".sc-sites-frame", "has": ".aero-sd-tabs", "nth": 0},
         "width": 1100,
@@ -150,6 +183,13 @@ SHOTS = [
         "width": 1100,
         "crop": [".aero-tlink", '.aero-sr-row:has-text("Taking new sessions")'],
         "pad": 20,
+    },
+    {
+        "id": "tester-allow",
+        "frame": {"sel": ".aero-tx-card", "has_text": "Mic refused"},
+        "crop": ["FRAME"],
+        "pad": 0,
+        "max_h": 345,
     },
     {
         "id": "test-setup",
@@ -184,24 +224,31 @@ SHOTS = [
     {
         "id": "review-watch",
         "frame": {"sel": ".sc-review-frame", "has_text": "Watch, dark (the default)"},
-        "seek": 0.3,
+        "seek": 50,
         "crop": [".aero-rv"],
         "pad": 0,
     },
     {
         "id": "review-timeline",
         "frame": {"sel": ".sc-review-frame", "has_text": "Watch, dark (the default)"},
-        "seek": 0.3,
+        "seek": 50,
         "crop": [".aero-rv-ctl", ".aero-rv-tl"],
         "pad": 0,
     },
     {
         "id": "review-transcript",
         "frame": {"sel": ".sc-review-frame", "has_text": "Watch, dark (the default)"},
-        "seek": 0.3,
+        "seek": 50,
         "crop": [".aero-rv-insp"],
         "pad": 0,
         "max_h": 640,
+    },
+    {
+        "id": "review-lanes",
+        "frame": {"sel": ".sc-review-frame", "has_text": "A faint waveform on top"},
+        "seek": 50,
+        "crop": [".aero-rv-ctl", ".aero-rv-tl"],
+        "pad": 0,
     },
     {
         "id": "review-arriving",
@@ -209,13 +256,6 @@ SHOTS = [
         "crop": [".aero-rv-insp"],
         "pad": 0,
         "max_h": 250,
-    },
-    {
-        "id": "review-read",
-        "frame": {"sel": ".sc-review-frame", "has_text": "Read, dark"},
-        "crop": [".aero-rv"],
-        "pad": 0,
-        "max_h": 640,
     },
     {
         "id": "insights",
@@ -310,12 +350,15 @@ def shoot(page, port_url, shot):
             page.wait_for_timeout(step[1])
 
     if shot.get("seek") is not None:
-        # Move the recording the way an owner would: a click on the timeline track.
-        track = frame.locator(".aero-rv-tl-track").first
-        bb = track.bounding_box()
-        if bb:
-            page.mouse.click(bb["x"] + bb["width"] * shot["seek"], bb["y"] + bb["height"] / 2)
-            page.wait_for_timeout(1500)
+        # Put the playhead at a moment (seconds) by setting the recording's time, as the player does.
+        frame.evaluate("""async (el, t) => {
+            const v = el.querySelector('video, audio');
+            if (!v) return;
+            if (v.readyState < 1) await new Promise((r) => { v.addEventListener('loadedmetadata', r, { once: true }); setTimeout(r, 8000); });
+            await new Promise((r) => { v.addEventListener('seeked', r, { once: true }); v.currentTime = t; setTimeout(r, 4000); });
+            v.dispatchEvent(new Event('timeupdate'));
+        }""", shot["seek"])
+        page.wait_for_timeout(1200)
         page.mouse.move(0, 0)  # no hover card in the picture
         page.wait_for_timeout(300)
 
@@ -323,12 +366,15 @@ def shoot(page, port_url, shot):
     page.wait_for_timeout(500)
     boxes = []
     for sel in shot["crop"]:
-        b = frame.bounding_box() if sel == "FRAME" else frame.locator(sel).first.bounding_box()
+        scope = page if shot.get("page_crop") else frame
+        b = frame.bounding_box() if sel == "FRAME" else scope.locator(sel).first.bounding_box()
         if not b:
             raise RuntimeError(f"{shot['id']}: nothing matches {sel}")
         boxes.append(b)
     fb = frame.bounding_box()
     r = union(boxes)
+    if shot.get("page_crop"):
+        fb = {"x": 0, "y": 0, "width": page.viewport_size["width"], "height": page.viewport_size["height"]}
     pad = shot.get("pad", 0)
     x0 = max(fb["x"], r["x"] - pad)
     y0 = max(fb["y"], r["y"] - pad)
@@ -390,7 +436,19 @@ def main():
             if u.startswith(APP_ORIGIN):
                 try:
                     res = opener.open(u.replace(APP_ORIGIN, local), timeout=60)
-                    r.fulfill(status=200, body=res.read(), headers={"content-type": res.headers.get("Content-Type", "text/html")})
+                    body = res.read()
+                    ct = res.headers.get("Content-Type", "text/html")
+                    rng = r.request.headers.get("range")
+                    if rng and rng.startswith("bytes="):
+                        # Media asks for byte ranges; answering them lets the recording seek.
+                        a, _, z = rng[6:].partition("-")
+                        start = int(a or 0)
+                        end = min(int(z) if z else len(body) - 1, len(body) - 1)
+                        r.fulfill(status=206, body=body[start:end + 1], headers={
+                            "content-type": ct, "accept-ranges": "bytes",
+                            "content-range": f"bytes {start}-{end}/{len(body)}"})
+                    else:
+                        r.fulfill(status=200, body=body, headers={"content-type": ct, "accept-ranges": "bytes"})
                 except Exception as e:  # noqa: BLE001
                     print("  could not serve", u, e)
                     r.abort()

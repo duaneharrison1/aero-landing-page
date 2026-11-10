@@ -34,6 +34,13 @@
     "cut": false,
     "dark": false
   },
+  "new-site-figma-link": {
+    "src": "/guides/new-site-figma-link.webp",
+    "width": 1408,
+    "height": 916,
+    "cut": false,
+    "dark": false
+  },
   "new-site-prompt": {
     "src": "/guides/new-site-prompt.webp",
     "width": 1408,
@@ -62,6 +69,13 @@
     "cut": false,
     "dark": false
   },
+  "publish-dialog": {
+    "src": "/guides/publish-dialog.webp",
+    "width": 1120,
+    "height": 594,
+    "cut": false,
+    "dark": false
+  },
   "review-arriving": {
     "src": "/guides/review-arriving.webp",
     "width": 808,
@@ -69,11 +83,11 @@
     "cut": true,
     "dark": true
   },
-  "review-read": {
-    "src": "/guides/review-read.webp",
-    "width": 1440,
-    "height": 869,
-    "cut": true,
+  "review-lanes": {
+    "src": "/guides/review-lanes.webp",
+    "width": 1310,
+    "height": 642,
+    "cut": false,
     "dark": true
   },
   "review-timeline": {
@@ -111,6 +125,13 @@
     "cut": false,
     "dark": false
   },
+  "site-update": {
+    "src": "/guides/site-update.webp",
+    "width": 1298,
+    "height": 514,
+    "cut": false,
+    "dark": false
+  },
   "task-edit": {
     "src": "/guides/task-edit.webp",
     "width": 1314,
@@ -130,6 +151,13 @@
     "width": 1440,
     "height": 1130,
     "cut": false,
+    "dark": false
+  },
+  "tester-allow": {
+    "src": "/guides/tester-allow.webp",
+    "width": 960,
+    "height": 690,
+    "cut": true,
     "dark": false
   },
   "versions": {
