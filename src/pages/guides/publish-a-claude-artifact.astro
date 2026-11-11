@@ -3,8 +3,12 @@
 import SiteLayout from "../../layouts/SiteLayout.astro";
 import "../../styles/website/site-page.css";
 import { getPage } from "../../lib/website";
+import { guidePicHtml } from "../../lib/guide-images";
 
-const { html, copy, meta } = getPage("publish-a-claude-artifact");
+const page = getPage("publish-a-claude-artifact");
+const { copy, meta } = page;
+// <!--guide-pic:id--> in the markup becomes a captured app screen (src/lib/guide-images.ts).
+const html = page.html.replace(/<!--guide-pic:([a-z0-9-]+)-->/g, (_, id) => guidePicHtml(id, "publish"));
 ---
 <SiteLayout title={meta.title} description={meta.description} bodyClass={meta.bodyClass} jsonld={meta.jsonld} copy={copy} script="site">
   <Fragment set:html={html} />

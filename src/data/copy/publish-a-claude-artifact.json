@@ -1,10 +1,10 @@
 {
  "title": "Publish a Claude artifact to its own address · Aero",
- "desc": "How to publish a Claude artifact as a real website at your own address, in one prompt or by uploading its HTML. Then test it with people you choose.",
+ "desc": "How to publish a Claude artifact as a real website at its own address, in one prompt or by uploading its HTML. Then test it with people you choose.",
  "crumb.a": "Guides",
  "crumb.b": "Publish a Claude artifact",
  "h1": "Publish a Claude artifact.",
- "answer": "Copy one prompt from Aero into the Claude chat where you made the artifact. Claude sends the files to Aero and it goes live at an address like yourname.aeroapp.ai. Or download the artifact as HTML and drop it into Aero.",
+ "answer": "To publish a Claude artifact, copy one prompt from Aero into the Claude chat where you made it. Claude sends the files to Aero and it goes live at an address like yourname.aeroapp.ai. Or download the artifact as HTML and drop it into Aero.",
  "meta": [
   "About 2 minutes",
   "Free plan works",
@@ -14,13 +14,13 @@
  "need": [
   "The Claude chat where you built the artifact",
   "An Aero account (free)",
-  "A name for the site, like pocket"
+  "Nothing else: the site name is optional"
  ],
  "steps.h": "Steps",
  "steps": [
   [
    "Start a new site from a prompt",
-   "In Aero, go to Sites, New site, and pick From Claude or ChatGPT. Give the site a name.",
+   "In Aero, go to Sites, New site, and pick From Claude or ChatGPT. The name is optional: leave it blank and the site is named after its address.",
    [
     "prompt",
     ".x-seg, .mhead .crumb",
@@ -29,7 +29,7 @@
   ],
   [
    "Copy the prompt",
-   "Aero shows one prompt with your key in it. Press Copy prompt. The key only lets this prompt publish sites in your account.",
+   "Press Copy prompt. Copying it adds your personal publish key, so keep the prompt to yourself, like a password.",
    [
     "prompt",
     ".x-pbox, .x-key",
@@ -50,7 +50,7 @@
   ],
   [
    "Open its page in Aero",
-   "Aero updates by itself when the site is live and opens its page: the address, a preview and its versions.",
+   "Aero sees the site go live and says so. Press Done to open its page: the address, a preview and its versions.",
    [
     "justpub",
     ".x-justpub, .x-stage, .x-addr",
@@ -62,9 +62,9 @@
   ]
  ],
  "alt.h": "Prefer not to use a prompt?",
- "alt.p": "Download the artifact from Claude as an HTML file, then drop it on New site, Upload. It goes live at its own address the same way.",
+ "alt.p": "Download the artifact from Claude as an HTML file, then drop it on New site, Upload HTML. It goes live at its own address the same way.",
  "next.h": "Then test it.",
- "next.p": "Start a new test and pick this site. You get a test link to send to anyone: they open it on their own computer, and you get the recording, transcript and summary back.",
+ "next.p": "On the site’s page, press Test this site. You get a test link to send to anyone: they open it on their own computer, and you get the recording, transcript and summary back.",
  "next.a": "How testing works",
  "faq.h": "Questions.",
  "faq": [
@@ -78,7 +78,7 @@
   ],
   [
    "How do I update it?",
-   "Ask Claude for the change in the same chat, then use the prompt again. Aero keeps every version, so you can roll back."
+   "Ask Claude for the change in the same chat. On the site’s page, Ask Claude or ChatGPT gives you a prompt that publishes the next version to the same address. Aero keeps every version, so you can roll back."
   ],
   [
    "Can I keep it private?",
@@ -90,7 +90,7 @@
   ],
   [
    "How long does a free site stay live?",
-   "7 days. Paid plans keep it live; they start at $3 a month with a 7-day free trial."
+   "7 days, counted from when your first site goes live. Then it goes offline and keeps its address. Paid plans keep sites live, from $3 a month with a 7-day free trial."
   ]
  ],
  "rel.h": "Related guides",

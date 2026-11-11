@@ -30,6 +30,38 @@ one-line answer, steps, "what you get", FAQ, related guides). `src/pages/guides/
 `test`), check every step against the app's real flow, and build. It appears at `/guides/<slug>`, on the `/guides`
 index under its group, and in the sitemap. `publish-a-claude-artifact` keeps its own hand-built page (it has `existing: true`).
 
+### Guide pictures
+
+The pictures under the steps are screenshots of the real app, not drawn copies. They live in `public/guides/*.webp`
+(2x, at most 1440px wide, under about 150 KB each).
+
+- **Which picture goes where:** `src/data/guide-images.json`. `images` holds each picture's alt text, `guides` puts a
+  picture under a step (`"publish-a-figma-prototype": { "3": "new-site-figma" }`, steps count from 1). One picture can
+  sit on several guides. The steps' words stay in `guides.json`.
+- **The hand-built Claude artifact guide** places them with `<!--guide-pic:new-site-->` in
+  `src/markup/publish-a-claude-artifact.html`. Its third picture (the Claude chat) stays drawn in HTML, simplified and
+  labelled "Outside Aero", because it is another tool's interface.
+- **Sizes:** `src/data/guide-image-files.json`, written by the capture script. Don't edit it by hand.
+- **Look:** `src/lib/guide-images.ts` wraps each one in the step's wash (`.s-gpic` in `site.css`), with the same
+  rounded window and shadow as the crops on the homepage and Features page. A picture cut short fades out at the bottom.
+
+**Re-capture them when the app's UI changes.** The script opens figmaApp's style guide (`/aero`, which renders the
+real Sites, Tests and Review components with Example data and handlers that write nothing), does a few clicks or typing
+in it, and screenshots each part:
+
+```
+# figmaApp checked out on master next to this repo
+python3 scripts/guide-images/capture.py --app ../figmaApp              # builds the app first (a few minutes)
+python3 scripts/guide-images/capture.py --app ../figmaApp --no-build   # reuse figmaApp/build
+python3 scripts/guide-images/capture.py --app ../figmaApp --only versions,analytics
+```
+
+It needs Python 3 with `playwright` (then `python3 -m playwright install chromium`) and `Pillow`. The app is served
+locally and opened as app.aeroapp.ai so it shows Aero; every other request is blocked, so nothing reaches Firebase or an
+account. Each shot (frame, clicks, crop) is a short entry in `SHOTS` at the top of the script. If a shot fails, the
+style guide has probably changed: fix that entry. Look at the pictures before committing: they must show only Example
+names, no cursor, nothing that isn't live, and plans only as in `docs/brand/PRICING-FACTS.md`.
+
 ## Change words
 
 - **Most words:** edit the page's file in `src/data/copy/`. Any element in the markup marked `data-c="key"` takes its

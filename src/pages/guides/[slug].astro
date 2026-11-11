@@ -6,6 +6,7 @@ import SiteLayout from "../../layouts/SiteLayout.astro";
 import "../../styles/website/site-page.css";
 import { GUIDES, bySlug, cardHtml, jsonLd, esc, ICON, PILL } from "../../lib/guides";
 import { link } from "../../lib/website";
+import { guidePicHtml, stepPic } from "../../lib/guide-images";
 
 export function getStaticPaths() {
   return GUIDES.filter((g) => !g.existing).map((g) => ({ params: { slug: g.slug }, props: { slug: g.slug } }));
@@ -25,7 +26,7 @@ const signup = link("@signup");
   <section><div class="site-wrap s-narrow">
     <div class="s-need"><h2 class="site-h3">What you need</h2><ul>{g.needs!.map((n) => <li><Fragment set:html={ICON.tick} />{n}</li>)}</ul></div>
     <h2 class="site-h2 s-h2">Steps</h2>
-    <ol class="s-steps s-steps-text">{g.steps!.map((s, i) => <li class="s-step"><div class="s-step-tx"><span class="s-step-n">{i + 1}</span><div><h3 class="site-h3">{s.name}</h3><p class="site-body">{s.text}</p></div></div></li>)}</ol>
+    <ol class="s-steps s-steps-text">{g.steps!.map((s, i) => { const pic = stepPic(g.slug, i + 1); return <li class="s-step"><div class="s-step-tx"><span class="s-step-n">{i + 1}</span><div><h3 class="site-h3">{s.name}</h3><p class="site-body">{s.text}</p></div></div>{pic && <Fragment set:html={guidePicHtml(pic, g.group)} />}</li>; })}</ol>
     <div class="s-need s-gets"><h2 class="site-h3">What you get</h2><ul>{g.gets!.map((n) => <li><Fragment set:html={ICON.tick} />{n}</li>)}</ul></div>
     {g.alt && <div class="s-alt"><h3 class="site-h3">{g.alt.h}</h3><p class="site-body">{g.alt.p}</p></div>}
     {g.group === "publish" && next ? (

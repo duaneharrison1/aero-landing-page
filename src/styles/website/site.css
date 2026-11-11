@@ -178,6 +178,13 @@ a.s-gcard:hover{box-shadow:inset 0 0 0 1px var(--line-strong),0 10px 24px -18px 
 .s-step-tx .site-body{margin-top:4px}
 .s-step-pic{border-radius:20px;padding:28px;height:300px;margin-left:50px}
 .s-step-pic .s-crop{height:100%;--fill:1}
+/* guide pictures: captured app screens (public/guides, scripts/guide-images/capture.py) on the step's wash.
+   The file is 2x; --w is its 1x width, so it is never shown larger than captured. */
+.s-gpic{height:auto;margin:0 0 0 50px;display:flex;align-items:center;justify-content:center;min-height:200px}
+.s-gimg{display:block;width:auto;height:auto;max-width:min(100%,var(--w));max-height:440px;border-radius:12px;background:var(--surface);
+  box-shadow:0 0 0 1px rgba(0,0,0,.06),0 18px 40px -22px rgba(24,28,40,.35)}
+.s-gimg.dark{background:#161618;box-shadow:0 0 0 1px rgba(0,0,0,.2),0 22px 44px -22px rgba(12,14,24,.55)}
+.s-gimg.cut-b{border-bottom-left-radius:0;border-bottom-right-radius:0;-webkit-mask-image:linear-gradient(180deg,#000 80%,transparent);mask-image:linear-gradient(180deg,#000 80%,transparent)}
 .s-alt{margin-top:48px;padding-top:28px;border-top:1px solid var(--line)}
 .s-alt .site-body{margin-top:6px}
 .s-next{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:28px;padding:40px 44px;margin-top:56px}
@@ -255,6 +262,8 @@ a.s-gcard:hover{box-shadow:inset 0 0 0 1px var(--line-strong),0 10px 24px -18px 
   .s-use-pic{min-height:240px;padding:20px 16px;order:-1}
   .s-gcards{grid-template-columns:1fr}
   .s-step-pic{margin-left:0;height:220px;padding:16px;border-radius:16px}
+  .s-gpic{height:auto;margin-left:0;min-height:0;padding:20px 16px}
+  .s-gimg{max-height:300px}
   .s-next{grid-template-columns:1fr;padding:28px 22px;border-radius:22px}
   .s-post{grid-template-columns:1fr 18px;gap:6px 12px}
   .s-post time{grid-column:1/-1;padding:0}
