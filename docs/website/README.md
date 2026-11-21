@@ -15,12 +15,27 @@ each thing is, so a change is one edit in one place.
 | `/guides` | `src/pages/guides/index.astro` | `src/markup/guides.html` | `src/data/copy/guides.json` |
 | `/guides/publish-a-claude-artifact` | `src/pages/guides/publish-a-claude-artifact.astro` | `src/markup/publish-a-claude-artifact.html` | `src/data/copy/publish-a-claude-artifact.json` |
 | `/guides/<slug>` | `src/pages/guides/[slug].astro` | in the template | `src/data/guides.json` |
+| `/alternatives` | `src/pages/alternatives/index.astro` | in the file | in the file |
+| `/alternatives/<slug>` | `src/pages/alternatives/[slug].astro` | in the template | `src/data/alternatives.json` |
 | `/blog` | `src/pages/blog/index.astro` | `src/markup/blog.html` (the list comes from `src/data/blog.json`) | `src/data/copy/blog.json` |
 | `/blog/<slug>` | `src/pages/blog/[slug].astro` | `src/markup/blog/<slug>.html` | `src/data/copy/blog/<slug>.json` |
 | `/about`, `/contact`, 404 | their `.astro` files (Tailwind, `src/layouts/Layout.astro`) | in the file | in the file |
 
 The page title, meta description, JSON-LD (FAQ, HowTo, breadcrumbs) and body class of each new page are in
 `src/data/pages.json`. The sitemap is made by `@astrojs/sitemap` at build time.
+
+## Alternatives (comparison pages)
+
+Each comparison is one entry in `src/data/alternatives.json`: title, description, answer, "choose them" and "choose Aero"
+lists, the side-by-side rows, notes, sources and FAQ. `src/pages/alternatives/[slug].astro` is the template; the
+three pictures are the same real app screens the guides use (`new-site`, `test-link`, `insights`).
+
+Rules for the facts: take them only from the other tool's own pages, write the date you read them, and write
+"Not stated" where the page is silent. Never use review sites. Re-read the pages before changing a row or after about
+three months, because plans and prices move. Aero's own lines come from `docs/brand/PRICING-FACTS.md`. Every page
+says where the other tool is the better choice. Adding a tool: add an entry, build, and it appears at
+`/alternatives/<slug>`, on the index, in `llms.txt` and in the sitemap. The apex serves `/alternatives` through the
+figmaApp middleware (`MARKETING_PREFIXES`), so a new top-level folder needs a line there too.
 
 ## Guides (task pages)
 

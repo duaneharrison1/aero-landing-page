@@ -1,0 +1,56 @@
+---
+// Comparison pages: one template, data in src/data/alternatives.json. See docs/website/README.md, "Alternatives".
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import "../../styles/website/site-page.css";
+import { ALTS, altBySlug, altJsonLd } from "../../lib/alternatives";
+import { ICON, PILL, esc } from "../../lib/guides";
+import { link } from "../../lib/website";
+import { guidePicHtml } from "../../lib/guide-images";
+
+export function getStaticPaths() {
+  return ALTS.map((a) => ({ params: { slug: a.slug }, props: { slug: a.slug } }));
+}
+const a = altBySlug(Astro.props.slug)!;
+const others = ALTS.filter((x) => x.slug !== a.slug);
+const signup = link("@signup");
+const steps = [
+  { pill: PILL.publish, group: "publish", h: "Put the prototype online", p: "Paste a prompt into Claude or ChatGPT, drop an HTML folder or zip, or paste a Figma link. It goes live at its own address.", pic: "new-site" },
+  { pill: PILL.test, group: "test", h: "Send one test link", p: "Add a few tasks if you like. Testers open the link in their browser, allow recording and talk it through. They need no account.", pic: "test-link" },
+  { pill: PILL.review, group: "review", h: "Read what happened", p: "Each session comes back with the recording, a transcript and a summary. The insights page lists what to fix first.", pic: "insights" },
+];
+const sourceLinks = a.sources.map(([t, u]) => `<a href="${u}" rel="nofollow noopener">${esc(t)}</a>`).join(" · ");
+---
+<SiteLayout title={a.metaTitle} description={a.description} bodyClass="site s-page" jsonld={altJsonLd(a)} script="site">
+  <section class="s-hero s-task-hero s-alt-hero"><div class="site-wrap s-narrow">
+    <nav class="s-crumb" aria-label="Breadcrumb"><a href="/alternatives">Alternatives</a><svg class="i" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 3 5 5-5 5"/></svg><span aria-current="page">{a.name}</span></nav>
+    <h1 class="site-h1 s-h1-task">{a.h1}<span class="hd-dot">.</span></h1>
+    <p class="site-lead s-answer">{a.answer}</p>
+    <p class="s-fine-row">{a.facts.map((f) => <span><Fragment set:html={ICON.tick} />{f}</span>)}</p>
+    <div class="s-ctas"><a class="btn g3 md" href={signup} data-glass-v3="primary" data-fill="rgba(29,29,31,.8)"><span>Start free</span></a><a class="btn g3 md" href="/pricing" data-glass-v3="secondary"><span>See pricing</span></a></div>
+  </div></section>
+  <section class="s-alt-steps"><div class="site-wrap s-narrow">
+    <h2 class="site-h2 s-h2">How Aero works<span class="hd-dot">.</span></h2>
+    <ol class="s-steps s-steps-text">{steps.map((s, i) => <li class="s-step"><div class="s-step-tx"><span class="s-step-n">{i + 1}</span><div><Fragment set:html={s.pill} /><h3 class="site-h3">{s.h}</h3><p class="site-body">{s.p}</p></div></div><Fragment set:html={guidePicHtml(s.pic, s.group)} /></li>)}</ol>
+  </div></section>
+  <section class="s-sec"><div class="site-wrap">
+    <h2 class="site-h2 s-h2">Which one fits<span class="hd-dot">.</span></h2>
+    <div class="s-pick">
+      <div class="s-need"><h3 class="site-h3">Choose {a.name} if</h3><ul>{a.chooseThem.map((n) => <li><Fragment set:html={ICON.tick} />{n}</li>)}</ul></div>
+      <div class="s-need us"><h3 class="site-h3">Choose Aero if</h3><ul>{a.chooseAero.map((n) => <li><Fragment set:html={ICON.tick} />{n}</li>)}</ul></div>
+    </div>
+  </div></section>
+  <section class="s-sec"><div class="site-wrap">
+    <h2 class="site-h2 s-h2">Side by side<span class="hd-dot">.</span></h2>
+    <div class="s-tscroll"><table class="s-tbl s-ctbl s-alt"><tr><th><span class="sr-only">Feature</span></th><th class="us">Aero</th><th>{a.name}</th></tr>{a.rows.map(([l, x, y]) => <tr><th scope="row">{l}</th><td class="us">{x}</td><td>{y}</td></tr>)}</table></div>
+    <ul class="s-notes">{a.notes.map((n) => <li>{n}</li>)}</ul>
+    <p class="s-src"><b>Sources</b> <Fragment set:html={sourceLinks} /></p>
+  </div></section>
+  <section><div class="site-wrap s-narrow">
+    <div class="s-tfaq"><h2 class="site-h2 s-h2">Questions<span class="hd-dot">.</span></h2><div class="s-faq-list">{a.faq.map(([q, ans]) => <details><summary>{q}</summary><p>{ans}</p></details>)}</div></div>
+    <div class="s-rel"><h2 class="site-h3">More comparisons</h2><div class="s-gcards">{others.map((o) => <a class="s-gcard np" href={`/alternatives/${o.slug}`}><b>{o.name} alternative</b><span class="s-garr"><Fragment set:html={ICON.arr} /></span></a>)}</div></div>
+  </div></section>
+  <section class="s-close-w"><div class="site-wrap"><div class="site-band w-hero s-close">
+    <div><h2 class="site-h2">Try it on the free plan<span class="hd-dot">.</span></h2><p class="site-lead">3 test sessions with recordings, transcripts and summaries.</p></div>
+    <div class="s-ctas"><a class="btn g3 md" href={signup} data-glass-v3="primary" data-fill="rgba(29,29,31,.8)"><span>Start free</span></a><a class="btn g3 md" href="/guides" data-glass-v3="secondary"><span>Read the guides</span></a></div></div>
+  </div></section>
+</SiteLayout>

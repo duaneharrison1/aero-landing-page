@@ -3,6 +3,7 @@
 // docs/brand/PRICING-FACTS.md (the only source for plans and limits); update both together.
 import type { APIRoute } from "astro";
 import { GUIDES } from "../lib/guides";
+import { ALTS } from "../lib/alternatives";
 
 const SITE = "https://aeroapp.ai";
 const MANAGE = new Set([
@@ -16,6 +17,7 @@ const ARTIFACT_LINE =
   "Copy one prompt from Aero into the Claude chat where you made the artifact, and Claude publishes it to its own address.";
 
 const line = (g: (typeof GUIDES)[number]) => `- [${g.title}](${SITE}/guides/${g.slug}): ${g.answer ?? ARTIFACT_LINE}`;
+const altLine = (a: (typeof ALTS)[number]) => `- [${a.name} alternative](${SITE}/alternatives/${a.slug}): ${a.answer}`;
 const list = (pick: (g: (typeof GUIDES)[number]) => boolean) => GUIDES.filter(pick).map(line).join("\n");
 
 export const GET: APIRoute = () => {
@@ -56,6 +58,10 @@ Prices are in US dollars, monthly. Full details and a comparison with other tool
 - Pro, $19: 20 test sessions, plus priority support.
 - Paid plans have a 7-day free trial, no call and no contract. The session numbers are totals on a plan, not monthly allowances.
 - Checkout may show a regional price.
+
+## How does Aero compare with other tools?
+
+${ALTS.map(altLine).join("\n")}
 
 ## What's new?
 
