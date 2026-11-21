@@ -1,11 +1,19 @@
 ---
 brand-sync: figmaApp docs/brand is the source. Copy this file unchanged to aero-landing-page/docs/brand/.
-version: 2026-11-06.1
+version: 2026-11-21.1
 ---
 
 # Aero brand and product decisions
 
 The running log of what Duane decided, newest first. Add a line whenever he decides something; never delete a line, strike it through and say what replaced it. The full evidence is in `research/conversation-audit.md`.
+
+## 21 Nov 2026: Aero SEO programme (same steps as Figmafolio)
+- Same order as Figmafolio: baseline, technical PR, registrations, research, admin, pages, alternatives. One step at a time.
+- One English site in USD. No country folders for Aero.
+- Website traffic stays in the figmafolio.com Plausible site and is filtered by hostname (aeroapp.ai). The admin reads it that way; no separate site.
+- Search Console and Bing use the same Google account as Figmafolio and heybooking. aeroapp.ai is a domain property, verified with a DNS TXT record on Vercel DNS (keep the record) and imported into Bing.
+- Comparison pages may name Maze, Lyssna (formerly UsabilityHub), Userbrain, Useberry, UserTesting, UXtweak, Lookback, Userlytics, Great Question, Optimal Workshop and PlaybookUX, and on the hosting side Tiiny and Siter. The competitor rule applies: its own page, dated, "Not stated" rather than "no", say where they are the better choice, no logos or reviews, re-check every quarter.
+- The shared /admin for Aero and Figmafolio gets tabs and acquisition, website and search views (plan in the project doc "Shared admin improvements"); built one PR at a time, each flagged before merge.
 
 ## 6 Nov 2026: design rounds 3 to 8 (built in #330 to #335)
 - Homepage hero: "From an idea you had today / to findings for your team.", with a rotating subhead: Publish your [Claude artifact / Figma prototype / Lovable app / HTML site], send one test link, and get findings (aero-landing-page #28). The order stays Publish, Test, Review.

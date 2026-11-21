@@ -7,6 +7,7 @@ const blogCollection = defineCollection({
     draft: z.boolean(),
     title: z.string(),
     snippet: z.string(),
+    description: z.string().optional(), // the meta description; falls back to the site default
     image: z.object({
       src: z.string(),
       alt: z.string(),

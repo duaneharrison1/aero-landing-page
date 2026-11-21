@@ -3,18 +3,57 @@
   "route": "/",
   "title": "Aero: publish a prototype, test it, get findings",
   "description": "Put a Claude, Figma or HTML prototype online, send one test link, and get recordings, transcripts and what to fix first. Free to start.",
-  "bodyClass": "site hm"
+  "bodyClass": "site hm",
+  "jsonld": [
+   {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://aeroapp.ai/#organization",
+    "name": "Aero",
+    "url": "https://aeroapp.ai/",
+    "logo": "https://aeroapp.ai/apple-touch-icon.png"
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://aeroapp.ai/#website",
+    "url": "https://aeroapp.ai/",
+    "name": "Aero",
+    "inLanguage": "en-GB",
+    "publisher": {
+     "@id": "https://aeroapp.ai/#organization"
+    }
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Aero",
+    "url": "https://aeroapp.ai/",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "Put a Claude, Figma or HTML prototype online, send one test link, and get recordings, transcripts and what to fix first.",
+    "offers": {
+     "@type": "Offer",
+     "price": "0",
+     "priceCurrency": "USD",
+     "description": "Free plan. Paid plans from $3 a month."
+    },
+    "publisher": {
+     "@id": "https://aeroapp.ai/#organization"
+    }
+   }
+  ]
  },
  "features": {
   "route": "/features",
   "title": "Features: publish, test and review in one place · Aero",
-  "description": "Every Aero feature, grouped by step: publish from one prompt, an HTML folder or a Figma link; test with one link and no software for testers; review transcripts, summaries and friction points across sessions.",
+  "description": "Every Aero feature in one place: publish from a prompt, an HTML folder or a Figma link, test with one link, and review transcripts and friction points.",
   "bodyClass": "site s-page"
  },
  "pricing": {
   "route": "/pricing",
   "title": "Pricing: free to start, from $3 a month · Aero",
-  "description": "Aero plans: Free, Basic $3, Solo $6 and Pro $19 a month. Recordings on every plan. 7-day free trial, no call, no contract. Compared with Maze, Lookback, Userbrain and Lyssna, per month.",
+  "description": "Aero plans: Free, Basic $3, Solo $6 and Pro $19 a month. Recordings on every plan, 7-day free trial, no contract. Compared with Maze and Lyssna.",
   "bodyClass": "site s-page",
   "jsonld": [
    {
@@ -224,13 +263,13 @@
  "blog": {
   "route": "/blog",
   "title": "Blog: what’s new in Aero",
-  "description": "Dated notes on what changed in Aero: publishing, testing and reviewing.",
+  "description": "Dated notes on what changed in Aero across publishing, testing and reviewing, from custom domains to steadier Figma tests.",
   "bodyClass": "site s-page"
  },
  "blog/change-custom-domain": {
   "route": "/blog/change-custom-domain",
   "title": "Change or remove your custom domain yourself · Aero blog",
-  "description": "You can now switch a site to a different custom domain, or remove it, without contacting support.",
+  "description": "You can now switch a site to a different custom domain or remove it in one step, with clear messages when a domain can’t be connected.",
   "bodyClass": "site s-page",
   "jsonld": [
    {
@@ -249,7 +288,7 @@
  "blog/figma-sites-custom-domains": {
   "route": "/blog/figma-sites-custom-domains",
   "title": "Custom domains for Figma sites · Aero blog",
-  "description": "Sites made from a Figma prototype now get the same settings as HTML sites, including your own domain.",
+  "description": "Sites made from a Figma prototype now get the same settings as HTML sites, including your own domain. One set of settings for every kind of site.",
   "bodyClass": "site s-page",
   "jsonld": [
    {
@@ -268,7 +307,7 @@
  "blog/html-hosting": {
   "route": "/blog/html-hosting",
   "title": "Drop an HTML folder and it’s live · Aero blog",
-  "description": "Aero now hosts HTML sites: a single file, a folder or a zip, live at its own aeroapp.ai address.",
+  "description": "Aero now hosts HTML sites: upload a file, folder or zip and it’s live at its own aeroapp.ai address, with every version kept.",
   "bodyClass": "site s-page",
   "jsonld": [
    {
@@ -287,7 +326,7 @@
  "blog/publish-from-claude": {
   "route": "/blog/publish-from-claude",
   "title": "Publish from Claude or ChatGPT with one prompt · Aero blog",
-  "description": "Built something in Claude or ChatGPT? Aero now gives you one prompt to publish it from the same chat.",
+  "description": "Built something in Claude or ChatGPT? Aero gives you one prompt to publish it from the same chat, and each version shows where it came from.",
   "bodyClass": "site s-page",
   "jsonld": [
    {
@@ -306,7 +345,7 @@
  "blog/sign-in-with-google": {
   "route": "/blog/sign-in-with-google",
   "title": "Sign in with Google · Aero blog",
-  "description": "You can sign in to Aero with your Google account, and link it to an existing email and password.",
+  "description": "Sign in or sign up to Aero with Google, link it to an existing email and password, or unlink it. Resetting your password is clearer too.",
   "bodyClass": "site s-page",
   "jsonld": [
    {
@@ -325,7 +364,7 @@
  "blog/site-settings": {
   "route": "/blog/site-settings",
   "title": "Passwords, favicons and visits for your sites · Aero blog",
-  "description": "Every site now has a settings page: its name, password protection, favicon and visits.",
+  "description": "Every site now has a settings page: password protection and a custom favicon from Basic, site analytics from Solo, and a rename for the address.",
   "bodyClass": "site s-page",
   "jsonld": [
    {
@@ -363,7 +402,7 @@
  "blog/tasks-are-optional": {
   "route": "/blog/tasks-are-optional",
   "title": "Tasks are optional · Aero blog",
-  "description": "A test no longer needs tasks. Leave them out and testers explore freely.",
+  "description": "A test no longer needs tasks. Leave them out and testers explore freely, and the review sums up the whole session.",
   "bodyClass": "site s-page",
   "jsonld": [
    {
@@ -382,7 +421,7 @@
  "blog/test-from-a-prompt": {
   "route": "/blog/test-from-a-prompt",
   "title": "Set up a test from the same prompt · Aero blog",
-  "description": "The prompt that publishes your site can now set up a test on it too.",
+  "description": "The prompt that publishes your site can now set up a test on it too, and the test link comes back in the chat reply.",
   "bodyClass": "site s-page",
   "jsonld": [
    {
@@ -401,7 +440,7 @@
  "blog/test-html-sites": {
   "route": "/blog/test-html-sites",
   "title": "Test an HTML site, with tasks · Aero blog",
-  "description": "You can now run a test on any HTML site you’ve published, not only on Figma prototypes.",
+  "description": "You can now run a test on any HTML site you’ve published, with a task panel over the site and the device and browser saved with each session.",
   "bodyClass": "site s-page",
   "jsonld": [
    {

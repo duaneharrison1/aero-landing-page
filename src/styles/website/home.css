@@ -47,7 +47,7 @@
 .hm-h1{font-size:clamp(34px,3.7vw,54px);line-height:1.04;letter-spacing:-.035em}
 .hm-lead{color:var(--ink2);font-size:16.5px;line-height:1.5;max-width:34em}
 .hm-made{color:var(--ink);font-weight:450}
-.hm-rot{position:relative;display:inline-block;vertical-align:bottom;height:1.5em;overflow:hidden;transition:width .45s cubic-bezier(.3,.7,.2,1)}
+.hm-rot{position:relative;display:inline-block;vertical-align:bottom;height:1.5em;width:6.654em;overflow:hidden;transition:width .45s cubic-bezier(.3,.7,.2,1)} /* width: the first word ("Claude artifact"), so the lead does not re-wrap when home.js sizes the box to the word showing */
 .hm-w{position:absolute;left:0;right:0;top:0;text-align:left;white-space:nowrap;opacity:0;transform:translateY(.7em);transition:opacity .35s,transform .45s cubic-bezier(.3,.7,.2,1);color:var(--ink)}
 .hm-w u{text-decoration:underline;text-decoration-color:var(--blue);text-decoration-thickness:2px;text-underline-offset:4px}
 .hm-made{display:inline}

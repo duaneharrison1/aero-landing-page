@@ -44,7 +44,7 @@ if (props.kind === "new") {
     <Fragment set:html={body} />
   </SiteLayout>
 ) : (
-  <Layout title={props.entry.data.title}>
+  <Layout title={props.entry.data.title} description={props.kind === "old" ? props.entry.data.description : undefined}>
     <Container>
       <div class="prose prose-lg mx-auto mt-14 max-w-3xl">
         <Content />

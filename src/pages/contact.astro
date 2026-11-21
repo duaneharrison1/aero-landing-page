@@ -8,7 +8,7 @@ import Layout from "../layouts/Layout.astro";
 // FAQ, LinkedIn link, and support email have been removed.
 ---
 
-<Layout title="Contact">
+<Layout title="Contact" description="Get in touch with the Aero team. Fill out the form and we’ll get back to you about publishing, testing or your account.">
   <Container>
     <div class="text-center mt-16 mb-10">
       <h1 class="text-4xl md:text-5xl font-bold mb-2 text-[#1D1D1F]">
@@ -20,7 +20,7 @@ import Layout from "../layouts/Layout.astro";
     </div>
 
     <div id="contact-form" class="scroll-mt-24">
-      <Sectionhead>
+      <Sectionhead as="h2">
         <Fragment slot="title">Contact form</Fragment>
         <Fragment slot="desc"
           >Fill out the form below and we’ll get back to you.</Fragment

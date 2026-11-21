@@ -1,0 +1,5 @@
+# Aero marketing site. Everything on aeroapp.ai may be crawled.
+User-agent: *
+Allow: /
+
+Sitemap: https://aeroapp.ai/sitemap-index.xml
