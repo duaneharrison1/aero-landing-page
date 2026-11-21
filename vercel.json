@@ -17,5 +17,57 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/how-it-works",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/pricing-test",
+      "destination": "/pricing",
+      "permanent": true
+    },
+    {
+      "source": "/features/analytics",
+      "destination": "/features#publish",
+      "permanent": true
+    },
+    {
+      "source": "/features/code-conversion",
+      "destination": "/features#publish",
+      "permanent": true
+    },
+    {
+      "source": "/features/custom-domain",
+      "destination": "/features#publish",
+      "permanent": true
+    },
+    {
+      "source": "/features/custom-favicon",
+      "destination": "/features#publish",
+      "permanent": true
+    },
+    {
+      "source": "/features/password-protection",
+      "destination": "/features#publish",
+      "permanent": true
+    },
+    {
+      "source": "/features/project-showcase",
+      "destination": "/features",
+      "permanent": true
+    },
+    {
+      "source": "/features/responsive-design",
+      "destination": "/features#publish",
+      "permanent": true
+    },
+    {
+      "source": "/features/user-testing",
+      "destination": "/features#test",
+      "permanent": true
+    }
   ]
 }

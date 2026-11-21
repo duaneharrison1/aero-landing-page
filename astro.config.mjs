@@ -9,7 +9,7 @@ import icon from "astro-icon";
 // https://astro.build/config
 export default defineConfig({
   site: "https://aeroapp.ai",
-  // Old addresses from the earlier site, kept working (Oct 2026 redesign). See docs/website/README.md.
+  // Old addresses from the earlier site (Oct 2026 redesign). Real 301s live in vercel.json; keep both lists the same. See docs/website/README.md.
   redirects: {
     "/how-it-works": "/",
     "/pricing-test": "/pricing",
