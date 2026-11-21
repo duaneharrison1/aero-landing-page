@@ -1,0 +1,21 @@
+---
+// Index of the comparison pages. Data in src/data/alternatives.json. See docs/website/README.md, "Alternatives".
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import "../../styles/website/site-page.css";
+import { ALTS } from "../../lib/alternatives";
+import { ICON } from "../../lib/guides";
+import { link } from "../../lib/website";
+
+const signup = link("@signup");
+const jsonld = [{ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Alternatives" }] }];
+---
+<SiteLayout title="Aero compared with other testing tools" description="How Aero compares with Maze, UserTesting and Lyssna: what each does, what each costs, and when the other tool is the better choice." bodyClass="site s-page" jsonld={jsonld} script="site">
+  <section class="s-hero"><div class="site-wrap"><p class="site-eyebrow">Alternatives</p>
+    <h1 class="site-h1">Aero next to the tools you know<span class="hd-dot">.</span></h1>
+    <p class="site-lead s-lead-w">Facts come from each tool’s own pages, with the date we read them. Where another tool is the better choice, we say so.</p></div></section>
+  <section><div class="site-wrap"><div class="s-gcards">{ALTS.map((o) => <a class="s-gcard np" href={`/alternatives/${o.slug}`}><b>{o.name} alternative</b><span class="s-garr"><Fragment set:html={ICON.arr} /></span></a>)}</div></div></section>
+  <section class="s-close-w"><div class="site-wrap"><div class="site-band w-hero s-close">
+    <div><h2 class="site-h2">Try it on the free plan<span class="hd-dot">.</span></h2><p class="site-lead">3 test sessions with recordings, transcripts and summaries.</p></div>
+    <div class="s-ctas"><a class="btn g3 md" href={signup} data-glass-v3="primary" data-fill="rgba(29,29,31,.8)"><span>Start free</span></a><a class="btn g3 md" href="/pricing" data-glass-v3="secondary"><span>See pricing</span></a></div></div>
+  </div></section>
+</SiteLayout>

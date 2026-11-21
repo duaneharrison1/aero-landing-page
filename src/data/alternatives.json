@@ -1,0 +1,125 @@
+[
+  {
+    "slug": "maze",
+    "name": "Maze",
+    "metaTitle": "Maze alternative for AI-built prototypes | Aero",
+    "description": "Maze or Aero? Aero hosts a prototype from Claude, Figma or HTML, records your own testers, and gives transcripts on the free plan. What each does.",
+    "h1": "A Maze alternative for AI-built prototypes",
+    "answer": "Maze is a research platform with surveys, card sorting and a testing panel. Aero is narrower: it puts a prototype online at its own link, you send the link to your own testers, and you get a recording, transcript and summary of each session.",
+    "facts": ["Free plan includes recordings and transcripts", "No account for testers", "No testing panel"],
+    "chooseThem": [
+      "You need surveys, card sorting or tree testing as well as prototype tests.",
+      "You want a recruited panel of participants, not only people you invite.",
+      "Your team has an Enterprise budget and needs moderated interviews, mobile app testing or single sign-on."
+    ],
+    "chooseAero": [
+      "Your prototype comes from Claude, ChatGPT, Lovable, Bolt or v0, or is a plain HTML file, as well as Figma.",
+      "You have a few people to send a link to and want a recording, transcript and summary back from each.",
+      "You want the free plan to include recordings and transcripts.",
+      "You want your prototype at its own address, with a password if you need one."
+    ],
+    "rows": [
+      ["Price", "Free, then $3, $6 or $19 a month", "Free plan. Enterprise is custom pricing"],
+      ["Sessions with your own testers", "3 on Free; 5, 10 or 20 on paid plans¹", "1 study a month on Free"],
+      ["Tab and voice recording", "Yes, on every plan", "Not on Free. Enterprise includes recordings"],
+      ["Transcript and summary of each session", "Yes, on every plan", "Not on Free. Enterprise includes interview transcription"],
+      ["Prototype sources", "Figma, Claude artifacts, ChatGPT canvases, Lovable, Bolt, v0 and HTML", "Figma through an integration. Other sources not stated"],
+      ["Hosts your prototype", "Yes, at its own address", "Not stated"],
+      ["Participant panel", "No. You send the link to your own testers", "Yes. Pay-per-use credits on Free; a 20M+ panel on Enterprise"],
+      ["Surveys, card sorting and tree testing", "No", "Yes, basic on Free"]
+    ],
+    "notes": [
+      "¹ Aero’s sessions are a total on your plan, not a monthly allowance.",
+      "Read from Maze’s own pages on 21 Nov 2026. “Not stated” means the page didn’t say, not that Maze can’t do it. Plans and prices change, so check Maze’s pricing page."
+    ],
+    "sources": [["Maze pricing", "https://maze.co/pricing/"], ["Maze prototype testing guide", "https://maze.co/guides/prototype-testing/"]],
+    "faq": [
+      ["Is Aero a replacement for Maze?", "Only for one job. Aero publishes a prototype and records your own testers. It has no panel, surveys, card sorting or tree testing, so teams that need those still need a tool like Maze."],
+      ["Can I test a Claude or Lovable prototype in Maze?", "Maze’s own pages describe Figma imports and live website testing for published sites. They don’t say whether a coded or AI-built prototype can be tested, so check with Maze. In Aero you publish it and test the link."],
+      ["Do my testers need an account?", "Not for Aero. They open your link, allow recording and start."],
+      ["Does Aero find testers for me?", "No. You send the link to your own people."],
+      ["What does Aero cost?", "Free has 3 test sessions with recordings and transcripts. Paid plans are $3, $6 and $19 a month, with a 7-day free trial."]
+    ]
+  },
+  {
+    "slug": "usertesting",
+    "name": "UserTesting",
+    "metaTitle": "UserTesting alternative for prototype tests | Aero",
+    "description": "UserTesting finds participants for you. Aero hosts your prototype and records the people you invite, from $0 a month with transcripts on every plan.",
+    "h1": "A UserTesting alternative for tests you run yourself",
+    "answer": "UserTesting is an enterprise platform with its own network of participants. Aero is for the smaller job: you put a prototype online, send the link to people you already have, and get a recording, transcript and summary of each session.",
+    "facts": ["From $0, no sales call", "No account for testers", "You bring your own testers"],
+    "chooseThem": [
+      "You need participants found for you, with demographic filters and screener questions.",
+      "You need live conversations, a managed research programme or an enterprise contract.",
+      "You test with large groups across teams and countries."
+    ],
+    "chooseAero": [
+      "You already have people to send a link to: colleagues, customers or a community.",
+      "You want to pay $0 to $19 a month, not per session or by quote.",
+      "Your prototype comes from Claude, ChatGPT, Lovable, Bolt, v0 or plain HTML as well as Figma."
+    ],
+    "rows": [
+      ["Price", "Free, then $3, $6 or $19 a month. No call", "Starter is listed at $149 a session, with a 10-session minimum. Higher plans are by quote"],
+      ["Sessions", "3 on Free; 5, 10 or 20 on paid plans¹", "Paid per session on Starter; unlimited-testing plans by quote"],
+      ["Recording", "Yes, on every plan", "Yes. Session videos and screen recordings on Starter"],
+      ["Transcript and summary of each session", "Yes, on every plan", "Yes. Transcripts on Starter"],
+      ["Participants", "Your own testers only", "Its own participant network, with demographic filters and screener questions"],
+      ["Prototype sources", "Figma, Claude artifacts, ChatGPT canvases, Lovable, Bolt, v0 and HTML", "Prototypes, websites, apps and concepts, with a plugin for Figma"],
+      ["Hosts your prototype", "Yes, at its own address", "Not stated on its plans pages. Its help centre lists secure prototype hosting on higher plans"]
+    ],
+    "notes": [
+      "¹ Aero’s sessions are a total on your plan, not a monthly allowance.",
+      "Read from UserTesting’s own pages on 21 Nov 2026. Its pages name the plans differently (Starter, Advanced, Ultimate on one; Advanced, Ultimate and Ultimate+ in its help centre), and its main pricing page didn’t load when we checked. “Not stated” means the page didn’t say, not that UserTesting can’t do it."
+    ],
+    "sources": [["UserTesting platform plans", "https://www.usertesting.com/plans/platform"], ["UserTesting Starter plan", "https://www.usertesting.com/platform/order-starter"], ["UserTesting subscription options", "https://help.usertesting.com/hc/en-us/articles/11880401600797-UserTesting-subscription-options"]],
+    "faq": [
+      ["Is Aero a UserTesting alternative?", "For one job: testing a prototype with people you invite. Aero doesn’t find participants, run live conversations or sell enterprise plans."],
+      ["Does Aero provide testers?", "No. You send the test link to your own people, and they need no account."],
+      ["What does UserTesting cost?", "Its Starter plan is listed at $149 a session with a minimum purchase of 10 sessions. Higher plans are by quote. Check its plans page for current prices."],
+      ["What do I get from each session in Aero?", "The recording of the tester’s tab and voice, a transcript, and a summary with friction points. They arrive a minute or so after the session ends."],
+      ["What does Aero cost?", "Free has 3 test sessions with recordings and transcripts. Paid plans are $3, $6 and $19 a month, with a 7-day free trial."]
+    ]
+  },
+  {
+    "slug": "lyssna",
+    "name": "Lyssna",
+    "metaTitle": "Lyssna alternative for AI-built prototypes | Aero",
+    "description": "Lyssna, formerly UsabilityHub, offers quick design tests and a panel. Aero hosts your prototype and records the people you invite. Side by side.",
+    "h1": "A Lyssna alternative for testing your own prototype",
+    "answer": "Lyssna (formerly UsabilityHub) runs quick design tests and interviews, with a panel you can pay for. Aero does one thing: it hosts your prototype and records your own testers going through it, with a transcript and summary of each session.",
+    "facts": ["Free plan includes recordings and transcripts", "No account for testers", "No testing panel"],
+    "chooseThem": [
+      "You want unlimited quick studies and user interviews in one tool.",
+      "You want to recruit from a panel, which Lyssna prices separately, not only invite people.",
+      "You need several seats, or enterprise features such as single sign-on."
+    ],
+    "chooseAero": [
+      "Your prototype comes from Claude, ChatGPT, Lovable, Bolt or v0, or is a plain HTML file, as well as Figma.",
+      "You want recordings and transcripts on the free plan.",
+      "You want your prototype at its own address, with a password if you need one."
+    ],
+    "rows": [
+      ["Price", "Free, then $3, $6 or $19 a month", "Free plan. Growth is listed at $166 a month. Enterprise is by quote"],
+      ["Sessions with your own testers", "3 on Free; 5, 10 or 20 on paid plans¹", "15 self-recruited responses on Free; unlimited on Growth"],
+      ["Tab and voice recording", "Yes, on every plan", "Think-aloud recordings on Growth and Enterprise. Free not stated"],
+      ["Transcript and summary of each session", "Yes, on every plan", "A transcription feature is listed, but the page doesn’t say which plans have it. AI summaries on Growth"],
+      ["Prototype sources", "Figma, Claude artifacts, ChatGPT canvases, Lovable, Bolt, v0 and HTML", "Figma prototypes. Other sources not stated"],
+      ["Hosts your prototype", "Yes, at its own address", "Not stated"],
+      ["Participant panel", "No. You send the link to your own testers", "Yes, priced separately on every plan"],
+      ["Seats", "One person per plan", "3 on Free, 5 on Growth"]
+    ],
+    "notes": [
+      "¹ Aero’s sessions are a total on your plan, not a monthly allowance.",
+      "Read from Lyssna’s own pages on 21 Nov 2026. “Not stated” means the page didn’t say, not that Lyssna can’t do it. Plans and prices change, so check Lyssna’s pricing page."
+    ],
+    "sources": [["Lyssna pricing", "https://www.lyssna.com/pricing/"], ["Lyssna recordings help", "https://help.lyssna.com/en/articles/9398996-recordings"]],
+    "faq": [
+      ["Are Lyssna and UsabilityHub the same company?", "Yes. UsabilityHub changed its name to Lyssna in October 2023, according to Lyssna’s own announcement."],
+      ["Is Aero a replacement for Lyssna?", "Only for one job. Aero publishes a prototype and records your own testers. It has no panel and no quick design studies."],
+      ["Does Aero find testers for me?", "No. You send the link to your own people, and they need no account."],
+      ["Can I test a Lovable or Claude prototype in Aero?", "Yes. Publish it to Aero, then start a test and pick that site. You get one link to send."],
+      ["What does Aero cost?", "Free has 3 test sessions with recordings and transcripts. Paid plans are $3, $6 and $19 a month, with a 7-day free trial."]
+    ]
+  }
+]
