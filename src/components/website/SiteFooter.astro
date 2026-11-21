@@ -11,7 +11,7 @@ const f = site.footer;
 <div class="site-foot-top"><div class="site-foot-brand"><Fragment set:html={lockup} /><p>{f.tag}<span class="hd-dot">.</span></p></div>
 <div class="site-foot-cols">
   {f.columns.map((c) => (
-    <div><h4>{c.title}</h4><ul>{c.links.map((l) => <li><a href={link(l.href)}>{l.label}</a></li>)}</ul></div>
+    <div><h2>{c.title}</h2><ul>{c.links.map((l) => <li><a href={link(l.href)}>{l.label}</a></li>)}</ul></div>
   ))}
 </div></div>
 <div class="site-foot-fine"><span>{f.copyright}</span><span>{f.fine}</span></div></div></footer>

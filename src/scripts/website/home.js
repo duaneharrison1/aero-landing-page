@@ -17,6 +17,7 @@
   var HERO_DEFAULT = 'new';
   var CLASSIC = (Q.get('hero') || HERO_DEFAULT) === 'classic';
   var LAY = Q.get('l') || 'c'; if (/^[bc]$/.test(LAY)) D.documentElement.classList.add('lay-' + LAY); // hero layout: c (centred, decided 25 Oct), or ?l=a / ?l=b
+  if (LAY !== 'c') D.documentElement.classList.remove('lay-c'); // lay-c is already in the page HTML (SiteLayout.astro) so the hero does not jump after load
 
   /* ---------- copy ---------- */
   try {

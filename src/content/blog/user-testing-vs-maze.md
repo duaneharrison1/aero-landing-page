@@ -1,6 +1,7 @@
 ---
 draft: false
 title: "User Testing by Aero vs Maze"
+description: "Looking for a Maze alternative? Compare features, pricing, and see which prototype testing tool is right for you."
 snippet: "Looking for a Maze alternative? Compare features, pricing, and see which prototype testing tool is right for you."
 image:
   src: "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
