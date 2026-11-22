@@ -2,8 +2,8 @@
  {
   "slug": "steadier-figma-tests",
   "date": "2026-10-21",
-  "title": "Steadier Figma tests and summaries",
-  "summary": "Figma prototype tests are more reliable for testers, and each session is summarised once, with a backup if the first try fails.",
+  "title": "Every session gets a summary, with a backup",
+  "summary": "Each test session gets one transcript and one summary, and a second service takes over if the first is busy.",
   "pill": "pill pill-test",
   "label": "Test"
  },
@@ -11,7 +11,7 @@
   "slug": "change-custom-domain",
   "date": "2026-09-21",
   "title": "Change or remove your custom domain yourself",
-  "summary": "You can now switch a site to a different custom domain, or remove it, without contacting support.",
+  "summary": "Switch a site to a different custom domain, or remove it, from the site’s settings whenever you like.",
   "pill": "pill pill-publish",
   "label": "Publish"
  },
@@ -122,8 +122,8 @@
  {
   "slug": "www-custom-domains",
   "date": "2026-11-13",
-  "title": "www now works on a new custom domain",
-  "summary": "When you connect a domain like example.com, www.example.com is set up too and sends visitors to the main address.",
+  "title": "www comes with your custom domain",
+  "summary": "Connect a domain like example.com and www.example.com works too, sending visitors to your main address.",
   "pill": "pill pill-publish",
   "label": "Publish"
  }

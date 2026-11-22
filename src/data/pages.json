@@ -269,7 +269,7 @@
  "blog/change-custom-domain": {
   "route": "/blog/change-custom-domain",
   "title": "Change or remove your custom domain yourself · Aero blog",
-  "description": "You can now switch a site to a different custom domain or remove it in one step, with clear messages when a domain can’t be connected.",
+  "description": "Switch a site to a different custom domain, or remove it, from the site’s settings whenever you like.",
   "bodyClass": "site s-page",
   "jsonld": [
    {
@@ -277,7 +277,7 @@
     "@type": "BlogPosting",
     "headline": "Change or remove your custom domain yourself",
     "datePublished": "2026-09-21",
-    "description": "You can now switch a site to a different custom domain, or remove it, without contacting support.",
+    "description": "Switch a site to a different custom domain, or remove it, from the site’s settings whenever you like.",
     "publisher": {
      "@type": "Organization",
      "name": "Aero"
@@ -382,16 +382,16 @@
  },
  "blog/steadier-figma-tests": {
   "route": "/blog/steadier-figma-tests",
-  "title": "Steadier Figma tests and summaries · Aero blog",
-  "description": "Figma prototype tests are more reliable for testers, and each session is summarised once, with a backup if the first try fails.",
+  "title": "Every session gets a summary, with a backup · Aero blog",
+  "description": "Each test session gets one transcript and one summary, and a second service takes over if the first is busy.",
   "bodyClass": "site s-page",
   "jsonld": [
    {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": "Steadier Figma tests and summaries",
+    "headline": "Every session gets a summary, with a backup",
     "datePublished": "2026-10-21",
-    "description": "Figma prototype tests are more reliable for testers, and each session is summarised once, with a backup if the first try fails.",
+    "description": "Each test session gets one transcript and one summary, and a second service takes over if the first is busy.",
     "publisher": {
      "@type": "Organization",
      "name": "Aero"
@@ -559,16 +559,16 @@
  },
  "blog/www-custom-domains": {
   "route": "/blog/www-custom-domains",
-  "title": "www now works on a new custom domain · Aero blog",
-  "description": "When you connect a domain like example.com, www.example.com is set up too and sends visitors to the main address.",
+  "title": "www comes with your custom domain · Aero blog",
+  "description": "Connect a domain like example.com and www.example.com works too, sending visitors to your main address.",
   "bodyClass": "site s-page",
   "jsonld": [
    {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": "www now works on a new custom domain",
+    "headline": "www comes with your custom domain",
     "datePublished": "2026-11-13",
-    "description": "When you connect a domain like example.com, www.example.com is set up too and sends visitors to the main address.",
+    "description": "Connect a domain like example.com and www.example.com works too, sending visitors to your main address.",
     "publisher": {
      "@type": "Organization",
      "name": "Aero"
