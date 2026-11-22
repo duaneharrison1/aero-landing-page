@@ -461,5 +461,119 @@
   "title": "How Aero turns test sessions into findings",
   "description": "See how Aero records a session, finds the moments people got stuck, and ranks what to fix first across sessions, with quotes you can check.",
   "bodyClass": "site s-page"
+ },
+ "blog/test-this-site-copy": {
+  "route": "/blog/test-this-site-copy",
+  "title": "Test a copy of your site · Aero blog",
+  "description": "Test this site now makes a copy, so updating your site never changes a test that is running.",
+  "bodyClass": "site s-page",
+  "jsonld": [
+   {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Test a copy of your site",
+    "datePublished": "2026-10-26",
+    "description": "Test this site now makes a copy, so updating your site never changes a test that is running.",
+    "publisher": {
+     "@type": "Organization",
+     "name": "Aero"
+    }
+   }
+  ]
+ },
+ "blog/one-tab-site-tests": {
+  "route": "/blog/one-tab-site-tests",
+  "title": "Site tests run in one tab · Aero blog",
+  "description": "Testers see your site and the tasks in a single tab, with one short permission step.",
+  "bodyClass": "site s-page",
+  "jsonld": [
+   {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Site tests run in one tab",
+    "datePublished": "2026-10-27",
+    "description": "Testers see your site and the tasks in a single tab, with one short permission step.",
+    "publisher": {
+     "@type": "Organization",
+     "name": "Aero"
+    }
+   }
+  ]
+ },
+ "blog/review-on-one-track": {
+  "route": "/blog/review-on-one-track",
+  "title": "Review a session on one track · Aero blog",
+  "description": "A session opens as one track with tasks, what the tester said and your findings on it, and a Lanes view that splits them out.",
+  "bodyClass": "site s-page",
+  "jsonld": [
+   {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Review a session on one track",
+    "datePublished": "2026-11-06",
+    "description": "A session opens as one track with tasks, what the tester said and your findings on it, and a Lanes view that splits them out.",
+    "publisher": {
+     "@type": "Organization",
+     "name": "Aero"
+    }
+   }
+  ]
+ },
+ "blog/figma-link-check": {
+  "route": "/blog/figma-link-check",
+  "title": "Paste a Figma link and Aero checks it · Aero blog",
+  "description": "Aero now turns a Figma design link into a prototype link, and tells you if the prototype is not shared.",
+  "bodyClass": "site s-page",
+  "jsonld": [
+   {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Paste a Figma link and Aero checks it",
+    "datePublished": "2026-11-04",
+    "description": "Aero now turns a Figma design link into a prototype link, and tells you if the prototype is not shared.",
+    "publisher": {
+     "@type": "Organization",
+     "name": "Aero"
+    }
+   }
+  ]
+ },
+ "blog/site-previews": {
+  "route": "/blog/site-previews",
+  "title": "Site previews open as a picture first · Aero blog",
+  "description": "A site’s page now shows a picture of the live page straight away, and loads the live site only when you ask.",
+  "bodyClass": "site s-page",
+  "jsonld": [
+   {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Site previews open as a picture first",
+    "datePublished": "2026-11-04",
+    "description": "A site’s page now shows a picture of the live page straight away, and loads the live site only when you ask.",
+    "publisher": {
+     "@type": "Organization",
+     "name": "Aero"
+    }
+   }
+  ]
+ },
+ "blog/www-custom-domains": {
+  "route": "/blog/www-custom-domains",
+  "title": "www now works on a new custom domain · Aero blog",
+  "description": "When you connect a domain like example.com, www.example.com is set up too and sends visitors to the main address.",
+  "bodyClass": "site s-page",
+  "jsonld": [
+   {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "www now works on a new custom domain",
+    "datePublished": "2026-11-13",
+    "description": "When you connect a domain like example.com, www.example.com is set up too and sends visitors to the main address.",
+    "publisher": {
+     "@type": "Organization",
+     "name": "Aero"
+    }
+   }
+  ]
  }
 }

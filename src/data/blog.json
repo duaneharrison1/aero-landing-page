@@ -78,5 +78,53 @@
   "summary": "Aero now hosts HTML sites: a single file, a folder or a zip, live at its own aeroapp.ai address.",
   "pill": "pill pill-publish",
   "label": "Publish"
+ },
+ {
+  "slug": "test-this-site-copy",
+  "date": "2026-10-26",
+  "title": "Test a copy of your site",
+  "summary": "Test this site now makes a copy, so updating your site never changes a test that is running.",
+  "pill": "pill pill-test",
+  "label": "Test"
+ },
+ {
+  "slug": "one-tab-site-tests",
+  "date": "2026-10-27",
+  "title": "Site tests run in one tab",
+  "summary": "Testers see your site and the tasks in a single tab, with one short permission step.",
+  "pill": "pill pill-test",
+  "label": "Test"
+ },
+ {
+  "slug": "review-on-one-track",
+  "date": "2026-11-06",
+  "title": "Review a session on one track",
+  "summary": "A session opens as one track with tasks, what the tester said and your findings on it, and a Lanes view that splits them out.",
+  "pill": "pill pill-review",
+  "label": "Review"
+ },
+ {
+  "slug": "figma-link-check",
+  "date": "2026-11-04",
+  "title": "Paste a Figma link and Aero checks it",
+  "summary": "Aero now turns a Figma design link into a prototype link, and tells you if the prototype is not shared.",
+  "pill": "pill pill-publish",
+  "label": "Publish"
+ },
+ {
+  "slug": "site-previews",
+  "date": "2026-11-04",
+  "title": "Site previews open as a picture first",
+  "summary": "A site’s page now shows a picture of the live page straight away, and loads the live site only when you ask.",
+  "pill": "pill pill-publish",
+  "label": "Publish"
+ },
+ {
+  "slug": "www-custom-domains",
+  "date": "2026-11-13",
+  "title": "www now works on a new custom domain",
+  "summary": "When you connect a domain like example.com, www.example.com is set up too and sends visitors to the main address.",
+  "pill": "pill pill-publish",
+  "label": "Publish"
  }
 ]
