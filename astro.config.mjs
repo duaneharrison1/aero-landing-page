@@ -21,6 +21,8 @@ export default defineConfig({
     "/features/project-showcase": "/features",
     "/features/responsive-design": "/features#publish",
     "/features/user-testing": "/features#test",
+    "/blog/user-testing-vs-maze": "/alternatives/maze/",
+    "/blog/Figmafolio-vs-Figma-Sites": "/blog/",
   },
   integrations: [mdx(), sitemap({ filter: (page) => !page.includes("/404") }), icon(), tailwind({ applyBaseStyles: false })],
   vite: {

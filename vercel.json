@@ -68,6 +68,16 @@
       "source": "/features/user-testing",
       "destination": "/features#test",
       "permanent": true
+    },
+    {
+      "source": "/blog/user-testing-vs-maze",
+      "destination": "/alternatives/maze/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/Figmafolio-vs-Figma-Sites",
+      "destination": "/blog/",
+      "permanent": true
     }
   ]
 }
