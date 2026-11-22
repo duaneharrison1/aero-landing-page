@@ -5,7 +5,7 @@
   "metaTitle": "Maze alternative for AI-built prototypes | Aero",
   "description": "Maze or Aero? Aero hosts a prototype from Claude, Figma or HTML, records your own testers, and gives transcripts on the free plan. What each does.",
   "h1": "A Maze alternative for AI-built prototypes",
-  "answer": "Maze is a research platform with surveys, card sorting and a testing panel. Aero is narrower: it puts a prototype online at its own link, you send the link to your own testers, and you get a recording, transcript and summary of each session.",
+  "answer": "Maze is a research platform with surveys, card sorting and a testing panel. Aero is built for prototypes: it puts a prototype online at its own link, you send the link to your own testers, and you get a recording, transcript and summary of each session.",
   "facts": [
    "Free plan includes recordings and transcripts",
    "No account for testers",
@@ -80,8 +80,8 @@
   ],
   "faq": [
    [
-    "Is Aero a replacement for Maze?",
-    "Only for one job. Aero publishes a prototype and records your own testers. It has no panel, surveys, card sorting or tree testing, so teams that need those still need a tool like Maze."
+    "Can Aero do the job of Maze?",
+    "Yes, for testing a prototype with your own people: Aero publishes it, records each session and gives you a transcript and summary. If you also need a panel, surveys, card sorting or tree testing, Maze covers those."
    ],
    [
     "Can I test a Claude or Lovable prototype in Maze?",
@@ -107,7 +107,7 @@
   "metaTitle": "UserTesting alternative for prototype tests | Aero",
   "description": "UserTesting finds participants for you. Aero hosts your prototype and records the people you invite, from $0 a month with transcripts on every plan.",
   "h1": "A UserTesting alternative for tests you run yourself",
-  "answer": "UserTesting is an enterprise platform with its own network of participants. Aero is for the smaller job: you put a prototype online, send the link to people you already have, and get a recording, transcript and summary of each session.",
+  "answer": "UserTesting is an enterprise platform with its own network of participants. Aero is built for prototypes: you put a prototype online, send the link to people you already have, and get a recording, transcript and summary of each session.",
   "facts": [
    "From $0, no sales call",
    "No account for testers",
@@ -181,7 +181,7 @@
   "faq": [
    [
     "Is Aero a UserTesting alternative?",
-    "For one job: testing a prototype with people you invite. Aero doesn’t find participants, run live conversations or sell enterprise plans."
+    "Yes, for testing a prototype with people you invite: Aero hosts it, records each session and summarises it. If you want participants found for you, live conversations or an enterprise plan, UserTesting covers those."
    ],
    [
     "Does Aero provide testers?",
@@ -207,7 +207,7 @@
   "metaTitle": "Lyssna alternative for AI-built prototypes | Aero",
   "description": "Lyssna, formerly UsabilityHub, offers quick design tests and a panel. Aero hosts your prototype and records the people you invite. Side by side.",
   "h1": "A Lyssna alternative for testing your own prototype",
-  "answer": "Lyssna (formerly UsabilityHub) runs quick design tests and interviews, with a panel you can pay for. Aero does one thing: it hosts your prototype and records your own testers going through it, with a transcript and summary of each session.",
+  "answer": "Lyssna (formerly UsabilityHub) runs quick design tests and interviews, with a panel you can pay for. Aero is built for prototypes: it hosts your prototype and records your own testers going through it, with a transcript and summary of each session.",
   "facts": [
    "Free plan includes recordings and transcripts",
    "No account for testers",
@@ -285,8 +285,8 @@
     "Yes. UsabilityHub changed its name to Lyssna in October 2023, according to Lyssna’s own announcement."
    ],
    [
-    "Is Aero a replacement for Lyssna?",
-    "Only for one job. Aero publishes a prototype and records your own testers. It has no panel and no quick design studies."
+    "Can Aero do the job of Lyssna?",
+    "Yes, for testing a prototype with your own people: Aero publishes it and records each session. If you also want a panel or quick design studies, Lyssna covers those."
    ],
    [
     "Does Aero find testers for me?",
@@ -378,8 +378,8 @@
   ],
   "faq": [
    [
-    "Is Aero a replacement for Userbrain?",
-    "Only for one job. Aero hosts a prototype and records your own testers. It has no panel and doesn’t test native mobile apps."
+    "Can Aero do the job of Userbrain?",
+    "Yes, for testing a prototype with your own people: Aero hosts it and records each session. If you want a panel, or to test native mobile apps, Userbrain covers those."
    ],
    [
     "Can I use my own testers in Userbrain?",
@@ -405,7 +405,7 @@
   "metaTitle": "Useberry alternative for AI-built prototypes | Aero",
   "description": "Useberry prices in euros and limits responses. Aero hosts your prototype and records the people you invite, with transcripts on the free plan.",
   "h1": "A Useberry alternative for AI-built prototypes",
-  "answer": "Useberry is a testing platform with a participant pool, interviews and a response allowance. Aero does one job: it hosts your prototype, you send the link to your own testers, and you get a recording, transcript and summary of each session.",
+  "answer": "Useberry is a testing platform with a participant pool, interviews and a response allowance. Aero is built for prototypes: it hosts your prototype, you send the link to your own testers, and you get a recording, transcript and summary of each session.",
   "facts": [
    "Free plan includes recordings and transcripts",
    "No account for testers",
@@ -470,8 +470,8 @@
   ],
   "faq": [
    [
-    "Is Aero a replacement for Useberry?",
-    "Only for one job. Aero hosts a prototype and records your own testers. It has no participant pool and no interviews."
+    "Can Aero do the job of Useberry?",
+    "Yes, for testing a prototype with your own people: Aero hosts it and records each session. If you want a participant pool or interviews, Useberry covers those."
    ],
    [
     "Does Aero find testers for me?",
@@ -497,7 +497,7 @@
   "metaTitle": "UXtweak alternative for prototype tests | Aero",
   "description": "UXtweak covers card sorting, surveys and prototype tests. Aero hosts your prototype and records your own testers, with transcripts on the free plan.",
   "h1": "A UXtweak alternative for prototype tests you run yourself",
-  "answer": "UXtweak is a wide research toolkit: card sorting, tree testing, surveys, a user panel and more. Aero is narrower. It hosts your prototype, you send the link to your own testers, and you get a recording, transcript and summary of each session.",
+  "answer": "UXtweak is a wide research toolkit: card sorting, tree testing, surveys, a user panel and more. Aero is built for prototypes. It hosts your prototype, you send the link to your own testers, and you get a recording, transcript and summary of each session.",
   "facts": [
    "Free plan includes recordings and transcripts",
    "No account for testers",
@@ -567,8 +567,8 @@
   ],
   "faq": [
    [
-    "Is Aero a replacement for UXtweak?",
-    "Only for one job. Aero hosts a prototype and records your own testers. It has no panel, card sorting, tree testing or surveys."
+    "Can Aero do the job of UXtweak?",
+    "Yes, for testing a prototype with your own people: Aero hosts it and records each session. If you also want a panel, card sorting, tree testing or surveys, UXtweak covers those."
    ],
    [
     "Does Aero find testers for me?",
@@ -674,8 +674,8 @@
   ],
   "faq": [
    [
-    "Is Aero a replacement for Siter?",
-    "Not for building a site. Siter has an editor with pages and forms. Aero hosts a site you already have and records people testing it."
+    "Can Aero do the job of Siter?",
+    "Aero hosts a site you already have and records people testing it. If you want to build the site itself, with pages and forms, Siter has the editor for that."
    ],
    [
     "Can I put HTML on Siter?",
@@ -791,8 +791,8 @@
   ],
   "faq": [
    [
-    "Is Aero a replacement for Tiiny Host?",
-    "For a prototype, yes: both take HTML or a zip and give you a link. Aero adds testing. Tiiny does more for other files, with an AI editor, QR codes and more sites on its bigger plans."
+    "Can Aero do the job of Tiiny Host?",
+    "For a prototype, yes: both take HTML or a zip and give you a link, and Aero adds testing. Tiiny is the better fit if you want an AI editor, QR codes, other file types or more sites on its bigger plans."
    ],
    [
     "Does Aero work with AI assistants?",
@@ -801,6 +801,516 @@
    [
     "Does Aero have a free plan?",
     "Yes. Free has 3 test sessions with recordings and transcripts, and sites stay live for 7 days."
+   ],
+   [
+    "Do testers need an account?",
+    "Not for Aero. They open your link, allow recording and start."
+   ],
+   [
+    "What does Aero cost?",
+    "Free, then $3, $6 and $19 a month, with a 7-day free trial on paid plans."
+   ]
+  ]
+ },
+ {
+  "slug": "lookback",
+  "name": "Lookback",
+  "metaTitle": "Lookback alternative for prototype tests | Aero",
+  "description": "Lookback sells session packs from $299 a year. Aero hosts your prototype and records the people you invite, from $0, with transcripts on every plan.",
+  "h1": "A Lookback alternative for unmoderated prototype tests",
+  "answer": "Lookback is a research tool for live and recorded sessions, sold as session packs from $299 a year. Aero is built for prototypes: it puts a prototype online, you send the link to people you already have, and you get a recording, transcript and summary of each session, from $0.",
+  "facts": [
+   "Free plan, no card",
+   "No account for testers",
+   "Recordings and transcripts on every plan"
+  ],
+  "chooseThem": [
+   "You run live, moderated interviews and want them scheduled from your calendar.",
+   "You want to recruit participants through Lookback’s User Interviews integration.",
+   "You have recordings from other research and want them transcribed and kept in one place."
+  ],
+  "chooseAero": [
+   "Your prototype comes from Claude, ChatGPT, Lovable, Bolt or v0, or is plain HTML, as well as Figma.",
+   "You want to pay $0 to $19 a month, not $299 a year for a pack of sessions.",
+   "You want your prototype at its own address, with a password if you need one."
+  ],
+  "rows": [
+   [
+    "Price",
+    "Free, then $3, $6 or $19 a month",
+    "Freelance $299 a year (10 sessions), Team $1,782 a year (100), Insights Hub $4,122 a year (300)"
+   ],
+   [
+    "Free plan",
+    "Yes. Sites stay live for 7 days",
+    "A free trial: 5 sessions, 60 days, no card. No free plan stated"
+   ],
+   [
+    "Sessions with your own testers",
+    "3 on Free; 5, 10 or 20 on paid plans¹",
+    "10, 100 or 300 a year, with packs of 10 to add"
+   ],
+   [
+    "Tab and voice recording",
+    "Yes, on every plan",
+    "Yes. Records sessions"
+   ],
+   [
+    "Transcript and summary of each session",
+    "Yes, on every plan",
+    "Transcribes research you upload. Transcripts of its own sessions not stated"
+   ],
+   [
+    "Prototype sources",
+    "Figma, Claude artifacts, ChatGPT canvases, Lovable, Bolt, v0 and HTML",
+    "Not stated"
+   ],
+   [
+    "Hosts your prototype",
+    "Yes, at its own address",
+    "Not stated"
+   ],
+   [
+    "Recruits participants",
+    "No. You send the link to your own testers",
+    "Yes, through Recruit with User Interviews. A participant package comes with paid plans, incentives are extra"
+   ],
+   [
+    "Live moderated sessions with calendar",
+    "No. Testers go through the prototype on their own",
+    "Yes. Connects Google Calendar, Outlook and Exchange"
+   ]
+  ],
+  "notes": [
+   "¹ Aero’s sessions are a total on your plan, not a monthly allowance.",
+   "Read from Lookback’s own pages on 22 Nov 2026. Some of the pages are old, so the prices may have changed. “Not stated” means the page didn’t say, not that Lookback can’t do it. Plans and prices change, so check Lookback’s pricing page."
+  ],
+  "sources": [
+   [
+    "Lookback pricing",
+    "https://www.lookback.com/pricing"
+   ],
+   [
+    "Lookback: participant package",
+    "https://blog.lookback.com/whats-new/participant-package-included-in-every-paid-plan"
+   ],
+   [
+    "Lookback: calendar integration",
+    "https://blog.lookback.com/whats-new/calendar-integration-for-moderated-research"
+   ]
+  ],
+  "faq": [
+   [
+    "Can Aero do the job of Lookback?",
+    "Yes, for unmoderated prototype tests: Aero hosts the prototype and records each session. If you run live moderated sessions with calendar scheduling, or want to recruit participants, Lookback covers those."
+   ],
+   [
+    "Can I use Lookback to test an AI-built prototype?",
+    "Lookback’s pages don’t say whether it hosts or tests a coded or AI-built prototype, so check with Lookback. In Aero you publish it and test the link."
+   ],
+   [
+    "Do testers need an account?",
+    "Not for Aero. They open your link, allow recording and start."
+   ],
+   [
+    "What does Aero cost?",
+    "Free, then $3, $6 and $19 a month, with a 7-day free trial on paid plans."
+   ]
+  ]
+ },
+ {
+  "slug": "userlytics",
+  "name": "Userlytics",
+  "metaTitle": "Userlytics alternative for your own testers | Aero",
+  "description": "Userlytics starts at $699 a month for your own testers. Aero starts at $0, hosts your prototype and records the people you invite.",
+  "h1": "A Userlytics alternative for testing with your own people",
+  "answer": "Userlytics is a full research platform with a panel of over 2 million participants. Its plans for your own testers start at $699 a month. Aero starts at $0: it hosts your prototype, you send the link to your own testers, and you get a recording, transcript and summary of each session.",
+  "facts": [
+   "Free plan, no card",
+   "No account for testers",
+   "From $3 a month with a password"
+  ],
+  "chooseThem": [
+   "You want a recruited panel: Userlytics lists over 2 million participants.",
+   "You need card sorting, tree testing and quantitative studies as well as prototype tests.",
+   "You want unlimited seats and accounts, which Userlytics says come with two of its plans."
+  ],
+  "chooseAero": [
+   "You already have people to send a link to, and want to pay $0 to $19 a month.",
+   "Your prototype comes from Claude, ChatGPT, Lovable, Bolt or v0, or is plain HTML, as well as Figma.",
+   "You want recordings, transcripts and summaries on the free plan."
+  ],
+  "rows": [
+   [
+    "Price",
+    "Free, then $3, $6 or $19 a month",
+    "Premium $699 a month, Advanced $999 a month (both paid annually). Pay per participant, from 5 sessions. Enterprise from $34 a session"
+   ],
+   [
+    "Free plan",
+    "Yes. Sites stay live for 7 days",
+    "Not stated on its pricing page"
+   ],
+   [
+    "Sessions with your own testers",
+    "3 on Free; 5, 10 or 20 on paid plans¹",
+    "Unlimited unmoderated sessions with your own participants on Premium and Advanced"
+   ],
+   [
+    "Tab and voice recording",
+    "Yes, on every plan",
+    "Yes. Audio and video recording"
+   ],
+   [
+    "Prototype sources",
+    "Figma, Claude artifacts, ChatGPT canvases, Lovable, Bolt, v0 and HTML",
+    "Not stated"
+   ],
+   [
+    "Hosts your prototype",
+    "Yes, at its own address",
+    "Not stated"
+   ],
+   [
+    "Participant panel",
+    "No. You send the link to your own testers",
+    "Yes. Over 2 million participants"
+   ],
+   [
+    "Card sorting and tree testing",
+    "No",
+    "Yes"
+   ]
+  ],
+  "notes": [
+   "¹ Aero’s sessions are a total on your plan, not a monthly allowance.",
+   "Read from Userlytics’s own pages on 22 Nov 2026. Its pages give some figures differently, so the lowest plan prices are the ones on its pricing page. “Not stated” means the page didn’t say, not that Userlytics can’t do it. Plans and prices change, so check Userlytics’s pricing page."
+  ],
+  "sources": [
+   [
+    "Userlytics plans and pricing",
+    "https://www.userlytics.com/user-experience-research/pricing-and-plans/"
+   ],
+   [
+    "Userlytics self-recruitment plans",
+    "https://www.userlytics.com/user-experience-research/pricing-and-plans/self-recruitment/"
+   ],
+   [
+    "Userlytics enterprise plan",
+    "https://www.userlytics.com/user-experience-research/pricing-and-plans/enterprise-plan/"
+   ]
+  ],
+  "faq": [
+   [
+    "Can Aero do the job of Userlytics?",
+    "Yes, for testing a prototype with your own people: Aero hosts it and records each session. If you want a panel, card sorting, tree testing or quantitative studies, Userlytics covers those."
+   ],
+   [
+    "Does Aero find testers for me?",
+    "No. You send the link to your own people."
+   ],
+   [
+    "Do testers need an account?",
+    "Not for Aero. They open your link, allow recording and start."
+   ],
+   [
+    "What does Aero cost?",
+    "Free, then $3, $6 and $19 a month, with a 7-day free trial on paid plans."
+   ]
+  ]
+ },
+ {
+  "slug": "great-question",
+  "name": "Great Question",
+  "metaTitle": "Great Question alternative for prototype tests | Aero",
+  "description": "Great Question is $129 a seat a month. Aero hosts your prototype and records the people you invite, from $0, with transcripts on the free plan.",
+  "h1": "A Great Question alternative for prototype tests",
+  "answer": "Great Question is an all-in-one research platform priced per seat, from $129 a seat a month for up to 5 seats, with a 14-day trial and no free plan. Aero is built for prototypes: it hosts your prototype, you send the link to your own testers, and you get a recording, transcript and summary of each session, from $0.",
+  "facts": [
+   "Free plan, no card",
+   "No account for testers",
+   "One price per plan, not per seat"
+  ],
+  "chooseThem": [
+   "You want one place for recruiting, scheduling, incentives, surveys and a research repository.",
+   "You run moderated interviews and want them scheduled.",
+   "You want to run research from an AI tool: Great Question offers an MCP integration, which you request access to.",
+   "You want unlimited free observer seats for stakeholders."
+  ],
+  "chooseAero": [
+   "You want to pay $0 to $19 a month, not $129 for each person.",
+   "Your prototype comes from Claude, ChatGPT, Lovable, Bolt or v0, or is plain HTML, as well as Figma.",
+   "You want a free plan. Great Question has a 14-day trial only."
+  ],
+  "rows": [
+   [
+    "Price",
+    "Free, then $3, $6 or $19 a month",
+    "Self-serve $129 a seat a month ($1,290 a year), up to 5 seats. Enterprise is custom, annual, 5 seats or more"
+   ],
+   [
+    "Free plan",
+    "Yes. Sites stay live for 7 days",
+    "No. A 14-day trial, no card"
+   ],
+   [
+    "Sessions with your own testers",
+    "3 on Free; 5, 10 or 20 on paid plans¹",
+    "Self-serve includes 100 research participants"
+   ],
+   [
+    "Unmoderated prototype testing",
+    "Yes",
+    "Yes"
+   ],
+   [
+    "Prototype sources",
+    "Figma, Claude artifacts, ChatGPT canvases, Lovable, Bolt, v0 and HTML",
+    "Not stated"
+   ],
+   [
+    "Hosts your prototype",
+    "Yes, at its own address",
+    "Not stated"
+   ],
+   [
+    "Transcript and summary of each session",
+    "Yes, on every plan",
+    "Transcription and AI summaries are listed"
+   ],
+   [
+    "Recruits participants",
+    "No. You send the link to your own testers",
+    "Yes, through its User Interviews panel integration"
+   ],
+   [
+    "Moderated interviews, surveys",
+    "No",
+    "Yes"
+   ],
+   [
+    "Works with AI tools",
+    "One prompt in Claude or ChatGPT publishes your prototype",
+    "MCP integration. Request access on any plan"
+   ]
+  ],
+  "notes": [
+   "¹ Aero’s sessions are a total on your plan, not a monthly allowance.",
+   "Read from Great Question’s own pages on 22 Nov 2026. Its pricing page also lists older per-seat prices in some articles; the figures here are from its machine-readable pricing page, last updated 27 Apr 2026. “Not stated” means the page didn’t say, not that Great Question can’t do it. Plans and prices change, so check Great Question’s pricing page."
+  ],
+  "sources": [
+   [
+    "Great Question pricing",
+    "https://cms.greatquestion.co/pricing-md"
+   ],
+   [
+    "Great Question: unmoderated testing guide",
+    "https://greatquestion.co/blog/unmoderated-testing-guide"
+   ]
+  ],
+  "faq": [
+   [
+    "Can Aero do the job of Great Question?",
+    "Yes, for testing a prototype with your own people: Aero hosts it and records each session. If you also want recruiting, scheduling, surveys and a research repository in one place, Great Question covers those."
+   ],
+   [
+    "Can I run my research from Claude with Aero?",
+    "You can publish a prototype and set up a test from Claude or ChatGPT with one prompt. Great Question goes further with an MCP integration that covers research tasks, which you request access to."
+   ],
+   [
+    "Do testers need an account?",
+    "Not for Aero. They open your link, allow recording and start."
+   ],
+   [
+    "What does Aero cost?",
+    "Free, then $3, $6 and $19 a month, with a 7-day free trial on paid plans."
+   ]
+  ]
+ },
+ {
+  "slug": "optimal-workshop",
+  "name": "Optimal Workshop",
+  "metaTitle": "Optimal Workshop alternative for prototype tests | Aero",
+  "description": "Optimal tests Figma prototypes from $199 a month billed yearly. Aero hosts your prototype and records the people you invite, from $0.",
+  "h1": "An Optimal Workshop alternative for testing a prototype",
+  "answer": "Optimal is a research platform with prototype tests, card sorting, tree testing and first-click tests, from $199 a month billed annually for 5 launched studies a year. Aero is built for prototypes: it hosts your prototype, you send the link to your own testers, and you get a recording, transcript and summary of each session, from $0.",
+  "facts": [
+   "Free plan, no card",
+   "No account for testers",
+   "Prices on the page, no quote"
+  ],
+  "chooseThem": [
+   "You need card sorting, tree testing and first-click tests as well as prototype tests.",
+   "You want unlimited seats and unlimited responses per study.",
+   "You want a recruited panel: Optimal lists over 20 million participants, as an add-on."
+  ],
+  "chooseAero": [
+   "You want to pay $0 to $19 a month, not $199 a month billed yearly.",
+   "Your prototype comes from Claude, ChatGPT, Lovable, Bolt or v0, or is plain HTML, as well as Figma.",
+   "You want your prototype at its own address, with a password if you need one."
+  ],
+  "rows": [
+   [
+    "Price",
+    "Free, then $3, $6 or $19 a month",
+    "Starter $199 a month billed annually, with 5 launched studies a year. Enterprise is custom"
+   ],
+   [
+    "Free plan",
+    "Yes. Sites stay live for 7 days",
+    "Not stated on its pricing page"
+   ],
+   [
+    "Sessions with your own testers",
+    "3 on Free; 5, 10 or 20 on paid plans¹",
+    "Unlimited participant responses per study"
+   ],
+   [
+    "Tab and voice recording",
+    "Yes, on every plan",
+    "Yes. Video, audio and screen recordings"
+   ],
+   [
+    "Transcript and summary of each session",
+    "Yes, on every plan",
+    "AI-powered analytics and insights are listed"
+   ],
+   [
+    "Prototype sources",
+    "Figma, Claude artifacts, ChatGPT canvases, Lovable, Bolt, v0 and HTML",
+    "Figma imports, or images with clickable areas. Live site testing too"
+   ],
+   [
+    "Hosts your prototype",
+    "Yes, at its own address",
+    "Not stated"
+   ],
+   [
+    "Participant panel",
+    "No. You send the link to your own testers",
+    "Add-on: Optimal Recruitment"
+   ],
+   [
+    "Card sorting, tree testing, first-click",
+    "No",
+    "Yes"
+   ]
+  ],
+  "notes": [
+   "¹ Aero’s sessions are a total on your plan, not a monthly allowance.",
+   "Read from Optimal’s own pages on 22 Nov 2026. Its pricing page is old, so the prices may have changed. “Not stated” means the page didn’t say, not that Optimal can’t do it. Plans and prices change, so check Optimal’s pricing page."
+  ],
+  "sources": [
+   [
+    "Optimal pricing",
+    "https://www.optimalworkshop.com/pricing"
+   ],
+   [
+    "Optimal: difference between paid plans",
+    "https://support.optimalworkshop.com/en/articles/2626911-the-difference-between-optimal-s-paid-subscription-plans"
+   ]
+  ],
+  "faq": [
+   [
+    "Can Aero do the job of Optimal?",
+    "Yes, for prototype tests: Aero hosts the prototype and records each session. If you also need card sorting, tree testing or first-click tests, Optimal covers those."
+   ],
+   [
+    "Can I test an AI-built prototype in Optimal?",
+    "Optimal’s pages describe Figma imports, images with clickable areas and live site testing. They don’t say how a coded or AI-built prototype gets tested, so check with Optimal. In Aero you publish it and test the link."
+   ],
+   [
+    "Do testers need an account?",
+    "Not for Aero. They open your link, allow recording and start."
+   ],
+   [
+    "What does Aero cost?",
+    "Free, then $3, $6 and $19 a month, with a 7-day free trial on paid plans."
+   ]
+  ]
+ },
+ {
+  "slug": "playbookux",
+  "name": "PlaybookUX",
+  "metaTitle": "PlaybookUX alternative for your own testers | Aero",
+  "description": "PlaybookUX has a 7 million participant panel and custom plans. Aero hosts your prototype and records the people you invite, from $0.",
+  "h1": "A PlaybookUX alternative for testing with your own people",
+  "answer": "PlaybookUX runs moderated and unmoderated tests with a panel of 7 million participants, on plans it describes as custom to your needs. Aero is built for prototypes: it hosts your prototype, you send the link to your own testers, and you get a recording, transcript and summary of each session, from $0.",
+  "facts": [
+   "Free plan, no card",
+   "No account for testers",
+   "Prices on the page, no quote"
+  ],
+  "chooseThem": [
+   "You want a recruited panel: PlaybookUX lists 7 million participants.",
+   "You run moderated sessions with live note-taking and invisible observers.",
+   "You need diary studies, session replays or SSO and SAML."
+  ],
+  "chooseAero": [
+   "You want a price you can read: $0 to $19 a month.",
+   "Your prototype comes from Claude, ChatGPT, Lovable, Bolt or v0, or is plain HTML, as well as Figma.",
+   "You want recordings, transcripts and summaries on the free plan."
+  ],
+  "rows": [
+   [
+    "Price",
+    "Free, then $3, $6 or $19 a month",
+    "Self-serve plus optional add-ons: Scale $5,400 a year, Pro $8,800 a year. Enterprise is custom"
+   ],
+   [
+    "Free plan",
+    "Yes. Sites stay live for 7 days",
+    "Not stated"
+   ],
+   [
+    "Sessions with your own testers",
+    "3 on Free; 5, 10 or 20 on paid plans¹",
+    "Not stated"
+   ],
+   [
+    "Prototype sources",
+    "Figma, Claude artifacts, ChatGPT canvases, Lovable, Bolt, v0 and HTML",
+    "Figma integration and click testing are listed"
+   ],
+   [
+    "Hosts your prototype",
+    "Yes, at its own address",
+    "Not stated"
+   ],
+   [
+    "Participant panel",
+    "No. You send the link to your own testers",
+    "Yes. 7 million participants"
+   ],
+   [
+    "Moderated sessions",
+    "No",
+    "Yes, with live note-taking and invisible observers"
+   ],
+   [
+    "Diary studies and session replays",
+    "No",
+    "Yes"
+   ]
+  ],
+  "notes": [
+   "¹ Aero’s sessions are a total on your plan, not a monthly allowance.",
+   "Read from PlaybookUX’s own pages on 22 Nov 2026. Its pricing page says plans are custom, and I couldn’t read the base self-serve price. “Not stated” means the page didn’t say, not that PlaybookUX can’t do it. Plans and prices change, so check PlaybookUX’s pricing page."
+  ],
+  "sources": [
+   [
+    "PlaybookUX pricing",
+    "https://www.playbookux.com/pricing/"
+   ]
+  ],
+  "faq": [
+   [
+    "Can Aero do the job of PlaybookUX?",
+    "Yes, for testing a prototype with your own people: Aero hosts it and records each session. If you want a panel, moderated sessions or diary studies, PlaybookUX covers those."
+   ],
+   [
+    "Does Aero find testers for me?",
+    "No. You send the link to your own people."
    ],
    [
     "Do testers need an account?",
