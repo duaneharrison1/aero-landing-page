@@ -22,7 +22,7 @@ export default defineConfig({
     "/features/responsive-design": "/features#publish",
     "/features/user-testing": "/features#test",
     "/blog/user-testing-vs-maze": "/alternatives/maze/",
-    "/blog/Figmafolio-vs-Figma-Sites": "/blog/",
+    "/blog/Figmafolio-vs-Figma-Sites": "/alternatives/figma-sites/",
   },
   integrations: [mdx(), sitemap({ filter: (page) => !page.includes("/404") }), icon(), tailwind({ applyBaseStyles: false })],
   vite: {
