@@ -35,6 +35,8 @@ const signup = link("@signup");
       <div class="site-band w-test s-next"><div><span class="pill pill-review">Review</span><h2 class="site-h2">Then review it<span class="hd-dot">.</span></h2><p class="site-body">Open a session to read its summary and friction points, or watch the recording. With several sessions you can compare them.</p></div><div><a class="btn g3 md" href="/features#review" data-glass-v3="secondary">How review works</a></div></div>
     ) : null}
     <div class="s-tfaq"><h2 class="site-h2 s-h2">Questions<span class="hd-dot">.</span></h2><div class="s-faq-list">{g.faq!.map(([q, a]) => <details><summary>{q}</summary><p>{a}</p></details>)}</div></div>
+    {g.group === "test" && <p class="site-body s-compare">Comparing tools? See how Aero stacks up against <a href="/alternatives/maze/">Maze</a>, <a href="/alternatives/lyssna/">Lyssna</a>, <a href="/alternatives/lookback/">Lookback</a> and <a href="/alternatives/">others</a>.</p>}
+    {g.group === "publish" && <p class="site-body s-compare">Comparing tools? See how Aero stacks up against <a href="/alternatives/tiiny/">Tiiny Host</a>, <a href="/alternatives/siter/">Siter</a> and <a href="/alternatives/figma-sites/">Figma Sites</a>.</p>}
     {related.length > 0 && <div class="s-rel"><h2 class="site-h3">Related guides</h2><div class="s-gcards"><Fragment set:html={related.map((r) => cardHtml(r!, true)).join("")} /></div></div>}
   </div></section>
   <section class="s-close-w"><div class="site-wrap"><div class="site-band w-hero s-close">
