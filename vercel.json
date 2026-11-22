@@ -76,7 +76,7 @@
     },
     {
       "source": "/blog/Figmafolio-vs-Figma-Sites",
-      "destination": "/blog/",
+      "destination": "/alternatives/figma-sites/",
       "permanent": true
     }
   ]

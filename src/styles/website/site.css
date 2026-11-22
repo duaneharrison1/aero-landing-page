@@ -309,8 +309,19 @@ a.s-gcard:hover{box-shadow:inset 0 0 0 1px var(--line-strong),0 10px 24px -18px 
 .s-alt td,.s-alt th{vertical-align:top}
 @media(max-width:900px){
   .s-pick{grid-template-columns:1fr}
-  .s-alt{min-width:560px}
+}
+@media(max-width:700px){
+  .s-alt,.s-alt tbody,.s-alt tr,.s-alt th,.s-alt td{display:block;min-width:0;width:auto;position:static}
+  .s-alt tr:first-child{display:none}
+  .s-alt tr{padding:14px 16px;border-top:1px solid rgba(0,0,0,.07)}
+  .s-alt tr:nth-child(2){border-top:0}
+  .s-alt th[scope=row]{padding:0 0 6px;box-shadow:none;background:none;font-weight:600}
+  .s-alt td{padding:4px 0;border:0}
+  .s-alt td::before{content:attr(data-l);display:block;font-size:12px;opacity:.6;margin-bottom:1px}
 }
 /* Blog posts: a real app screen under the headline */
 .s-post-gpic{margin:36px 0 8px;border-radius:22px;padding:32px}
 @media(max-width:900px){.s-post-gpic{padding:16px;border-radius:18px;margin-top:24px}}
+
+.s-compare{margin-top:28px}
+.s-compare a{text-decoration:underline;text-underline-offset:3px}

@@ -1321,5 +1321,119 @@
     "Free, then $3, $6 and $19 a month, with a 7-day free trial on paid plans."
    ]
   ]
+ },
+ {
+  "slug": "figma-sites",
+  "name": "Figma Sites",
+  "metaTitle": "Figma Sites alternative for sharing a prototype | Aero",
+  "description": "Figma Sites is for designing and building a website in Figma. Aero puts a prototype you already have online and records people testing it.",
+  "h1": "A Figma Sites alternative for sharing a prototype",
+  "answer": "Figma Sites is for designing and building a website inside Figma. Aero starts from what you already made: a Figma link, a Claude artifact, a Lovable, Bolt or v0 build, or plain HTML. It goes online at its own address, you send one test link, and you get a recording, transcript and summary of each session, from $0.",
+  "facts": [
+   "Free plan, no card",
+   "Works with more than Figma",
+   "Recordings and transcripts on every plan"
+  ],
+  "chooseThem": [
+   "You want to design and build the whole website in Figma, with pages, breakpoints and interactions in one file.",
+   "Your team already pays for Full seats and wants publishing inside Figma.",
+   "You want Google Analytics, a cookie banner and per-page search settings built into the site editor."
+  ],
+  "chooseAero": [
+   "Your prototype came from Claude, ChatGPT, Lovable, Bolt, v0 or HTML, not only Figma.",
+   "You want to send a link and watch people try it, with a recording, transcript and summary of each session.",
+   "You want a free plan and prices from $3 a month, not a paid Full seat."
+  ],
+  "rows": [
+   [
+    "Price",
+    "Free, then $3, $6 or $19 a month",
+    "Publishing to a live domain needs a paid plan with a Full seat. A Sites price isn’t stated on the help pages"
+   ],
+   [
+    "Free plan",
+    "Yes. Sites stay live for 7 days",
+    "Starter can design in Sites. Publishing to a live domain needs Professional, Education, Organization or Enterprise"
+   ],
+   [
+    "What you start from",
+    "A prototype you already have",
+    "A design you build in Figma Sites"
+   ],
+   [
+    "Prototype sources",
+    "Figma, Claude artifacts, ChatGPT canvases, Lovable, Bolt, v0 and HTML",
+    "Figma files"
+   ],
+   [
+    "Upload an HTML file, folder or zip",
+    "Yes",
+    "Not stated"
+   ],
+   [
+    "Custom domain",
+    "From Solo, $6 a month",
+    "Paid plans. Professional can connect 10 domains, Organization and Enterprise any number. One domain per site"
+   ],
+   [
+    "Password protection",
+    "From Basic, $3",
+    "Paid plans, whole site"
+   ],
+   [
+    "Analytics",
+    "From Solo, $6",
+    "Google Analytics ID only"
+   ],
+   [
+    "Every version kept",
+    "Yes, and you can roll back",
+    "Not stated"
+   ],
+   [
+    "Recordings, transcripts and summaries of testers",
+    "Yes, on every plan",
+    "Not stated"
+   ]
+  ],
+  "notes": [
+   "Read from Figma’s own help and pricing pages on 22 Nov 2026. Some of those pages date from the 2025 beta, when custom domains were free through 2025, so Figma’s current terms may differ. “Not stated” means the page didn’t say, not that Figma Sites can’t do it. Check Figma’s pricing page."
+  ],
+  "sources": [
+   [
+    "Manage a custom domain for your site",
+    "https://help.figma.com/hc/en-us/articles/31414274019863-Manage-a-custom-domain-for-your-site"
+   ],
+   [
+    "Edit website settings",
+    "https://help.figma.com/hc/en-us/articles/31242875661591-Edit-website-settings"
+   ],
+   [
+    "What Figma features are in beta?",
+    "https://help.figma.com/hc/en-us/articles/4406787442711-What-Figma-features-are-in-beta"
+   ],
+   [
+    "Figma pricing FAQ",
+    "https://www.figma.com/pricing-faq/"
+   ]
+  ],
+  "faq": [
+   [
+    "Can Aero do the job of Figma Sites?",
+    "For sharing and testing a prototype, yes: Aero publishes it at its own address and records each session. If you want to design and build the website itself inside Figma, Figma Sites is the tool for that."
+   ],
+   [
+    "Can I use Aero with a Figma prototype?",
+    "Yes. Paste the Figma link and Aero publishes it, then you send one test link."
+   ],
+   [
+    "Do testers need an account?",
+    "Not for Aero. They open your link, allow recording and start."
+   ],
+   [
+    "What does Aero cost?",
+    "Free, then $3, $6 and $19 a month, with a 7-day free trial on paid plans."
+   ]
+  ]
  }
 ]

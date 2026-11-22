@@ -41,7 +41,7 @@ const sourceLinks = a.sources.map(([t, u]) => `<a href="${u}" rel="nofollow noop
   </div></section>
   <section class="s-sec"><div class="site-wrap">
     <h2 class="site-h2 s-h2">Side by side<span class="hd-dot">.</span></h2>
-    <div class="s-tscroll"><table class="s-tbl s-ctbl s-alt"><tr><th><span class="sr-only">Feature</span></th><th class="us">Aero</th><th>{a.name}</th></tr>{a.rows.map(([l, x, y]) => <tr><th scope="row">{l}</th><td class="us">{x}</td><td>{y}</td></tr>)}</table></div>
+    <div class="s-tscroll"><table class="s-tbl s-ctbl s-alt"><tr><th><span class="sr-only">Feature</span></th><th class="us">Aero</th><th>{a.name}</th></tr>{a.rows.map(([l, x, y]) => <tr><th scope="row">{l}</th><td class="us" data-l="Aero">{x}</td><td data-l={a.name}>{y}</td></tr>)}</table></div>
     <ul class="s-notes">{a.notes.map((n) => <li>{n}</li>)}</ul>
     <p class="s-src"><b>Sources</b> <Fragment set:html={sourceLinks} /></p>
   </div></section>

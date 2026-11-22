@@ -1,11 +1,17 @@
 ---
 brand-sync: figmaApp docs/brand is the source. Copy this file unchanged to aero-landing-page/docs/brand/.
-version: 2026-11-21.1
+version: 2026-11-22.1
 ---
 
 # Aero brand and product decisions
 
 The running log of what Duane decided, newest first. Add a line whenever he decides something; never delete a line, strike it through and say what replaced it. The full evidence is in `research/conversation-audit.md`.
+
+## 22 Nov 2026: Aero SEO pages and blog
+- Comparison pages (`/alternatives/<tool>`) may name Maze, Lyssna, Userbrain, Useberry, UserTesting, UXtweak, Lookback, Userlytics, Great Question, Optimal Workshop, PlaybookUX and Figma Sites on the testing side, and Tiiny and Siter on the hosting side. Done case by case, fighting each on its own ground (e.g. against hosting tools, Aero also hosts HTML easily and connects with AI). Facts only from the tool's own pages, dated, "Not stated" where silent.
+- Wording on those pages stays positive and honest: Aero is "built for prototypes", never "narrower", "does one job" or "only for". Each page still says where the other tool is the better fit.
+- The blog is features and reassurance only. No admissions of past faults and no "it should have worked in the first place" fixes.
+- The admin needs no review from Clark before it is built (Duane, 22 Nov).
 
 ## 21 Nov 2026: Aero SEO programme (same steps as Figmafolio)
 - Same order as Figmafolio: baseline, technical PR, registrations, research, admin, pages, alternatives. One step at a time.

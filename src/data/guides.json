@@ -1477,5 +1477,164 @@
    "slug": "user-test-an-html-site"
   },
   "cta": "Update your site"
+ },
+ {
+  "slug": "user-test-an-ai-built-prototype",
+  "group": "test",
+  "title": "User test a Lovable, Bolt or v0 prototype",
+  "metaTitle": "User test a Lovable, Bolt or v0 prototype · Aero",
+  "description": "Test a Lovable, Bolt or v0 prototype with real people. Publish the built files on Aero, send one test link and get a recording, transcript and summary.",
+  "answer": "To user test a Lovable, Bolt or v0 prototype, build it into static files, drop the folder or a zip into Aero, then start a test on that site. You send one test link, and each tester’s browser tab and voice are recorded.",
+  "facts": [
+   "Free plan works",
+   "No account for testers",
+   "Works with any tool that exports code"
+  ],
+  "needs": [
+   "Your prototype’s code, out of Lovable, Bolt or v0",
+   "Node.js on your computer, to build it (or a coding agent that does it for you)",
+   "An Aero account (free)",
+   "A few people to send the link to"
+  ],
+  "steps": [
+   {
+    "name": "Build it into static files",
+    "text": "These tools make code, not finished pages. In the project folder, run npm run build. The output folder (often called dist) is what Aero hosts."
+   },
+   {
+    "name": "Start a new test",
+    "text": "In Aero, go to Tests and start a new test, then pick Upload HTML."
+   },
+   {
+    "name": "Drop in the build folder",
+    "text": "Drop a folder or a zip, or choose files. index.html needs to be at the top. Press Publish and continue. Aero puts it online at its own address."
+   },
+   {
+    "name": "Add tasks (optional)",
+    "text": "Add a few short tasks, such as “Find where to change your plan”. With no tasks, testers explore freely and the review sums up the whole session."
+   },
+   {
+    "name": "Send the test link",
+    "text": "Press Copy test link and send it to your testers. They open it on their own computer, see your site with a small task panel they can move, and talk through what they do."
+   },
+   {
+    "name": "Review the sessions",
+    "text": "Each session shows up in Sessions when the tester finishes. The transcript and summary follow: about a minute for a short session, longer for a long one."
+   }
+  ],
+  "alt": {
+   "h": "Prefer to let a coding agent do it?",
+   "p": "Open the project in a coding agent and paste Aero’s publish prompt. The agent builds and publishes it for you, then you start the test from the site’s page."
+  },
+  "gets": [
+   "A recording of the tester’s browser tab and their voice",
+   "A transcript and a summary of each session, with the moments they got stuck",
+   "Insights across sessions once two are analysed",
+   "A test link that works without an account"
+  ],
+  "faq": [
+   [
+    "Do testers need an account?",
+    "No. They open the test link, allow their microphone and the tab, and start."
+   ],
+   [
+    "Does Aero find testers for me?",
+    "No. Bring your own testers: friends, clients, colleagues or classmates."
+   ],
+   [
+    "Does it work with the prototype’s backend?",
+    "Aero hosts static files, so a prototype that needs a live backend or database may not work the same. Test the front-end flow."
+   ],
+   [
+    "What is recorded?",
+    "The tester’s browser tab and their voice. Never their camera, and not their mouse pointer."
+   ],
+   [
+    "How many sessions do I get?",
+    "Free has 3 test sessions, Basic 5, Solo 10 and Pro 20. They are a total on your plan, not a monthly allowance. Transcripts and summaries are on every plan."
+   ]
+  ],
+  "related": [
+   "publish-a-lovable-app",
+   "publish-a-bolt-app",
+   "publish-a-v0-app"
+  ],
+  "next": null,
+  "cta": "Test your prototype"
+ },
+ {
+  "slug": "run-a-think-aloud-usability-test",
+  "group": "test",
+  "title": "Run a think-aloud usability test",
+  "metaTitle": "Run a think-aloud usability test, recorded · Aero",
+  "description": "Run a think-aloud usability test on a prototype. Testers talk as they use it, and Aero records their tab and voice and transcribes each session.",
+  "answer": "To run a think-aloud usability test, ask people to say what they’re thinking while they try a few tasks on your prototype. Aero records their browser tab and voice, then gives you a transcript and a summary of each session.",
+  "facts": [
+   "Free plan works",
+   "Tab and voice recorded",
+   "Transcript on every plan"
+  ],
+  "needs": [
+   "A prototype online (Figma link, Claude artifact, HTML or a zip)",
+   "An Aero account (free)",
+   "A few people to send the link to"
+  ],
+  "steps": [
+   {
+    "name": "Put the prototype online",
+    "text": "Start a new test and pick what you have: a Figma link, a prompt from Claude or ChatGPT, or an HTML folder or zip. Aero publishes it at its own address."
+   },
+   {
+    "name": "Write tasks that give people a goal",
+    "text": "Add 1 to 5 tasks in Setup. Write the goal, not the clicks, for example “Find where to change your plan”. Short tasks are easier to talk through."
+   },
+   {
+    "name": "Tell testers to talk aloud",
+    "text": "In your message with the link, ask them to say what they see, expect and feel as they go, even when it seems obvious. Their voice is part of the recording."
+   },
+   {
+    "name": "Send the test link",
+    "text": "Press Copy test link and send it. Testers open it on their own computer, see your site with a small task panel they can move, and talk through what they do. No account needed."
+   },
+   {
+    "name": "Watch and read each session",
+    "text": "Each session shows up in Sessions when the tester finishes. Watch the recording, read the transcript, and use the summary to see where they got stuck."
+   }
+  ],
+  "gets": [
+   "A recording of the tester’s browser tab and their voice",
+   "A transcript and a summary of each session",
+   "Insights across sessions once two are analysed",
+   "A test link that works without an account"
+  ],
+  "faq": [
+   [
+    "What is a think-aloud test?",
+    "A usability test where people say what they’re thinking while they use something. It shows why they hesitate, not only where."
+   ],
+   [
+    "Is the tester’s face recorded?",
+    "No. Aero records the browser tab and the tester’s voice. Never their camera, and not their mouse pointer."
+   ],
+   [
+    "Does Aero find testers for me?",
+    "No. Bring your own testers: friends, clients, colleagues or classmates."
+   ],
+   [
+    "Do testers need an account?",
+    "No. They open the test link, allow their microphone and the tab, and start."
+   ],
+   [
+    "How many sessions do I get?",
+    "Free has 3 test sessions, Basic 5, Solo 10 and Pro 20. They are a total on your plan, not a monthly allowance. Transcripts and summaries are on every plan."
+   ]
+  ],
+  "related": [
+   "write-user-test-tasks",
+   "send-a-user-test-link",
+   "watch-a-user-test-recording"
+  ],
+  "next": null,
+  "cta": "Run a test"
  }
 ]
