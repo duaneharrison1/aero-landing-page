@@ -1,6 +1,6 @@
 {
  "title": "Change or remove your custom domain yourself · Aero blog",
- "desc": "You can now switch a site to a different custom domain, or remove it, without contacting support.",
+ "desc": "Switch a site to a different custom domain, or remove it, from the site’s settings whenever you like.",
  "hero.eyebrow": "Blog",
  "hero.h1": "What’s new.",
  "hero.lead": "What changed in Aero, when it changed, in plain words.",
@@ -14,5 +14,5 @@
  "cta.a": "Start free",
  "cta.b": "See pricing",
  "h1": "Change or remove your custom domain yourself",
- "lead": "You can now switch a site to a different custom domain, or remove it, without contacting support."
+ "lead": "Switch a site to a different custom domain, or remove it, from the site’s settings whenever you like."
 }
