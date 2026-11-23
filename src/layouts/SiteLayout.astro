@@ -19,6 +19,7 @@ import appleTouchIcon from "../assets/brand/apple-touch-icon.png?url";
 import glassSettings from "../glass/glass-settings.js?url";
 import glassEngine from "../glass/glass-v3.js?url";
 import navJs from "../scripts/website/nav.js?url";
+import eventsJs from "../scripts/website/events.js?url";
 import homeJs from "../scripts/website/home.js?url";
 import siteJs from "../scripts/website/site.js?url";
 
@@ -83,6 +84,7 @@ const pageJs = script === "home" ? homeJs : script === "site" ? siteJs : null;
     <script is:inline src={glassSettings}></script>
     <script is:inline src={glassEngine}></script>
     <script is:inline src={navJs}></script>
+    <script is:inline src={eventsJs}></script>
     {pageJs && <script is:inline src={pageJs}></script>}
     <slot name="scripts" />
   </body>
