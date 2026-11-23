@@ -24,4 +24,4 @@ The public Aero website, built with Astro and deployed on Vercel. The app (app.a
 ## Commit rules
 
 - Run `npm run build` before committing; it must pass.
-- Work on a `claude/` branch and open a PR. Duane approves every merge.
+- Work on a `claude/` branch and open a PR. Duane has allowed Claude to merge its own PRs once `npm run build` and the Vercel preview pass (decided 23 Nov 2026). Report each merge to him afterwards. Squash merge via the REST API.
